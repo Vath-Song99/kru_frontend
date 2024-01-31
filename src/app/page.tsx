@@ -1,8 +1,16 @@
+import { Inputform } from '@/components'
 import React from 'react'
+
 import { Dropdown, InputForm } from '@/components'
+
+
+import { InputForm, Typography, Button } from '@/components'
+
 const Home = () => {
   return (
+
     <div>
+
       <InputForm width="sm" height="sm" placholder="Enter your email"/>
       <InputForm width="sm" height="sm" placholder="Enter your email" />
       <Dropdown className="my-custom-dropdown left-1/2 text-sm">
@@ -17,6 +25,38 @@ const Home = () => {
         </div>
       </div>
     </Dropdown>
+
+
+      <Typography 
+       align='center'
+       fontSize='sm'
+      >
+       smakshit
+      </Typography>
+     <Typography
+     align='center'
+     fontSize='lg'
+     variant='semibold'
+     colorshceme='secondary'
+     >
+      hello world
+     </Typography>
+     <Button
+      align='right'
+      maincolor='secondary'
+     >
+      hello 
+     </Button>
+     <Button
+      align='right'
+      maincolor='secondary'
+     >
+      Sign up 
+     </Button>
+     
+    <div className=''>
+       <Inputform type='search' placeholder='Search ..' className='w-full h-10 px-52 focus:outline-none'/>
+
     </div>
   )
 }

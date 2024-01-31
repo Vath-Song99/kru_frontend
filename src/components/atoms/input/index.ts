@@ -1,3 +1,3 @@
-import { Inputform } from "./inputform";
+import { Inputform } from './inputform'
 
 export {Inputform}

@@ -1,13 +1,10 @@
+import { Inputform } from '@/components'
 import React from 'react'
+
 const Home = () => {
   return (
-    <div>
-<<<<<<< HEAD
-      
-=======
-      <InputForm width="sm" height="sm" placholder="Enter your email"/>
-      <InputForm width="sm" height="sm" placholder="Enter your email" />
->>>>>>> 3f50cde (Branch: 38-input-form)
+    <div className=''>
+       <Inputform type='search' placeholder='Search ..' className='w-full h-10 px-52 focus:outline-none'/>
     </div>
   )
 }

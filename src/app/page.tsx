@@ -1,10 +1,36 @@
 import React from 'react'
-import { InputForm } from '@/components'
+import { InputForm, Typography, Button } from '@/components'
 const Home = () => {
   return (
     <div>
-      
-      <InputForm width="sm" height="sm" placholder="Enter your email" />
+      <Typography 
+       align='center'
+       fontSize='sm'
+      >
+       smakshit
+      </Typography>
+     <Typography
+     align='center'
+     fontSize='lg'
+     variant='semibold'
+     colorshceme='secondary'
+     >
+      hello world
+     </Typography>
+     <Button
+      align='right'
+      maincolor='secondary'
+     >
+      hello 
+     </Button>
+     <Button
+      align='right'
+      maincolor='secondary'
+     >
+      Sign up 
+     </Button>
+     
+
     </div>
   )
 }

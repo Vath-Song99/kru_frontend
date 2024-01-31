@@ -1,1 +1,1 @@
-export * from "./input"
+export {Button} from './button'

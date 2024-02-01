@@ -65,11 +65,8 @@ const Dropdown: React.FC<DropdownProps> = ({
       </button>
       {isOpen && (
         <div className={`${className}`}>
-          <ShowDropdown
-          >
-           <LinkDropdown >
-           {children}
-           </LinkDropdown>
+          <ShowDropdown>
+            <LinkDropdown>{children}</LinkDropdown>
           </ShowDropdown>
         </div>
       )}
@@ -77,17 +74,36 @@ const Dropdown: React.FC<DropdownProps> = ({
   );
 };
 
-const ShowDropdown: React.FC<ShowDropProps> = ({ children, className,role,aling }) => {
-  return <div className={`absolute ${aling} right-0 z-10 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none  ${className}`}  aria-orientation="vertical" aria-labelledby="menu-button" role={`${role}`}>{children}</div>;
+const ShowDropdown: React.FC<ShowDropProps> = ({
+  children,
+  className,
+  role,
+  aling,
+}) => {
+  return (
+    <div
+      className={`absolute ${aling} right-0 z-10 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none  ${className}`}
+      aria-orientation="vertical"
+      aria-labelledby="menu-button"
+      role={`${role}`}
+    >
+      {children}
+    </div>
+  );
 };
 
-const LinkDropdown: React.FC<LinkDropdownProps> = ({ children, className,role }) => {
-  return <div className={`${className}`} role={`${role}`}>
-        {children}
-  </div>;
+const LinkDropdown: React.FC<LinkDropdownProps> = ({
+  children,
+  className,
+  role,
+}) => {
+  return (
+    <div className={`${className}`} role={`${role}`}>
+      {children}
+    </div>
+  );
 };
-
-
+// dropdown
 const LinkDropdownPage: React.FC<LinkDropdownPageProps> = ({
   children,
   className,
@@ -96,9 +112,15 @@ const LinkDropdownPage: React.FC<LinkDropdownPageProps> = ({
   role,
 }) => {
   return (
-    <Link className={`${className}`} href={`${href}`}id={`${id}`} role={`${role}`}>{children}</Link>
-  )
-}
+    <Link
+      className={`${className}`}
+      href={`${href}`}
+      id={`${id}`}
+      role={`${role}`}
+    >
+      {children}
+    </Link>
+  );
+};
 
-
-export { Dropdown, ShowDropdown, LinkDropdown ,LinkDropdownPage};
+export { Dropdown, ShowDropdown, LinkDropdown, LinkDropdownPage };

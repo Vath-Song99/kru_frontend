@@ -65,6 +65,7 @@ const Typography: React.FC<TypographyProps> = ({
       case "secondary":
         return "text-[#455445]"
       default:
+
         return "text-[#000000]"
     }
   }

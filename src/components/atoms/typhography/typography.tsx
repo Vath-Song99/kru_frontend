@@ -76,7 +76,7 @@ const Typography: React.FC<TypographyProps> = ({
   const typographyColorStyles = typographycolorscheme(colorshceme);
 
   return (
-    <p 
+    <p  
       className={`${typographyColorStyles} ${typographyVariantStyles}  ${typographyFontSizeStyles} ${typographyAlignStyles} ${className}`}
     >
       {children}

@@ -12,6 +12,7 @@ const Home = () => {
     <div >
       <div className='flex'>
         <Banner >
+          
         </Banner>
          
       </div>

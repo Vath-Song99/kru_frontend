@@ -1,6 +1,6 @@
 import React from 'react'
-
 import Image from 'next/image'
+
 
 const Banner = () => {
 const image =   ''
@@ -14,9 +14,9 @@ const image =   ''
         <p className='text-[40px] w-[350px]  font-bold mt-[60px] '>
             Graduated or Want Internship ? Submit now , Show Your Skill
         </p>
-        <button className='bg-[#8e44ad] text-white rounded-md w-[300px] h-[80px] mt-[60px] text-[25px]'>
-            Become a Tutor Now 
-        </button>
+        {/* <button className='bg-[#8e44ad] text-white rounded-md w-[300px] h-[80px] mt-[60px] text-[25px]'>
+            Become a tutor now 
+        </button> */}
         </div>
        
     </div>

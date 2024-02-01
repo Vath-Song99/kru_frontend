@@ -8,7 +8,7 @@ interface InputProps {
   placeholder?: string;
 }
 
-const Inputform: React.FC<InputProps> = ({ className, type, placeholder }) => {
+const InputForm: React.FC<InputProps> = ({ className, type, placeholder }) => {
   return (
     <input
       type={type}
@@ -19,4 +19,4 @@ const Inputform: React.FC<InputProps> = ({ className, type, placeholder }) => {
   );
 };
 
-export { Inputform };
+export { InputForm };

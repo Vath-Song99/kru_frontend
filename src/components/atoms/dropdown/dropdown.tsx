@@ -28,14 +28,9 @@ interface LinkDropdownPageProps {
   id?: string;
 }
 
-const Dropdown: React.FC<DropdownProps> = ({
-  children,
-  className,
-  buttonContent,
-}) => {
-  const [isOpen, setIsOpen] = useState(false);
 
-const Dropdown: React.FC<DropdownProps> = ({ children, className }) => {
+
+const Dropdown: React.FC<DropdownProps> = ({ children, className, buttonContent, }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
 

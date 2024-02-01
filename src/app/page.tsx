@@ -1,16 +1,19 @@
-import { Inputform } from '@/components'
-import React from 'react'
 
-import { Dropdown, InputForm } from '@/components'
+import React from "react";
+=======
+import { Dropdown } from '@/components'
 
 
 import { InputForm, Typography, Button } from '@/components'
+
 
 const Home = () => {
   return (
 
     <div>
 
+
+        <Button>Hello</Button>
       <InputForm width="sm" height="sm" placholder="Enter your email"/>
       <InputForm width="sm" height="sm" placholder="Enter your email" />
       <Dropdown className="my-custom-dropdown left-1/2 text-sm">
@@ -58,7 +61,7 @@ const Home = () => {
        <Inputform type='search' placeholder='Search ..' className='w-full h-10 px-52 focus:outline-none'/>
 
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

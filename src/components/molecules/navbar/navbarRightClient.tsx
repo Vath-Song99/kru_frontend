@@ -60,9 +60,9 @@ const ProfileImage: React.FC<ImageProps> = ({
 // call it when it static 
 const NavbarRightClient:React.FC <NavbarProps> = ({ className}) =>{
     return (
-      <div className= {`    ${className}`}>
+      <div className= {` flex items-center   ${className}`}>
         <LanguageDropdown></LanguageDropdown>
-        <ProfileImage src="/Profiles/profile2.jpg" width={30} height={30} alt="Image Profile" className=""></ProfileImage>
+        <ProfileImage src="/Profiles/profile2.jpg" width={50} height={50} alt="Image Profile" className="w-20 h-20 object-cover border border-gray-400 rounded-full ml-5"></ProfileImage>
       </div>
     )
 }

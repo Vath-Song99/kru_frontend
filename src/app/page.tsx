@@ -1,24 +1,9 @@
-import { Inputform } from '@/components'
 import React from 'react'
 
-import { Dropdown,  Button  } from '@/components'
-
-
-import { Typography,Banner} from '@/components'
-
-const Home = () => {
+const Page = () => {
   return (
-
-    <div >
-      <div className='flex'>
-        <Banner >
-          
-        </Banner>
-         
-      </div>
-    </div>
-
+    <div>Page</div>
   )
 }
 
-export default Home
+export default Page

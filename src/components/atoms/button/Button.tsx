@@ -13,7 +13,7 @@ interface ButtonProps {
 
 const Button: FC<ButtonProps> = ({
   children,
-  className = "",
+  className = "w-full",
   colorScheme = "primary",
   isDisabled = false,
   leftIcon,

@@ -14,7 +14,6 @@ interface ShowDropProps {
   aling?: string;
 }
 
-<<<<<<< HEAD
 interface LinkDropdownProps {
   children: React.ReactNode;
   className?: string;
@@ -35,10 +34,10 @@ const Dropdown: React.FC<DropdownProps> = ({
   buttonContent,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
-=======
+
 const Dropdown: React.FC<DropdownProps> = ({ children, className }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
->>>>>>> d2a5514 (first commit)
+
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);

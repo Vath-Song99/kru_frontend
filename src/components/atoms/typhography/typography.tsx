@@ -65,7 +65,7 @@ const Typography: React.FC<TypographyProps> = ({
       case "secondary":
         return "bg-[#007c00]"
       default:
-        return "bg-[#8e44ad]"
+        break;
     }
   }
 

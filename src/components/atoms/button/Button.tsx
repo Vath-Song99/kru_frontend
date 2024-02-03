@@ -9,6 +9,8 @@ interface ButtonProps {
   isDisabled?: boolean;
   rightIcon?: ReactNode;
   leftIcon?: ReactNode;
+  size: number;
+  radius: number      
 }
 
 const Button: FC<ButtonProps> = ({
@@ -18,6 +20,7 @@ const Button: FC<ButtonProps> = ({
   isDisabled = false,
   leftIcon,
   rightIcon,
+  size
 }) => {
   const getColorSchemeClass = (scheme: string) => {
     switch (scheme) {
@@ -34,6 +37,7 @@ const Button: FC<ButtonProps> = ({
   const disableStyle = isDisabled ? "cursor-not-allowed" : "cursor-pointer";
   const combinedClassName = `text-center flex items-center justify-center space-x-2 ${disableStyle} ${colorSchemeClass} ${className}`;
 
+  
   return (
     <button disabled={isDisabled} className={combinedClassName}>
       {leftIcon}

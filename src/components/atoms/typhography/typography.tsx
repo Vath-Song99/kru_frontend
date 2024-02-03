@@ -8,7 +8,7 @@ interface TypographyProps {
   align?: "left" | "center" | "right" | "justify";
   fontSize?: "base" | "sm" | "md" | "lg" | "xl";
   variant?: "normal" | "semibold" | "bold";
-  colorshceme?: "primary"| "secondary";
+  colorshceme?: "primary"| "secondary"| "tb";
 }
 
 const Typography: React.FC<TypographyProps> = ({
@@ -65,7 +65,9 @@ const Typography: React.FC<TypographyProps> = ({
       case "primary":
         return "text-[#8e44ad]"
       case "secondary":
+
         return "text-[#455445]"
+
       default:
 
         return "text-[#000000]"

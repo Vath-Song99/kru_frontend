@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import Image from "next/image";
 import { Button } from "@/components";
-interface CardprofileProps {
+interface CardProfileProps {
   children: React.ReactNode;
   className?: string;
   toptext?: string;
@@ -10,6 +10,7 @@ interface CardprofileProps {
   RetingTutor?: string;
   Studentsqty?: string;
   PriceTutor?: string;
+  align?:string
 }
 
 interface ImageCardProps {
@@ -68,7 +69,7 @@ const HeaderImage: React.FC<HeaderImageProps> = ({ children, className }) => {
   );
 };
 
-const ProfileCard: React.FC<CardprofileProps> = ({
+const ProfileCard: React.FC<CardProfileProps> = ({
   className,
   children,
   toptext,
@@ -77,10 +78,11 @@ const ProfileCard: React.FC<CardprofileProps> = ({
   RetingTutor,
   Studentsqty,
   PriceTutor,
+  align = "center",
 }) => {
   return (
     <div
-      className={`w-[420px] h-[420px] bg-while rounded-lg shadow-lg flex flex-col `}
+      className={`w-[420px] h-[420px] bg-while rounded-lg shadow-lg flex flex-col ${className}`}
     >
       <div className="flex  justify-between py-[10px] ">
         <div className="ml-[20px]  flex justify-start ">

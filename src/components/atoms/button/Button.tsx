@@ -5,7 +5,7 @@ import React, { FC, ReactNode } from "react";
 interface ButtonProps {
   children: ReactNode;
   className?: string;
-  colorScheme?: "primary" | "secondary";
+  colorScheme?: "primary" | "secondary"|"cardButton";
   isDisabled?: boolean;
   rightIcon?: ReactNode;
   leftIcon?: ReactNode;
@@ -25,6 +25,8 @@ const Button: FC<ButtonProps> = ({
         return "bg-[#8E44AD] hover:bg-purple-500 text-white";
       case "secondary":
         return "bg-cyan-600 hover:bg-cyan-500";
+        case "cardButton":
+          return " border border-solid border-[#7b2cbf] focus:outline-none focus:border-[#7b2cbf] hover:bg-[#7b2cbf]  hover:text-white  transition duration-300 ease-in-out";
       default:
         return "bg-[#8E44AD] hover:bg-purple-500 text-white";
     }

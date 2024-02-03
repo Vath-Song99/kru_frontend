@@ -6,7 +6,7 @@ interface TypographyProps {
   align?: "left" | "center" | "right" | "justify";
   fontSize?: "base" | "sm" | "md" | "lg" | "xl";
   variant?: "normal" | "semibold" | "bold";
-  colorshceme?: "primary"| "secondary";
+  colorshceme?: "primary"| "secondary"| "tb";
 }
 
 const Typography: React.FC<TypographyProps> = ({
@@ -64,6 +64,8 @@ const Typography: React.FC<TypographyProps> = ({
         return "bg-[#8e44ad]"
       case "secondary":
         return "bg-[#007c00]"
+        case "tb":
+        return "text-black"
       default:
         return "bg-[#8e44ad]"
     }

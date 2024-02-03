@@ -1,19 +1,31 @@
-<<<<<<< HEAD
-import React from 'react'
-
+import React from "react";
+import Image from "next/image";
+import {
+  Dropdown,
+  LinkDropdown,
+  LinkDropdownPage,
+  ShowDropdown,
+  Typography,
+  ProfileCard,
+  ImageCard,
+  HeaderImage,
+  Button,
+} from "@/components";
 const Page = () => {
   return (
-    <div>page</div>
-  )
-}
-
-export default Page
-=======
-import React from "react";
-
-const Homepage = () => {
-  return <div>Homepage</div>;
+    <div>
+      <ProfileCard toptext="1" NameTutorTitle="Ny Sreyneang" NameSubject="English teacher" RetingTutor="20" Studentsqty="100" PriceTutor="200">
+        <HeaderImage>
+          <ImageCard
+            alt="this pic"
+            ImageSrc="sreyneang.png"
+          >
+          
+          </ImageCard>
+        </HeaderImage>
+      </ProfileCard>
+    </div>
+  );
 };
 
-export default Homepage;
->>>>>>> d2fa3b94e5d4caa9e747b45e88c153f874d5ffa0
+export default Page;

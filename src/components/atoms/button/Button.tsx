@@ -9,8 +9,8 @@ interface ButtonProps {
   isDisabled?: boolean;
   rightIcon?: ReactNode;
   leftIcon?: ReactNode;
-  size: number;
-  radius: number      
+  size?: number;
+  radius?: number      
 }
 
 const Button: FC<ButtonProps> = ({

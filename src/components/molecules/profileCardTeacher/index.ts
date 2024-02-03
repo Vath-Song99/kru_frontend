@@ -1,3 +1,3 @@
-import { ProfileCard,ImageCard,HeaderImage, } from "./profilecard";
+import { ProfileCard,ImageCard,HeaderImage } from "./profilecard";
 
-export {ProfileCard,ImageCard,HeaderImage};
+export {ProfileCard,ImageCard,HeaderImage}

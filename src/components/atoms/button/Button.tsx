@@ -27,7 +27,7 @@ const Button: FC<ButtonProps> = ({
       case "primary":
         return "bg-[#8E44AD] hover:bg-purple-500 text-white";
       case "secondary":
-        return "bg-cyan-600 hover:bg-cyan-500";
+        return "bg-[#007C00] hover:bg-cyan-500";
         case "cardButton":
           return " border border-solid border-[#7b2cbf] focus:outline-none focus:border-[#7b2cbf] hover:bg-[#7b2cbf]  hover:text-white  transition duration-300 ease-in-out";
       default:

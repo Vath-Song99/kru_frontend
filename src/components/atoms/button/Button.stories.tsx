@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from './Button';
+import React from 'react';
 
 //👇 This default export determines where your story goes in the story list
 const meta: Meta<typeof Button> = {
@@ -7,6 +8,7 @@ const meta: Meta<typeof Button> = {
   component: Button,
   parameters: {
       layout: "centered",
+
   },
   tags:["autodocs"],
 };
@@ -19,6 +21,11 @@ export const FirstStory: Story = {
     children: "Button",
     colorScheme: "primary",
     isDisabled: false,
+    size: "sm",
+    radius : "sm",
+    fontColor: "white",
+    fontSize: "sm",
+   
   },
 
     //👇 The args you need here will depend on your component

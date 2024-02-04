@@ -1,3 +1,3 @@
-import  { Dropdown,ShowDropdown,LinkDropdown,LinkDropdownPage } from "./dropdown";
+import  { Dropdown,ShowDropdown,LinkDropdown,LinkDropdownPage } from "./Dropdown";
 
  export {Dropdown,ShowDropdown,LinkDropdown,LinkDropdownPage}

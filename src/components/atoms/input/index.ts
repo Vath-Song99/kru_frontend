@@ -1,6 +1,4 @@
-import { InputForm } from "./inputform";
+import { InputForm } from "./InputForm";
 
-
-export {InputForm}
-
+export { InputForm };
 

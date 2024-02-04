@@ -1,17 +1,15 @@
-<<<<<<< HEAD
-import { ImageCard, ProfileCard } from '@/components'
+import { Homepage, Navbar } from '@/components'
 import React from 'react'
+import { Poppins } from 'next/font/google'
+
+export
 
 const Page = () => {
   return (
-    <div>
-        <ProfileCard >
-            <ImageCard ImageSrc='sreyneang.png' alt=''></ImageCard>
-        </ProfileCard>
+    <div className='w-full'>
+          <Homepage/>
     </div>
   )
 }
 
 export default Page
-=======
->>>>>>> c948b4a88637ea82a8b96f6ae12e5edc70df7a27

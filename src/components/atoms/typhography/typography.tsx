@@ -1,3 +1,5 @@
+"use client"
+
 import React, { ReactNode } from "react";
 
 interface TypographyProps {
@@ -6,7 +8,7 @@ interface TypographyProps {
   align?: "left" | "center" | "right" | "justify";
   fontSize?: "base" | "sm" | "md" | "lg" | "xl";
   variant?: "normal" | "semibold" | "bold";
-  colorshceme?: "primary"| "secondary";
+  colorshceme?: "primary"| "secondary"| "tb";
 }
 
 const Typography: React.FC<TypographyProps> = ({
@@ -15,7 +17,7 @@ const Typography: React.FC<TypographyProps> = ({
   align = "center",
   fontSize = "base",
   variant = "normal",
-  colorshceme ="primary"
+  colorshceme =""
 }) => {
   const typographyAlign = (align: string) => {
     switch (align) {
@@ -61,11 +63,14 @@ const Typography: React.FC<TypographyProps> = ({
   const typographycolorscheme = (color : string)=>{
     switch (color) {
       case "primary":
-        return "bg-[#8e44ad]"
+        return "text-[#8e44ad]"
       case "secondary":
-        return "bg-[#007c00]"
+
+        return "text-[#455445]"
+
       default:
-        return "bg-[#8e44ad]"
+
+        return "text-[#000000]"
     }
   }
 
@@ -75,7 +80,7 @@ const Typography: React.FC<TypographyProps> = ({
   const typographyColorStyles = typographycolorscheme(colorshceme);
 
   return (
-    <p
+    <p  
       className={`${typographyColorStyles} ${typographyVariantStyles}  ${typographyFontSizeStyles} ${typographyAlignStyles} ${className}`}
     >
       {children}

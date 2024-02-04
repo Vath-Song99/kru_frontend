@@ -8,7 +8,6 @@ import {
   CardSubject,
   NavbarLeftSever,
   NavbarRightClient,
-  
 } from "@/components";
 
 const Home = () => {

@@ -178,7 +178,7 @@ const ProfileCard: React.FC<CardProfileProps> = ({
       {/* end values data in card  */}
       {/* state  this button  */}
       <div className="flex justify-center py-7">
-        <Button className="w-[130px] h-[35px] flex justify-between items-center rounded-[10px]" colorScheme="cardButton">
+        <Button className="w-[130px] h-[35px] flex justify-between items-center rounded-[10px]" colorScheme="outline">
           <p className="text-[#454544] font-thin text-sm	 tracking-wider ml-[8px]">View profile</p>
           <div >
           <svg

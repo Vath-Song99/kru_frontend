@@ -1,4 +1,4 @@
-import { NavbarLeftSever } from "./navbarLeftSever";
-import { NavbarRightClient } from "./navbarRightClient";
+import { NavbarLeftSever } from "./NavbarLeftSever";
+import { NavbarRightClient } from "./NavbarRightClient";
 
 export {NavbarLeftSever, NavbarRightClient}

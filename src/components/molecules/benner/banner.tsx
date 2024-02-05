@@ -2,7 +2,6 @@
 import React from 'react'
 import Image from 'next/image'
 import { Button } from '@/components'
-
 const Banner = () => {
   const image = ''
   return (
@@ -25,14 +24,10 @@ const Banner = () => {
                 </svg>} className='w-[384px] h-[85px] rounded-md text-[25px] mt-[20px]'>
               Become A tutor now
             </Button>
-
-
           </div>
-
         </div>
       </div>
     </div>
   )
 }
-
 export { Banner }

@@ -6,15 +6,16 @@ import {
   Banner,
   Navbar,
   CardSubject,
-  NavbarLeftSever,
-  NavbarRightClient,
+  Homepage
 } from "@/components";
 
 const Home = () => {
   return (
     <div>
       <div className="">
-        
+        <Homepage>
+           
+        </Homepage>
       </div>
     </div>
   );

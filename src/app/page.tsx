@@ -1,15 +1,24 @@
-import { Homepage, Navbar } from '@/components'
-import React from 'react'
-import { Poppins } from 'next/font/google'
+import React from "react";
+import { Dropdown, Button } from "@/components";
 
-export
+import {
+  Typography,
+  Banner,
+  Navbar,
+  CardSubject,
+  Homepage
+} from "@/components";
 
-const Page = () => {
+const Home = () => {
   return (
-    <div className='w-full'>
-          <Homepage/>
+    <div>
+      <div className="">
+        <Homepage>
+           
+        </Homepage>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Page
+export default Home;

@@ -18,14 +18,9 @@ const Homepage = () => {
       <div className="w-full h-[327px] flex justify-between items-center">
         {/* Left side */}
         <div className="w-1/2 ">
-          <Typography
-            className="text-6xl font-extrabold"
-            align="left"
-            variant="extrabold"
-            colorshceme="primary"
-          >
+          <h1 className="text-6xl   text-[#7B2CBF] font-extrabold leading-20">
             Welcome to Kru platform
-          </Typography>
+          </h1>
 
           <Typography className="mt-7" fontSize="md" align="left">
             Kru’s vision is to connect communication between private teachers
@@ -318,62 +313,61 @@ const Homepage = () => {
         {/* Card teacher rate */}
 
         <div className="w-full flex mt-5 justify-between  flex-wrap gap-0">
-        {/* Thorn code */}
-            <ProfileCard
-              className="w-[365px] "
-              toptext="1"
-              NameTutorTitle="Ny Sreyneang"
-              NameSubject="English teacher"
-              RetingTutor="20"
-              Studentsqty="100"
-              PriceTutor="200"
-            >
-              <HeaderImage>
-                <ImageCard alt="this pic" ImageSrc="sreyneang.png">
-                  {" "}
-                </ImageCard>
-              </HeaderImage>
-            </ProfileCard>
-            <ProfileCard
-              className="w-[365px]"
-              toptext="1"
-              NameTutorTitle="Ny Sreyneang"
-              NameSubject="English teacher"
-              RetingTutor="20"
-              Studentsqty="100"
-              PriceTutor="200"
-            >
-              <HeaderImage>
-                <ImageCard alt="this pic" ImageSrc="sreyneang.png">
-                  {" "}
-                </ImageCard>
-              </HeaderImage>
-            </ProfileCard>
-            <ProfileCard
-              className="w-[365px]"
-              toptext="1"
-              NameTutorTitle="Ny Sreyneang"
-              NameSubject="English teacher"
-              RetingTutor="20"
-              Studentsqty="100"
-              PriceTutor="200"
-            >
-              <HeaderImage>
-                <ImageCard alt="this pic" ImageSrc="sreyneang.png">
-                  {" "}
-                </ImageCard>
-              </HeaderImage>
-            </ProfileCard>
-          </div>
-        </div>
-
-        {/* benner card */}
-
-        <div className="w-full h-[407px] border flex justify-center items-center mb-5">
-          <Banner/>
+          {/* Thorn code */}
+          <ProfileCard
+            className="w-[365px] "
+            toptext="1"
+            NameTutorTitle="Ny Sreyneang"
+            NameSubject="English teacher"
+            RetingTutor="20"
+            Studentsqty="100"
+            PriceTutor="200"
+          >
+            <HeaderImage>
+              <ImageCard alt="this pic" ImageSrc="sreyneang.png">
+                {" "}
+              </ImageCard>
+            </HeaderImage>
+          </ProfileCard>
+          <ProfileCard
+            className="w-[365px]"
+            toptext="1"
+            NameTutorTitle="Ny Sreyneang"
+            NameSubject="English teacher"
+            RetingTutor="20"
+            Studentsqty="100"
+            PriceTutor="200"
+          >
+            <HeaderImage>
+              <ImageCard alt="this pic" ImageSrc="sreyneang.png">
+                {" "}
+              </ImageCard>
+            </HeaderImage>
+          </ProfileCard>
+          <ProfileCard
+            className="w-[365px]"
+            toptext="1"
+            NameTutorTitle="Ny Sreyneang"
+            NameSubject="English teacher"
+            RetingTutor="20"
+            Studentsqty="100"
+            PriceTutor="200"
+          >
+            <HeaderImage>
+              <ImageCard alt="this pic" ImageSrc="sreyneang.png">
+                {" "}
+              </ImageCard>
+            </HeaderImage>
+          </ProfileCard>
         </div>
       </div>
-    
+
+      {/* benner card */}
+
+      <div className="w-full h-[407px] border flex justify-center items-center mb-5">
+        <Banner />
+      </div>
+    </div>
   );
 };
 

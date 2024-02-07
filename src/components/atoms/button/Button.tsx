@@ -23,7 +23,7 @@ const Button: FC<ButtonProps> = ({
   isDisabled = false,
   leftIcon,
   rightIcon,
-  size = "sm",
+  size = "default", 
   radius = "sm",
   fontColor = "text-white",
   fontSize = "sm",
@@ -59,7 +59,7 @@ const Button: FC<ButtonProps> = ({
       case "md": return "px-16 py-2"
       case "lg": return "px-20 py-3"
       case "xl": return "px-28 py-5"
-      default: return "px-10 py-2"
+      default: return "px-0"
     }
   }
   const fontColorControl = (fontColor: string) =>{

@@ -1,7 +1,7 @@
 "use client"
 import React, { FC, useState } from "react";
 import Image from "next/image";
-import { Button, ButtonIcon } from "@/components";
+import { Button, ButtonIcon, Typography } from "@/components";
 interface CardProfileProps {
   children: React.ReactNode;
   className?: string;
@@ -181,16 +181,15 @@ const ProfileCard: React.FC<CardProfileProps> = ({
       {/* end values data in card  */}
       {/* state  this button  */}
       <div className="flex justify-center py-7">
-        <Button className="w-[130px] h-[35px] flex justify-between items-center px-0 " radius="md" colorScheme="outline" hover={()=>{
-         setButtonColor(true)
-        }} >  
-               <p className="text-[#454544] font-thin text-sm	 tracking-wider ml-[8px]">View profile</p>
+        <Button className="w-[130px] h-[35px] flex items-center justify-between px-2 " radius="md" colorScheme="outline" 
+       >  
+          <Typography align="left" fontSize="sm" >View profile</Typography>
          
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
             height="16"
-            className="mr-[10px]"
+            className="m-0 w-4 h-4"
             viewBox="0 0 16 16"
             fill="none"
           >

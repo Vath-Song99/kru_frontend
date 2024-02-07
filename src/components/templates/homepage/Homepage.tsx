@@ -22,7 +22,7 @@ const Homepage = () => {
             className=""
             align="left"
             fontSize="4xl"
-            variant="semibold"
+            variant="bold"
           >
             Welcome to Kru platform
           </Typography>
@@ -73,6 +73,7 @@ const Homepage = () => {
             fontSize="xl"
             fontColor="black"
             radius="md"
+            size="sm"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -110,6 +111,7 @@ const Homepage = () => {
             fontSize="xl"
             fontColor="black"
             radius="md"
+            size="sm"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -125,7 +127,7 @@ const Homepage = () => {
                 d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
               />
             </svg>
-            English
+            Khmer
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -147,6 +149,7 @@ const Homepage = () => {
             fontSize="xl"
             fontColor="black"
             radius="md"
+            size="sm"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -162,7 +165,7 @@ const Homepage = () => {
                 d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
               />
             </svg>
-            English
+            Mathematic
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -184,6 +187,7 @@ const Homepage = () => {
             fontSize="xl"
             fontColor="black"
             radius="md"
+            size="sm"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -199,7 +203,7 @@ const Homepage = () => {
                 d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
               />
             </svg>
-            English
+            Biology
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -221,6 +225,7 @@ const Homepage = () => {
             fontSize="xl"
             fontColor="black"
             radius="md"
+            size="sm"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -236,7 +241,7 @@ const Homepage = () => {
                 d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
               />
             </svg>
-            English
+            Physics
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -258,6 +263,7 @@ const Homepage = () => {
             fontSize="xl"
             fontColor="black"
             radius="md"
+            size="sm"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -273,7 +279,7 @@ const Homepage = () => {
                 d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
               />
             </svg>
-            English
+            Chimistry
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -314,7 +320,7 @@ const Homepage = () => {
         <div className="w-full flex mt-5 justify-between  flex-wrap gap-0">
         {/* Thorn code */}
             <ProfileCard
-              className="w-[358px] "
+              className="w-[365px] "
               toptext="1"
               NameTutorTitle="Ny Sreyneang"
               NameSubject="English teacher"
@@ -329,7 +335,7 @@ const Homepage = () => {
               </HeaderImage>
             </ProfileCard>
             <ProfileCard
-              className="w-[358px]"
+              className="w-[365px]"
               toptext="1"
               NameTutorTitle="Ny Sreyneang"
               NameSubject="English teacher"
@@ -344,7 +350,7 @@ const Homepage = () => {
               </HeaderImage>
             </ProfileCard>
             <ProfileCard
-              className="w-[358px]"
+              className="w-[365px]"
               toptext="1"
               NameTutorTitle="Ny Sreyneang"
               NameSubject="English teacher"

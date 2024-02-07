@@ -21,12 +21,12 @@ const Banner = () => {
           {/* Heading */}
 
           <div className='w-1/2 h-full flex justify-center items-center'>
-             <div className='w-1/2 h-1/2'>
+             <div className='w-[65%] h-1/2'>
               <Typography
               align='left'
-              fontSize='lg'
+              fontSize='4xl'
               variant="semibold"
-              className='text-3xl'
+              className=''
               >
               Graduated or Want Internship ? Submit now , Show Your Skill
               </Typography>
@@ -35,7 +35,7 @@ const Banner = () => {
                size='sm'
                fontSize='md'
                colorScheme='primary'
-               className='mt-5 w-[300px] h-[50px]'
+               className='mt-10 w-[300px] h-[50px]'
                radius='md'
               >Become a teacher now</Button>
             </div>

@@ -1,1 +1,3 @@
-export * from "./navbar"
+export * from "./profile-card-teacher"
+
+export * from "./card-subject"

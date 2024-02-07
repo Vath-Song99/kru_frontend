@@ -1,14 +1,13 @@
 import React from "react";
+import "../../../app/globals.css" 
 
   const Footer: React.FC = () => {
     return (
-        <footer className="footer bg-gray-900 py-16 mt-16">
-        <div className="container mx-[5%]">
-          <div className="flex flex-wrap">
-            <div className="w-full md:w-1/4 lg:w-1/4 px-4 mb-8 md:mb-0">
-              <h4 className="text-white text-lg m-0">1-ON-1 TUTORS</h4>
-              <div className="w-10 h-[2px] bg-[#e91e63] mt-1"></div>
-              <ul className="flex flex-col mt-5 gap-y-5">
+        <footer className="w-[80%] h-[300px] flex justify-between items-start  ">
+            <div className="w-full md:w-1/4 lg:w-1/4 xl:w-1/4 grid grid-flow-row gap-1  px-4 mb-8 md:mb-0">
+              <h4 className="text-white text-lg ">1-ON-1 TUTORS</h4>
+              <div className="w-10 h-[2px] bg-[#e91e63] "></div>
+              <ul className="flex flex-col  gap-y-3">
                 <li>
                   <a href="#" className="text-gray-400 hover:text-white transition-all hover:ml-4">
                     English teacher
@@ -41,11 +40,11 @@ import React from "react";
                 </li>
               </ul>
             </div>
-            <div className="w-full md:w-1/4 lg:w-1/4 px-4 mb-8 md:mb-0">
+            <div className="w-full md:w-1/4 lg:w-1/4 grid grid-flow-row gap-1 px-4 mb-8 md:mb-0">
               <h4 className="text-white text-lg m-0">Get help</h4>
-              <div className="w-10 h-[2px] bg-[#e91e63] mt-1"></div>
-              <ul className="flex flex-col mt-5 gap-y-5 ">
-                <li>
+              <div className="w-10 h-[2px] bg-[#e91e63]"></div>
+              <ul className="flex flex-col gap-y-3 ">
+                <li>  
                   <a href="#" className="text-gray-400 hover:text-white transition-all hover:ml-4">
                     FAQ
                   </a>
@@ -62,10 +61,10 @@ import React from "react";
                 </li>
               </ul>
             </div>
-            <div className="w-full md:w-1/4 lg:w-1/4 px-4 mb-8 md:mb-0">
+            <div className="w-full md:w-1/4 lg:w-1/4 grid grid-flow-row gap-1 px-4 mb-8 md:mb-0">
               <h4 className="text-white text-xl m-0">Contact</h4>
-              <div className="w-10 h-[2px] bg-[#e91e63] mt-1"></div>
-              <ul className="flex flex-col mt-5 gap-y-5">
+              <div className="w-10 h-[2px] bg-[#e91e63] "></div>
+              <ul className="flex flex-col gap-y-3">
                 <li>
                   <a href="#" className="text-gray-400 hover:text-white transition-all hover:ml-4">
                     Facebook
@@ -83,9 +82,9 @@ import React from "react";
                 </li>
               </ul>
             </div>
-            <div className="w-full md:w-1/4 lg:w-1/4 px-4 mb-8 md:mb-0">
+            <div className="w-full md:w-1/4 lg:w-1/4 grid grid-flow-row gap-1 px-4 mb-8 md:mb-0">
               <h4 className="text-white text-lg m-0">follow us</h4>
-              <div className="w-10 h-[2px] bg-[#e91e63] mt-1"></div>
+              <div className="w-10 h-[2px] bg-[#e91e63]"></div>
               <div className="flex mt-5 gap-4">
                 <a href="#" className="text-gray-400 hover:text-white">
                   <svg
@@ -141,8 +140,7 @@ import React from "react";
                 </a>
               </div>
             </div>
-          </div>
-        </div>
+          
       </footer> 
     );
   }

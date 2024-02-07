@@ -2,3 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer  {
+    container {
+        @apply w-[80%];
+    }
+}
+

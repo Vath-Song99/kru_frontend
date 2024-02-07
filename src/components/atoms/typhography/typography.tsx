@@ -6,7 +6,7 @@ interface TypographyProps {
   children: ReactNode;
   className?: string;
   align?: "left" | "center" | "right" | "justify";
-  fontSize?: "base" | "sm" | "md" | "lg" | "xl";
+  fontSize?: "base" | "sm" | "md" | "lg" | "xl" | "4xl";
   variant?: "normal" | "semibold" | "bold";
   colorshceme?: "primary"| "secondary"| "tb";
 }
@@ -42,8 +42,12 @@ const Typography: React.FC<TypographyProps> = ({
         return "text-sm";
       case "md":
         return "text-md";
-      case "lg":
-        return "text-lg";
+        case "lg":
+          return "text-lg";
+        case "xl":
+        return "text-xl";
+        case "4xl":
+        return "text-4xl";
       default:
         return "text-base";
     }

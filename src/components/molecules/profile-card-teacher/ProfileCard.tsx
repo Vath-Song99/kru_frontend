@@ -1,6 +1,7 @@
-import React, { FC } from "react";
+"use client"
+import React, { FC, useState } from "react";
 import Image from "next/image";
-import { Button } from "@/components";
+import { Button, ButtonIcon } from "@/components";
 interface CardProfileProps {
   children: React.ReactNode;
   className?: string;
@@ -47,7 +48,7 @@ interface HeaderImageProps {
 const HeaderImage: React.FC<HeaderImageProps> = ({ children, className }) => {
   return (
     <div
-      className={`w-[420px] mt-[-20px] px-9 h-[180px] flex justify-center items-center relative${className}`}
+      className={`  px-9 flex justify-center items-center relative${className}`}
     >
       {children}
       <svg
@@ -80,9 +81,11 @@ const ProfileCard: React.FC<CardProfileProps> = ({
   PriceTutor,
   align = "center",
 }) => {
+
+  const [buttonColor,setButtonColor] = useState(false)
   return (
     <div
-      className={`w-[420px] h-[420px] bg-while rounded-lg shadow-lg flex flex-col ${className}`}
+      className={`bg-while rounded-lg shadow-lg flex flex-col ${className}`}
     >
       <div className="flex  justify-between py-[10px] ">
         <div className="ml-[20px]  flex justify-start ">
@@ -178,9 +181,11 @@ const ProfileCard: React.FC<CardProfileProps> = ({
       {/* end values data in card  */}
       {/* state  this button  */}
       <div className="flex justify-center py-7">
-        <Button className="w-[130px] h-[35px] flex justify-between items-center rounded-[10px]" colorScheme="outline">
-          <p className="text-[#454544] font-thin text-sm	 tracking-wider ml-[8px]">View profile</p>
-          <div >
+        <Button className="w-[130px] h-[35px] flex justify-between items-center px-0 " radius="md" colorScheme="outline" hover={()=>{
+         setButtonColor(true)
+        }} >  
+               <p className="text-[#454544] font-thin text-sm	 tracking-wider ml-[8px]">View profile</p>
+         
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -196,8 +201,6 @@ const ProfileCard: React.FC<CardProfileProps> = ({
               fill="#454544"
             />
           </svg>
-          </div>
-          
         </Button>
       </div>
       {/* end this button  */}

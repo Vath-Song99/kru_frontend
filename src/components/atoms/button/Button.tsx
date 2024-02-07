@@ -5,7 +5,7 @@ import React, { FC, ReactNode } from "react";
 interface ButtonProps {
   children: ReactNode;
   className?: string;
-  colorScheme?: "primary" | "secondary"|"outline";
+  colorScheme?: "primary" | "secondary"|"outline" | "tertiary";
   isDisabled?: boolean;
   rightIcon?: React.ReactNode;
   leftIcon?: ReactNode;
@@ -13,6 +13,7 @@ interface ButtonProps {
   radius?: "sm" | "md" | "lg" | "xl"
   fontColor?: "primary" | "secondary" | "tertiary" | "white" | "black" 
   fontSize?: "sm" | "md" | "lg" | "xl"
+  hover?: () => void
 }
 
 const Button: FC<ButtonProps> = ({
@@ -25,7 +26,8 @@ const Button: FC<ButtonProps> = ({
   size = "sm",
   radius = "sm",
   fontColor = "text-white",
-  fontSize = "sm"
+  fontSize = "sm",
+  hover
   
 }) => {
   const getColorSchemeClass = (schemeParam: string) => {
@@ -35,7 +37,9 @@ const Button: FC<ButtonProps> = ({
       case "secondary":
         return "bg-[#007C00] hover:bg-cyan-500";
         case "outline":
-          return " border border-solid border-[#7b2cbf] focus:outline-none focus:border-[#7b2cbf] hover:bg-[#7b2cbf]  hover:text-white  transition duration-300 ease-in-out";
+          return " border border-solid border-[#7b2cbf] focus:outline-none focus:border-[#7B2CBF] hover:bg-[#7b2cbf]  hover:text-white  transition duration-300 ease-in-out";
+        case "tertiary":
+          return "bg-[#F4F4F8]" 
       default:
         return "bg-[#7B2CBF] hover:bg-purple-500 text-white";
     }
@@ -88,7 +92,7 @@ const Button: FC<ButtonProps> = ({
 
   
   return (
-    <button disabled={isDisabled} className={combinedClassName}>
+    <button disabled={isDisabled} className={combinedClassName} onMouseOver={hover} >
       {leftIcon}
       {children}
       {rightIcon}

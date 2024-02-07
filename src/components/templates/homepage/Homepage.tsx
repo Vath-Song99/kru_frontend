@@ -12,22 +12,22 @@ import Image from "next/image";
 
 const Homepage = () => {
   return (
-    <div className="md:w-[80%] lg:w-[80%] w-[80%] ">
+    <div className="md:w-[80%] lg:w-[1200px] w-[80%] h-[1700px] ">
       {/* Homepage Benner */}
 
       <div className="w-full h-[327px] flex justify-between items-center">
         {/* Left side */}
         <div className="w-1/2 ">
           <Typography
-            className=""
+            className="text-6xl font-extrabold"
             align="left"
-            fontSize="4xl"
-            variant="bold"
+            variant="extrabold"
+            colorshceme="primary"
           >
             Welcome to Kru platform
           </Typography>
 
-          <Typography className="mt-7" align="left">
+          <Typography className="mt-7" fontSize="md" align="left">
             Kru’s vision is to connect communication between private teachers
             and students by digital ways
           </Typography>

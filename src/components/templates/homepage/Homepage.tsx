@@ -6,53 +6,32 @@ import {
   HeaderImage,
   Typography,
   Banner,
+  HomepageSlider
 } from "@/components";
 import React from "react";
 import Image from "next/image";
 
-const Homepage = () => {
+interface HomepageProps {
+  homepageSlider: React.ReactNode
+  profileCard: React.ReactNode
+}
+
+const Homepage:React.FC <HomepageProps> = ({
+    homepageSlider,
+    profileCard
+}) => {
   return (
     <div className="md:w-[80%] lg:w-[1200px] w-[80%] h-[1700px] ">
       {/* Homepage Benner */}
 
-      <div className="w-full h-[327px] flex justify-between items-center">
-        {/* Left side */}
-        <div className="w-1/2 ">
-          <h1 className="text-6xl   text-[#7B2CBF] font-extrabold leading-20">
-            Welcome to Kru platform
-          </h1>
-
-          <Typography className="mt-7" fontSize="md" align="left">
-            Kru’s vision is to connect communication between private teachers
-            and students by digital ways
-          </Typography>
-          <Button
-            className="mt-7"
-            colorScheme="primary"
-            size="lg"
-            fontSize="md"
-            radius="md"
-          >
-            Get started
-          </Button>
-        </div>
-        {/* Right side */}
-        <div className="">
-          <Image
-            src={"/Benner/Benner-top.png"}
-            width={500}
-            height={500}
-            alt="Benner top"
-          ></Image>
-        </div>
-      </div>
+      <HomepageSlider/>
 
       {/*  all subject */}
 
-      <div className="w-full h-[327px]">
+      <div className="w-full h-[327px] pt-10">
         {/* Heading all subject */}
         <div className="w-full flex justify-between ">
-          <Typography align="left" fontSize="xl" variant="semibold">
+          <Typography align="left" fontSize="4xl" tags="h1" className="text-gray-800 tracking-wide" variant="semibold">
             All subject
           </Typography>
           <Typography className="underline" fontSize="sm">
@@ -63,12 +42,12 @@ const Homepage = () => {
         {/* Button subject */}
         <div className="w-full flex justify-between items-center mt-4 flex-wrap gap-6">
           <Button
-            className="border flex items-center justify-between w-[360px] h-[73px]"
+            className="border-2 flex items-center justify-between w-[360px] h-[73px]"
             colorScheme="tertiary"
             fontSize="xl"
             fontColor="black"
             radius="md"
-            size="sm"
+        
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -101,12 +80,12 @@ const Homepage = () => {
             </svg>
           </Button>
           <Button
-            className="border flex items-center justify-between w-[360px] h-[73px]"
+            className="border-2 flex items-center justify-between w-[360px] h-[73px]"
             colorScheme="tertiary"
             fontSize="xl"
             fontColor="black"
             radius="md"
-            size="sm"
+            
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -139,12 +118,12 @@ const Homepage = () => {
             </svg>
           </Button>
           <Button
-            className="border flex items-center justify-between w-[360px] h-[73px]"
+            className="border-2 flex items-center justify-between w-[360px] h-[73px]"
             colorScheme="tertiary"
             fontSize="xl"
             fontColor="black"
             radius="md"
-            size="sm"
+           
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -177,12 +156,12 @@ const Homepage = () => {
             </svg>
           </Button>
           <Button
-            className="border flex items-center justify-between w-[360px] h-[73px]"
+            className="border-2 flex items-center justify-between w-[360px] h-[73px]"
             colorScheme="tertiary"
             fontSize="xl"
             fontColor="black"
             radius="md"
-            size="sm"
+          
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -215,12 +194,12 @@ const Homepage = () => {
             </svg>
           </Button>
           <Button
-            className="border flex items-center justify-between w-[360px] h-[73px]"
+            className="border-2 flex items-center justify-between w-[360px] h-[73px]"
             colorScheme="tertiary"
             fontSize="xl"
             fontColor="black"
             radius="md"
-            size="sm"
+            
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -253,12 +232,12 @@ const Homepage = () => {
             </svg>
           </Button>
           <Button
-            className="border flex items-center justify-between w-[360px] h-[73px]"
+            className="border-2 flex items-center justify-between w-[360px] h-[73px]"
             colorScheme="tertiary"
             fontSize="xl"
             fontColor="black"
             radius="md"
-            size="sm"
+         
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -296,11 +275,11 @@ const Homepage = () => {
       {/* Top Teachers rate card */}
       <div className="w-full h-[570px]">
         {/* Heading */}
-        <div className="w-full flex justify-between ">
+        <div className="w-full flex justify-between ">  
           <Typography
-            className=""
+            className="text-gray-800 tracking-wide"
             align="left"
-            fontSize="xl"
+            fontSize="4xl"
             variant="semibold"
           >
             Top teachers rate
@@ -315,7 +294,7 @@ const Homepage = () => {
         <div className="w-full flex mt-5 justify-between  flex-wrap gap-0">
           {/* Thorn code */}
           <ProfileCard
-            className="w-[365px] "
+            className="w-[365px]"
             toptext="1"
             NameTutorTitle="Ny Sreyneang"
             NameSubject="English teacher"

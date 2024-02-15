@@ -32,7 +32,6 @@ const Banner = () => {
               </Typography>
 
               <Button
-               size='sm'
                fontSize='md'
                colorScheme='primary'
                className='mt-10 w-[300px] h-[50px]'

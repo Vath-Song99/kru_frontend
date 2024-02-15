@@ -82,10 +82,10 @@ const ProfileCard: React.FC<CardProfileProps> = ({
   align = "center",
 }) => {
 
-  const [buttonColor,setButtonColor] = useState(false)
+  
   return (
     <div
-      className={`bg-while rounded-lg shadow-lg flex flex-col ${className}`}
+      className={` bg-white border shadow-sm  rounded-lg  flex flex-col ${className}`}
     >
       <div className="flex  justify-between py-[10px] ">
         <div className="ml-[20px]  flex justify-start ">
@@ -181,7 +181,7 @@ const ProfileCard: React.FC<CardProfileProps> = ({
       {/* end values data in card  */}
       {/* state  this button  */}
       <div className="flex justify-center py-7">
-        <Button className="w-[130px] h-[35px] flex items-center justify-between px-2 " radius="md" colorScheme="outline" 
+        <Button className="w-[130px] h-[35px] flex items-center justify-between px-2 " radius="xl" colorScheme="outline" 
        >  
           <Typography align="left" fontSize="sm" >View profile</Typography>
          

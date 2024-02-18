@@ -1,7 +1,8 @@
-"use client"
+"use client";
 import React, { FC, useState } from "react";
 import Image from "next/image";
 import { Button, ButtonIcon, Typography } from "@/components";
+import { Fascinate } from "next/font/google";
 interface CardProfileProps {
   children: React.ReactNode;
   className?: string;
@@ -11,7 +12,7 @@ interface CardProfileProps {
   RetingTutor?: string;
   Studentsqty?: string;
   PriceTutor?: string;
-  align?:string
+  align?: string;
 }
 
 interface ImageCardProps {
@@ -32,7 +33,7 @@ const ImageCard: React.FC<ImageCardProps> = ({
   return (
     <Image
       src={`/${ImageSrc}`}
-      className={`${className}`}
+      className={`w-[180px] h-[180px] rounded-full object-cover  shadow-md ${className}`}
       alt={`${alt}`}
       width={180}
       height={180}
@@ -81,8 +82,8 @@ const ProfileCard: React.FC<CardProfileProps> = ({
   PriceTutor,
   align = "center",
 }) => {
+  const [isHover, setIsHover] = useState(false);
 
-  
   return (
     <div
       className={` bg-white border shadow-sm  rounded-lg  flex flex-col ${className}`}
@@ -181,25 +182,30 @@ const ProfileCard: React.FC<CardProfileProps> = ({
       {/* end values data in card  */}
       {/* state  this button  */}
       <div className="flex justify-center py-7">
-        <Button className="w-[130px] h-[35px] flex items-center justify-between px-2 " radius="xl" colorScheme="outline" 
-       >  
-          <Typography align="left" fontSize="sm" >View profile</Typography>
-         
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            className="m-0 w-4 h-4"
-            viewBox="0 0 16 16"
-            fill="none"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M10.8536 7.64689C10.9472 7.74064 10.9998 7.86772 10.9998 8.00022C10.9998 8.13272 10.9472 8.25981 10.8536 8.35356L5.85356 13.3536C5.75877 13.4419 5.63341 13.49 5.50388 13.4877C5.37434 13.4854 5.25075 13.4329 5.15914 13.3413C5.06753 13.2497 5.01506 13.1261 5.01277 12.9966C5.01049 12.867 5.05857 12.7417 5.14689 12.6469L9.79356 8.00022L5.14689 3.35356C5.05857 3.25877 5.01049 3.13341 5.01277 3.00387C5.01506 2.87434 5.06753 2.75075 5.15914 2.65914C5.25075 2.56753 5.37434 2.51506 5.50388 2.51277C5.63341 2.51049 5.75877 2.55857 5.85356 2.64689L10.8536 7.64689Z"
-              fill="#454544"
-            />
-          </svg>
+        <Button
+          className="w-[130px] h-[35px] flex items-center justify-between px-3 "
+          radius="xl"
+          colorScheme="outline"
+          
+        >
+              <Typography align="left" fontSize="sm" colorscheme="secondary">
+                View profile
+              </Typography>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                className="m-0 w-4 h-4"
+                viewBox="0 0 16 16"
+                fill="none"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M10.8536 7.64689C10.9472 7.74064 10.9998 7.86772 10.9998 8.00022C10.9998 8.13272 10.9472 8.25981 10.8536 8.35356L5.85356 13.3536C5.75877 13.4419 5.63341 13.49 5.50388 13.4877C5.37434 13.4854 5.25075 13.4329 5.15914 13.3413C5.06753 13.2497 5.01506 13.1261 5.01277 12.9966C5.01049 12.867 5.05857 12.7417 5.14689 12.6469L9.79356 8.00022L5.14689 3.35356C5.05857 3.25877 5.01049 3.13341 5.01277 3.00387C5.01506 2.87434 5.06753 2.75075 5.15914 2.65914C5.25075 2.56753 5.37434 2.51506 5.50388 2.51277C5.63341 2.51049 5.75877 2.55857 5.85356 2.64689L10.8536 7.64689Z"
+                  fill="#454544"
+                />
+              </svg>
         </Button>
       </div>
       {/* end this button  */}

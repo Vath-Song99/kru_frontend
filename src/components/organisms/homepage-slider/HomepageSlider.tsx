@@ -2,31 +2,35 @@ import React from 'react'
 import {  Typography,Button } from '@/components'
 import Image from 'next/image'
 
-const HomepageSlider = () => {
+
+
+
+const HomepageSlider = ({className}:{className?:string}) => {
   return (
-    <div className="w-full h-[327px] flex justify-between items-center pt-10">
+    <div className={`w-full h-[327px] flex justify-between items-center pt-10 ${className}`}>
     {/* Left side */}
     <div className="w-1/2 ">
-      <h1 className="text-6xl   text-[#7B2CBF] font-extrabold leading-20 tracking-wide">
+      <Typography className='leading-none tracking-wide ' tags='h1' fontSize='4xl' variant='2-extrabold' align='left' colorscheme='primary'>
         Welcome to Kru platform
-      </h1>
+      </Typography>
 
-      <Typography className="mt-7" fontSize="lg" align="left">
+      <Typography className="mt-7" fontSize="md"  variant='normal' align="left">
         Kru’s vision is to connect communication between private teachers
         and students by digital ways
       </Typography>
       <Button
-        className="w-[250px] h-[50px] mt-7 flex justify-around items-center"
+        className="w-[205px] h-[50px] mt-7 flex justify-around items-center"
         colorScheme="primary"
-        fontSize="md"
+        fontSize="sm"
         radius="md"
       >
         <Typography
+        className='tracking-widest'
         align="left"
-        fontSize="xl"
+        fontSize="md"
         colorscheme="white"
         variant="normal"
-        tags="h1"
+        tags="p"
         >Get started</Typography>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -48,8 +52,8 @@ const HomepageSlider = () => {
     <div className="">
       <Image
         src={"/Benner/Benner-top.png"}
-        width={500}
-        height={500}
+        width={600}
+        height={600}
         alt="Benner top"
       ></Image>
     </div>

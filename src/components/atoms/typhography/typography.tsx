@@ -7,7 +7,7 @@ interface TypographyProps {
   className?: string;
   align?: "left" | "center" | "right" | "justify";
   fontSize?: "base" | "sm" | "md" | "lg" | "xl" |  "2xl" | "3xl" | "4xl";
-  variant?: "normal" | "semibold" | "bold" | "extrabold";
+  variant?: "normal" | "semibold" | "bold" | "extrabold" | "2-extrabold";
   colorscheme?: "primary" | "secondary" | "tb" | "white"; // Corrected prop name
   tags?: "h1" | "p";
 }
@@ -53,7 +53,7 @@ const Typography: React.FC<TypographyProps> = ({
       case "3xl":
         return "text-[50px]";
       case "4xl":
-        return "text-[50px]";
+        return "text-[64px]";
       default:
         return "text-[16px]";
     }
@@ -69,6 +69,8 @@ const Typography: React.FC<TypographyProps> = ({
         return "font-semibold";
       case "extrabold":
         return "font-extrabold";
+      case "2-extrabold":
+        return "font-black"
       default:
         return "font-normal";
     }

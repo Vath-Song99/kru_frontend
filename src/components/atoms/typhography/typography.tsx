@@ -1,14 +1,15 @@
-"use client"
+"use client";
 
-import React, { ReactNode } from "react";
+import React, { FC, ReactNode, useState } from "react";
 
 interface TypographyProps {
   children: ReactNode;
   className?: string;
   align?: "left" | "center" | "right" | "justify";
-  fontSize?: "base" | "sm" | "md" | "lg" | "xl" | "4xl";
-  variant?: "normal" | "semibold" | "bold";
-  colorshceme?: "primary"| "secondary"| "tb";
+  fontSize?: "base" | "sm" | "md" | "lg" | "xl" |  "2xl" | "3xl" | "4xl";
+  variant?: "normal" | "semibold" | "bold" | "extrabold" | "2-extrabold";
+  colorscheme?: "primary" | "secondary" | "tb" | "white"; // Corrected prop name
+  tags?: "h1" | "p";
 }
 
 const Typography: React.FC<TypographyProps> = ({
@@ -17,7 +18,8 @@ const Typography: React.FC<TypographyProps> = ({
   align = "center",
   fontSize = "base",
   variant = "normal",
-  colorshceme =""
+  colorscheme = "", // Corrected prop name
+  tags = "p",
 }) => {
   const typographyAlign = (align: string) => {
     switch (align) {
@@ -30,28 +32,33 @@ const Typography: React.FC<TypographyProps> = ({
       case "justify":
         return "text-justify";
       default:
-        "text-center";
+        return "text-center"; // Added return statement
     }
   };
 
   const typographyFontSize = (fontSize: string) => {
     switch (fontSize) {
       case "base":
-        return "text-base";
+        return "text-[16px]";
       case "sm":
-        return "text-sm";
+        return "text-[14px]";
       case "md":
-        return "text-md";
-        case "lg":
-          return "text-lg";
-        case "xl":
-        return "text-xl";
-        case "4xl":
-        return "text-4xl";
+        return "text-[20px]";
+      case "lg":
+        return "text-[25px]";
+      case "xl":
+        return "text-[32px]";
+      case "2xl":
+        return "text-[44px]";
+      case "3xl":
+        return "text-[50px]";
+      case "4xl":
+        return "text-[64px]";
       default:
-        return "text-base";
+        return "text-[16px]";
     }
   };
+
   const typographyVariant = (variant: string) => {
     switch (variant) {
       case "normal":
@@ -60,35 +67,49 @@ const Typography: React.FC<TypographyProps> = ({
         return "font-bold";
       case "semibold":
         return "font-semibold";
+      case "extrabold":
+        return "font-extrabold";
+      case "2-extrabold":
+        return "font-black"
       default:
         return "font-normal";
     }
   };
-  const typographycolorscheme = (color : string)=>{
+
+  const typographyColorScheme = (color: string) => {
     switch (color) {
       case "primary":
-        return "text-[#8e44ad]"
+        return "text-[#7B2CBF]";
       case "secondary":
-
-        return "text-[#455445]"
-
+        return "text-[#455445]";
+      case "white":
+        return "text-white";
       default:
-
-        return "text-[#000000]"
+        return "text-[#000000]";
     }
-  }
+  };
 
   const typographyAlignStyles = typographyAlign(align);
   const typographyFontSizeStyles = typographyFontSize(fontSize);
   const typographyVariantStyles = typographyVariant(variant);
-  const typographyColorStyles = typographycolorscheme(colorshceme);
+  const typographyColorStyles = typographyColorScheme(colorscheme);
 
   return (
-    <p  
-      className={`${typographyColorStyles} ${typographyVariantStyles}  ${typographyFontSizeStyles} ${typographyAlignStyles} ${className}`}
-    >
-      {children}
-    </p>
+    <>
+      {tags === "h1" ? (
+        <h1
+          className={`${typographyColorStyles} ${typographyVariantStyles} ${typographyFontSizeStyles} ${typographyAlignStyles} ${className}`}
+        >
+          {children}
+        </h1>
+      ) : (
+        <p
+          className={`${typographyColorStyles} ${typographyVariantStyles} ${typographyFontSizeStyles} ${typographyAlignStyles} ${className}`}
+        >
+          {children}
+        </p>
+      )}
+    </>
   );
 };
 

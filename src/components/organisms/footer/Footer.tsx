@@ -7,7 +7,7 @@ import "../../../app/globals.css"
             <div className="w-full md:w-1/4 lg:w-1/4 xl:w-1/4 grid grid-flow-row gap-1  px-4 mb-8 md:mb-0">
               <h4 className="text-white text-lg ">1-ON-1 TUTORS</h4>
               <div className="w-10 h-[2px] bg-[#e91e63] "></div>
-              <ul className="flex flex-col  gap-y-3">
+              <ul className="flex flex-col mt-5 gap-y-2">
                 <li>
                   <a href="#" className="text-gray-400 hover:text-white transition-all hover:ml-4">
                     English teacher
@@ -43,7 +43,7 @@ import "../../../app/globals.css"
             <div className="w-full md:w-1/4 lg:w-1/4 grid grid-flow-row gap-1 px-4 mb-8 md:mb-0">
               <h4 className="text-white text-lg m-0">Get help</h4>
               <div className="w-10 h-[2px] bg-[#e91e63]"></div>
-              <ul className="flex flex-col gap-y-3 ">
+              <ul className="flex flex-col mt-5 gap-y-3 ">
                 <li>  
                   <a href="#" className="text-gray-400 hover:text-white transition-all hover:ml-4">
                     FAQ
@@ -64,7 +64,7 @@ import "../../../app/globals.css"
             <div className="w-full md:w-1/4 lg:w-1/4 grid grid-flow-row gap-1 px-4 mb-8 md:mb-0">
               <h4 className="text-white text-xl m-0">Contact</h4>
               <div className="w-10 h-[2px] bg-[#e91e63] "></div>
-              <ul className="flex flex-col gap-y-3">
+              <ul className="flex flex-col mt-5 gap-y-3">
                 <li>
                   <a href="#" className="text-gray-400 hover:text-white transition-all hover:ml-4">
                     Facebook

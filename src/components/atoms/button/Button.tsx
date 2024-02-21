@@ -9,10 +9,11 @@ interface ButtonProps {
   isDisabled?: boolean;
   rightIcon?: React.ReactNode;
   leftIcon?: ReactNode;
-  size?: "sm" | "md" | "lg" | "xl"
   radius?: "sm" | "md" | "lg" | "xl"
   fontColor?: "primary" | "secondary" | "tertiary" | "white" | "black" 
   fontSize?: "sm" | "md" | "lg" | "xl"
+  width?: number;
+  height?: number;
   hover?: () => void
 }
 
@@ -23,25 +24,26 @@ const Button: FC<ButtonProps> = ({
   isDisabled = false,
   leftIcon,
   rightIcon,
-  size = "sm",
   radius = "sm",
   fontColor = "text-white",
   fontSize = "sm",
-  hover
+  hover,
+  width,
+  height
   
 }) => {
   const getColorSchemeClass = (schemeParam: string) => {
     switch (schemeParam) {
       case "primary":
-        return "bg-[#7B2CBF] hover:bg-purple-500 text-white";
+        return "bg-[#7B2CBF] hover:bg-[#542598] text-white";
       case "secondary":
-        return "bg-[#007C00] hover:bg-cyan-500";
+        return "bg-[#007C00] hover:bg-white hover:border hover:border-[#007C00] hover:text-[#455445]";
         case "outline":
-          return " border border-solid border-[#7b2cbf] focus:outline-none focus:border-[#7B2CBF] hover:bg-[#7b2cbf]  hover:text-white  transition duration-300 ease-in-out";
+          return "bg-none border border-[#7B2CBF]";
         case "tertiary":
-          return "bg-[#F4F4F8]" 
+          return "bg-[#F4F4F8] shadow-sm hover:bg-[#C8C8CC]" 
       default:
-        return "bg-[#7B2CBF] hover:bg-purple-500 text-white";
+        return "bg-[#7B2CBF] hover:bg-[#542598] text-white";
     }
   };
   const buttonRadius = (radiusParam: string) =>{
@@ -53,15 +55,6 @@ const Button: FC<ButtonProps> = ({
       default: return "rounded-sm"
     }
   }
-  const buttonSize = (sizeParam: string) =>{
-    switch (sizeParam){
-      case "sm": return "px-10 py-2"
-      case "md": return "px-16 py-2"
-      case "lg": return "px-20 py-3"
-      case "xl": return "px-28 py-5"
-      default: return "px-10 py-2"
-    }
-  }
   const fontColorControl = (fontColor: string) =>{
     switch (fontColor){
       case "primary": return "text-[#7B2CBF]"
@@ -71,8 +64,8 @@ const Button: FC<ButtonProps> = ({
       default: return "text-white"
     }
   }
-  const fontSizeControl = (fontColor: string) =>{
-    switch (fontColor){
+  const fontSizeControl = (fontSize: string) =>{
+    switch (fontSize){
       case "sm": return "text-[12px]"
       case "md": return "text-[16px]"
       case "lg": return "text-[20px]"
@@ -82,13 +75,12 @@ const Button: FC<ButtonProps> = ({
   }
 
   
-  const sizeButton = buttonSize (size)
   const roundedButton = buttonRadius(radius)
   const colorSchemeClass = getColorSchemeClass(colorScheme);
   const disableStyle = isDisabled ? "cursor-not-allowed" : "cursor-pointer";
   const colorFont = fontColorControl(fontColor)
   const sizeFont = fontSizeControl (fontSize)
-  const combinedClassName = `${sizeButton} ${roundedButton} ${colorFont} ${sizeFont}  ${disableStyle} ${colorSchemeClass} ${className}`;
+  const combinedClassName = ` ${roundedButton} ${colorFont} ${sizeFont}  ${disableStyle} ${colorSchemeClass} ${className}`;
 
   
   return (

@@ -16,7 +16,7 @@ const TopTeachersList = ({children}:{children?:React.ReactNode}) => {
         />
          <ProfileCard
         className=""
-        imageUrl="/Profiles/English Teacher.jpg"
+        imageUrl="/Profiles/EnglishTeacher.jpg"
         username= "Khiev Navin"
         subjectname="Mathematics Teacher"
         rateStar={55}

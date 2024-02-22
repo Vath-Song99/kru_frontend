@@ -14,7 +14,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Learn with kru",
   description: "The kru platform provide you the real connection",
-  icons:"/Logos/KruNew.png"
+  icons:"/Logos/KruLogo.png"
 };
 
 export default function RootLayout({

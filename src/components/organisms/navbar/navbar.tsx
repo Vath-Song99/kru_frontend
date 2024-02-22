@@ -1,5 +1,6 @@
 "use client"
-import React from 'react'
+import React from 'react';
+
 import Image from 'next/image'
 import { Typography } from '@/components'
 import Link from 'next/link'
@@ -20,7 +21,7 @@ const Navbar = () => {
 
               <div className='h-full  flex items-center pl-[51px]'>
                     <Link href={"/teacher'slist"} className=''>
-                        <Typography>Find teacher</Typography>
+                        <Typography>Find hello</Typography>
                     </Link>
                     <Link href={""} className='pl-[32px]'>
                           <Typography>Become a teacher</Typography>

@@ -5,8 +5,10 @@ import React from 'react'
 
 const page = () => {
   return (
-    <KruPlatformDo></KruPlatformDo>
-  );
-};
+    <div className='w-full flex justify-center'>
+          <Homepage/>
+    </div>
+  )
+}
 
 export default page

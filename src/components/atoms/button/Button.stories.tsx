@@ -21,7 +21,6 @@ export const FirstStory: Story = {
     children: "Button",
     colorScheme: "primary",
     isDisabled: false,
-    size: "sm",
     radius : "sm",
     fontColor: "white",
     fontSize: "sm",

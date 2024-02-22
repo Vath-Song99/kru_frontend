@@ -1,63 +1,60 @@
-"use client"
-import React from 'react';
+"use client";
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { Button } from "@/components";
 
-import Image from 'next/image'
-import { Typography } from '@/components'
-import Link from 'next/link'
 const Navbar = () => {
   return (
-   
     <div className={`w-[80%] h-[100px] flex justify-between items-center`}>
-        <div className='h-full w-1/2 flex items-center'>
-              {/* <div className='w-[90px] h-[90px] rounded-full object-cover border'> */}
-                  <Image
-                  src={"/Logos/KruNew.png"}
-                  width={800}
-                  height={800}
-                  alt='Kru Icon'
-                  className='w-14 h-14  object-cover '
-                  ></Image>
-              {/* </div> */}
+      <div className="h-full w-1/2 flex items-center justify-start">
+        <Image
+        src={"/Logos/KruLogo.png"}
+        height={500}
+        width={500}
+        alt="Kru Logo"
+        className="h-[100px] w-[100px] object-cover"
+      
+        />
+        <div className="hidden lg:w-[60%] lg:flex lg:justify-center lg:items-center lg:gap-5 xl:w-[60%] xl:flex xl:justify-center xl:items-center xl:gap-5">
+          <Link className="text-[#455445] text-sm hover:underline" href={"#"}>Home</Link>
+          <Link className="text-[#455445] text-sm hover:underline" href={"#"}>Become a teacher</Link>
+          <Link className="text-[#455445] text-sm hover:underline" href={"#"}>Find teacher</Link>
 
-              <div className='h-full  flex items-center pl-[51px]'>
-                    <Link href={"/teacher'slist"} className=''>
-                        <Typography>Find hello</Typography>
-                    </Link>
-                    <Link href={""} className='pl-[32px]'>
-                          <Typography>Become a teacher</Typography>
-                    </Link>
-              </div>
         </div>
 
+      </div>
 
-        {/* right */}
+      {/* right */}
 
-        <div className='w-1/2 h-full flex items-center justify-end gap-10'>
-              <Typography>Support us</Typography>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-               <path strokeLinecap="round" strokeLinejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0M3.124 7.5A8.969 8.969 0 0 1 5.292 3m13.416 0a8.969 8.969 0 0 1 2.168 4.5" />
-                </svg>
-              <div className='relative'>
-                  <div className='w-[58px] h-[58px] rounded-full object-cover border-[1.6px]  border-gray-500'>
-                      <Image
-                      src={"/Profiles/example1.jpg"}
-                      objectFit='cover'
-                      width={700}
-                      height={700}
-                      alt='srey neang profile'
-                      className='w-full h-full object-cover rounded-full'
-                      ></Image>
-                  </div>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-[11px] h-[11px] absolute top-[42px] left-[44px] shadow-xl">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z" />
-                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6   0Z" />
-                  </svg>
+      <div className="hidden lg:w-1/2 lg:h-full lg:flex lg:items-center lg:justify-end lg:gap-5 xl:w-1/2 xl:h-full xl:flex xl:items-center xl:justify-end xl:gap-5">
+        <Link
+          href={"/Login"}
+          className="text-[#455445] text-sm hover:underline"
+        >
+          Log in
+        </Link>
 
-              </div>
+        <div className="w-1/4 flex items-center justify-evenly ">
+          {/* verticle Line */}
+          <div className="h-5 w-[1px] border-l-2 border-[#455445]"></div>
+          <Link
+            href={"Sign up"}
+            className="text-[#9B90C2] text-sm hover:underline"
+          >
+            Sign up for free
+          </Link>
         </div>
+        <Button className="px-4 py-2" colorScheme="primary">
+          Get Started
+        </Button>
+      </div>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 lg:hidden xl:hidden cursor-pointer">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" onClick={() => alert("hello world")} />
+</svg>
+
     </div>
+  );
+};
 
-  )
-}
-
-export {Navbar}
+export { Navbar };

@@ -1,3 +1,3 @@
-import { ProfileCard,ImageCard,HeaderImage } from "./ProfileCard";
+import ProfileCard from "./ProfileCard";
 
-export {ProfileCard,ImageCard,HeaderImage}
+export default ProfileCard

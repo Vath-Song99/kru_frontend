@@ -1,3 +1,3 @@
-import AllSubjectList from "./AllSubjectList";
+import {AllSubjectList} from "./AllSubjectList";
 
-export default AllSubjectList
+export  {AllSubjectList}

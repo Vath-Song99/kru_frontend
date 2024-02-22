@@ -145,4 +145,4 @@ const HomeBenner: React.FC = ({ className }: { className?: string }) => {
   );
 };
 
-export default HomeBenner;
+export  {HomeBenner};

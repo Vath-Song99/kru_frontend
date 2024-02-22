@@ -1,34 +1,37 @@
 "use client";
-import { HomepageSlider } from "@/components";
-import { SearchInput } from "@/components/molecules/search-input";
-import HomeBenner from "@/components/organisms/home-benner";
-import TopTeachersList from "@/components/organisms/top-teachers-list";
-import React from "react";
-import ProfileCard from "@/components/molecules/profile-card-teacher";
+
+import {
+  HomepageSlider,
+  HomeBenner,
+  TopTeachersList,
+} from "@/components/organisms";
+import { SearchInput, ShowEasyText, KruVision } from "@/components/molecules";
 
 const Homepage = () => {
   return (
-    <div className="w-full h-[1700px] ">
+    <div className="w-full h-[1950px] ">
       {/* Homepage Benner */}
 
       <HomepageSlider />
 
-
       {/* Home-Benner */}
 
-      <HomeBenner/>
+      <HomeBenner />
 
       {/* Search Input */}
 
-      <SearchInput/>
+      <div className="w-full grid grid-flow-row gap-16">
+        <SearchInput />
 
-      {/*  all subject */}
+        {/*  all subject */}
 
-     <TopTeachersList/>
+        <TopTeachersList />
 
-      {/* Top Teachers rate card */}
+        {/* benner card */}
 
-      {/* benner card */}
+        <KruVision />
+        <ShowEasyText />
+      </div>
     </div>
   );
 };

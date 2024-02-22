@@ -39,9 +39,9 @@ const Typography: React.FC<TypographyProps> = ({
   const typographyFontSize = (fontSize: string) => {
     switch (fontSize) {
       case "base":
-        return "text-[16px]";
+        return "text-base";
       case "sm":
-        return "text-[14px]";
+        return "text-sm";
       case "md":
         return "text-[20px]";
       case "lg":
@@ -55,7 +55,7 @@ const Typography: React.FC<TypographyProps> = ({
       case "4xl":
         return "text-[64px]";
       default:
-        return "text-[16px]";
+        return "text-base";
     }
   };
 

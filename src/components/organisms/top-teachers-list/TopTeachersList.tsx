@@ -3,7 +3,7 @@ import React from 'react'
 
 const TopTeachersList = ({children}:{children?:React.ReactNode}) => {
   return (
-    <div className='w-full mt-20 flex justify-center items-center'>
+    <div className='w-full flex justify-center items-center flex-wrap'>
         <div className='w-[75%] flex justify-between items-center'>
         <ProfileCard
         className=""
@@ -36,4 +36,4 @@ const TopTeachersList = ({children}:{children?:React.ReactNode}) => {
   )
 }
 
-export default TopTeachersList
+export  {TopTeachersList}

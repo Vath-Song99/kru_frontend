@@ -1,3 +1,3 @@
-import HomepageSlider from "./HomepageSlider";
+import {HomepageSlider} from "./HomepageSlider";
 
 export {HomepageSlider}

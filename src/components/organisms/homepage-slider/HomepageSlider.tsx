@@ -5,7 +5,7 @@ import { Button } from "@/components";
 
 const HomepageSlider = ({ className }: { className?: string }) => {
   return (
-    <div className="w-full h-[479px bg-[#252525] relative">
+    <div className="w-full h-[479px] bg-[#252525] relative">
       <Image
         src={"/Benner/Benner.jpg"}
         alt="Benner"
@@ -56,4 +56,4 @@ const HomepageSlider = ({ className }: { className?: string }) => {
   );
 };
 
-export default HomepageSlider;
+export  {HomepageSlider};

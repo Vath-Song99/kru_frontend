@@ -1,3 +1,3 @@
-import HomeBenner from "./HomeBenner";
+import {HomeBenner} from "./HomeBenner";
 
-export default HomeBenner
+export  {HomeBenner}

@@ -250,4 +250,4 @@ const AllSubjectList = () => {
   );
 };
 
-export default AllSubjectList;
+export  {AllSubjectList};

@@ -38,4 +38,4 @@ const CardSubject: FC<CardSubjectProps> = ({
   );
 };
 
-export {CardSubject};
+export  {CardSubject};

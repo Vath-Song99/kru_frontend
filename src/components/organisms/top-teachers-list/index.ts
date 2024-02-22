@@ -1,3 +1,3 @@
-import TopTeachersList from "./TopTeachersList";
+import {TopTeachersList} from "./TopTeachersList";
 
-export default TopTeachersList
+export  {TopTeachersList}

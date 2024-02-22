@@ -1,1 +1,3 @@
-export * from "./CardSubject"
+import {CardSubject} from "./CardSubject";
+
+export  {CardSubject}

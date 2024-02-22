@@ -1,216 +1,157 @@
-"use client";
-import React, { FC, useState } from "react";
+import React from "react";
 import Image from "next/image";
-import { Button, ButtonIcon, Typography } from "@/components";
-import { Fascinate } from "next/font/google";
-interface CardProfileProps {
-  children: React.ReactNode;
+import { Typography } from "@/components/atoms";
+import Link from "next/link";
+
+interface ProfileCardProps {
   className?: string;
-  toptext?: string;
-  NameTutorTitle?: string;
-  NameSubject?: string;
-  RetingTutor?: string;
-  Studentsqty?: string;
-  PriceTutor?: string;
-  align?: string;
+  imageUrl: string;
+  username: string;
+  subjectname: string;
+  rateStar: number;
+  price: number;
+  students: number;
 }
 
-interface ImageCardProps {
-  children?: React.ReactNode;
-  className?: string;
-  ImageSrc?: string;
-  alt?: string;
-  ImageWidth?: number;
-  ImageHeight?: number;
-}
-
-const ImageCard: React.FC<ImageCardProps> = ({
-  children,
+const ProfileCard: React.FC<ProfileCardProps> = ({
   className,
-  ImageSrc,
-  alt,
+  imageUrl,
+  username,
+  subjectname,
+  rateStar,
+  price,
+  students,
 }) => {
   return (
-    <Image
-      src={`/${ImageSrc}`}
-      className={`w-[180px] h-[180px] rounded-full object-cover  shadow-md ${className}`}
-      alt={`${alt}`}
-      width={180}
-      height={180}
-    />
-  );
-};
-
-interface HeaderImageProps {
-  children: React.ReactNode;
-  className?: string;
-}
-
-const HeaderImage: React.FC<HeaderImageProps> = ({ children, className }) => {
-  return (
     <div
-      className={`  px-9 flex justify-center items-center relative${className}`}
+      className={`w-[353px] h-[388px] rounded-md border shadow-md p-4 ${className}`}
     >
-      {children}
-      <svg
-        className="absolute mt-[135px] ml-[110px]"
-        xmlns="http://www.w3.org/2000/svg"
-        width="25"
-        height="25"
-        viewBox="0 0 25 25"
-        fill="none"
-      >
-        <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          d="M2.34375 12.5C2.34375 6.89062 6.89062 2.34375 12.5 2.34375C18.1094 2.34375 22.6562 6.89062 22.6562 12.5C22.6562 18.1094 18.1094 22.6562 12.5 22.6562C6.89062 22.6562 2.34375 18.1094 2.34375 12.5ZM16.2604 10.6104C16.3229 10.5271 16.3681 10.4322 16.3934 10.3312C16.4187 10.2302 16.4236 10.1251 16.4077 10.0222C16.3918 9.91934 16.3555 9.82065 16.3009 9.73198C16.2463 9.6433 16.1746 9.56643 16.0899 9.50589C16.0051 9.44534 15.9092 9.40234 15.8076 9.37941C15.706 9.35647 15.6009 9.35408 15.4984 9.37236C15.3959 9.39064 15.2981 9.42922 15.2107 9.48585C15.1233 9.54247 15.0481 9.61599 14.9896 9.70208L11.6188 14.4208L9.92708 12.7292C9.77898 12.5912 9.5831 12.516 9.38071 12.5196C9.17831 12.5232 8.9852 12.6052 8.84206 12.7483C8.69892 12.8914 8.61693 13.0846 8.61336 13.287C8.60979 13.4894 8.68492 13.6852 8.82292 13.8333L11.1667 16.1771C11.2469 16.2572 11.3435 16.3189 11.45 16.358C11.5564 16.397 11.6701 16.4124 11.7831 16.4031C11.8961 16.3937 12.0057 16.3599 12.1043 16.304C12.2029 16.2481 12.2882 16.1714 12.3542 16.0792L16.2604 10.6104Z"
-          fill="#008000"
-        />
-      </svg>
-    </div>
-  );
-};
+      <Image
+        className="w-[317px] h-[235px] rounded-md object-cover"
+        src={imageUrl}
+        alt="Image Card"
+        width={500}
+        height={500}
+      ></Image>
 
-const ProfileCard: React.FC<CardProfileProps> = ({
-  className,
-  children,
-  toptext,
-  NameTutorTitle,
-  NameSubject,
-  RetingTutor,
-  Studentsqty,
-  PriceTutor,
-  align = "center",
-}) => {
-  const [isHover, setIsHover] = useState(false);
+      <div className="grid grid-flow-row justify-start gap-2 mt-2">
+       <div className="p-0 m-0">
+       <Typography
+          className="capitalize"
+          fontSize="md"
+          colorscheme="secondary"
+          variant="semibold"
+          align="left"
+        >
+          {username}
+        </Typography>
 
-  return (
-    <div
-      className={` bg-white border shadow-sm  rounded-lg  flex flex-col ${className}`}
-    >
-      <div className="flex  justify-between py-[10px] ">
-        <div className="ml-[20px]  flex justify-start ">
+        <div className="flex items-center justify-start">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
-            viewBox="0 0 18 18"
             fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-6 h-6 py-1 pr-2 text-[#455445]"
           >
             <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M3.87464 1.96552V2.60902C3.09839 2.72002 2.33039 2.85652 1.57139 3.01627C1.42935 3.04637 1.30445 3.13023 1.22281 3.2503C1.14118 3.37038 1.10914 3.51737 1.13339 3.66052C1.32282 4.77354 1.87871 5.79136 2.71276 6.55231C3.54682 7.31326 4.61121 7.77371 5.73689 7.86052C6.33618 8.3503 7.04007 8.6957 7.79414 8.87002C7.72248 9.72129 7.4352 10.5403 6.95939 11.2498H6.40514C5.62814 11.2498 4.99889 11.8798 4.99889 12.656V14.6248H4.43639C3.98884 14.6248 3.55962 14.8026 3.24315 15.119C2.92668 15.4355 2.74889 15.8647 2.74889 16.3123C2.74889 16.6228 3.00089 16.8748 3.31139 16.8748H14.5614C14.7106 16.8748 14.8537 16.8155 14.9591 16.71C15.0646 16.6045 15.1239 16.4615 15.1239 16.3123C15.1239 15.8647 14.9461 15.4355 14.6296 15.119C14.3132 14.8026 13.8839 14.6248 13.4364 14.6248H12.8739V12.656C12.8739 11.879 12.2439 11.2498 11.4676 11.2498H10.9134C10.4378 10.5402 10.1508 9.72123 10.0794 8.87002C10.8335 8.69548 11.5374 8.34982 12.1366 7.85977C13.2625 7.77312 14.327 7.31274 15.1612 6.55178C15.9954 5.79081 16.5514 4.77291 16.7409 3.65977C16.7649 3.51663 16.7327 3.36973 16.6509 3.24981C16.5691 3.12988 16.4442 3.04621 16.3021 3.01627C15.5394 2.85514 14.7714 2.71932 13.9996 2.60902V1.96477C13.9996 1.82758 13.9494 1.69514 13.8585 1.59238C13.7676 1.48961 13.6423 1.4236 13.5061 1.40677C11.9902 1.21806 10.464 1.12363 8.93639 1.12402C7.38914 1.12402 5.86439 1.22002 4.36664 1.40677C4.23063 1.42377 4.10549 1.48985 4.01476 1.5926C3.92403 1.69535 3.87393 1.8277 3.87389 1.96477L3.87464 1.96552ZM3.87464 3.93727C3.87464 4.83427 4.10864 5.67727 4.51739 6.40777C4.01044 6.18044 3.55715 5.84871 3.18715 5.43425C2.81714 5.01978 2.53874 4.53192 2.37014 4.00252C2.86967 3.90559 3.37129 3.81982 3.87464 3.74527V3.93727ZM13.9996 3.93727V3.74527C14.5051 3.82027 15.0069 3.90577 15.5041 4.00252C15.3356 4.53194 15.0572 5.01983 14.6872 5.43429C14.3172 5.84876 13.8639 6.18048 13.3569 6.40777C13.7796 5.65308 14.001 4.80229 13.9996 3.93727Z"
-              fill="#B0A229"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5"
             />
           </svg>
-          <div className="ml-[5px] text-gray-800 mt-[-1px]">Top</div>
-          <div className="ml-[5px] mt-[-1px]">{toptext}</div>
-        </div>
-        <div className="text-gray-800 mr-[20px]">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="25"
-            height="25"
-            viewBox="0 0 25 25"
-            fill="none"
+
+          <Typography
+            className="capitalize"
+            fontSize="sm"
+            colorscheme="secondary"
+            variant="normal"
+            align="left"
           >
-            <path
-              d="M18.3264 3.46084C19.4728 3.59389 20.3125 4.58229 20.3125 5.73644V21.875L12.5 17.9688L4.6875 21.875V5.73644C4.6875 4.58229 5.52717 3.59389 6.67363 3.46084C8.58496 3.23903 10.5292 3.125 12.5 3.125C14.4708 3.125 16.415 3.23903 18.3264 3.46084Z"
-              stroke="#0F172A"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
+            {subjectname}
+          </Typography>
         </div>
-      </div>
-      {children}
-      <div className="flex justify-center">
-        <div className="text-gray-800 text-center text-xl font-normal leading-6 tracking-wider px-9 py-2">
-          {NameTutorTitle}
-        </div>
-      </div>
-      <div className="flex justify-center">
-        <p className="text-[#454544] font-thin text-sm	 tracking-wider mt-[-2px]">
-          {NameSubject}
-        </p>
-      </div>
-      {/* this price and retting for tututing */}
-      <div className="flex justify-between py-6">
-        <div className="text-[#454544] ml-[20px]  bg-opacity-80 text-lg font-normal leading-5 tracking-wider">
-          Rating
-        </div>
-        <div className="text-[#454544] bg-opacity-80 text-lg font-normal leading-5 tracking-wider">
-          Students
-        </div>
-        <div className="text-[#454544] mr-[20px]  bg-opacity-80 text-lg font-normal leading-5 tracking-wider">
-          Price
-        </div>
-      </div>
-      {/* end this price and retting for tututing */}
-      {/* this values data in card  */}
-      <div className="flex justify-between mt-[-10px] ml-[10px]">
-        <div className="text-[#454544] ml-[20px]  bg-opacity-80 text-sm font-normal leading-5 tracking-wider">
-          <div className="flex justify-start">
-            <div className="">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-              >
-                <path
-                  d="M10.1731 5.487L10.1789 5.50109L10.1942 5.50232L13.7968 5.79165C14.5507 5.85188 14.8564 6.79221 14.2819 7.28441L11.5372 9.63574L11.5256 9.64568L11.5292 9.66053L12.3672 13.1759C12.5427 13.9116 11.7429 14.4925 11.0979 14.0987L8.0132 12.2147L8.00017 12.2068L7.98713 12.2147L4.90247 14.0987C4.25746 14.4925 3.45764 13.9109 3.63315 13.1759L3.63315 13.1759L4.47115 9.66053L4.47469 9.64568L4.4631 9.63574L1.71843 7.28441C1.14398 6.79221 1.44967 5.85188 2.20349 5.79165L2.2035 5.79165L5.80617 5.50232L5.82138 5.50109L5.82725 5.487L7.21525 2.14966C7.50537 1.4522 8.49496 1.4522 8.78508 2.14966L10.1731 5.487Z"
-                  fill="#FFFF00"
-                  stroke="black"
-                  stroke-width="0.05"
-                />
-              </svg>
-            </div>
-            <div className="ml-[5px]">{RetingTutor}</div>
+       </div>
+
+        <div className="w-[144px]  flex items-center justify-between">
+          <div className="flex items-center">
+            <Typography className=""
+             fontSize="sm"
+             colorscheme="secondary"
+             variant="normal"
+             align="left"
+             tags="p"
+            >{rateStar}</Typography>
+            <svg
+            
+              viewBox="0 0 14 14"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-4 h-4 ml-1"
+            >
+              <path
+                d="M13.0811 5.32044C13.0281 5.15713 12.9282 5.01302 12.7939 4.90606C12.6596 4.79909 12.4969 4.73399 12.3258 4.71888L9.07794 4.43888L7.80482 1.41138C7.73853 1.25252 7.62673 1.11682 7.48348 1.02138C7.34023 0.925929 7.17195 0.875 6.99982 0.875C6.82768 0.875 6.6594 0.925929 6.51615 1.02138C6.37291 1.11682 6.2611 1.25252 6.19482 1.41138L4.92552 4.43888L1.6738 4.72052C1.5021 4.73494 1.33848 4.79974 1.20347 4.90679C1.06845 5.01384 0.968039 5.15836 0.914833 5.32225C0.861626 5.48613 0.857989 5.66208 0.904379 5.82802C0.950768 5.99396 1.04512 6.14251 1.1756 6.25505L3.64255 8.41083L2.90318 11.6122C2.86408 11.7798 2.87524 11.9551 2.93525 12.1163C2.99526 12.2776 3.10147 12.4175 3.2406 12.5187C3.37972 12.6199 3.54559 12.6778 3.71746 12.6853C3.88933 12.6927 4.05958 12.6493 4.20693 12.5605L6.99599 10.8652L9.79107 12.5605C9.93841 12.6493 10.1087 12.6927 10.2805 12.6853C10.4524 12.6778 10.6183 12.6199 10.7574 12.5187C10.8965 12.4175 11.0027 12.2776 11.0627 12.1163C11.1228 11.9551 11.1339 11.7798 11.0948 11.6122L10.356 8.40755L12.8224 6.25505C12.9529 6.14212 13.047 5.99315 13.093 5.82686C13.1391 5.66056 13.1349 5.48437 13.0811 5.32044ZM12.2487 5.59388L9.78232 7.74638C9.66228 7.85079 9.57298 7.98596 9.52403 8.13734C9.47508 8.28872 9.46833 8.45059 9.5045 8.60552L10.2455 11.8124L7.45263 10.1171C7.31637 10.0341 7.1599 9.9902 7.00036 9.9902C6.84082 9.9902 6.68436 10.0341 6.5481 10.1171L3.75904 11.8124L4.49513 8.6077C4.5313 8.45277 4.52455 8.29091 4.4756 8.13953C4.42665 7.98815 4.33736 7.85298 4.21732 7.74856L1.74982 5.59716C1.74962 5.59552 1.74962 5.59387 1.74982 5.59224L5.00044 5.31114C5.15915 5.29715 5.31102 5.2401 5.43968 5.14613C5.56834 5.05217 5.6689 4.92486 5.73052 4.77794L6.99982 1.75427L8.26857 4.77794C8.33018 4.92486 8.43075 5.05217 8.55941 5.14613C8.68807 5.2401 8.83994 5.29715 8.99864 5.31114L12.2498 5.59224V5.59606L12.2487 5.59388Z"
+                fill="#FFE600"
+              />
+            </svg>
+          </div>
+          <div className="flex items-center">
+            <Typography className=""
+             fontSize="sm"
+             colorscheme="secondary"
+             variant="normal"
+             align="left"
+             tags="p"
+            >{price}</Typography>
+            <svg
+            
+              viewBox="0 0 14 14"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-4 h-4"
+            >
+              <path
+                d="M4.0835 8.75H5.25016C5.25016 9.38 6.04933 9.91667 7.00016 9.91667C7.951 9.91667 8.75016 9.38 8.75016 8.75C8.75016 8.10833 8.1435 7.875 6.86016 7.56583C5.6235 7.25667 4.0835 6.87167 4.0835 5.25C4.0835 4.20583 4.941 3.31917 6.12516 3.02167V1.75H7.87516V3.02167C9.05933 3.31917 9.91683 4.20583 9.91683 5.25H8.75016C8.75016 4.62 7.951 4.08333 7.00016 4.08333C6.04933 4.08333 5.25016 4.62 5.25016 5.25C5.25016 5.89167 5.85683 6.125 7.14016 6.43417C8.37683 6.74333 9.91683 7.12833 9.91683 8.75C9.91683 9.79417 9.05933 10.6808 7.87516 10.9783V12.25H6.12516V10.9783C4.941 10.6808 4.0835 9.79417 4.0835 8.75Z"
+                fill="#008000"
+              />
+            </svg>
+          </div>
+          <div className="flex items-center">
+            <Typography className="mr-1"
+             fontSize="sm"
+             colorscheme="secondary"
+             variant="normal"
+             align="left"
+             tags="p"
+            >{students}</Typography>
+            <svg
+            
+              viewBox="0 0 14 14"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-4 h-4 mb-[3px]"
+            >
+              <path
+                d="M7 3.2085C7.54148 3.2085 8.06079 3.4236 8.44368 3.80649C8.82656 4.18937 9.04167 4.70868 9.04167 5.25016C9.04167 5.79165 8.82656 6.31095 8.44368 6.69384C8.06079 7.07673 7.54148 7.29183 7 7.29183C6.45852 7.29183 5.93921 7.07673 5.55632 6.69384C5.17344 6.31095 4.95833 5.79165 4.95833 5.25016C4.95833 4.70868 5.17344 4.18937 5.55632 3.80649C5.93921 3.4236 6.45852 3.2085 7 3.2085ZM2.91667 4.66683C3.24333 4.66683 3.54667 4.75433 3.80917 4.91183C3.72167 5.746 3.96667 6.57433 4.46833 7.22183C4.17667 7.78183 3.59333 8.16683 2.91667 8.16683C2.45254 8.16683 2.00742 7.98246 1.67923 7.65427C1.35104 7.32608 1.16667 6.88096 1.16667 6.41683C1.16667 5.9527 1.35104 5.50758 1.67923 5.17939C2.00742 4.8512 2.45254 4.66683 2.91667 4.66683ZM11.0833 4.66683C11.5475 4.66683 11.9926 4.8512 12.3208 5.17939C12.649 5.50758 12.8333 5.9527 12.8333 6.41683C12.8333 6.88096 12.649 7.32608 12.3208 7.65427C11.9926 7.98246 11.5475 8.16683 11.0833 8.16683C10.4067 8.16683 9.82333 7.78183 9.53167 7.22183C10.0403 6.56524 10.2763 5.73794 10.1908 4.91183C10.4533 4.75433 10.7567 4.66683 11.0833 4.66683ZM3.20833 10.646C3.20833 9.4385 4.90583 8.4585 7 8.4585C9.09417 8.4585 10.7917 9.4385 10.7917 10.646V11.6668H3.20833V10.646ZM0 11.6668V10.7918C0 9.981 1.1025 9.2985 2.59583 9.10016C2.25167 9.49683 2.04167 10.0452 2.04167 10.646V11.6668H0ZM14 11.6668H11.9583V10.646C11.9583 10.0452 11.7483 9.49683 11.4042 9.10016C12.8975 9.2985 14 9.981 14 10.7918V11.6668Z"
+                fill="#0866FF"
+              />
+            </svg>
           </div>
         </div>
-        <div className="text-[#454544] bg-opacity-80 ml-[35px] text-sm font-normal leading-5 tracking-wider">
-          {Studentsqty}
-        </div>
-        <div className="text-[#454544] mr-[20px]  bg-opacity-80 text-sm font-normal leading-5 tracking-wider">
-          {PriceTutor}$/hour
+
+        <div className="flex items-center justify-between gap-2">
+        <Link
+        href={""}
+        className="text-[#0157FF] text-sm">See more detail about teacher</Link>
+        <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5.22017 0.229106C5.3608 0.0886552 5.55142 0.00976563 5.75017 0.00976563C5.94892 0.00976563 6.13955 0.0886552 6.28017 0.229106L10.5302 4.4791C10.6706 4.61973 10.7495 4.81035 10.7495 5.00911C10.7495 5.20786 10.6706 5.39848 10.5302 5.5391L6.28017 9.7891C6.13791 9.92151 5.94986 9.99362 5.75554 9.99026C5.56123 9.9869 5.37578 9.90835 5.23817 9.7711C5.10093 9.6335 5.02237 9.44805 5.01902 9.25373C5.01566 9.05942 5.08776 8.87137 5.22017 8.7291L8.19017 5.7591L0.750173 5.7591C0.55126 5.7591 0.360496 5.68009 0.219843 5.53943C0.0791906 5.39878 0.000172943 5.20802 0.000172943 5.00911C0.000172943 4.81019 0.0791906 4.61943 0.219843 4.47877C0.360496 4.33812 0.55126 4.25911 0.750173 4.25911L8.19017 4.25911L5.22017 1.28911C5.07972 1.14848 5.00083 0.957856 5.00083 0.759106C5.00083 0.560355 5.07972 0.369731 5.22017 0.229106Z" fill="#0157FF"/>
+</svg>
+
         </div>
       </div>
-      {/* end values data in card  */}
-      {/* state  this button  */}
-      <div className="flex justify-center py-7">
-        <Button
-          className="w-[130px] h-[35px] flex items-center justify-between px-3 "
-          radius="xl"
-          colorScheme="outline"
-          
-        >
-              <Typography align="left" fontSize="sm" colorscheme="secondary">
-                View profile
-              </Typography>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                className="m-0 w-4 h-4"
-                viewBox="0 0 16 16"
-                fill="none"
-              >
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M10.8536 7.64689C10.9472 7.74064 10.9998 7.86772 10.9998 8.00022C10.9998 8.13272 10.9472 8.25981 10.8536 8.35356L5.85356 13.3536C5.75877 13.4419 5.63341 13.49 5.50388 13.4877C5.37434 13.4854 5.25075 13.4329 5.15914 13.3413C5.06753 13.2497 5.01506 13.1261 5.01277 12.9966C5.01049 12.867 5.05857 12.7417 5.14689 12.6469L9.79356 8.00022L5.14689 3.35356C5.05857 3.25877 5.01049 3.13341 5.01277 3.00387C5.01506 2.87434 5.06753 2.75075 5.15914 2.65914C5.25075 2.56753 5.37434 2.51506 5.50388 2.51277C5.63341 2.51049 5.75877 2.55857 5.85356 2.64689L10.8536 7.64689Z"
-                  fill="#454544"
-                />
-              </svg>
-        </Button>
-      </div>
-      {/* end this button  */}
     </div>
   );
 };
 
-export { ProfileCard, ImageCard, HeaderImage };
+export default ProfileCard;

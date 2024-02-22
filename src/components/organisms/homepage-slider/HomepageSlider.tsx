@@ -18,7 +18,7 @@ const HomepageSlider = ({ className }: { className?: string }) => {
         <div className="w-full h-full flex items-center justify-center">
           <div className="w-1/2 h-1/2 grid gap-5">
             <Typography
-              className="leading-10 tracking-widest"
+              className="leading-10 tracking-widest capitalize"
               fontSize="2xl"
               colorscheme="white"
               variant="bold"

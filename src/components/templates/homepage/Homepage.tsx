@@ -1,17 +1,17 @@
 "use client";
-import { Banner, HomepageSlider } from "@/components";
+import { HomepageSlider } from "@/components";
 import { SearchInput } from "@/components/molecules/search-input";
-import AllSubjectList from "@/components/organisms/all-subject-list";
 import HomeBenner from "@/components/organisms/home-benner";
 import TopTeachersList from "@/components/organisms/top-teachers-list";
 import React from "react";
+import ProfileCard from "@/components/molecules/profile-card-teacher";
 
 const Homepage = () => {
   return (
-    <div className="md:w-[80%] lg:w-full w-[80%] h-[1700px] ">
+    <div className="w-full h-[1700px] ">
       {/* Homepage Benner */}
 
-      <HomepageSlider className="mt-10" />
+      <HomepageSlider />
 
 
       {/* Home-Benner */}
@@ -24,6 +24,7 @@ const Homepage = () => {
 
       {/*  all subject */}
 
+     <TopTeachersList/>
 
       {/* Top Teachers rate card */}
 

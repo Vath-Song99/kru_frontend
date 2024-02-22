@@ -1,64 +1,59 @@
-import React from 'react'
-import {  Typography,Button } from '@/components'
-import Image from 'next/image'
+import React from "react";
+import { Typography } from "@/components";
+import Image from "next/image";
+import { Button } from "@/components";
 
-
-
-
-const HomepageSlider = ({className}:{className?:string}) => {
+const HomepageSlider = ({ className }: { className?: string }) => {
   return (
-    <div className={`w-full h-[327px] flex justify-between items-center pt-10 ${className}`}>
-    {/* Left side */}
-    <div className="w-1/2 ">
-      <Typography className='leading-none tracking-wide ' tags='h1' fontSize='4xl' variant='2-extrabold' align='left' colorscheme='primary'>
-        Welcome to Kru platform
-      </Typography>
-
-      <Typography className="mt-7" fontSize="md"  variant='normal' align="left">
-        Kru’s vision is to connect communication between private teachers
-        and students by digital ways
-      </Typography>
-      <Button
-        className="w-[205px] h-[50px] mt-7 flex justify-around items-center"
-        colorScheme="primary"
-        fontSize="sm"
-        radius="md"
-      >
-        <Typography
-        className='tracking-widest'
-        align="left"
-        fontSize="md"
-        colorscheme="white"
-        variant="normal"
-        tags="p"
-        >Get started</Typography>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={1.5}
-          stroke="currentColor"
-          className="w-6 h-6"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="m8.25 4.5 7.5 7.5-7.5 7.5"
-          />
-        </svg>
-      </Button>
-    </div>
-    {/* Right side */}
-    <div className="">
+    <div className="w-full h-[479px bg-[#252525] relative">
       <Image
-        src={"/Benner/Benner-top.png"}
-        width={600}
-        height={600}
-        alt="Benner top"
+        src={"/Benner/Benner.jpg"}
+        alt="Benner"
+        width={1728}
+        height={479}
+        className="w-full h-[479px] object-cover opacity-30 relative"
       ></Image>
-    </div>
-  </div>
-  )
-}
+      {/* <h1>Hello world</h1> */}
+      <div className="w-full h-full absolute inset-0">
+        <div className="w-full h-full flex items-center justify-center">
+          <div className="w-1/2 h-1/2 grid gap-5">
+            <Typography
+              className="leading-10 tracking-widest"
+              fontSize="2xl"
+              colorscheme="white"
+              variant="bold"
+              align="center"
+              tags="h1"
+            >
+              The teachers are around you now
+            </Typography>
+            <Typography
+              className=""
+              fontSize="base"
+              colorscheme="white"
+              variant="normal"
+              tags="p"
+              align="center"
+            >
+              Stop wasting your time Learnwithkru platform are provide you the
+              easier way to find the teacher{" "}
+            </Typography>
 
-export default HomepageSlider
+            <div className="w-full flex justify-center">
+              <Button
+                className="px-14 py-1 border-2  "
+                colorScheme="outline"
+                fontSize="md"
+                radius="md"
+              >
+                Get Started
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default HomepageSlider;

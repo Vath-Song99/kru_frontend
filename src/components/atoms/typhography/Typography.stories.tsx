@@ -21,7 +21,7 @@ export const FirstStory: Story = {
       align: "center",
       fontSize: "base",
       variant: "normal",
-      colorshceme:"primary"
+      colorscheme:"primary"
   },
 
     //👇 The args you need here will depend on your component

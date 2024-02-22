@@ -1,5 +1,6 @@
 "use client";
 import { Banner, HomepageSlider } from "@/components";
+import { SearchInput } from "@/components/molecules/search-input";
 import AllSubjectList from "@/components/organisms/all-subject-list";
 import HomeBenner from "@/components/organisms/home-benner";
 import TopTeachersList from "@/components/organisms/top-teachers-list";
@@ -16,6 +17,10 @@ const Homepage = () => {
       {/* Home-Benner */}
 
       <HomeBenner/>
+
+      {/* Search Input */}
+
+      <SearchInput/>
 
       {/*  all subject */}
 

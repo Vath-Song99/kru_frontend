@@ -4,7 +4,7 @@ import React from "react";
 const HomeBenner: React.FC = ({ className }: { className?: string }) => {
   return (
     <div
-      className={`w-screen flex justify-center  py-4  bg-[#F6FAFC]  ${className}`}  //list card
+      className={`w-screen h-auto flex justify-center  py-4  bg-[#F6FAFC]  ${className}`}  //list card
     >
        {/* Header */}
       <div className="md:w-[80%]  grid justify-center  gap-5">  

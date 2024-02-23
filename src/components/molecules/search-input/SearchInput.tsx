@@ -7,7 +7,7 @@ const SearchInput = ({ className }: { className?: string }) => {
       <InputForm
         type="text"
         borderColor="none"
-        className="w-full h-full px-12 outline-none border shadow-sm lg:px-[233px] "
+        className="w-full h-full pl-12 sm:px-28 md:px-36 outline-none border shadow-sm lg:px-44 "
         placeholder="Searching ..."
       />
 
@@ -17,7 +17,7 @@ const SearchInput = ({ className }: { className?: string }) => {
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="w-6 h-6 absolute top-5 right-14 lg:inset-x-[190px] text-[#455445]"
+        className="w-6 h-6 absolute top-5 right-14 sm:left-20 md:left-[85px] lg:left-[140px]  text-[#455445]"
       >
         <path
           strokeLinecap="round"

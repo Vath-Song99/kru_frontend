@@ -5,7 +5,7 @@ import { Button } from "@/components";
 
 const HomepageSlider = ({ className }: { className?: string }) => {
   return (
-    <div className="w-screen h-[479px] bg-[#252525] relative">
+    <div className="w-screen  bg-[#252525] relative">
       <Image
         src={"/Benner/Benner.jpg"}
         alt="Benner"

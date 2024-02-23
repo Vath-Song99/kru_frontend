@@ -1,5 +1,4 @@
 import { Typography } from "@/components/atoms";
-import { Button } from "@nextui-org/react";
 import React from "react";
 
 const HomeBenner: React.FC = ({ className }: { className?: string }) => {

@@ -3,10 +3,10 @@ import React from 'react'
 
 const TopTeachersList = ({children}:{children?:React.ReactNode}) => {
   return (
-    <div className='w-full flex justify-center items-center flex-wrap'>
-        <div className='w-[75%] flex justify-between items-center'>
+    <div className='w-screen flex  justify-center items-center flex-wrap'>
+        <div className='w-[80%] h-auto flex flex-col items-center  sm:flex-col sm:flex sm:items-center md:flex  md:gap-2 md:flex-row-reverse md:justify-between  lg:justify-between lg:gap-4' >
         <ProfileCard
-        className=""
+        className=" p-2 mt-4"
         imageUrl="/Profiles/teacher1.avif"
         username= "horn thorn"
         subjectname="English Teacher"
@@ -15,7 +15,7 @@ const TopTeachersList = ({children}:{children?:React.ReactNode}) => {
         students={100}
         />
          <ProfileCard
-        className=""
+        className="mt-4 p-2"
         imageUrl="/Profiles/EnglishTeacher.jpg"
         username= "Khiev Navin"
         subjectname="Mathematics Teacher"
@@ -23,7 +23,7 @@ const TopTeachersList = ({children}:{children?:React.ReactNode}) => {
         price={30}
         students={49}
         /> <ProfileCard
-        className=""
+        className="mt-4 p-2"
         imageUrl="/Profiles/teacher3.jpg"
         username= "Sea Pohai"
         subjectname="Biology Teacher"

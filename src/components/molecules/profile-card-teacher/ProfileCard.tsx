@@ -24,10 +24,10 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
 }) => {
   return (
     <div
-      className={`w-[353px] h-[388px] rounded-md border shadow-md p-4 ${className}`}
+      className={`w-[353px] h-[388px] p-4 rounded-md border shadow-md ${className}`}
     >
       <Image
-        className="w-[317px] h-[235px] rounded-md object-cover"
+        className="w-[360px] h-[235px] rounded-md object-cover"
         src={imageUrl}
         alt="Image Card"
         width={500}

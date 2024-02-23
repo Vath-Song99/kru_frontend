@@ -3,11 +3,11 @@ import { InputForm, Typography } from "@/components/atoms";
 
 const SearchInput = ({ className }: { className?: string }) => {
   return (
-    <div className={`w-full h-[60px] relative   ${className}`}>
+    <div className={`w-screen h-[60px] relative   ${className}`}>
       <InputForm
         type="text"
         borderColor="none"
-        className="w-full h-full outline-none border shadow-sm px-[233px] "
+        className="w-full h-full px-12 outline-none border shadow-sm lg:px-[233px] "
         placeholder="Searching ..."
       />
 
@@ -17,7 +17,7 @@ const SearchInput = ({ className }: { className?: string }) => {
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="w-6 h-6 absolute top-5 inset-x-[190px] text-[#455445]"
+        className="w-6 h-6 absolute top-5 right-14 lg:inset-x-[190px] text-[#455445]"
       >
         <path
           strokeLinecap="round"
@@ -26,15 +26,15 @@ const SearchInput = ({ className }: { className?: string }) => {
         />
       </svg>
       <div className="w-full flex justify-center items-center mt-5">
-        <div className="w-[75%] flex items-center justify-between ">
-          <div className="flex items-center gap-4">
+        <div className="lg:w-[75%] w-[80%] flex items-center justify-between ">
+          <div className="flex items-center md:gap-4 gap-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="w-7 h-7 text-[#455445]"
+              className="md:w-7 md:h-7 w-5 text-[#455445]"
             >
               <path
                 strokeLinecap="round"
@@ -43,18 +43,18 @@ const SearchInput = ({ className }: { className?: string }) => {
               />
             </svg>
             <Typography
-             className=""
-             fontSize="base"
+             className="text-xs"
+             fontSize="sm"
              colorscheme="secondary"
              variant="semibold"
             >Choose Option</Typography>
           </div>
           <Typography
-            className="tracking-wider hover:underline"
+            className="tracking-wide hover:underline  text-xs md:text-base"
             align="justify"
             colorscheme="secondary"
             variant="normal"
-            fontSize="sm"
+            
           >
             see more
           </Typography>

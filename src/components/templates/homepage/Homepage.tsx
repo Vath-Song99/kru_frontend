@@ -9,7 +9,7 @@ import { SearchInput, ShowEasyText, KruVision } from "@/components/molecules";
 
 const Homepage = () => {
   return (
-    <div className="w-full h-[1950px] ">
+    <div className="w-screen h-[1950px] ">
       {/* Homepage Benner */}
 
       <HomepageSlider />

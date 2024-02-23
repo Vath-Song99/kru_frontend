@@ -5,21 +5,21 @@ import { Button } from "@/components";
 
 const HomepageSlider = ({ className }: { className?: string }) => {
   return (
-    <div className="w-full h-[479px] bg-[#252525] relative">
+    <div className="w-screen h-[479px] bg-[#252525] relative">
       <Image
         src={"/Benner/Benner.jpg"}
         alt="Benner"
         width={1728}
         height={479}
-        className="w-full h-[479px] object-cover opacity-30 relative"
+        className="w-screen h-[479px] object-cover opacity-30 relative"
       ></Image>
       {/* <h1>Hello world</h1> */}
       <div className="w-full h-full absolute inset-0">
         <div className="w-full h-full flex items-center justify-center">
-          <div className="w-1/2 h-1/2 grid gap-5">
+          <div className="w-[80%] grid gap-3 sm:w-1/2 sm:gap-4">
             <Typography
-              className="leading-10 tracking-widest capitalize"
-              fontSize="2xl"
+              className="leading-10 tracking-widest capitalize sm:text-3xl md:text-4xl lg:text-5xl"
+              fontSize="lg"
               colorscheme="white"
               variant="bold"
               align="center"
@@ -28,8 +28,8 @@ const HomepageSlider = ({ className }: { className?: string }) => {
               The teachers are around you now
             </Typography>
             <Typography
-              className=""
-              fontSize="base"
+              className="sm:text-sm md:text-md lg:text-lg"
+              fontSize="sm"
               colorscheme="white"
               variant="normal"
               tags="p"
@@ -41,9 +41,9 @@ const HomepageSlider = ({ className }: { className?: string }) => {
 
             <div className="w-full flex justify-center">
               <Button
-                className="px-14 py-1 border-2  "
+                className="px-8 py-[6px] sm:py-2 md:px-9 lg:px-10 lg:py-2 border-2  "
                 colorScheme="outline"
-                fontSize="md"
+                fontSize="sm"
                 radius="md"
               >
                 Get Started

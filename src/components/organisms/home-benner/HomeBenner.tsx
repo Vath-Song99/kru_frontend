@@ -4,10 +4,10 @@ import React from "react";
 const HomeBenner: React.FC = ({ className }: { className?: string }) => {
   return (
     <div
-      className={`w-screen h-auto flex justify-center  py-4  bg-[#F6FAFC]  ${className}`}  //list card
+      className={`w-full h-auto flex justify-center  py-4  bg-[#F6FAFC]  ${className}`}  //list card
     >
        {/* Header */}
-      <div className="md:w-[80%]  grid justify-center  gap-5">  
+      <div className="w-full md:w-[80%]  grid justify-center  gap-5">  
         
         <div className="grid gap-5">
         <Typography
@@ -33,7 +33,7 @@ const HomeBenner: React.FC = ({ className }: { className?: string }) => {
         </div>
 
         {/* List card */}
-        <div className="w-screen md:w-full  h-auto flex justify-center md:justify-between   flex-wrap gap-8">
+        <div className="w-full md:w-full  h-auto flex justify-center md:justify-between   flex-wrap gap-8">
           {/* Card */}
           <div className="w-[80%] md:w-[45%] lg:w-[400px] h-auto  shadow-md border px-10 py-3 grid gap-5">
             <div className="flex items-center justify-start gap-3">

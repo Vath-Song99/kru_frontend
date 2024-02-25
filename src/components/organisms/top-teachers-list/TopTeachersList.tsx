@@ -3,7 +3,7 @@ import React from 'react'
 
 const TopTeachersList:React.FC = ({children}:{children?:React.ReactNode}) => {
   return (
-    <div className='w-screen flex  justify-center items-center flex-wrap'>
+    <div className='w-full flex  justify-center items-center flex-wrap'>
         <div className='w-[80%] h-auto flex flex-wrap sm:justify-between justify-center' >
         <ProfileCard
         className=" p-2 mt-4"

@@ -3,7 +3,7 @@ import React from 'react'
 
 const KruVision = () => {
   return (
-    <div className='w-screen h-[100px] md:h-[128px] bg-[#F6FAFC] flex justify-center items-center shadow-sm'>
+    <div className='w-full h-[100px] md:h-[128px] bg-[#F6FAFC] flex justify-center items-center shadow-sm'>
          <div className='w-[80%] h-1/2'>
          <Typography
           className='tracking-wider capitalize'

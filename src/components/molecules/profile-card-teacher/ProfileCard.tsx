@@ -24,10 +24,10 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
 }) => {
   return (
     <div
-      className={`w-[353px] h-[388px] p-4 rounded-md border shadow-md ${className}`}
+      className={`w-full sm:w-[48%] lg:w-[353px] h-[388px] p-4 rounded-md border shadow-md ${className}`}
     >
       <Image
-        className="w-[360px] h-[235px] rounded-md object-cover"
+        className="lg:w-[360px] h-[235px] rounded-md object-cover"
         src={imageUrl}
         alt="Image Card"
         width={500}
@@ -143,8 +143,8 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
         <div className="flex items-center justify-between gap-2">
         <Link
         href={""}
-        className="text-[#0157FF] text-sm">See more detail about teacher</Link>
-        <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+        className="text-[#0157FF] text-xs hover:text-opacity-70 md:text-sm">See more detail about teacher</Link>
+        <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg" className="hover:opacity-70">
 <path d="M5.22017 0.229106C5.3608 0.0886552 5.55142 0.00976563 5.75017 0.00976563C5.94892 0.00976563 6.13955 0.0886552 6.28017 0.229106L10.5302 4.4791C10.6706 4.61973 10.7495 4.81035 10.7495 5.00911C10.7495 5.20786 10.6706 5.39848 10.5302 5.5391L6.28017 9.7891C6.13791 9.92151 5.94986 9.99362 5.75554 9.99026C5.56123 9.9869 5.37578 9.90835 5.23817 9.7711C5.10093 9.6335 5.02237 9.44805 5.01902 9.25373C5.01566 9.05942 5.08776 8.87137 5.22017 8.7291L8.19017 5.7591L0.750173 5.7591C0.55126 5.7591 0.360496 5.68009 0.219843 5.53943C0.0791906 5.39878 0.000172943 5.20802 0.000172943 5.00911C0.000172943 4.81019 0.0791906 4.61943 0.219843 4.47877C0.360496 4.33812 0.55126 4.25911 0.750173 4.25911L8.19017 4.25911L5.22017 1.28911C5.07972 1.14848 5.00083 0.957856 5.00083 0.759106C5.00083 0.560355 5.07972 0.369731 5.22017 0.229106Z" fill="#0157FF"/>
 </svg>
 

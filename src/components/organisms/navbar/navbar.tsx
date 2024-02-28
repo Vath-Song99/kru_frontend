@@ -13,10 +13,10 @@ const Navbar = () => {
         height={500}
         width={500}
         alt="Kru Logo"
-        className="h-[100px] w-[100px] object-cover"
+        className="h-full w-[100px] object-cover"
       
         />
-        <div className="hidden lg:w-[60%] lg:flex lg:justify-center lg:items-center lg:gap-5 xl:w-[60%] xl:flex xl:justify-center xl:items-center xl:gap-5">
+        <div className="hidden   lg:w-[80%] lg:flex  lg:justify-start lg:items-center lg:gap-5">
           <Link className="text-[#455445] text-sm hover:underline" href={"#"}>Home</Link>
           <Link className="text-[#455445] text-sm hover:underline" href={"#"}>Become a teacher</Link>
           <Link className="text-[#455445] text-sm hover:underline" href={"#"}>Find teacher</Link>
@@ -27,7 +27,7 @@ const Navbar = () => {
 
       {/* right */}
 
-      <div className="hidden lg:w-1/2 lg:h-full lg:flex lg:items-center lg:justify-end lg:gap-5 xl:w-1/2 xl:h-full xl:flex xl:items-center xl:justify-end xl:gap-5">
+      <div className="hidden lg:w-1/2 lg:h-full lg:flex lg:items-center lg:justify-end lg:gap-5">
         <Link
           href={"/Login"}
           className="text-[#455445] text-sm hover:underline"

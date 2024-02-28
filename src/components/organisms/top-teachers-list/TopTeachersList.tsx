@@ -1,10 +1,10 @@
 import ProfileCard from '@/components/molecules/profile-card-teacher'
 import React from 'react'
 
-const TopTeachersList = ({children}:{children?:React.ReactNode}) => {
+const TopTeachersList:React.FC = ({children}:{children?:React.ReactNode}) => {
   return (
-    <div className='w-screen flex  justify-center items-center flex-wrap'>
-        <div className='w-[80%] h-auto flex flex-col items-center  sm:flex-col sm:flex sm:items-center md:flex  md:gap-2 md:flex-row-reverse md:justify-between  lg:justify-between lg:gap-4' >
+    <div className='w-full flex  justify-center items-center flex-wrap'>
+        <div className='w-[80%] h-auto flex flex-wrap sm:justify-between justify-center' >
         <ProfileCard
         className=" p-2 mt-4"
         imageUrl="/Profiles/teacher1.avif"

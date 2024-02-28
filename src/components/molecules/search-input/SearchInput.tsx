@@ -3,38 +3,44 @@ import { InputForm, Typography } from "@/components/atoms";
 
 const SearchInput = ({ className }: { className?: string }) => {
   return (
-    <div className={`w-full h-[60px] relative   ${className}`}>
-      <InputForm
-        type="text"
-        borderColor="none"
-        className="w-full h-full outline-none border shadow-sm px-[233px] "
-        placeholder="Searching ..."
-      />
-
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        strokeWidth={1.5}
-        stroke="currentColor"
-        className="w-6 h-6 absolute top-5 inset-x-[190px] text-[#455445]"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
-        />
-      </svg>
-      <div className="w-full flex justify-center items-center mt-5">
-        <div className="w-[75%] flex items-center justify-between ">
-          <div className="flex items-center gap-4">
+    <div className={`w-full    ${className}`}>
+      <div className="w-full flex justify-center items-center border shadow-sm  gap-5 ">
+        <div className="lg:w-[80%] w-[80%] flex items-center justify-between ">
+          <div className="flex items-center md:gap-4 gap-">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="w-7 h-7 text-[#455445]"
+              className="md:w-7 md:h-7 w-5 text-[#455445]"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+              />
+            </svg>
+            <InputForm
+              type="text"
+              borderColor="none"
+              className="outline-none border-none text-xs md:text-base"
+              placeholder="Searching ..."
+            />
+          </div>
+        </div>
+      </div>
+
+      <div className="w-full flex justify-center items-center mt-5">
+        <div className="lg:w-[80%] w-[80%] flex items-center justify-between ">
+          <div className="flex items-center  md:gap-8 gap-4 ">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="md:w-7 md:h-7 w-5 text-[#455445]"
             >
               <path
                 strokeLinecap="round"
@@ -43,18 +49,20 @@ const SearchInput = ({ className }: { className?: string }) => {
               />
             </svg>
             <Typography
-             className=""
-             fontSize="base"
-             colorscheme="secondary"
-             variant="semibold"
-            >Choose Option</Typography>
+              className="text-xs"
+              fontSize="sm"
+              colorscheme="secondary"
+              variant="semibold"
+              align="justify"
+            >
+              Choose Option
+            </Typography>
           </div>
           <Typography
-            className="tracking-wider hover:underline"
+            className="tracking-wide hover:underline  text-xs md:text-base"
             align="justify"
             colorscheme="secondary"
             variant="normal"
-            fontSize="sm"
           >
             see more
           </Typography>

@@ -39,7 +39,7 @@ const Button: FC<ButtonProps> = ({
       case "secondary":
         return "bg-[#007C00] hover:bg-white hover:border hover:border-[#007C00] hover:text-[#455445]";
         case "outline":
-          return "bg-none border border-[#7B2CBF]";
+          return "bg-none border border-[#7B2CBF] hover:bg-[#7B2CBF]";
         case "tertiary":
           return "bg-[#F4F4F8] shadow-sm hover:bg-[#C8C8CC]" 
       default:

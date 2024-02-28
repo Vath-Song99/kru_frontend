@@ -20,7 +20,7 @@ const Navbar = () => {
           <Link className="text-[#455445] text-sm hover:underline" href={"#"}>Home</Link>
           <Link className="text-[#455445] text-sm hover:underline" href={"#"}>Become a teacher</Link>
           <Link className="text-[#455445] text-sm hover:underline" href={"#"}>Find teacher</Link>
-
+          
         </div>
 
       </div>

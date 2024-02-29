@@ -4,7 +4,7 @@ import { InputForm, Typography } from "@/components/atoms";
 const SearchInput = ({ className }: { className?: string }) => {
   return (
     <div className={`w-full    ${className}`}>
-      <div className="w-full flex justify-center items-center border shadow-sm  gap-5 ">
+      <div className="w-full flex justify-center items-center border shadow-sm py-2  gap-5 ">
         <div className="lg:w-[80%] w-[80%] flex items-center justify-between ">
           <div className="flex items-center md:gap-4 gap-">
             <svg

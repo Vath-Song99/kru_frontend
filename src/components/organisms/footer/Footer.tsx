@@ -3,93 +3,92 @@ import "../../../app/globals.css"
 
   const Footer: React.FC = () => {
     return (
-        <footer className="w-full md:w-[80%] md:h-[300px] md:flex md:justify-between items-start  ">
-            <div className="w-full md:w-1/4 lg:w-1/4 xl:w-1/4 grid grid-flow-row gap-1  px-4 mb-8 md:mb-0">
+        <footer className="w-full md:w-[80%] md:h-[300px] md:flex md:justify-between items-start py-4 lg:py-6 grid gap-3 ">
+            <div className="w-full md:w-1/4 grid grid-flow-row   px-4 md:px-0">
               <h4 className="text-white text-lg ">1-ON-1 TUTORS</h4>
               <div className="w-10 h-[2px] bg-[#e91e63] "></div>
-              <ul className="flex flex-col mt-5 gap-y-2">
+              <ul className="flex flex-col md:mt-2 gap-y-2">
                 <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-all hover:ml-4">
+                  <a href="#" className="text-gray-400 text-xs md:text-sm hover:text-white transition-all hover:ml-4">
                     English teacher
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-all hover:ml-4">
+                  <a href="#" className="text-gray-400 text-xs md:text-sm hover:text-white transition-all hover:ml-4">
                     Math teacher
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-all hover:ml-4">
+                  <a href="#" className="text-gray-400 text-xs md:text-sm hover:text-white transition-all hover:ml-4">
                     Khmer teacher
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-all hover:ml-4">
+                  <a href="#" className="text-gray-400 text-xs md:text-sm hover:text-white transition-all hover:ml-4">
                     Computer teacher
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-all hover:ml-4">
+                  <a href="#" className="text-gray-400 text-xs md:text-sm hover:text-white transition-all hover:ml-4">
                     Physics teacher
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-all hover:ml-4">
+                  <a href="#" className="text-gray-400 text-xs md:text-sm hover:text-white transition-all hover:ml-4">
                     Biology teacher
                   </a>
                 </li>
               </ul>
             </div>
-            <div className="w-full md:w-1/4 lg:w-1/4 grid grid-flow-row gap-1 px-4 mb-8 md:mb-0">
+            <div className="w-full md:w-1/4 lg:w-1/4 grid grid-flow-row gap-1 px-4">
               <h4 className="text-white text-lg m-0">Get help</h4>
               <div className="w-10 h-[2px] bg-[#e91e63]"></div>
-              <ul className="flex flex-col mt-5 gap-y-3 ">
-                <li>  
-                  <a href="#" className="text-gray-400 hover:text-white transition-all hover:ml-4">
+              <ul className="flex flex-col md:mt-2 gap-y-2 ">
+                <li>    
+                  <a href="#" className="text-gray-400 text-xs md:text-sm hover:text-white transition-all hover:ml-4">
                     FAQ
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-all hover:ml-4">
+                  <a href="#" className="text-gray-400 text-xs md:text-sm hover:text-white transition-all hover:ml-4">
                     shipping
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-all hover:ml-4">
+                  <a href="#" className="text-gray-400 text-xs md:text-sm hover:text-white transition-all hover:ml-4">
                     returns
                   </a>
                 </li>
               </ul>
             </div>
-            <div className="w-full md:w-1/4 lg:w-1/4 grid grid-flow-row gap-1 px-4 mb-8 md:mb-0">
+            <div className="w-full md:w-1/4 lg:w-1/4 grid grid-flow-row gap-1 px-4">
               <h4 className="text-white text-xl m-0">Contact</h4>
               <div className="w-10 h-[2px] bg-[#e91e63] "></div>
-              <ul className="flex flex-col mt-5 gap-y-3">
+              <ul className="flex flex-col md:mt-2 gap-y-2">
                 <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-all hover:ml-4">
+                  <a href="#" className="text-gray-400 text-xs md:text-sm hover:text-white transition-all hover:ml-4">
                     Facebook
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-all hover:ml-4">
+                  <a href="#" className="text-gray-400 text-xs md:text-sm hover:text-white transition-all hover:ml-4">
                     Telegram
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-all hover:ml-4">
+                  <a href="#" className="text-gray-400 text-xs md:text-sm hover:text-white transition-all hover:ml-4">
                     Tiktok
                   </a>
                 </li>
               </ul>
             </div>
-            <div className="w-full md:w-1/4 lg:w-1/4 grid grid-flow-row gap-1 px-4 mb-8 md:mb-0">
+            <div className="w-full md:w-1/4 lg:w-1/4 grid grid-flow-row gap-1 px-4">
               <h4 className="text-white text-lg m-0">follow us</h4>
               <div className="w-10 h-[2px] bg-[#e91e63]"></div>
-              <div className="flex mt-5 gap-4">
-                <a href="#" className="text-gray-400 hover:text-white">
+              <div className="flex  gap-4">
+                <a href="#" className="text-gray-400 text-xs md:text-sm hover:text-white">
                   <svg
-                    width="32"
-                    height="32"
+                   className="w-6 md:w-7"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -99,10 +98,9 @@ import "../../../app/globals.css"
                     />
                   </svg>
                 </a>
-                <a href="#" className="text-gray-400 hover:text-white">
+                <a href="#" className="text-gray-400 text-xs md:text-sm hover:text-white">
                   <svg
-                    width="32"
-                    height="32"
+                   className="w-6 md:w-7"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -112,10 +110,9 @@ import "../../../app/globals.css"
                     />
                   </svg>
                 </a>
-                <a href="#" className="text-gray-400 hover:text-white">
+                <a href="#" className="text-gray-400 text-xs md:text-sm hover:text-white">
                   <svg
-                    width="32"
-                    height="32"
+                   className="w-6 md:w-7"
                     viewBox="0 0 1024 1024"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -125,10 +122,9 @@ import "../../../app/globals.css"
                     />
                   </svg>
                 </a>
-                <a href="#" className="text-gray-400 hover:text-white">
+                <a href="#" className="text-gray-400 text-xs md:text-sm hover:text-white">
                   <svg
-                    width="32"
-                    height="32"
+                   className="w-6 md:w-7"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
                   >

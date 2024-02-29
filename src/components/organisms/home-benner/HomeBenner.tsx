@@ -7,9 +7,10 @@ const HomeBenner: React.FC = ({ className }: { className?: string }) => {
       className={`w-full h-auto flex justify-center  py-4  bg-[#F6FAFC]  ${className}`}  //list card
     >
        {/* Header */}
-      <div className="w-full md:w-[80%]  grid justify-center  gap-5">  
+      <div className="w-full md:w-[80%]  grid grid-flow-row justify-center  gap-5 ">  
         
-        <div className="grid gap-5">
+        <div className="w-full flex justify-center items-center">
+        <div className="w-[80%] grid  gap-5">
         <Typography
           className="capitalize sm:text-3xl"
           fontSize="md"
@@ -20,7 +21,7 @@ const HomeBenner: React.FC = ({ className }: { className?: string }) => {
           May i ask who <span className="text-[#7B2CBF]">you</span> are?
         </Typography>
 
-        <Typography
+       <Typography
           className=""
           fontSize="sm"
           colorscheme="secondary"
@@ -31,6 +32,8 @@ const HomeBenner: React.FC = ({ className }: { className?: string }) => {
           appication
         </Typography>
         </div>
+        </div>
+      
 
         {/* List card */}
         <div className="w-full md:w-full  h-auto flex justify-center md:justify-between   flex-wrap gap-8">

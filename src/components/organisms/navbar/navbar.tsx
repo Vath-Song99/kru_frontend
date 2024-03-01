@@ -25,7 +25,7 @@ const Navbar: React.FC <NavbarProps> = ({className,setIsShowModal,isShowModal}) 
           alt="Kru Logo"
           className="h-full w-[100px] object-cover"
         />
-        <div className="hidden   lg:w-[80%] lg:flex  lg:justify-start lg:items-center lg:gap-5">
+        <div className="hidden lg:w-[80%] lg:flex  lg:justify-start lg:items-center lg:gap-5">
           <Link className="text-[#455445] text-sm hover:underline" href={"#"}>
             Home
           </Link>

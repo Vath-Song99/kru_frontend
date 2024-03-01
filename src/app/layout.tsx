@@ -26,7 +26,7 @@ import type { Metadata } from "next";
       <html lang="en">
         <body className={poppins.className}>
             {children}
-          <div className="w-full flex justify-center items-end bg-gray-900 mt-6"><Footer/></div>
+          <div className="w-full flex justify-center items-end bg-gray-900 mt-6"></div>
           </body>
       </html>
     );

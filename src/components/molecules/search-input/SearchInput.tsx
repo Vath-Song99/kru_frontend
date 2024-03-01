@@ -4,7 +4,7 @@ import { InputForm, Typography } from "@/components/atoms";
 const SearchInput = ({ className }: { className?: string }) => {
   return (
     <div className={`w-full    ${className}`}>
-      <div className="w-full flex justify-center items-center border shadow-sm py-2  gap-5 ">
+      <div className="w-full flex justify-center items-center border shadow-sm py-1  gap-5 ">
         <div className="lg:w-[80%] w-[80%] flex items-center justify-between ">
           <div className="flex items-center md:gap-4 gap-">
             <svg
@@ -13,7 +13,7 @@ const SearchInput = ({ className }: { className?: string }) => {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="md:w-7 md:h-7 w-5 text-[#455445]"
+              className="md:w-6 md:h-6 w-5 text-[#455445]"
             >
               <path
                 strokeLinecap="round"
@@ -24,7 +24,7 @@ const SearchInput = ({ className }: { className?: string }) => {
             <InputForm
               type="text"
               borderColor="none"
-              className="outline-none border-none text-xs md:text-base"
+              className="outline-none border-none text-xs md:text-sm"
               placeholder="Searching ..."
             />
           </div>
@@ -40,7 +40,7 @@ const SearchInput = ({ className }: { className?: string }) => {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="md:w-7 md:h-7 w-5 text-[#455445]"
+              className="md:w-6 md:h-6 w-5 text-[#455445]"
             >
               <path
                 strokeLinecap="round"
@@ -59,7 +59,7 @@ const SearchInput = ({ className }: { className?: string }) => {
             </Typography>
           </div>
           <Typography
-            className="tracking-wide hover:underline  text-xs md:text-base"
+            className="tracking-wide hover:underline  text-xs md:text-sm"
             align="justify"
             colorscheme="secondary"
             variant="normal"

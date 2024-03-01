@@ -1,8 +1,10 @@
 "use client"
+import { on } from "events";
 import React, { ReactNode } from "react";
 
 interface ButtonIconProps {
     icon: ReactNode;
+    onclick?: CallableFunction;
     className?: string;
 }
 const ButtonIcon : React.FC<ButtonIconProps> = ({icon, className}) => {
@@ -11,6 +13,7 @@ const ButtonIcon : React.FC<ButtonIconProps> = ({icon, className}) => {
         className={`h-10 w-10 rounded-ful flex items-center justify-center cursor-pointer hover:rounded-full hover:bg-purple-500 ${className}`}
         >
             {icon}
+            
         </button>
     )
 }

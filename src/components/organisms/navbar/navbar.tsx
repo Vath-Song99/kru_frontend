@@ -17,6 +17,7 @@ interface NavbarProps {
   className?: string;
   setIsShowModal: React.Dispatch<React.SetStateAction<boolean>>;
   isShowModal: boolean;
+
 }
 
 const Navbar: React.FC<NavbarProps> = ({
@@ -34,25 +35,30 @@ const Navbar: React.FC<NavbarProps> = ({
     setIsOpen(!isOpen);
   };
   return (
+
     <nav
       className={`w-[80%] h-[100px] flex justify-between items-center  ${className}`}
     >
       <div className="h-full w-1/2 flex items-center justify-start">
+        <Link href={"/"}>
         <Image
           src={"/Logos/KruLogo.png"}
           height={500}
-          width={500}
+          width={500} 
           alt="Kru Logo"
           className="h-full w-[100px] object-cover"
-        />
+        
+        ></Image></Link>
+
         <div className="hidden   lg:w-[80%] lg:flex  lg:justify-start lg:items-center lg:gap-5">
-          <Link className="text-[#455445] text-sm hover:underline" href={"#"}>
+          <Link className="text-[#455445] text-xs md:text-sm hover:underline" href={"/"}>
+
             Home
           </Link>
-          <Link className="text-[#455445] text-sm hover:underline" href={"#"}>
+          <Link className="text-[#455445] text-xs md:text-sm hover:underline" href={"/signup"}>
             Become a teacher
           </Link>
-          <Link className="text-[#455445] text-sm hover:underline" href={"#"}>
+          <Link className="text-[#455445] text-xs md:text-sm hover:underline" href={"teacher-list"}>
             Find teacher
           </Link>
         </div>
@@ -62,8 +68,8 @@ const Navbar: React.FC<NavbarProps> = ({
 
       <div className="hidden lg:w-1/2 lg:h-full lg:flex lg:items-center lg:justify-end ">
         <Link
-          href={"/Login"}
-          className="text-[#455445] text-sm hover:underline"
+          href={"login"}
+          className="text-[#455445] text-xs md:text-sm hover:underline"
         >
           Log in
         </Link>
@@ -72,14 +78,14 @@ const Navbar: React.FC<NavbarProps> = ({
           {/* verticle Line */}
           <div className="h-5 w-[1px] border-l-2 border-[#455445]"></div>
           <Link
-            href={"Sign up"}
-            className="text-[#9B90C2] text-sm hover:underline"
+            href={"signup"}
+            className="text-[#9B90C2] text-xs md:text-sm hover:underline"
           >
             Sign up for free
           </Link>
         </div>
-        <Button className="px-4 py-2" colorScheme="primary">
-          Get Started
+        <Button className="px-4 py-2" colorScheme="primary" >
+            <Link href={"teacher-list"}>Get Started</Link>
         </Button>
       </div>
 

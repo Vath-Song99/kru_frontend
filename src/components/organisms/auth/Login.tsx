@@ -4,13 +4,13 @@ import { Button } from "../..";
 import Image from "next/image";
 const Login = () => {
     return (
-        <div className=" w-full h-full flex justify-center items-center mt-20 mx-auto">
-            <div className="border-[3px] border-[#f3f3f3]-500 w-[900px] h-[600px] flex ">
-                <div className="flex items-center">
-                    <div className="space-y-5">
-                        <h1 className="text-4xl ml-[100px] font-bold ">Login with Kru</h1>
-                        <div className="space-y-5">
-                            <Button className="flex items-center justify-around w-[300px] h-[50px]  ml-[50px] bg-[#f3f3f3] rounded-md hover:bg-[#d2d0d0]">
+        <div className=" w-full h-[100vh] flex justify-center items-center ">
+            <div className="w-[900px] h-[600px] flex justify-between items-center border shadow-md">
+                <div className="w-1/2 flex items-center justify-center">
+                    <div className="">
+                        <h1 className="text-3xl tracking-wide font-bold pb-5">Login with Kru</h1>
+                        <div className="grid gap-3"> 
+                            <Button className="flex items-center justify-evenly w-[300px] h-[50px]  bg-[#f3f3f3] rounded-md hover:bg-[#d2d0d0]">
                                 <svg
                                     width="25"
                                     height="24"
@@ -47,12 +47,12 @@ const Login = () => {
                                         </clipPath>
                                     </defs>
                                 </svg>
-                                <div className="text-base text-slate-950 mr-[20px] ">
+                                <div className="text-sm text-slate-950 mr-[20px] ">
                                     {" "}
                                     Continue with Google
                                 </div>
                             </Button>
-                            <Button className="flex items-center  justify-around w-[300px] h-[50px]  ml-[50px] bg-[#f3f3f3] rounded-md  hover:bg-[#d2d0d0]">
+                            <Button className="flex items-center justify-evenly    w-[300px] h-[50px]   bg-[#f3f3f3] rounded-md  hover:bg-[#d2d0d0]">
                                 <svg
                                     width="25"
                                     height="24"
@@ -65,39 +65,41 @@ const Login = () => {
                                         fill="#0866FF"
                                     />
                                 </svg>
-                                <div className="text-base text-slate-950">
+                                <div className="text-sm text-slate-950 ">
                                     Continue with Facebook
                                 </div>
                             </Button>
-                            <div className="flex items-center mt-4 justify-start">
-                                <div className="border-t border-black w-[120px] ml-[50px]"></div>
+                            <div className="flex items-center justify-start">
+                                <div className="border-t border-black w-[120px] "></div>
                                 <div className="mx-4 text-black">or</div>
                                 <div className="border-t border-black w-[120px] "></div>
                             </div>
                         </div>
-                        <div className="ml-[50px]">
-                            <form>
+                       
+                            <form className="grid gap-3">
                                 <div className="flex flex-col">
                                     <label htmlFor="username">Email</label>
                                     <input
                                         type="email"
                                         placeholder="example@gmail.com"
-                                        className="border border-purple-500 rounded-md w-[300px] h-[40px] pl-3"
+                                        className="border border-purple-500 rounded-md w-[300px] h-[40px] pl-3 outline-none text-xs"
                                     />
                                 </div>
                                 <div className="flex flex-col">
                                     <label htmlFor="password">Password</label>
                                     <input
                                         type="password"
-                                        placeholder="*********"
-                                        className="border border-purple-500 rounded-md w-[300px] h-[40px] pl-3"
+                                        placeholder="password"
+                                        className="border border-purple-500 rounded-md w-[300px] h-[40px] pl-3 outline-none text-xs"
                                     />
                                 </div>
-                                <div className=" flex items-center mt-[8px] mb-[10px]">
-                                    <input type="checkbox" className="mr-[2px]" />
+                                <div className=" flex items-center justify-between">
+                                     <div className="flex items-center">
+                                     <input type="checkbox" className="mr-[2px]" />
                                     <a href="" className="text-sm">Remember me</a>
+                                     </div>
                                     <a
-                                        className="inline-block align-baseline text-sm text-[#455445] ml-[70px]"
+                                        className="inline-block align-baseline text-sm hover:underline text-[#455445]"
                                         href="index"
                                     >
                                         Forgot Password?
@@ -108,11 +110,10 @@ const Login = () => {
                                     Log in
                                 </Button>
                             </form>
-                        </div>
                     </div>
                 </div>
-                <div className="flex items-center justify-center ml-[70px]">
-                    <Image alt="login page" src={"/login.png"} width={400} height={400}></Image>
+                <div className="flex items-center justify-center ">
+                    <Image  alt="login page" src={"/login.png"} width={400} height={400}></Image>
                 </div>
             </div>
         </div>

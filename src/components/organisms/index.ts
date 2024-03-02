@@ -16,4 +16,4 @@ export * from "./filter-teachers"
 
 export * from "./teacher-list-cards"
 
-export * from "./login"
+export * from "./auth"

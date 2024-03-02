@@ -16,8 +16,8 @@ const Modal: React.FC<ModalProps>  = ({className}) => {
   return (
     <>
       {/* Button to toggle modal */}
-      <button onClick={toggleModal} className="bg-blue-500 text-white font-semibold px-4 py-2 rounded focus:outline-none">Open Modal</button>
-      
+      {/* <button onClick={toggleModal} className="bg-blue-500 text-white font-semibold px-4 py-2 rounded focus:outline-none">Open Modal</button> */}
+      z
       {/* Modal content */}
       {isOpen && (
         <div className="fixed inset-0 overflow-y-auto z-50 flex justify-center items-center bg-black bg-opacity-50">

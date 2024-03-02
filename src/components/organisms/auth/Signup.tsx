@@ -1,5 +1,6 @@
 "use client"
 import { Button } from "@/components";
+import Link from "next/link";
 import React, { useState } from "react";
 
 const Signup = () => {
@@ -9,22 +10,22 @@ const Signup = () => {
         setShowPassword(!showPassword);
     };
     return (
-        <div className="w-full h-full flex justify-center items-center mt-20 mx-auto">
-            <div className="border-[1px] border-[#f3f3f3]-500 w-[500px] h-[700px] flex items-center justify-center shadow-[0_1px_3px_rgb(0,0,0,0.2)]">
-                <div className="flex">
-                    <div className="space-y-5">
-                        <div className="flex flex-col   ">
-                            <h1 className="text-[30px] font-bold ">Sign up with Kru</h1>
-                            <h4 className="underline">
-                                Sign up as a teacher?{" "}
-                                <a className="text-[#7b2cbf] underline hover:text-purple-700">
+        <div className="w-full h-[100vh] flex justify-center items-center  mx-auto">
+            <div className="border-[1px] border-[#f3f3f3]-500  pt-4 pb-8 px-8 flex items-center justify-center shadow-md">
+               
+                    <div className="grid gap-3">
+                        <div className="flex flex-col  gap-2 ">
+                            <h1 className="text-3xl font-medium ">Sign up with Kru</h1>
+                            <p className="underline text-xs">
+                                Sign up as a teacher?{"  "}
+                                <Link href={"/signup"} className="text-[#7b2cbf] underline hover:text-purple-700">
                                     Sign up
-                                </a>
-                            </h4>
+                                </Link>
+                            </p>
                         </div>
-                        <div className="space-y-5">
-                            <Button className="flex items-center justify-center w-[360px] h-[50px]  bg-[#f3f3f3] rounded-md hover:bg-[#d2d0d0]">
-                                <div className="w-[80%] flex justify-between items-center">
+                        <div className="grid gap-3">
+                            <Button className="flex items-center justify-center  w-[360px] py-2.5  bg-[#f3f3f3] rounded-md hover:bg-[#d2d0d0]">
+                                <div className="w-[80%] flex justify-evenly items-center gap-x-5">
                                     <svg
                                         width="24"
                                         height="24"
@@ -50,14 +51,14 @@ const Signup = () => {
                                         />
                                     </svg>
 
-                                    <p className="text-base text-slate-950 mr-[40px] ">
+                                    <p className="text-sm text-slate-950  ">
                                         Continue with Google
                                     </p>
                                 </div>
                             </Button>
-                            <Button className="flex items-center  justify-center w-[360px] h-[50px]   bg-[#f3f3f3] rounded-md  hover:bg-[#d2d0d0] ">
+                            <Button className="flex items-center  justify-center w-[360px] py-2.5   bg-[#f3f3f3] rounded-md  hover:bg-[#d2d0d0] ">
 
-                                <div className="w-[80%] flex gap-[40px] items-center">
+                                <div className="w-[80%] flex justify-evenly  items-center">
                                     <svg
                                         width="24"
                                         height="24"
@@ -82,13 +83,13 @@ const Signup = () => {
                                         </defs>
                                     </svg>
 
-                                    <p className="text-base text-slate-950 ">
+                                    <p className="text-sm text-slate-950 ">
                                         Continue with Facebook
                                     </p>
 
                                 </div>
                             </Button>
-                            <div className="w-full flex items-center mt-4 justify-evenly pr-3">
+                            <div className="w-full flex items-center  justify-evenly">
 
 
                                 <div className="border-t border-black w-[40%] "></div>
@@ -102,23 +103,23 @@ const Signup = () => {
                                         <input
                                             outline-none placeholder="First Name"
                                             type="text"
-                                            className="border border-purple-500 rounded-md w-[360px] h-[40px] pl-3 outline-none"
+                                            className="border border-purple-500 rounded-md w-[360px] h-[40px] pl-3 outline-none text-xs"
                                         />
                                     </div>
                                     <div className="flex flex-col">
                                         <label htmlFor="">Last Name:</label>
                                         <input
-                                            outline-none placeholder="Last Name"
+                                            outline-none text-xs placeholder="Last Name"
                                             type="text"
-                                            className="border border-purple-500 rounded-md w-[360px] h-[40px] pl-3 outline-none"
+                                            className="border border-purple-500 rounded-md w-[360px] h-[40px] pl-3 outline-none text-xs"
                                         />
                                     </div>
                                     <div className="flex flex-col">
                                         <label htmlFor="username">Email</label>
                                         <input
-                                            outline-none type="email"
+                                            outline-none text-xs type="email"
                                             placeholder="example@gmail.com"
-                                            className="border border-purple-500 rounded-md w-[360px] h-[40px] pl-3 outline-none"
+                                            className="border border-purple-500 rounded-md w-[360px] h-[40px] pl-3 outline-none text-xs"
                                         />
                                     </div>
                                     <div className="flex flex-col ">
@@ -128,8 +129,8 @@ const Signup = () => {
                                                 outline-none type={showPassword ? "text" : "password"}
                                                 value={Password}
                                                 onChange={(e) => setPassword(e.target.value)}
-                                                placeholder="*********"
-                                                className="border  border-purple-500 rounded-md w-[360px] h-[40px] pl-3 outline-none"
+                                                placeholder="password"
+                                                className="border  border-purple-500 rounded-md w-[360px] h-[40px] pl-3 outline-none text-xs"
                                             />
                                             <button
                                                 type="button"
@@ -175,22 +176,21 @@ const Signup = () => {
                                             </button>
                                         </div>
                                     </div>
-                                    <div className=" flex items-center justify-between mt-[8px] mb-[10px]">
+                                    <div className=" flex items-center  justify-between my-5 mb-[10px]">
                                         <div className="flex items-center gap-1">
                                             <input type="checkbox" className=" outline-none" />
-                                            <a href="" className="text-sm">
+                                            <Link href={"/signup"} className="text-sm">
                                                 Remember me
-                                            </a>
+                                            </Link>
                                         </div>
-                                        <a
+                                        <Link href={"/signup"}
                                             className="inline-block align-baseline text-xs hover:underline   text-[#455445]"
-                                            href="index"
+                                            
                                         >
                                             Already have an account?
-                                        </a>
+                                        </Link>
                                     </div>
-                                    <Button className="rounded-m hover:bg-white hover:border-[#7b2cbc] hover:border-2 hover:text-black hover:rounded-md
-                                        text-white text-[16px] flex justify-center w-[360px]  py-2 px-4 focus:outline-none focus:shadow-outline ">
+                                    <Button className="w-full py-2.5 text-sm">
                                         Sign up
                                     </Button>
                                 </form>
@@ -199,8 +199,7 @@ const Signup = () => {
                     </div>
                 </div>
             </div>
-        </div>
-    );
+        );
 };
 
 export default Signup;

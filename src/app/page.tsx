@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-no-duplicate-props */
 "use client";
 
-import { Homepage } from "@/components";
+import { Homepage, Navbar } from "@/components";
 import React, { useState } from "react";
 
 
@@ -13,6 +13,11 @@ const Page = () => {
 
   return (
     <div className="max-w-full ">
+
+        <div className="w-full flex justify-center items-center">
+              <Navbar setIsShowModal= {setIsShowModal} isShowModal={isShowModal}/>
+        </div>
+
       <Homepage/>
     </div>
   );

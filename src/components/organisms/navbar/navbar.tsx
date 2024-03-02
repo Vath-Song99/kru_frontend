@@ -180,10 +180,10 @@ const Navbar: React.FC<NavbarProps> = ({
           </button>
         </div>
         <div className="w-full h-[1.2px] bg-gray-200"></div>
-        <nav className="flex mt-10 py-2 flex-col items-start justify-start">
+        <nav className="flex  py-2 flex-col items-start justify-start">
           <ul className="ml-5">
             <li
-              className="cursor-pointer py-5 relative"
+              className="cursor-pointer py-3 hover:underline relative"
               onClick={() => handleItemClick("Home")}
             >
               {selectedItem === "Home" && (
@@ -195,7 +195,7 @@ const Navbar: React.FC<NavbarProps> = ({
               Home
             </li>
             <li
-              className="cursor-pointer py-5 relative"
+              className="cursor-pointer py-3 hover:underline relative"
               onClick={() => handleItemClick("Become a teacher")}
             >
               {selectedItem === "Become a teacher" && (
@@ -207,7 +207,7 @@ const Navbar: React.FC<NavbarProps> = ({
               Become a teacher
             </li>
             <li
-              className="cursor-pointer py-5 relative"
+              className="cursor-pointer py-3 hover:underline relative"
               onClick={() => handleItemClick("Find teacher")}
             >
               {selectedItem === "Find teacher" && (

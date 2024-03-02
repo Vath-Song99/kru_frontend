@@ -25,11 +25,10 @@ import type { Metadata } from "next";
     return (
       <html lang="en">
         <body className={poppins.className}>
-        <div className="w-full flex justify-center items-center"><Navbar/></div>
 
           
             {children}
-          <div className="w-full flex justify-center items-end bg-gray-900 mt-6"><Footer/></div>
+          {/* <div className="w-full flex justify-center items-end bg-gray-900 mt-6"><Footer/></div> */}
           </body>
       </html>
     );

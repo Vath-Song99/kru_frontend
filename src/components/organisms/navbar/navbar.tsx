@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components";
-import { Modal } from "@/components";
 
 interface NavbarProps {
   className?: string,
@@ -18,21 +17,25 @@ const Navbar: React.FC <NavbarProps> = ({className,setIsShowModal,isShowModal}) 
   return (
     <div className={`w-[80%] h-[100px] flex justify-between items-center ${className}`}>
       <div className="h-full w-1/2 flex items-center justify-start">
+        <Link href={"/"}>
         <Image
           src={"/Logos/KruLogo.png"}
           height={500}
           width={500} 
           alt="Kru Logo"
           className="h-full w-[100px] object-cover"
-        />
+        
+        ></Image></Link>
+
         <div className="hidden   lg:w-[80%] lg:flex  lg:justify-start lg:items-center lg:gap-5">
-          <Link className="text-[#455445] text-xs md:text-sm hover:underline" href={"#"}>
+          <Link className="text-[#455445] text-xs md:text-sm hover:underline" href={"/"}>
+
             Home
           </Link>
-          <Link className="text-[#455445] text-xs md:text-sm hover:underline" href={"#"}>
+          <Link className="text-[#455445] text-xs md:text-sm hover:underline" href={"/signup"}>
             Become a teacher
           </Link>
-          <Link className="text-[#455445] text-xs md:text-sm hover:underline" href={"/pages/teacher-list"}>
+          <Link className="text-[#455445] text-xs md:text-sm hover:underline" href={"teacher-list"}>
             Find teacher
           </Link>
         </div>
@@ -42,7 +45,7 @@ const Navbar: React.FC <NavbarProps> = ({className,setIsShowModal,isShowModal}) 
 
       <div className="hidden lg:w-1/2 lg:h-full lg:flex lg:items-center lg:justify-end ">
         <Link
-          href={"/Login"}
+          href={"login"}
           className="text-[#455445] text-xs md:text-sm hover:underline"
         >
           Log in
@@ -52,14 +55,14 @@ const Navbar: React.FC <NavbarProps> = ({className,setIsShowModal,isShowModal}) 
           {/* verticle Line */}
           <div className="h-5 w-[1px] border-l-2 border-[#455445]"></div>
           <Link
-            href={"Sign up"}
+            href={"signup"}
             className="text-[#9B90C2] text-xs md:text-sm hover:underline"
           >
             Sign up for free
           </Link>
         </div>
-        <Button className="px-4 py-2" colorScheme="primary">
-          Get Started
+        <Button className="px-4 py-2" colorScheme="primary" >
+            <Link href={"teacher-list"}>Get Started</Link>
         </Button>
       </div>
       <svg

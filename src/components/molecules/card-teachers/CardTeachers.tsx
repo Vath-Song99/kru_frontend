@@ -17,22 +17,29 @@ const CardTeachers: React.FC<CardTeachersTypes> = ({
   reviews,
   students,
   description,
-  pricing,
+  pricing,  
 }) => {
   return (
-    <div className="w-[45%] flex justify-evenly border-[1.5px]  shadow-sm py-3 hover:border-3 hover:border-[#455445] ">
-      <Image
+    <div className="w-full  lg:w-[49%] flex justify-evenly sm:justify-around border-[1.5px] px-1 md:px-0  shadow-sm pt-2 pb-1 md:py-3 hover:border-3 hover:border-[#455445] ">
+     
+     <div className="flex flex-col items-center gap-1 justify-center md:justify-start w-[100px]  sm:w-[130px] md:w-[140px] lg:w-[120px]">
+     <Image
         src={`/${imageUrl}`}
         width={500}
         height={500}
         alt={`${teacherName}`}
-        className="w-[120px] h-[120px] object-cover"
+        className="w-full h-[100px] sm:h-[110px] md:h-[140px] lg:h-[120px] object-cover"
       ></Image>
 
-      <div className="w-[65%] grid gap-[2px]">
+<button className="md:hidden py-1 px-2 text-[8px] bg-[#007C00] text-white hover:bg-white hover:border hover:text-[#455445] hover:border-[#007C00]">
+            Send Message
+          </button>
+     </div>
+
+      <div className="w-[65%] grid  gap-[2px]">
         {/* Name */}
-        <div className="flex justify-between items-center">
-          <Typography  className="font-medium text-xl tracking-normal">
+        <div className="flex justify-between gap-14 items-center lg:gap-0">
+          <Typography  className="font-medium text-md sm:text-xl tracking-normal">
             {teacherName}
           </Typography>
           <svg
@@ -48,19 +55,18 @@ const CardTeachers: React.FC<CardTeachersTypes> = ({
             />
           </svg>
 
-          <button className="py-1 px-2 text-xs bg-[#007C00] text-white hover:bg-white hover:border hover:text-[#455445] hover:border-[#007C00]">
+          <button className="hidden md:block py-1 px-2 text-xs bg-[#007C00] text-white hover:bg-white hover:border hover:text-[#455445] hover:border-[#007C00]">
             Send Message
           </button>
         </div>
 
         {/* Stars */}
 
-        <div className="w-[75%] flex  items-center ">
+        <div className="w-full md:w-[75%] flex  items-center ">
           <Typography className="text-xs ">{rateStars}</Typography>
 
           <svg
-            width="90"
-            height="24"
+            className="w-20 md:w-24"
             viewBox="0 0 130 30"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -151,17 +157,24 @@ const CardTeachers: React.FC<CardTeachersTypes> = ({
 
         {/* Description */}
 
-        <article className="text-xs text-[#455445]">
+        <article className="text-xs text-[#455445] truncate md:text-clip">
           {description}
           <span>
             <Link
               href={""}
-              className="text-xs font-medium hover:underline ml-2 text-black"
+              className="hidden md:block text-xs text-gray-900 font-medium underline  "
             >
-              see more
+              Read more
             </Link>
           </span>
         </article>
+
+        <Link
+              href={""}
+              className="md:hidden text-xs text-gray-900 font-medium underline  "
+            >
+              Read more
+            </Link>
 
         {/* pricing */}
 

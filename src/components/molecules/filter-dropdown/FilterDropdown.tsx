@@ -25,10 +25,10 @@ const FilterDropdown: React.FC<FilterDropdownTypes> = ({
 }) => {
   return (
     
-      <div className="w-1/5 grid grid-flow-row  ">
+      <div className="lg:w-1/5 w-[48%] grid grid-flow-row  ">
         <Typography align="left" className="text-xs" colorscheme="secondary">{nameDropdown}</Typography>
-      <Dropdown  buttonContent={`Select ${nameDropdown}`}>
-        <ShowDropdown className="w-[222px] px-3 py-1">
+      <Dropdown className="w-full"  buttonContent={`Select ${nameDropdown}`}>
+        <ShowDropdown className=" w-[148px] sm:w-[270px] md:w-[360px] lg:w-[222px]  px-3 py-1">
           {
             itemsDropdown.map((item: { itemName: string; },index: React.Key | null | undefined) => (
               <LinkDropdown key={index} className="py-2 text-xs "> 

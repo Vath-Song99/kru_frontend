@@ -85,7 +85,7 @@ const TeacherInfo: Array<CardTeachersTypes> = [
 const TeacherListCards = () => {
   return (
     <div className="w-full flex justify-center">
-      <div className="w-[80%] flex justify-between items-center flex-wrap gap-4">
+      <div className="w-[80%] flex justify-center lg:justify-between   flex-wrap gap-4">
         {TeacherInfo.map((item, index) => (
           <CardTeachers
             key={index}

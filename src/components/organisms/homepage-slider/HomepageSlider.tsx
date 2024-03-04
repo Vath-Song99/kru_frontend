@@ -7,11 +7,11 @@ const HomepageSlider = ({ className }: { className?: string }) => {
   return (
     <div className="w-full  bg-[#252525] relative">
       <Image
-        src={"/Benner/Benner.jpg"}
+        src={"/Benner/teacherwithstudent.jpg"}
         alt="Benner"
         width={1728}
         height={479}
-        className="w-full h-[479px] object-cover opacity-30 relative"
+        className="w-full h-[479px] object-cover opacity-40 relative"
       ></Image>
       {/* <h1>Hello world</h1> */}
       <div className="w-full h-full absolute inset-0">

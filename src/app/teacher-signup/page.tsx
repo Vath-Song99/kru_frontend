@@ -3,7 +3,7 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div className=''>
+    <div className='w-full h-[100vh] flex justify-center items-center'>
         <SignupToBecomeTeacher/>
     </div>
   )

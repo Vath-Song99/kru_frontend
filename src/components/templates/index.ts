@@ -1,3 +1,4 @@
-export * from "./homepage"
+import { Homepage } from "./Homepage";
+import { TeacherList } from "./TeacherList"; 
 
-export * from "./teacher-list"
+export {Homepage , TeacherList}

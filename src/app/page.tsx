@@ -5,6 +5,7 @@ import { Homepage } from "@/components";
 import React, { useState } from "react";
 import { Modal } from "@/components";
 import { Navbar } from "@/components";
+import SettingProfile from "@/components/templates/SettingProfile";
 
 const Page = () => {
   const [isShowModal, setIsShowModal] = useState<boolean>(false);
@@ -17,8 +18,8 @@ const Page = () => {
            <div className="w-full flex justify-center items-center">
                 <Navbar isShowModal={isShowModal}  setIsShowModal={setIsShowModal}/>
                 {/* <Modal/> */}
-           </div>         
-          <Homepage/>
+           </div>     
+           <SettingProfile/>  
     </div>
   );
 };

@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import { Typography } from "@/components";
 import Image from "next/image";
@@ -7,7 +8,7 @@ const HomepageSlider = ({ className }: { className?: string }) => {
   return (
     <div className="w-full  bg-[#252525] relative">
       <Image
-        src={"/Benner/Benner.jpg"}
+        src={"/Benner/teacherwithstudent.jpg"}
         alt="Benner"
         width={1728}
         height={479}

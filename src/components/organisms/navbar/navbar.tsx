@@ -131,10 +131,10 @@ const Navbar: React.FC<NavbarProps> = ({
                   <g
                     fill="#0A0A0A"
                     stroke="#A9A9A9"
-                    stroke-dasharray="28"
-                    stroke-dashoffset="28"
-                    stroke-linecap="round"
-                    stroke-width="2"
+                    strokeDasharray="28"
+                    strokeDashoffset="28"
+                    strokeLinecap="round"
+                    strokeWidth="2"
                   >
                     <path d="M4 21V20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20V21">
                       <animate

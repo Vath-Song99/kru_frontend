@@ -3,6 +3,7 @@
 
 import { Footer, Homepage, Navbar } from "@/components";
 import React, { useState } from "react";
+import {CreateClass} from "@/components/templates/createClass";
 
 const Page = () => {
   const [isShowModal, setIsShowModal] = useState<boolean>(false);
@@ -10,17 +11,18 @@ const Page = () => {
   console.log(isShowModal);
 
   return (
-    <div className="max-w-full grid">
+    <>
+    <CreateClass />
+    {/* <div className="max-w-full grid">
       <div className="w-full flex justify-center items-center">
         <Navbar setIsShowModal={setIsShowModal} isShowModal={isShowModal} />
-      </div>
-
-      <Homepage />
-
+      </div> 
       <div className="w-full flex justify-center items-start bg-gray-900 mt-10">
         <Footer />
       </div>
-    </div>
+
+    </div> */}
+    </>
   );
 };
 

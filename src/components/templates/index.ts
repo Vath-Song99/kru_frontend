@@ -1,4 +1,5 @@
 import { Homepage } from "./Homepage";
-import { TeacherList } from "./TeacherList"; 
+import { TeacherList } from "./TeacherList";
+import { About } from "./About";
 
-export {Homepage , TeacherList}
+export { Homepage, TeacherList, About };

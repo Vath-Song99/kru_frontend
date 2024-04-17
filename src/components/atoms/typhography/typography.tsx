@@ -10,6 +10,7 @@ interface TypographyProps {
   variant?: "normal" | "semibold" | "bold" | "extrabold" | "2-extrabold";
   colorscheme?: "primary" | "secondary" | "tb" | "white"; // Corrected prop name
   tags?: "h1" | "p";
+  id?: string;
 }
 
 const Typography: React.FC<TypographyProps> = ({
@@ -20,6 +21,7 @@ const Typography: React.FC<TypographyProps> = ({
   variant = "normal",
   colorscheme = "", // Corrected prop name
   tags = "p",
+  id,
 }) => {
   const typographyAlign = (align: string) => {
     switch (align) {
@@ -105,6 +107,7 @@ const Typography: React.FC<TypographyProps> = ({
       ) : (
         <p
           className={`${typographyColorStyles} ${typographyVariantStyles} ${typographyFontSizeStyles} ${typographyAlignStyles} ${className}`}
+          id={ `${id}`}
         >
           {children}
         </p>

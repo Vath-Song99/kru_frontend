@@ -6,10 +6,11 @@ interface TypographyProps {
   children: ReactNode;
   className?: string;
   align?: "left" | "center" | "right" | "justify";
-  fontSize?: "base" | "sm" | "md" | "lg" | "xl" |  "2xl" | "3xl" | "4xl";
+  fontSize?: "base" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl";
   variant?: "normal" | "semibold" | "bold" | "extrabold" | "2-extrabold";
   colorscheme?: "primary" | "secondary" | "tb" | "white"; // Corrected prop name
   tags?: "h1" | "p";
+  id?: string;
 }
 
 const Typography: React.FC<TypographyProps> = ({
@@ -20,6 +21,7 @@ const Typography: React.FC<TypographyProps> = ({
   variant = "normal",
   colorscheme = "", // Corrected prop name
   tags = "p",
+  id,
 }) => {
   const typographyAlign = (align: string) => {
     switch (align) {
@@ -70,7 +72,7 @@ const Typography: React.FC<TypographyProps> = ({
       case "extrabold":
         return "font-extrabold";
       case "2-extrabold":
-        return "font-black"
+        return "font-black";
       default:
         return "font-normal";
     }
@@ -98,14 +100,13 @@ const Typography: React.FC<TypographyProps> = ({
     <>
       {tags === "h1" ? (
         <h1
-          className={`${typographyColorStyles} ${typographyVariantStyles} ${typographyFontSizeStyles} ${typographyAlignStyles} ${className}`}
-        >
+          className={`${typographyColorStyles} ${typographyVariantStyles} ${typographyFontSizeStyles} ${typographyAlignStyles} ${className}`}>
           {children}
         </h1>
       ) : (
         <p
           className={`${typographyColorStyles} ${typographyVariantStyles} ${typographyFontSizeStyles} ${typographyAlignStyles} ${className}`}
-        >
+          id={`${id}`}>
           {children}
         </p>
       )}

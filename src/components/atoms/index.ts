@@ -1,10 +1,9 @@
+export * from "./button";
 
+export * from "./input";
 
-export * from "./button"
+export * from "./dropdown";
 
-export * from "./input"
+export * from "./typhography";
 
-export * from "./dropdown"
-
-export * from "./typhography"
-
+export * from "./icons";

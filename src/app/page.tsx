@@ -5,6 +5,7 @@ import { Homepage } from "@/components";
 import React, { useState } from "react";
 import { Modal } from "@/components";
 import { Navbar } from "@/components";
+import SettingProfile from "@/components/templates/SettingProfile";
 
 const Page = () => {
   const [isShowModal, setIsShowModal] = useState<boolean>(false);
@@ -18,7 +19,7 @@ const Page = () => {
                 <Navbar isShowModal={isShowModal}  setIsShowModal={setIsShowModal}/>
                 {/* <Modal/> */}
            </div>         
-          <Homepage/>
+           <SettingProfile/>
     </div>
   );
 };

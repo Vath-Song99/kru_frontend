@@ -34,11 +34,11 @@ const TeachersInformation = () => {
       <div className="w-[80%] h-auto flex flex-col ">
         <div className="flex flex-col gap-2  sm:justify-start sm:flex-row  md:justify-between ">
           {/* this handle card is resposive */}
-          <div className=" flex flex-col  min-w-[320px] h-[780px]  sm:min-w-[290px] sm:h-[820px] md:min-w-[400px] md:h-[500px] sm:bg-cyan-400 bg-red-400 md:bg-orange-500 ">
+          <div className=" flex flex-col  min-w-[320px] h-[780px]  sm:min-w-[290px] sm:h-[820px] md:min-w-[400px] md:h-[500px]  ">
             {/* handel with image card profile */}
             <div className="flex flex-col md:flex-row">
               {/* this image  */}
-              <div className="flex flex-col md:flex-row relative sm:justify-center md:justify-start md:bg-amber-200">
+              <div className="flex flex-col md:flex-row relative sm:justify-center md:justify-start">
                 <div className="flex flex-col md:px-[20px]">
                   <div className="flex justify-center">
                     <svg
@@ -417,9 +417,8 @@ const TeachersInformation = () => {
           </div>
           {/* end  this handle card  */}
         </div>
-        <div className="flex flex-col py-[10px] border rounded-sm">
+        <div className="flex flex-col mt-[8px] border rounded-sm">
           <div className="flex justify-center py-[20px]">Time Available </div>
-          <div className="">
             {/* start handle table  */}
             <div className="relative overflow-x-auto">
               <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
@@ -457,7 +456,7 @@ const TeachersInformation = () => {
                     <td className="px-6 py-4">8:00 - 9:00 AM</td>
                     <td className="px-6 py-4">12:00 - 1:00 AM</td>
                     <td className="px-6 py-4">7:00 - 8:00 AM</td>
-                    <td className="px-6 py-4">add time +</td>
+                    <td className="px-6 py-4"><button type="button">add time +</button></td>
                     <td className="px-6 py-4">7:00 - 8:00 AM</td>
                   </tr>
                   <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
@@ -465,11 +464,11 @@ const TeachersInformation = () => {
                       7:00 - 8:00 AM
                     </td>
                     <td className="px-6 py-4">12:00 - 9:00 AM</td>
-                    <td className="px-6 py-4">Add time +</td>
+                    <td className="px-6 py-4"><button type="button">add time +</button></td>
                     <td className="px-6 py-4">12:00 - 1:00 AM</td>
-                    <td className="px-6 py-4">Add time +</td>
-                    <td className="px-6 py-4">Add time +</td>
-                    <td className="px-6 py-4">Add time +</td>
+                    <td className="px-6 py-4"><button type="button">add time +</button></td>
+                    <td className="px-6 py-4"><button type="button">add time +</button></td>
+                    <td className="px-6 py-4"><button type="button">add time +</button></td>
                   </tr>
                   <tr className="bg-white dark:bg-gray-800">
                     <td
@@ -477,10 +476,10 @@ const TeachersInformation = () => {
                       className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                       12:00 - 1:00 AM
                     </td>
-                    <td className="px-6 py-4">Add time +</td>
+                    <td className="px-6 py-4 bg-inherit"><button type="button">add time +</button></td>
                     <td className="px-6 py-4"></td>
                     <td className="px-6 py-4"></td>
-                    <td className="px-6 py-4"> 12:00 - 1:00 AM</td>
+                    <td className="px-6 py-4 "> 12:00 - 1:00  AM</td>
                     <td className="px-6 py-4"> 12:00 - 1:00 AM</td>
                     <td className="px-6 py-4"> </td>
                   </tr>
@@ -488,7 +487,6 @@ const TeachersInformation = () => {
               </table>
             </div>
             {/* end   handle table  */}
-          </div>
         </div>
       </div>
     </div>

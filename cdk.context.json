@@ -2,5 +2,9 @@
   "hosted-zone:account=471112831715:domainName=learnwithkru.com:region=us-east-1": {
     "Id": "/hostedzone/Z04936393FBJB0JB5PGN5",
     "Name": "learnwithkru.com."
+  },
+  "hosted-zone:account=767398095034:domainName=learnwithkru.com:region=us-east-1": {
+    "Id": "/hostedzone/Z08319892YZ76FHLTESKL",
+    "Name": "learnwithkru.com."
   }
 }

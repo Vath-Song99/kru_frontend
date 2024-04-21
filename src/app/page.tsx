@@ -2,6 +2,7 @@
 "use client";
 
 import { Footer, Homepage, Navbar } from "@/components";
+import ForgetPassword from "@/components/templates/ForgetPassword";
 import React, { useState } from "react";
 
 const Page = () => {
@@ -12,9 +13,7 @@ const Page = () => {
       <div className="w-full flex justify-center items-center">
         <Navbar setIsShowModal={setIsShowModal} isShowModal={isShowModal} />
       </div>
-
       <Homepage />
-
       <div className="w-full flex justify-center items-start bg-gray-900 mt-10">
         <Footer />
       </div>

@@ -1,5 +1,7 @@
+"use client";
 import React from "react";
 import { Image } from "@nextui-org/react";
+
 import { Button, InputForm, Typography } from "@/components/atoms";
 
 const SignupToBecomeTeacher = () => {
@@ -16,8 +18,7 @@ const SignupToBecomeTeacher = () => {
 
         <form
           className="w-full  lg:w-full  lg:grid  lg:grid-flow-row  lg:gap-4"
-          action=""
-        >
+          action="">
           <div>
             <Typography align="left">Email</Typography>
             <InputForm
@@ -40,8 +41,7 @@ const SignupToBecomeTeacher = () => {
             colorScheme="primary"
             fontColor="white"
             fontSize="lg"
-            className="py-[8px] md:py-2 w-full mt-4 text-sm"
-          >
+            className="py-[8px] md:py-2 w-full mt-4 text-sm">
             Signup
           </Button>
         </form>
@@ -61,8 +61,7 @@ const SignupToBecomeTeacher = () => {
                 height="20"
                 viewBox="0 0 25 24"
                 fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+                xmlns="http://www.w3.org/2000/svg">
                 <g clipPath="url(#clip0_1429_3262)">
                   <path
                     d="M12.5 9.81836V14.4656H18.9582C18.6746 15.9602 17.8236 17.2257 16.5472 18.0766L20.4417 21.0984C22.7108 19.0039 24.0199 15.9276 24.0199 12.273C24.0199 11.4221 23.9436 10.6039 23.8017 9.81849L12.5 9.81836Z"
@@ -95,8 +94,7 @@ const SignupToBecomeTeacher = () => {
             }
             colorScheme="tertiary"
             fontColor="black"
-            fontSize="lg"
-          >
+            fontSize="lg">
             Continue with Google
           </Button>
           <Button
@@ -108,9 +106,8 @@ const SignupToBecomeTeacher = () => {
                 height="20"
                 viewBox="0 0 25 24"
                 fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g clip-path="url(#clip0_1429_3265)">
+                xmlns="http://www.w3.org/2000/svg">
+                <g clipPath="url(#clip0_1429_3265)">
                   <path
                     d="M24.5 12C24.5 5.37264 19.1274 0 12.5 0C5.87264 0 0.5 5.37264 0.5 12C0.5 17.6275 4.37456 22.3498 9.60128 23.6467V15.6672H7.12688V12H9.60128V10.4198C9.60128 6.33552 11.4498 4.4424 15.4597 4.4424C16.22 4.4424 17.5318 4.59168 18.0685 4.74048V8.06448C17.7853 8.03472 17.2933 8.01984 16.6822 8.01984C14.7147 8.01984 13.9544 8.76528 13.9544 10.703V12H17.8741L17.2006 15.6672H13.9544V23.9122C19.8963 23.1946 24.5005 18.1354 24.5005 12H24.5Z"
                     fill="#0866FF"
@@ -134,8 +131,7 @@ const SignupToBecomeTeacher = () => {
             }
             colorScheme="tertiary"
             fontColor="black"
-            fontSize="lg"
-          >
+            fontSize="lg">
             Continue with Facebook
           </Button>
         </div>
@@ -146,8 +142,7 @@ const SignupToBecomeTeacher = () => {
         src="/benner/teacher-signup.png"
         alt="sign up to become a teacher"
         width={500}
-        height={500}
-      ></Image>
+        height={500}></Image>
     </div>
   );
 };

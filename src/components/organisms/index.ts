@@ -1,19 +1,19 @@
+export * from "./footer";
 
+export * from "./navbar";
 
-export * from "./footer"
+export * from "./banner";
 
-export * from "./navbar"
+export * from "./homepage-slider";
 
-export * from "./banner"
+export * from "./top-teachers-list";
 
-export * from "./homepage-slider"
+export * from "./home-benner";
 
-export * from "./top-teachers-list"
+export * from "./filter-teachers";
 
-export * from "./home-benner"
+export * from "./teacher-list-cards";
 
-export * from "./filter-teachers"
+export * from "./auth";
 
-export * from "./teacher-list-cards"
-
-export * from "./auth"
+export * from "./teachers-information";

@@ -16,7 +16,7 @@ const TopTeachersList:React.FC = ({children}:{children?:React.ReactNode}) => {
         />
          <ProfileCard
         className="mt-4 p-2"
-        imageUrl="/Profiles/EnglishTeacher.jpg"
+        imageUrl="/Profiles/maleteacher.jpg"
         username= "Khiev Navin"
         subjectname="Mathematics Teacher"
         rateStar={55}

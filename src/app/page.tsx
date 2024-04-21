@@ -8,9 +8,8 @@ import { Modal } from "@/components";
 import { Navbar } from "@/components";
 import SettingProfile from "@/components/templates/SettingProfile";
 
-
 const Page = () => {
-  const [isShowModal, setIsShowModal] = useState<boolean>(false);
+  // const [isShowModal, setIsShowModal] = useState<boolean>(false);
 
   return (
 
@@ -19,11 +18,10 @@ const Page = () => {
         <Navbar setIsShowModal={setIsShowModal} isShowModal={isShowModal} />
       </div>
       <ForgetPassword />
+
       <div className="w-full flex justify-center items-start bg-gray-900 mt-10">
         <Footer />
       </div>
-
-    </div>
   );
 };
 

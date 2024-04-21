@@ -6,14 +6,12 @@ import {
   TopTeachersList,
 } from "@/components/organisms";
 import { SearchInput, ShowEasyText, KruVision } from "@/components/molecules";
-import { Modal } from "@/components/molecules";
 
 const Homepage: React.FC = () => {
   return (
     <div className="max-w-full ">
       {/* Homepage Benner */}
 
-     
       <HomepageSlider />
 
       {/* Home-Benner */}

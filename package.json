@@ -11,7 +11,10 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@nextui-org/react": "^2.2.9",
+
+    "@nextui-org/image": "^2.0.26",
+    "@nextui-org/react": "^2.3.3",
+
     "next": "14.1.0",
     "react": "^18",
     "react-dom": "^18"

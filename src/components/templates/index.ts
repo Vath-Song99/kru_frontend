@@ -1,5 +1,8 @@
-export * from "./homepage"
+import { Homepage } from "./Homepage";
+import { TeacherList } from "./TeacherList";
+import { About } from "./About";
+import TeachersProfile from "./TeachersProfile";
 
-export * from "./teacher-list"
-
+export { Homepage, TeacherList, About ,TeachersProfile};
 export * from "./createClass"
+

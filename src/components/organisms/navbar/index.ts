@@ -1,3 +1,4 @@
 import { Navbar } from "./Navbar";
+import { TeacherNavbar } from "./TeacherNavbar";
 
-export {Navbar}
+export { Navbar, TeacherNavbar };

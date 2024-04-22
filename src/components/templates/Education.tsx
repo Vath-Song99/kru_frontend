@@ -1,13 +1,4 @@
 import React from "react";
-<<<<<<< HEAD
-
-const Education = () => {
-    return (
-        <>
-        </>
-    );
-}
-=======
 import { TeacherNavbarComponent } from "../molecules";
 import { BecomeTeacherForm, TeacherNavbar } from "../organisms";
 import { Typography } from "../atoms";
@@ -111,4 +102,3 @@ const Education = () => {
 };
 
 export { Education };
->>>>>>> b5dbd95d0bf975d33caec5c993551054ca3be8f8

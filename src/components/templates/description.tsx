@@ -1,18 +1,9 @@
 import React from "react";
-<<<<<<< HEAD
-
-const Education = () => {
-    return (
-        <>
-        </>
-    );
-}
-=======
 import { TeacherNavbarComponent } from "../molecules";
-import { BecomeTeacherForm, TeacherNavbar } from "../organisms";
+import { DescriptionForm, TeacherNavbar } from "../organisms";
 import { Typography } from "../atoms";
 
-const Education = () => {
+const Description = () => {
   const inputFormsArray = [
     {
       type: "text",
@@ -71,8 +62,22 @@ const Education = () => {
           </TeacherNavbarComponent>
 
           <TeacherNavbarComponent>
-            <div className="w-[35px] h-[36px] bg-black rounded-md flex justify-center items-center text-white">
-              2
+            <div className="w-[35px] h-[36px] bg-green-600 rounded-md flex justify-center items-center">
+              <svg
+                width="25"
+                height="24"
+                viewBox="0 0 25 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5 13.0278L10.6 19.25L19 5.25"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
             </div>
             <Typography>Education</Typography>
           </TeacherNavbarComponent>
@@ -99,16 +104,15 @@ const Education = () => {
       </div>
 
       <div className="w-full flex justify-center pt-10">
-        <BecomeTeacherForm
+        <DescriptionForm
           buttonTitle="next"
-          description="Do you have teaching certificates? If so, describe them to enhance your profile credibility and get more students."
+          description="This info will go on your public profile. Write it in the language you’ll be teaching"
           inputForms={inputFormsArray}
-          title="Teaching Certification"
+          title="Profile Description"
         />
       </div>
     </div>
   );
 };
 
-export { Education };
->>>>>>> b5dbd95d0bf975d33caec5c993551054ca3be8f8
+export { Description };

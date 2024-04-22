@@ -1,14 +1,12 @@
-import { Signup } from '@/components'
-import React from 'react'
+import { Signup } from "@/components";
+import React from "react";
 
 const page = () => {
   return (
     <React.Fragment>
-        
-        <Signup/>
-
+      <Signup />
     </React.Fragment>
-  )
-}
+  );
+};
 
-export default page
+export default page;

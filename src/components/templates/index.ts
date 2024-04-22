@@ -5,7 +5,9 @@ import TeachersProfile from "./TeachersProfile";
 import SettingProfile from "./SettingProfile";
 import { CreateClass } from "./CreateClass";
 import { Education } from "./Education";
-import { Description } from "./description";
+import { Description } from "./Description";
+import { TimeAvailable } from "./TimeAvailable";
+import { Pricing } from "./Pricing";
 
 export {
   Homepage,
@@ -16,4 +18,6 @@ export {
   CreateClass,
   Education,
   Description,
+  TimeAvailable,
+  Pricing,
 };

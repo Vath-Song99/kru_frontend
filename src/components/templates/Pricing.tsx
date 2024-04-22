@@ -1,39 +1,15 @@
 import React from "react";
 import { TeacherNavbarComponent } from "../molecules";
-import { DescriptionForm, TeacherNavbar } from "../organisms";
+import { BecomeTeacherForm, TeacherNavbar } from "../organisms";
 import { Typography } from "../atoms";
 
-const Description = () => {
+const Pricing = () => {
   const inputFormsArray = [
     {
       type: "text",
       borderColor: "black",
       borderRadius: "md",
-      placeholder: "University",
-    },
-    {
-      type: "text",
-      borderColor: "black",
-      borderRadius: "md",
-      placeholder: "Year of experience",
-    },
-    {
-      type: "text",
-      borderColor: "black",
-      borderRadius: "md",
-      placeholder: "Specialization",
-    },
-    {
-      type: "text",
-      borderColor: "black",
-      borderRadius: "md",
-      placeholder: "Type of Degree",
-    },
-    {
-      type: "file",
-      borderColor: "black",
-      borderRadius: "md",
-      placeholder: "Type of Degree",
+      placeholder: "set your pricing",
     },
   ];
   return (
@@ -83,19 +59,47 @@ const Description = () => {
           </TeacherNavbarComponent>
 
           <TeacherNavbarComponent>
-            <div className="w-[35px] h-[36px] bg-black rounded-md flex justify-center items-center text-white">
-              3
+            <div className="w-[35px] h-[36px] bg-green-600 rounded-md flex justify-center items-center">
+              <svg
+                width="25"
+                height="24"
+                viewBox="0 0 25 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5 13.0278L10.6 19.25L19 5.25"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
             </div>
             <Typography>Description</Typography>
           </TeacherNavbarComponent>
           <TeacherNavbarComponent>
-            <div className="w-[35px] h-[36px] bg-black rounded-md flex justify-center items-center text-white">
-              4
+            <div className="w-[35px] h-[36px] bg-green-600 rounded-md flex justify-center items-center">
+              <svg
+                width="25"
+                height="24"
+                viewBox="0 0 25 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5 13.0278L10.6 19.25L19 5.25"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
             </div>
             <Typography>Time Available</Typography>
           </TeacherNavbarComponent>
           <TeacherNavbarComponent icon={false}>
-            <div className="w-[35px] h-[36px] bg-black rounded-md flex justify-center items-center text-white">
+            <div className="w-[35px] h-[36px] bg-black rounded-md text-white flex justify-center items-center">
               5
             </div>
             <Typography>Pricing</Typography>
@@ -104,15 +108,15 @@ const Description = () => {
       </div>
 
       <div className="w-full flex justify-center pt-10">
-        <DescriptionForm
-          buttonTitle="next"
-          description="This info will go on your public profile. Write it in the language you’ll be teaching"
+        <BecomeTeacherForm
+          buttonTitle="Submit"
+          description="fill your price per hour. it’s will be show in the profile’s list"
           inputForms={inputFormsArray}
-          title="Profile Description"
+          title="Pricing per month"
         />
       </div>
     </div>
   );
 };
 
-export { Description };
+export { Pricing };

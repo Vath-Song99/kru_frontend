@@ -1,13 +1,13 @@
 import { Button, InputForm, Typography } from "@/components/atoms";
 import React from "react";
-import { BecomeTeacherFormType } from "./@types";
+import { BecomeTeacherFormTypes } from "./@types";
 
 const BecomeTeacherForm = ({
   title,
   description,
   inputForms,
   buttonTitle,
-}: BecomeTeacherFormType) => {
+}: BecomeTeacherFormTypes) => {
   return (
     <div className="w-[464px] h-auto ">
       <Typography align="left" fontSize="lg" variant="bold" className="py-2">
@@ -16,12 +16,10 @@ const BecomeTeacherForm = ({
       <Typography align="left" fontSize="sm" className="py-2">
         {description}
       </Typography>
+
       <div className="w-full grid grid-flow-row gap-2 py-2">
         {inputForms.map((inputForm: any, index: number) => (
           <InputForm
-            type="text"
-            borderColor="black"
-            borderRadius="md"
             key={index}
             {...inputForm}
             className="outline-none w-full"
@@ -42,4 +40,4 @@ const BecomeTeacherForm = ({
   );
 };
 
-export default BecomeTeacherForm;
+export { BecomeTeacherForm };

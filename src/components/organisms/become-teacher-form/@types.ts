@@ -5,9 +5,14 @@ interface InputFormsTypes {
   borderRadius?: string;
 }
 
-export interface BecomeTeacherFormType {
+export interface BecomeTeacherFormTypes {
   title: string;
   description: string;
-  inputForms: InputFormsTypes[];
+  inputForms?: InputFormsTypes[] | undefined;
   buttonTitle: string;
+}
+
+export interface TimeAvailableFormTypes extends BecomeTeacherFormTypes {
+  setTimeAvailable: string;
+  setTimeDescription: string;
 }

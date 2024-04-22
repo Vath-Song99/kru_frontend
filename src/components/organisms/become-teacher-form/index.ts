@@ -1,3 +1,5 @@
-import BecomeTeacherForm from "./BecomeTeacherForm";
+import { BecomeTeacherForm } from "./BecomeTeacherForm";
+import { TimeAvailableForm } from "./TimeAvailableForm";
+import { DescriptionForm } from "./DescriptionForm";
 
-export default BecomeTeacherForm;
+export { BecomeTeacherForm, TimeAvailableForm, DescriptionForm };

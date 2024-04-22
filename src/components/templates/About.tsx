@@ -1,8 +1,7 @@
 import React from "react";
 import { TeacherNavbarComponent } from "../molecules";
-import { TeacherNavbar } from "../organisms";
-import { Button, Typography } from "../atoms";
-import BecomeTeacherForm from "../organisms/become-teacher-form";
+import { BecomeTeacherForm, TeacherNavbar } from "../organisms";
+import { Typography } from "../atoms";
 
 const About = () => {
   const inputFormsArray = [
@@ -24,50 +23,35 @@ const About = () => {
       <div className="w-full flex justify-center items-center">
         <TeacherNavbar className="py-3 ">
           <TeacherNavbarComponent>
-            <Button
-              className="w-[35px] h-[36px] bg-black rounded-md"
-              fontSize="md"
-            >
+            <div className="w-[35px] h-[36px] bg-black rounded-md text-white flex justify-center items-center">
               1
-            </Button>
+            </div>
             <Typography>about</Typography>
           </TeacherNavbarComponent>
 
           <TeacherNavbarComponent>
-            <Button
-              className="w-[35px] h-[36px] bg-black rounded-md"
-              fontSize="md"
-            >
+            <div className="w-[35px] h-[36px] bg-black rounded-md text-white flex justify-center items-center">
               2
-            </Button>
+            </div>
             <Typography>Education</Typography>
           </TeacherNavbarComponent>
 
           <TeacherNavbarComponent>
-            <Button
-              className="w-[35px] h-[36px] bg-black rounded-md"
-              fontSize="md"
-            >
+            <div className="w-[35px] h-[36px] bg-black rounded-md text-white flex justify-center items-center">
               3
-            </Button>
+            </div>
             <Typography>Description</Typography>
           </TeacherNavbarComponent>
           <TeacherNavbarComponent>
-            <Button
-              className="w-[35px] h-[36px] bg-black rounded-md"
-              fontSize="md"
-            >
+            <div className="w-[35px] h-[36px] bg-black rounded-md text-white flex justify-center items-center">
               4
-            </Button>
+            </div>
             <Typography>Time Available</Typography>
           </TeacherNavbarComponent>
           <TeacherNavbarComponent icon={false}>
-            <Button
-              className="w-[35px] h-[36px] bg-black rounded-md"
-              fontSize="md"
-            >
+            <div className="w-[35px] h-[36px] bg-black rounded-md text-white flex justify-center items-center">
               5
-            </Button>
+            </div>
             <Typography>Pricing</Typography>
           </TeacherNavbarComponent>
         </TeacherNavbar>

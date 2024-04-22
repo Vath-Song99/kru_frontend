@@ -2,6 +2,7 @@
 import React from "react";
 import { Button } from "../..";
 import Image from "next/image";
+import Link from "next/link";
 const Login = () => {
     return (
         <div className=" w-full h-[100vh] flex justify-center items-center ">
@@ -9,6 +10,9 @@ const Login = () => {
                 <div className="w-1/2 flex items-center justify-center">
                     <div className="">
                         <h1 className="text-3xl tracking-wide font-bold pb-5">Login with Kru</h1>
+                        <h1 className="text-xs tracking-wide pb-5 underline  "> Don't have an account? <Link href={"/signup"} className="text-[#7B2CBF] hover:text-[gray]"> sign up
+                        </Link></h1>
+                        
                         <div className="grid gap-3"> 
                             <Button className="flex items-center justify-evenly w-[300px] h-[50px]  bg-[#f3f3f3] rounded-md hover:bg-[#d2d0d0]">
                                 <svg

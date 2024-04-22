@@ -61,7 +61,7 @@ const Navbar: React.FC<NavbarProps> = ({
           <Link className="text-[#455445] text-xs md:text-sm hover:underline" href={"teacher-list"}>
             Find teacher
           </Link>
-        </div>
+        </div>  
       </div>
 
       {/* right */}

@@ -2,6 +2,7 @@ import React from "react";
 import { Typography } from "@/components";
 import Image from "next/image";
 import { Button } from "@/components";
+import Link from "next/link";
 
 const HomepageSlider = ({ className }: { className?: string }) => {
   return (
@@ -46,11 +47,11 @@ const HomepageSlider = ({ className }: { className?: string }) => {
                 fontSize="sm"
                 radius="md"
               >
-                Get Started
+              <Link href={"teacher-list"}>Get Started</Link>
               </Button>
             </div>
           </div>
-        </div>
+        </div>  
       </div>
     </div>
   );

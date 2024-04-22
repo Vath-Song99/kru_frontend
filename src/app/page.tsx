@@ -2,7 +2,6 @@
 "use client";
 
 import { Footer, Homepage, Navbar } from "@/components";
-import ForgetPassword from "@/components/templates/ForgetPassword";
 import React, { useState } from "react";
 
 const Page = () => {

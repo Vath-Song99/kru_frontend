@@ -1,5 +1,5 @@
 "use client";
-import { About, Navbar } from "@/components";
+import { About, Description, Navbar } from "@/components";
 import React, { useState } from "react";
 
 const page = () => {
@@ -11,7 +11,7 @@ const page = () => {
       <div className="w-full flex justify-center items-center">
         <Navbar setIsShowModal={setIsShowModal} isShowModal={isShowModal} />
       </div>
-      <About />
+      <Description />
     </div>
   );
 };

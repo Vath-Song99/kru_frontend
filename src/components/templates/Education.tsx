@@ -4,19 +4,37 @@ import { TeacherNavbar } from "../organisms";
 import { Button, Typography } from "../atoms";
 import BecomeTeacherForm from "../organisms/become-teacher-form";
 
-const About = () => {
+const Education = () => {
   const inputFormsArray = [
     {
       type: "text",
       borderColor: "black",
       borderRadius: "md",
-      placeholder: "phone number",
+      placeholder: "University",
     },
     {
       type: "text",
       borderColor: "black",
       borderRadius: "md",
-      placeholder: "subject",
+      placeholder: "Year of experience",
+    },
+    {
+      type: "text",
+      borderColor: "black",
+      borderRadius: "md",
+      placeholder: "Specialization",
+    },
+    {
+      type: "text",
+      borderColor: "black",
+      borderRadius: "md",
+      placeholder: "Type of Degree",
+    },
+    {
+      type: "file",
+      borderColor: "black",
+      borderRadius: "md",
+      placeholder: "Type of Degree",
     },
   ];
   return (
@@ -76,13 +94,13 @@ const About = () => {
       <div className="w-full flex justify-center pt-10">
         <BecomeTeacherForm
           buttonTitle="next"
-          description="Start creating your public tutor profile. Your progress will be automatically saved as you complete each section. You can return at any time to finish your registration"
+          description="Do you have teaching certificates? If so, describe them to enhance your profile credibility and get more students."
           inputForms={inputFormsArray}
-          title="About"
+          title="Teaching Certification"
         />
       </div>
     </div>
   );
 };
 
-export { About };
+export { Education };

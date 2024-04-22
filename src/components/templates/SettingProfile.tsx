@@ -1,3 +1,4 @@
+"use client";
 
 import React, { ReactNode, useState } from "react";
 import Image from "next/image";
@@ -35,8 +36,13 @@ const SettingProfile = () => {
   return (
     <div className="w-[95%] sm:w-full md:w-[90%] lg:w-[90%] xl:w-[80%] h-150 mx-auto flex sm:flex-col md: flex-col lg:flex-row xl:flex-row">
       {/* Left profile */}
-      <div className="flex flex-col pb-10 gap-y-5 items-center md:items-center md:justify-center bg-gray-100 lg:w-[40%] xl:w-[40%] w-full md:w-full rounded-md">
-        <Typography fontSize="md" className="md:mt-10 mt-10">
+      <div className="flex flex-col pb-10 gap-y-5 items-center md:items-center md:justify-center bg-[#F8F8F8] lg:w-[40%] xl:w-[40%] w-full md:w-full rounded-md">
+        <Typography
+          fontSize="lg"
+          variant="bold"
+          colorscheme="tb"
+          className="md:mt-10 mt-10"
+        >
           Ny Sreyneang
         </Typography>
         <div className="flex w-[160px] h-[160px] items-center justify-end rounded-full overflow-hidden">
@@ -168,7 +174,6 @@ const SettingProfile = () => {
         >
           Update Info
         </Button>
-
       </div>
     </div>
   );

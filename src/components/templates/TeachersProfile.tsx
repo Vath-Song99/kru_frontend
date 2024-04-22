@@ -1,13 +1,13 @@
-import { TeachersInformation } from '@/components'
-import React from 'react'
+import { TeachersInformation } from "@/components";
+import React from "react";
 
-function TeachersProfile() {
+const TeachersProfile = () => {
   return (
-   <div className="max-w-full ">
+    <div className="max-w-full ">
       {/* Homepage Benner */}
-       <TeachersInformation />
+      <TeachersInformation />
     </div>
-  )
-}
+  );
+};
 
-export default TeachersProfile
+export default TeachersProfile;

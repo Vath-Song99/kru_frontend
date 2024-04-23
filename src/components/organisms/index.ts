@@ -16,6 +16,6 @@ export * from "./teacher-list-cards";
 
 export * from "./auth";
 
-export * from "./teachers-information";
+export * from "./teacher-detail";
 
 export * from "./become-teacher-form";

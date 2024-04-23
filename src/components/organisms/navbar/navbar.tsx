@@ -66,7 +66,7 @@ const Navbar: React.FC<NavbarProps> = ({
           >
             Find teacher
           </Link>
-        </div>
+        </div>  
       </div>
 
       {/* right */}

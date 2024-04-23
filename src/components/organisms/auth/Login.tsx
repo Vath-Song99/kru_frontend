@@ -2,6 +2,7 @@
 import React from "react";
 import { Button } from "../..";
 import Image from "next/image";
+import Link from "next/link";
 const Login = () => {
     return (
         <div className=" w-full h-[100vh] flex justify-center items-center ">
@@ -9,7 +10,10 @@ const Login = () => {
                 <div className="w-1/2 flex items-center justify-center">
                     <div className="">
                         <h1 className="text-3xl tracking-wide font-bold pb-5">Login with Kru</h1>
-                        <div className="grid gap-3"> 
+                        <h1 className="text-xs tracking-wide pb-5 underline  "> Don't have an account? <Link href={"/signup"} className="text-[#7B2CBF] hover:text-[gray]"> sign up
+                        </Link></h1>
+
+                        <div className="grid gap-3">
                             <Button className="flex items-center justify-evenly w-[300px] h-[50px]  bg-[#f3f3f3] rounded-md hover:bg-[#d2d0d0]">
                                 <svg
                                     width="25"
@@ -75,45 +79,45 @@ const Login = () => {
                                 <div className="border-t border-black w-[120px] "></div>
                             </div>
                         </div>
-                       
-                            <form className="grid gap-3">
-                                <div className="flex flex-col">
-                                    <label htmlFor="username">Email</label>
-                                    <input
-                                        type="email"
-                                        placeholder="example@gmail.com"
-                                        className="border border-purple-500 rounded-md w-[300px] h-[40px] pl-3 outline-none text-xs"
-                                    />
-                                </div>
-                                <div className="flex flex-col">
-                                    <label htmlFor="password">Password</label>
-                                    <input
-                                        type="password"
-                                        placeholder="password"
-                                        className="border border-purple-500 rounded-md w-[300px] h-[40px] pl-3 outline-none text-xs"
-                                    />
-                                </div>
-                                <div className=" flex items-center justify-between">
-                                     <div className="flex items-center">
-                                     <input type="checkbox" className="mr-[2px]" />
+
+                        <form className="grid gap-3">
+                            <div className="flex flex-col">
+                                <label htmlFor="username">Email</label>
+                                <input
+                                    type="email"
+                                    placeholder="example@gmail.com"
+                                    className="border border-purple-500 rounded-md w-[300px] h-[40px] pl-3 outline-none text-xs"
+                                />
+                            </div>
+                            <div className="flex flex-col">
+                                <label htmlFor="password">Password</label>
+                                <input
+                                    type="password"
+                                    placeholder="password"
+                                    className="border border-purple-500 rounded-md w-[300px] h-[40px] pl-3 outline-none text-xs"
+                                />
+                            </div>
+                            <div className=" flex items-center justify-between">
+                                <div className="flex items-center">
+                                    <input type="checkbox" className="mr-[2px]" />
                                     <a href="" className="text-sm">Remember me</a>
-                                     </div>
-                                    <a
-                                        className="inline-block align-baseline text-sm hover:underline text-[#455445]"
-                                        href="index"
-                                    >
-                                        Forgot Password?
-                                    </a>
                                 </div>
-                                <Button
-                                    className="hover:bg-violet-700 text-white text-[16px] flex justify-center w-[300px] font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ">
-                                    Log in
-                                </Button>
-                            </form>
+                                <a
+                                    className="inline-block align-baseline text-sm hover:underline text-[#455445]"
+                                    href="forget-password"
+                                >
+                                    Forgot Password?
+                                </a>
+                            </div>
+                            <Button
+                                className="hover:bg-violet-700 text-white text-[16px] flex justify-center w-[300px] font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ">
+                                Log in
+                            </Button>
+                        </form>
                     </div>
                 </div>
                 <div className="flex items-center justify-center ">
-                    <Image  alt="login page" src={"/login.png"} width={400} height={400}></Image>
+                    <Image alt="login page" src={"/login.png"} width={400} height={400}></Image>
                 </div>
             </div>
         </div>

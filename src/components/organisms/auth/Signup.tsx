@@ -183,7 +183,7 @@ const Signup = () => {
                                                 Remember me
                                             </Link>
                                         </div>
-                                        <Link href={"/signup"}
+                                        <Link href={"/login"}
                                             className="inline-block align-baseline text-xs hover:underline   text-[#455445]"
                                             
                                         >

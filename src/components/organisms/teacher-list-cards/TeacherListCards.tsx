@@ -1,6 +1,7 @@
 import { CardTeachers } from "@/components/molecules";
 import React from "react";
 import { CardTeachersTypes } from "@/@types";
+import Link from "next/link";
 
 const TeacherInfo: Array<CardTeachersTypes> = [
   {

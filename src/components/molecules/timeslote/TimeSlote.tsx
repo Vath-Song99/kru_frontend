@@ -4,8 +4,8 @@ import React from "react";
 const TimeSlote = ({ day }: { day: string }) => {
   return (
     <div className="w-full">
-      <div className="flex items-center justify-start gap-2">
-        <InputForm type="checkbox" className="w-[14px]" />
+      <div className="flex items-center  gap-2">
+        <InputForm type="checkbox" className="h-[16px] w-[16px]" />
         <label htmlFor="" className="font-bold">
           {day}
         </label>

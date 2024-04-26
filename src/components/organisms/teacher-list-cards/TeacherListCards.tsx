@@ -1,6 +1,7 @@
 import { CardTeachers } from "@/components/molecules";
 import React from "react";
 import { CardTeachersTypes } from "@/@types";
+import Link from "next/link";
 
 const TeacherInfo: Array<CardTeachersTypes> = [
   {
@@ -74,6 +75,17 @@ const TeacherInfo: Array<CardTeachersTypes> = [
     nameSubject: "Physics",
     teacherName: "Chan Tareak",
     rateStars: 4.3,
+    reviews: 532,
+    students: 120,
+    description:
+      "TEFL | TESOL | IELTS | 6 years' experience I'm Aimee graduated in 2017 from Batangas.",
+    pricing: 50000,
+  },
+  {
+    imageUrl: "Profiles/EnglishTeacher.jpg",
+    nameSubject: "Physics",
+    teacherName: "Chan Tareak",
+    rateStars: 4,
     reviews: 532,
     students: 120,
     description:

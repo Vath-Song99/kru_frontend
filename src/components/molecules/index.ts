@@ -6,3 +6,6 @@ export * from "./modal";
 export * from "./filter-dropdown";
 export * from "./card-teachers";
 export * from "./become-teacher-navbar";
+export * from "./progressStar";
+export * from "./profile";
+export * from "./teaher-info";

@@ -83,9 +83,11 @@ const Signup = () => {
                     </defs>
                   </svg>
 
+
                   <p className="text-sm text-slate-950 ">
                     Continue with Facebook
                   </p>
+
                 </div>
               </Button>
               <div className="w-full flex items-center  justify-evenly">

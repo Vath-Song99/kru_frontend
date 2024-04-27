@@ -20,5 +20,5 @@ export * from "./teacher-detail";
 
 export * from "./become-teacher-form";
 
-
 export * from "./form"
+

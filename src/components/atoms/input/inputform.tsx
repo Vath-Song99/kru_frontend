@@ -104,12 +104,12 @@ const InputForm: React.FC<InputProps> = ({
   const setBorderColor = borderColorControl(borderColor);
   const setPaddingX = paddingXControl(paddingX);
   const setPaddingY = paddingYControl(paddingY);
-  const setBorderRadius = borderRaduisControl (borderRadius);
+  const setBorderRadius = borderRaduisControl(borderRadius);
   const setBorderSize = borderSizeControl(borderSize);
 
   const setClassName = ` ${setBorderSize}  ${setBorderColor} ${setPaddingX} ${setPaddingY} ${setBorderRadius}  ${className}`;
-    // state to storea and set text value
-   const [text,setText] = useState("")
+  // state to storea and set text value
+  const [text, setText] = useState("")
   return (
     <input
       type={type}

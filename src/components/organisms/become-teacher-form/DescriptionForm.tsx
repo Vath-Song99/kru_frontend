@@ -7,6 +7,7 @@ const DescriptionForm = ({
   description,
   inputForms,
   buttonTitle,
+  fileLabel
 }: BecomeTeacherFormTypes) => {
   return (
     <div className="w-[464px] h-auto ">
@@ -56,16 +57,37 @@ const DescriptionForm = ({
             className="outline-none px-2 py-1 text-sm border border-black"
           ></textarea>
         </div>
+        <label htmlFor="fileLabel" className="relative cursor-pointer mt-2 ">
+          please input the video about yourself
+          <InputForm
+            type="file"
+            className="outline-none w-full hover:cursor-pointer border-black rounded  "
+          />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+            className="absolute top-12 transform -translate-y-1/2 right-2 w-6 h-6 pointer-events-none "
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m19.5 8.25-7.5 7.5-7.5-7.5"
+            />
+          </svg>
+        </label>
       </div>
       <div className="w-full flex justify-end items-center">
-        <Button
+        {/* <Button
           colorScheme="primary"
           fontSize="sm"
           fontColor="white"
           className="px-8 py-2"
         >
           {buttonTitle}
-        </Button>
+        </Button> */}
       </div>
     </div>
   );

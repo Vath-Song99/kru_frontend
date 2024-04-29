@@ -1,6 +1,7 @@
 import { Button, InputForm, Typography } from "@/components/atoms";
 import React from "react";
 import { BecomeTeacherFormTypes } from "./@types";
+import Image from "next/image";
 
 const AboutForm = ({
     title,
@@ -19,56 +20,62 @@ const AboutForm = ({
             <Typography align="left" fontSize="sm" className="py-2">
                 {description}
             </Typography>
-            <div className="relative">
+            <div className="flex justify-between">
                 <InputForm
-                    type="number"
-                    placeholder="Phone Number"
-                    className="pl-20 pr-4 py-2 border border-gray-300 rounded-md "
-                />
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400"
+                    className="w-[220px] border border-gray-300 rounded-lg "
+                    type={"text"}
+                    placeholder="First Name"
                 >
-                    <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M12 4v16m8-8H4"
+                </InputForm>
+                <InputForm
+                    className="w-[220px] border border-gray-300 rounded-lg"
+                    type={"text"}
+                    placeholder="Last Name"
+                ></InputForm>
+            </div>
+            <div className="flex mt-3 justify-between">
+                <div className="relative  ">
+                    <InputForm
+                        type="text"
+                        placeholder="Phone Number"
+                        className="border border-gray-300 rounded-lg w-[220px] pl-[70px] "
                     />
-                </svg>
-                <label htmlFor="text" className="absolute left-10 top-1/2 transform -translate-y-1/2 text-gray-400">
-                    855
-                </label>
-            </div>
-            <div className="grid grid-cols-2 gap-4 py-2">
-                {otherItems.map((inputForm: any, index: number) => (
-                    <div key={index} className="flex">
-                        <div className="flex">
-                            <InputForm
-                                {...inputForm}
-                                className="outline-none w-full"
-                            />
-                        </div>
-                    </div>
-                ))}
-            </div>
-            {lastItem && (
-                <div className="flex">
-                    <div className="flex">
-                        <InputForm
-                            paddingX="sm"
-                            borderSize="sm"
-                            paddingY="sm"
-                            type="text"
-                            placeholder=""
-                            {...lastItem}
-                            className="outline-none w-[464px]"
-                        />
-                    </div>
+
+                    <Image
+                        src={"/Logos/cambodiaflag.png"}
+                        alt={"cambodaiflag"}
+                        width={10}
+                        height={10}
+                        className="absolute left-2 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400"
+                    ></Image>
+
+                    <label htmlFor="text" className="absolute left-8 top-1/2 transform -translate-y-1/2 text-black ">
+                        855
+                    </label>
                 </div>
-            )}
+                <div>
+                    <InputForm
+                        type={"text"}
+                        placeholder="Subject"
+                        className="w-[220px] border border-gray-300 rounded-lg "
+                    >
+
+                    </InputForm>
+                </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4 py-2">
+
+            </div>
+            <div>
+                <InputForm
+                    type={"text"}
+                    placeholder="Address"
+                    className="w-[464px] border border-gray-300 rounded-lg "
+                >
+
+                </InputForm>
+            </div>
 
 
         </div>

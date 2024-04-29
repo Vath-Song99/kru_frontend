@@ -16,38 +16,6 @@ const BecomeTeacher = () => {
                 type: "text",
                 borderColor: "black",
                 borderRadius: "md",
-                placeholder: "First name",
-            },
-            {
-                type: "text",
-                borderColor: "black",
-                borderRadius: "md",
-                placeholder: "Last name",
-            },
-            {
-                type: "number",
-                borderColor: "black",
-                borderRadius: "md",
-                placeholder: "Phone Number",
-            },
-            {
-                type: "text",
-                borderColor: "black",
-                borderRadius: "md",
-                placeholder: "Subject",
-            },
-            {
-                type: "text",
-                borderColor: "black",
-                borderRadius: "md",
-                placeholder: "Address",
-            },
-        ],
-        [
-            {
-                type: "text",
-                borderColor: "black",
-                borderRadius: "md",
                 placeholder: "University",
             },
             {
@@ -90,14 +58,13 @@ const BecomeTeacher = () => {
         <AboutForm
             buttonTitle="next"
             description="Start creating your public tutor profile. Your progress will be automatically saved as you complete each section. You can return at any time to finish your registration"
-            inputForms={inputFormsArray[0]}
             title="About"
         />,
         <BecomeTeacherForm
             fileLabel="Please Input Your Degree To verify"
             buttonTitle="next"
             description="Do you have teaching certificates? If so, describe them to enhance your profile credibility and get more students."
-            inputForms={inputFormsArray[1]}
+            inputForms={inputFormsArray[0]}
             title="Education"
             checkboxtext="Don't have a Degree?"
         />,
@@ -111,12 +78,12 @@ const BecomeTeacher = () => {
             description="This is table that you can see all time in a week and you can select what time you available "
             setTimeAvailable="Set your Available"
             setTimeDescription="Availability shows your potential working hours. Students can book lessons at these times."
-            test="Hi there, I’m Abigail, a Ghanaian English tutor with Bachelor in Arts; specifically History and Political Studies. I find great joy in meeting, teaching and learning from people with diverse cultural backgrounds, hence, my ability to adapt to any challenges I find in line with my teaching career.. I am very passionate with assisting both Kids and Adults to confidently achieve their goal of easily communicating and participating in multilingual environments, both at home and professionalHi there, I’m Abigail, a Ghanaian English tutor with Bachelor in Arts; specifically History and Political Studies. I find great joy in meeting, teaching and learning from people with diverse cultural backgrounds, hence, my ability to adapt to any challenges I find in line with my teaching career.. I am very passionate with assisting both Kids and Adults to confidently achieve their goal of easily communicating and participating in multilingual environments, both at home and professionalHi there, I’m Abigail, a Ghanaian English tutor with Bachelor in Arts; specifically History and Political Studies. I find great joy in meeting, teaching and learning from people with diverse cultural backgrounds, hence, my ability to adapt to any challenges I find in line with my teaching career.. I am very passionate with assisting both Kids and Adults to confidently achieve their goal of easily communicating and participating in multilingual environments, both at home and professionalHi there, I’m Abigail, a Ghanaian English tutor with Bachelor in Arts; specifically History and Political Studies. I find great joy in meeting, teaching and learning from people with diverse cultural backgrounds, hence, my ability to adapt to any challenges I find in line with my teaching career.. I am very passionate with assisting both Kids and Adults to confidently achieve their goal of easily communicating and participating in multilingual environments, both at home and professionalHi there, I’m Abigail, a Ghanaian English tutor with Bachelor in Arts; specifically History and Political Studies. I find great joy in meeting, teaching and learning from people with diverse cultural backgrounds, hence, my ability to adapt to any challenges I find in line with my teaching career.. I am very passionate with assisting both Kids and Adults to confidently achieve their goal of easily communicating and participating in multilingual environments, both at home and professional"
+
         />,
         <BecomeTeacherForm
             buttonTitle="Submit"
             description="Fill your price per hour. It will be shown in the profile’s list"
-            inputForms={inputFormsArray[2]}
+            inputForms={inputFormsArray[1]}
             title="Pricing per month"
             checkboxtext="Agree with Termcondition"
         />,
@@ -125,16 +92,12 @@ const BecomeTeacher = () => {
     const nextPage = () => {
         setCurrentPage((prevPage) => Math.min(prevPage + 1, pages.length));
     };
-
-
-
     const handleButtonClick = (pageIndex: any) => {
         setButtonClicked(pageIndex);
     };
 
     return (
         <div className="min-h-screen">
-            {/* Navigation */}
             <div className="">
                 <TeacherNavbar className="py-2">
                     {Array.from({ length: pages.length }, (_, index) => (
@@ -148,11 +111,9 @@ const BecomeTeacher = () => {
                         </TeacherNavbarComponent>
                     ))}
                 </TeacherNavbar>
-                {/* Content */}
                 <div className="w-full flex justify-center pt-10">
                     {pages[currentPage - 1]}
                 </div>
-
                 {/* Pagination controls */}
                 <div className=" flex items-end justify-center mt-5 ">
                     <button className="bg-[#7B2CBF] text-[white] w-[100px] h-[30px] rounded-sm ml-4" onClick={nextPage} disabled={currentPage === pages.length}>Next</button>

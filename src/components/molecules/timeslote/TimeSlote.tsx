@@ -26,9 +26,9 @@ const TimeSlote = ({ day }: { day: string }) => {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-[464px]">
       <div className="flex items-center justify-start gap-2">
-        <InputForm type="checkbox" className="w-[16px]" />
+        <input type="checkbox" className="w-6" />
         <label htmlFor="" className="font-bold">
           {day}
         </label>

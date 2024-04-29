@@ -422,7 +422,7 @@ const TeachersInformation = () => {
           {/* start handle table  */}
           <div className="relative overflow-x-auto">
             <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-              <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+              <thead className="text-xs text-[] uppercase bg-gray-50 dark:bg-white dark:text-gray-400">
                 <tr>
                   <th scope="col" className="px-6 py-3">
                     Monday
@@ -448,7 +448,7 @@ const TeachersInformation = () => {
                 </tr>
               </thead>
               <tbody>
-                <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                <tr className="bg-white border-b ">
                   <td scope="row" className="px-6 py-4 ">
                     7:00 - 8:00 AM
                   </td>
@@ -461,7 +461,7 @@ const TeachersInformation = () => {
                   </td>
                   <td className="px-6 py-4">7:00 - 8:00 AM</td>
                 </tr>
-                <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                <tr className="bg-white border-b ">
                   <td scope="row" className="px-6 py-4 ">
                     7:00 - 8:00 AM
                   </td>

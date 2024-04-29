@@ -21,7 +21,7 @@ const BecomeTeacherForm = ({
       <Typography
         align="left"
         fontSize="sm"
-        className="py-2 flex gap-x-5 rounded-none"
+        className="py-2 flex gap-x-2 rounded-none"
       >
         {<input type="checkbox" />}
         {checkboxtext}

@@ -6,7 +6,7 @@ import { Typography } from "../../atoms";
 
 const BecomeTeacher = () => {
     const [currentPage, setCurrentPage] = useState(1);
-    const [buttonClicked, setButtonClicked] = useState(4);
+    const [buttonClicked, setButtonClicked] = useState(1);
 
     const inputFormsArray = [
         // Define input forms for each page
@@ -82,7 +82,7 @@ const BecomeTeacher = () => {
         />,
         <BecomeTeacherForm
             buttonTitle="Submit"
-            description="Fill your price per hour. It will be shown in the profile’s list"
+            description="Fill your price per Month. It will be shown in the profile’s list"
             inputForms={inputFormsArray[1]}
             title="Pricing per month"
             checkboxtext="Agree with Termcondition"
@@ -98,7 +98,7 @@ const BecomeTeacher = () => {
 
     return (
         <div className="min-h-screen">
-            <div className="">
+            <div className="h-screen">
                 <TeacherNavbar className="py-2">
                     {Array.from({ length: pages.length }, (_, index) => (
                         <TeacherNavbarComponent key={index}>
@@ -115,8 +115,8 @@ const BecomeTeacher = () => {
                     {pages[currentPage - 1]}
                 </div>
                 {/* Pagination controls */}
-                <div className=" flex items-end justify-center mt-5 ">
-                    <button className="bg-[#7B2CBF] text-[white] w-[100px] h-[30px] rounded-sm ml-4" onClick={nextPage} disabled={currentPage === pages.length}>Next</button>
+                <div className=" flex items-end justify-center mt-4">
+                    <button className="bg-[#7B2CBF] text-[white] w-[100px] h-[30px] rounded-sm " onClick={nextPage} disabled={currentPage === pages.length}>Next</button>
                 </div>
             </div>
 

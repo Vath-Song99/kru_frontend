@@ -1,8 +1,8 @@
 "use client"
 import React, { useState } from "react";
-import { TeacherNavbarComponent } from "../../molecules";
-import { BecomeTeacherForm, TeacherNavbar, DescriptionForm, TimeAvailableForm, AboutForm } from "../../organisms";
-import { Typography } from "../../atoms";
+import { TeacherNavbarComponent } from "../molecules";
+import { BecomeTeacherForm, TeacherNavbar, DescriptionForm, TimeAvailableForm, AboutForm } from "../organisms";
+import { Typography } from "../atoms";
 
 const BecomeTeacher = () => {
     const [currentPage, setCurrentPage] = useState(1);

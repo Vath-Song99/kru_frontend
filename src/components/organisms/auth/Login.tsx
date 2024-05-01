@@ -15,11 +15,8 @@ const Login = () => {
             </h1>
             <h1 className="text-xs tracking-wide pb-5 underline  ">
               {" "}
-<<<<<<< HEAD
               don&apos;t have an account?{" "}
-=======
-              Don&apos;t have an account?{" "}
->>>>>>> main
+
               <Link
                 href={"/signup"}
                 className="text-[#7B2CBF] hover:text-[gray]"

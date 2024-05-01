@@ -7,6 +7,7 @@ import {
   TeacherNavbarComponent,
   Typography,
 } from "@/components";
+import { CfnDataQualityJobDefinition } from "aws-cdk-lib/aws-sagemaker";
 
 import React, { useState } from "react";
 

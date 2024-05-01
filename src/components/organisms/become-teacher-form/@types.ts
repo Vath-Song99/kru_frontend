@@ -10,6 +10,9 @@ export interface BecomeTeacherFormTypes {
   description: string;
   inputForms?: InputFormsTypes[] | undefined;
   buttonTitle: string;
+  fileLabel?: string;
+  InputFormhalf?: string;
+  checkboxtext?: string;
 }
 
 export interface TimeAvailableFormTypes extends BecomeTeacherFormTypes {

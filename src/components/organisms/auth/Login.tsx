@@ -15,7 +15,11 @@ const Login = () => {
             </h1>
             <h1 className="text-xs tracking-wide pb-5 underline  ">
               {" "}
+<<<<<<< HEAD
               don&apos;t have an account?{" "}
+=======
+              Don&apos;t have an account?{" "}
+>>>>>>> main
               <Link
                 href={"/signup"}
                 className="text-[#7B2CBF] hover:text-[gray]"
@@ -94,6 +98,42 @@ const Login = () => {
             <div className="grid gap-3">
               <FormLogin />
             </div>
+
+            <form className="grid gap-3">
+              <div className="flex flex-col">
+                <label htmlFor="username">Email</label>
+                <input
+                  type="email"
+                  placeholder="example@gmail.com"
+                  className="border border-purple-500 rounded-md w-[300px] h-[40px] pl-3 outline-none text-xs"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label htmlFor="password">Password</label>
+                <input
+                  type="password"
+                  placeholder="password"
+                  className="border border-purple-500 rounded-md w-[300px] h-[40px] pl-3 outline-none text-xs"
+                />
+              </div>
+              <div className=" flex items-center justify-between">
+                <div className="flex items-center">
+                  <input type="checkbox" className="mr-[2px]" />
+                  <a href="" className="text-sm">
+                    Remember me
+                  </a>
+                </div>
+                <a
+                  className="inline-block align-baseline text-sm hover:underline text-[#455445]"
+                  href="forget-password"
+                >
+                  Forgot Password?
+                </a>
+              </div>
+              <Button className="hover:bg-violet-700 text-white text-[16px] flex justify-center w-[300px] font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ">
+                Log in
+              </Button>
+            </form>
           </div>
         </div>
         <div className="flex items-center justify-center ">

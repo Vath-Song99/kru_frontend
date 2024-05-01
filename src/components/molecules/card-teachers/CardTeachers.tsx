@@ -3,7 +3,11 @@
 import { Button, Typography } from "@/components/atoms";
 import Image from "next/image";
 import Link from "next/link";
+<<<<<<< HEAD
+import React, { useState } from "react";
+=======
 import React from "react";
+>>>>>>> main
 import { CardTeachersTypes } from "@/@types";
 
 const CardTeachers: React.FC<CardTeachersTypes> = ({
@@ -17,12 +21,20 @@ const CardTeachers: React.FC<CardTeachersTypes> = ({
   description,
   pricing,
 }) => {
+  const [isFavorite, setIsFavorite] = useState(true);
+  const handleClick = () => {
+    setIsFavorite(!isFavorite);
+  };
   return (
     <div className="w-full  lg:w-[49%] flex justify-evenly sm:justify-around border-[1.5px] px-1 md:px-0  shadow-sm pt-2 pb-1 md:py-3 hover:border-3 hover:border-[#455445] ">
+<<<<<<< HEAD
+      <div className="flex flex-col items-center gap-1 justify-center md:justify-start w-[100px]  sm:w-[130px] md:w-[140px] lg:w-[120px]">
+=======
       <Link
         href={"teacher-profile"}
         className="flex flex-col items-center gap-1 justify-center md:justify-start w-[100px]  sm:w-[130px] md:w-[140px] lg:w-[120px]"
       >
+>>>>>>> main
         <Image
           src={`/${imageUrl}`}
           width={500}
@@ -34,7 +46,11 @@ const CardTeachers: React.FC<CardTeachersTypes> = ({
         <button className="md:hidden py-1 px-2 text-[8px] bg-[#007C00] text-white hover:bg-white hover:border hover:text-[#455445] hover:border-[#007C00]">
           Send Message
         </button>
+<<<<<<< HEAD
+      </div>
+=======
       </Link>
+>>>>>>> main
 
       <div className="w-[65%] grid  gap-[2px]">
         {/* Name */}
@@ -42,18 +58,38 @@ const CardTeachers: React.FC<CardTeachersTypes> = ({
           <Typography className="font-medium text-md sm:text-xl tracking-normal">
             {teacherName}
           </Typography>
-          <svg
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M12.1 18.55L12 18.65L11.89 18.55C7.14 14.24 4 11.39 4 8.5C4 6.5 5.5 5 7.5 5C9.04 5 10.54 6 11.07 7.36H12.93C13.46 6 14.96 5 16.5 5C18.5 5 20 6.5 20 8.5C20 11.39 16.86 14.24 12.1 18.55ZM16.5 3C14.76 3 13.09 3.81 12 5.08C10.91 3.81 9.24 3 7.5 3C4.42 3 2 5.41 2 8.5C2 12.27 5.4 15.36 10.55 20.03L12 21.35L13.45 20.03C18.6 15.36 22 12.27 22 8.5C22 5.41 19.58 3 16.5 3Z"
-              fill="black"
-            />
-          </svg>
+          <button onClick={handleClick}>
+            {isFavorite ? (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                className="w-4 h-4"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                />
+              </svg>
+            ) : (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                className="w-4 h-4 fill-red-500 stroke-red-500"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                />
+              </svg>
+            )}
+          </button>
 
           <button className="hidden md:block py-1 px-2 text-xs bg-[#007C00] text-white hover:bg-white hover:border hover:text-[#455445] hover:border-[#007C00]">
             Send Message

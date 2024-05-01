@@ -1,6 +1,5 @@
 /* eslint-disable react/jsx-no-duplicate-props */
-"use client";
-
+"use client"
 import { Footer, Homepage, Navbar } from "@/components";
 import React, { useState } from "react";
 

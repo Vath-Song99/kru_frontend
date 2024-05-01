@@ -1,5 +1,5 @@
 import { CardTeachers } from "@/components/molecules";
-import React from "react";
+import React, { useState } from "react";
 import { CardTeachersTypes } from "@/@types";
 
 const TeacherInfo: Array<CardTeachersTypes> = [
@@ -93,10 +93,11 @@ const TeacherInfo: Array<CardTeachersTypes> = [
   },
 ];
 
+
 const TeacherListCards = () => {
   return (
     <div className="w-full flex justify-center">
-      <div className="w-[80%] flex justify-center lg:justify-between   flex-wrap gap-4">
+      <div className="w-[80%] flex justify-center lg:justify-between flex-wrap gap-4">
         {TeacherInfo.map((item, index) => (
           <CardTeachers
             key={index}

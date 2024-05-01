@@ -114,7 +114,11 @@ const InputForm: React.FC<InputProps> = ({
 
   const setClassName = ` ${setBorderSize}  ${setBorderColor} ${setPaddingX} ${setPaddingY} ${setBorderRadius}  ${className}`;
   // state to storea and set text value
+<<<<<<< HEAD
+  const [text, setText] = useState("")
+=======
   const [text, setText] = useState("");
+>>>>>>> main
   return (
     <input
       type={type}

@@ -8,6 +8,7 @@ import { Education } from "./Education";
 import { Description } from "./description";
 import { TimeAvailable } from "./TimeAvailable";
 import { Pricing } from "./Pricing";
+import ResetPassword from "./ResetPassword";
 
 export {
   Homepage,
@@ -20,4 +21,5 @@ export {
   Description,
   TimeAvailable,
   Pricing,
+  ResetPassword,
 };

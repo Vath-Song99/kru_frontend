@@ -3,11 +3,7 @@
 import { Button, Typography } from "@/components/atoms";
 import Image from "next/image";
 import Link from "next/link";
-<<<<<<< HEAD
 import React, { useState } from "react";
-=======
-import React from "react";
->>>>>>> main
 import { CardTeachersTypes } from "@/@types";
 
 const CardTeachers: React.FC<CardTeachersTypes> = ({
@@ -27,14 +23,12 @@ const CardTeachers: React.FC<CardTeachersTypes> = ({
   };
   return (
     <div className="w-full  lg:w-[49%] flex justify-evenly sm:justify-around border-[1.5px] px-1 md:px-0  shadow-sm pt-2 pb-1 md:py-3 hover:border-3 hover:border-[#455445] ">
-<<<<<<< HEAD
+
       <div className="flex flex-col items-center gap-1 justify-center md:justify-start w-[100px]  sm:w-[130px] md:w-[140px] lg:w-[120px]">
-=======
       <Link
         href={"teacher-profile"}
         className="flex flex-col items-center gap-1 justify-center md:justify-start w-[100px]  sm:w-[130px] md:w-[140px] lg:w-[120px]"
       >
->>>>>>> main
         <Image
           src={`/${imageUrl}`}
           width={500}
@@ -46,11 +40,7 @@ const CardTeachers: React.FC<CardTeachersTypes> = ({
         <button className="md:hidden py-1 px-2 text-[8px] bg-[#007C00] text-white hover:bg-white hover:border hover:text-[#455445] hover:border-[#007C00]">
           Send Message
         </button>
-<<<<<<< HEAD
-      </div>
-=======
       </Link>
->>>>>>> main
 
       <div className="w-[65%] grid  gap-[2px]">
         {/* Name */}
@@ -231,6 +221,6 @@ const CardTeachers: React.FC<CardTeachersTypes> = ({
       </div>
     </div>
   );
-};
+</div>)}
 
 export { CardTeachers };

@@ -5,15 +5,11 @@ import React, { FC, ReactNode } from "react";
 interface ButtonProps {
   children: ReactNode;
   className?: string;
-<<<<<<< HEAD
-=======
   type?: "button" | "submit" | "reset";
->>>>>>> main
   colorScheme?: "primary" | "secondary" | "outline" | "tertiary";
   isDisabled?: boolean;
   rightIcon?: React.ReactNode;
   leftIcon?: ReactNode;
-<<<<<<< HEAD
   radius?: "sm" | "md" | "lg" | "xl"
   fontColor?: "primary" | "secondary" | "tertiary" | "white" | "black"
   fontSize?: "sm" | "md" | "lg" | "xl"
@@ -21,14 +17,6 @@ interface ButtonProps {
   height?: number;
   onClick?: any;
   hover?: () => void
-=======
-  radius?: "sm" | "md" | "lg" | "xl";
-  fontColor?: "primary" | "secondary" | "tertiary" | "white" | "black";
-  fontSize?: "sm" | "md" | "lg" | "xl";
-  width?: number;
-  height?: number;
-  hover?: () => void;
->>>>>>> main
 }
 
 const Button: FC<ButtonProps> = ({
@@ -44,12 +32,8 @@ const Button: FC<ButtonProps> = ({
   hover,
   width,
   height,
-<<<<<<< HEAD
   onClick,
-
-=======
   type,
->>>>>>> main
 }) => {
   const getColorSchemeClass = (schemeParam: string) => {
     switch (schemeParam) {
@@ -60,7 +44,7 @@ const Button: FC<ButtonProps> = ({
       case "outline":
         return "text-gray-900 hover:text-white bg-none border border-[#7B2CBF] hover:bg-[#7B2CBF]";
       case "tertiary":
-<<<<<<< HEAD
+
         return "bg-[#F4F4F8] shadow-sm hover:bg-[#C8C8CC]"
 =======
         return "bg-[#F4F4F8] shadow-sm hover:bg-[#C8C8CC]";

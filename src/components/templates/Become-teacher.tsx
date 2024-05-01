@@ -9,6 +9,7 @@ import {
     AboutForm,
 } from "../organisms";
 import { Typography } from "../atoms";
+import Link from "next/link";
 
 const BecomeTeacher = () => {
     const [currentPage, setCurrentPage] = useState(0); // Changed initial page to 0
@@ -96,7 +97,15 @@ const BecomeTeacher = () => {
     ];
 
     const nextPage = () => {
-        setCurrentPage((prevPage) => Math.min(prevPage + 1, pages.length - 1));
+        if (currentPage === pages.length - 1) {
+            // If it's the last page, navigate to the next page using Link
+            // Adjust the 'to' attribute to the path of your next page
+            <Link href="/create-class" className="bg-[#7B2CBF] text-white w-[100px] h-[30px] rounded-sm">
+                Next Page
+            </Link>
+        } else {
+            setCurrentPage((prevPage) => Math.min(prevPage + 1, pages.length - 1));
+        }
     };
 
     return (

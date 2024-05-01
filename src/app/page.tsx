@@ -1,7 +1,12 @@
 /* eslint-disable react/jsx-no-duplicate-props */
+<<<<<<< HEAD
+"use client"
+import { Footer, Homepage, Navbar } from "@/components";
+=======
 "use client";
 
-import { Footer, Homepage, Navbar } from "@/components";
+import { Footer, Homepage, Navbar, SettingProfile } from "@/components";
+>>>>>>> main
 import React, { useState } from "react";
 
 const Page = () => {
@@ -13,9 +18,7 @@ const Page = () => {
         <Navbar setIsShowModal={setIsShowModal} isShowModal={isShowModal} />
       </div>
       <Homepage />
-      <div className="w-full flex justify-center items-start bg-gray-900 mt-10">
-        <Footer />
-      </div>
+      <div className="w-full flex justify-center items-start bg-gray-900 mt-10"></div>
     </div>
   );
 };

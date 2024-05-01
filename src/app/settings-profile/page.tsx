@@ -1,14 +1,5 @@
 "use client";
-import {
-  About,
-  Button,
-  Navbar,
-  TeacherNavbar,
-  TeacherNavbarComponent,
-  Typography,
-} from "@/components";
-import { CfnDataQualityJobDefinition } from "aws-cdk-lib/aws-sagemaker";
-
+import { Navbar, SettingProfile } from "@/components";
 import React, { useState } from "react";
 
 const page = () => {
@@ -19,7 +10,7 @@ const page = () => {
       <div className="w-full flex justify-center items-center">
         <Navbar setIsShowModal={setIsShowModal} isShowModal={isShowModal} />
       </div>
-      <About />
+      <SettingProfile />
     </div>
   );
 };

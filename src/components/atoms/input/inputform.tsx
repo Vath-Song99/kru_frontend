@@ -8,17 +8,26 @@ interface InputProps {
   placeholder?: string;
   value?: string;
   name?: string;
-  borderColor?: "primary" | "secondary" | "black" | "none";
+  borderColor?: "primary" | "secondary" | "black" | "none" | "border-class";
   paddingX?: "sm" | "md" | "lg" | "xl";
   paddingY?: "sm" | "md" | "lg" | "xl";
   borderRadius?: "sm" | "md" | "lg" | "xl" | "full";
-  borderSize?: "sm" | "md" | "lg" | "xl" | "2xl" | "full";
+  borderSize?:
+    | "btnlogin"
+    | "classroom"
+    | "forgetpassword"
+    | "sm"
+    | "md"
+    | "lg"
+    | "xl"
+    | "2xl"
+    | "full";
   onChange?: (event: any) => void;
 }
 
 const InputForm: React.FC<InputProps> = ({
   className,
-  type="text",
+  type = "text",
   placeholder = "example",
   borderColor = "primary",
   borderRadius = "sm",
@@ -39,6 +48,8 @@ const InputForm: React.FC<InputProps> = ({
         return "border border-black";
       case "none":
         return "";
+      case "border-class":
+        return "border-l-4  border-[#0000e8]";
       default:
         return "border border-[#7B2CBF] focus:border-2 border-[#7B2CBF]";
     }
@@ -89,6 +100,12 @@ const InputForm: React.FC<InputProps> = ({
   };
   const borderSizeControl = (borderSizeParam: string) => {
     switch (borderSizeParam) {
+      case "btnlogin":
+        return "w-[300px] h-[40px]";
+      case "classroom":
+        return "w-[350px] h-[40px]";
+      case "forgetpassword":
+        return "w-full h-[50px]";
       case "sm":
         return "w-[332px] h-[40px]";
       case "md":
@@ -113,11 +130,14 @@ const InputForm: React.FC<InputProps> = ({
   const setBorderSize = borderSizeControl(borderSize);
 
   const setClassName = ` ${setBorderSize}  ${setBorderColor} ${setPaddingX} ${setPaddingY} ${setBorderRadius}  ${className}`;
+<<<<<<< HEAD
+=======
   // state to storea and set text value
 <<<<<<< HEAD
   const [text, setText] = useState("")
 =======
   const [text, setText] = useState("");
+>>>>>>> main
 >>>>>>> main
   return (
     <input

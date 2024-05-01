@@ -11,8 +11,7 @@ const ForgetPassword = () => {
           viewBox="0 0 24 24"
           strokeWidth="0.7"
           stroke="rgb(100 116 139)"
-          className="w-[64px] h-[64px]"
-        >
+          className="w-[64px] h-[64px]">
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -20,11 +19,10 @@ const ForgetPassword = () => {
           />
         </svg>
         <Typography variant="bold">Forgot password?</Typography>
-        <Typography>
-          please enter your Email to reset your password.
-        </Typography>
+        <Typography>please enter your Email to reset your password.</Typography>
 
         {/* input form */}
+
         <div className="flex flex-col w-[80%] gap-y-5">
           <InputForm
             className="w-full border-gray-400 focus:outline-[#7B2CBF]"
@@ -47,13 +45,14 @@ const ForgetPassword = () => {
           <Typography className="flex justify-start">
             password at least 8 characters
           </Typography>
+          <div className="flex justify-center">
+            <Button className="w-[50%] h-[45px] mb-3" radius="md">
+              Forgot password
+            </Button>
+          </div>
         </div>
-        <Button className="w-[50%] h-[45px] mb-3" radius="md">
-          Forgot password
-        </Button>
       </div>
     </>
   );
 };
 export default ForgetPassword;
-

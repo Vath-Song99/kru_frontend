@@ -4,26 +4,31 @@ import React, { useState } from "react";
 
 interface InputProps {
   className?: string;
-  type: string;
+  type?: string;
   placeholder?: string;
+  value?: string;
+  name?: string;
   borderColor?: "primary" | "secondary" | "black" | "none";
   paddingX?: "sm" | "md" | "lg" | "xl";
   paddingY?: "sm" | "md" | "lg" | "xl";
   borderRadius?: "sm" | "md" | "lg" | "xl" | "full";
   borderSize?: "sm" | "md" | "lg" | "xl" | "2xl" | "full";
+  onChange?: (event: any) => void;
 }
 
 const InputForm: React.FC<InputProps> = ({
   className,
-  type = "text",
+  type="text",
   placeholder = "example",
   borderColor = "primary",
   borderRadius = "sm",
   paddingX = "sm",
   paddingY = "sm",
-  borderSize = "sm"
+  borderSize = "sm",
+  value,
+  name,
+  onChange,
 }) => {
-
   const borderColorControl = (borderColorParam: string) => {
     switch (borderColorParam) {
       case "primary":
@@ -93,7 +98,7 @@ const InputForm: React.FC<InputProps> = ({
       case "xl":
         return "w-[511px] h-[65px]";
       case "2xl":
-        return "w-[564px] h-[50px]"
+        return "w-[564px] h-[50px]";
       case "full":
         return "w-screen h-[65px]";
       default:
@@ -109,14 +114,19 @@ const InputForm: React.FC<InputProps> = ({
 
   const setClassName = ` ${setBorderSize}  ${setBorderColor} ${setPaddingX} ${setPaddingY} ${setBorderRadius}  ${className}`;
   // state to storea and set text value
+<<<<<<< HEAD
   const [text, setText] = useState("")
+=======
+  const [text, setText] = useState("");
+>>>>>>> main
   return (
     <input
       type={type}
-      id={type}
+      value={value}
+      name={name}
       placeholder={placeholder}
       className={setClassName}
-      onChange={textValue => setText(textValue.target.value)}
+      onChange={onChange}
     />
   );
 };

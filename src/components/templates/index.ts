@@ -3,7 +3,7 @@ import { TeacherList } from "./TeacherList";
 import TeachersProfile from "./TeachersProfile";
 import SettingProfile from "./SettingsProfile";
 import { CreateClass } from "./CreateClass";
-
+import ResetPassword from "./ResetPassword";
 import { BecomeTeacher } from "./Become-teacher";
 
 export {
@@ -12,5 +12,6 @@ export {
   TeachersProfile,
   SettingProfile,
   CreateClass,
+  ResetPassword,
   BecomeTeacher,
 };

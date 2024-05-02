@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import { Image } from "@nextui-org/react";
-
 import { Button, InputForm, Typography } from "@/components/atoms";
+import Link from "next/link";
 
 const SignupToBecomeTeacher = () => {
   return (
@@ -20,7 +20,7 @@ const SignupToBecomeTeacher = () => {
           className="w-full  lg:w-full  lg:grid  lg:grid-flow-row  lg:gap-4"
           action="">
           <div>
-            <Typography align="left">Email</Typography>
+            <Typography>Email</Typography>
             <InputForm
               type="text"
               placeholder="example@gmail.com"
@@ -42,7 +42,7 @@ const SignupToBecomeTeacher = () => {
             fontColor="white"
             fontSize="lg"
             className="py-[8px] md:py-2 w-full mt-4 text-sm">
-            Signup
+            <Link href={"become-a-teacher-signup-steps"}>Signup</Link>
           </Button>
         </form>
         <div className="w-full flex items-center  justify-between">

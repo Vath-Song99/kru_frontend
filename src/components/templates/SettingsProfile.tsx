@@ -1,4 +1,5 @@
-import React, { ReactNode, useState } from "react";
+"use client"
+import React, { useState } from "react";
 import Image from "next/image";
 import { Button, InputForm, Typography } from "../atoms";
 
@@ -16,9 +17,8 @@ const MenuItem: React.FC<MenuItemProps> = ({
   return (
     <a
       onClick={() => handleClick(itemName)}
-      className={`cursor-pointer text-[20px] sm:text-[20px] md:text-[16px] lg:text-[20px] xl:text-[20px] ${
-        active ? "border-b-2 border-[#7B2CBF] text-[#7B2CBF]" : ""
-      }`}
+      className={`cursor-pointer text-[20px] sm:text-[20px] md:text-[16px] lg:text-[20px] xl:text-[20px] ${active ? "border-b-2 border-[#7B2CBF] text-[#7B2CBF]" : ""
+        }`}
       style={{ padding: "15px" }}
     >
       {itemName}
@@ -27,13 +27,13 @@ const MenuItem: React.FC<MenuItemProps> = ({
 };
 
 const SettingsProfile = () => {
-  const [selectedItem, setSelectedItem] = useState<string>("User Info"); // Change null to "User Info"
+  const [selectedItem, setSelectedItem] = useState<string>("User Info");
   const handleItemClick = (item: string) => {
     setSelectedItem(item);
   };
 
   return (
-    <div className="w-[95%] sm:w-full  md:w-[90%] lg:w-[90%] xl:w-[80%] h-150 mx-auto flex sm:flex-col md: flex-col lg:flex-row xl:flex-row">
+    <div className="w-[95%] sm:w-full md:w-[90%] lg:w-[90%] xl:w-[80%] h-150 mx-auto flex sm:flex-col md:flex-col lg:flex-row xl:flex-row">
       {/* Left profile */}
       <div className="flex flex-col gap-y-3 items-center md:items-center bg-[#F8F8F8] h-[405px] lg:w-[40%] xl:w-[40%] w-full md:w-full rounded-md">
         <Typography fontSize="lg" variant="bold" className="mt-4">
@@ -55,20 +55,18 @@ const SettingsProfile = () => {
         >
           Upload new photo
         </Button>
-        <Typography className="text-[11px] sm:text-[12px] md:text-[14px] lg:text-[14px] xl:text-[15px]">
+        <Typography className="text-[12px]">
           The photo should be less than 2mb size
         </Typography>
-        <Typography className="text-[11px] sm:text-[12px] md:text-[14px] lg:text-[14px] xl:text-[15px]">
-          member since: 12 September 2024
-        </Typography>
+        <Typography className="text-[12px]">member since: 12 September 2024</Typography>
       </div>
 
       {/* Right profile */}
-      <div className="flex flex-col w-[100%] md:w-[100%] rounded-md sm:ml-7 md:ml-0 lg:ml-10 xl:ml-10">
+      <div className="flex flex-col w-[100%] md:w-[100%] rounded-md ml-7 sm:ml-0 md:ml-0 lg:ml-10 xl:ml-10">
         {/* edit profile */}
-        <div className="bg-[#F8F8F8] pt-[15px] ml-0 sm:mt-10 lg:mt-0 xl:mt-0 sm:mt-15 md:mt-20 w-[100%] md:w-[100%] rounded-md">
+        <div className="bg-[#F8F8F8] pt-5 mt-5 ml-0 sm:ml-0 lg:ml-0 xl:ml-0 w-[100%] md:w-[100%] rounded-md">
           <Typography
-            className="text-center md:text-left md:ml-10 lg:ml-10 xl:ml-10 py-4 lg:py-0 xl:py-0 md:mt-5 mb-[60px] md:mb-12 text-[30px] md:text-[30px] lg:text-[40px] xl:text-[40px]"
+            className="text-center md:text-left ml-0 md:ml-10 lg:ml-10 xl:ml-10 py-4 text-[30px] md:text-[30px] lg:text-[40px] xl:text-[40px]"
             variant="bold"
             align="left"
           >
@@ -92,74 +90,74 @@ const SettingsProfile = () => {
         {/* form input */}
         <div className="flex flex-col mt-5 sm:flex-col md:flex-row lg:flex-row xl:flex-row justify-between">
           <div className="flex flex-col md:w-[45%] lg:w-[45%] mt-3 xl:w-[45%]">
-            <Typography align="left" fontSize="md" className="md:text-[16px]">
+            <Typography align="left" fontSize="md">
               First Name
             </Typography>
             <InputForm
-              className="h-[50px] w-full border-gray-400 md:mt-2 focus: outline-[#7B2CBF]"
+              className="h-[50px] w-full border-gray-400 mt-2 focus:outline-[#7B2CBF]"
               type="Firt Name"
               borderRadius="md"
               placeholder="First Name"
-            ></InputForm>
+            />
           </div>
           <div className="flex flex-col md:w-[45%] lg:w-[45%] mt-3 xl:w-[45%]">
-            <Typography align="left" fontSize="md" className="md:text-[16px]">
+            <Typography align="left" fontSize="md">
               Last Name
             </Typography>
             <InputForm
-              className="h-[50px] w-full border-gray-400 md:mt-2 focus: outline-[#7B2CBF]"
+              className="h-[50px] w-full border-gray-400 mt-2 focus:outline-[#7B2CBF]"
               type="Last Name"
               placeholder="Last Name"
               borderRadius="md"
-            ></InputForm>
+            />
           </div>
         </div>
         <div className="flex flex-col mt-2 sm:flex-col md:flex-row lg:flex-row xl:flex-row justify-between">
           <div className="flex flex-col md:w-[45%] lg:w-[45%] mt-3 xl:w-[45%]">
-            <Typography align="left" fontSize="md" className="md:text-[16px]">
+            <Typography align="left" fontSize="md">
               Password
             </Typography>
             <InputForm
-              className="h-[50px] w-full border-gray-400 md:mt-2 focus: outline-[#7B2CBF]"
+              className="h-[50px] w-full border-gray-400 mt-2 focus:outline-[#7B2CBF]"
               type="password"
               borderRadius="md"
               placeholder="Password"
-            ></InputForm>
+            />
           </div>
           <div className="flex flex-col md:w-[45%] lg:w-[45%] mt-3 xl:w-[45%]">
-            <Typography align="left" fontSize="md" className="md:text-[16px]">
+            <Typography align="left" fontSize="md">
               Re-Password
             </Typography>
             <InputForm
-              className="h-[50px] w-full border-gray-400 md:mt-2 focus: outline-[#7B2CBF]"
+              className="h-[50px] w-full border-gray-400 mt-2 focus:outline-[#7B2CBF]"
               type="password"
               placeholder="Re-Password"
               borderRadius="md"
-            ></InputForm>
+            />
           </div>
         </div>
         <div className="flex flex-col mt-2 sm:flex-col md:flex-row lg:flex-row xl:flex-row justify-between">
           <div className="flex flex-col md:w-[45%] lg:w-[45%] mt-3 xl:w-[45%]">
-            <Typography align="left" fontSize="md" className="md:text-[16px]">
+            <Typography align="left" fontSize="md">
               Email
             </Typography>
             <InputForm
-              className="h-[50px] w-full border-gray-400 md:mt-2 focus: outline-[#7B2CBF]"
+              className="h-[50px] w-full border-gray-400 mt-2 focus:outline-[#7B2CBF]"
               type="email"
               borderRadius="md"
               placeholder="Email"
-            ></InputForm>
+            />
           </div>
           <div className="flex flex-col md:w-[45%] lg:w-[45%] mt-3 xl:w-[45%]">
-            <Typography align="left" fontSize="md" className="md:text-[16px]">
+            <Typography align="left" fontSize="md">
               Comfirm Email
             </Typography>
             <InputForm
-              className="h-[50px] w-full border-gray-400 md:mt-2 focus: outline-[#7B2CBF]"
+              className="h-[50px] w-full border-gray-400 mt-2 focus:outline-[#7B2CBF]"
               type="email"
               placeholder="Comfirm Email"
               borderRadius="md"
-            ></InputForm>
+            />
           </div>
         </div>
         <Button

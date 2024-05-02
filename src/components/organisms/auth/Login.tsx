@@ -3,6 +3,7 @@ import React from "react";
 import { Button } from "../..";
 import Image from "next/image";
 import Link from "next/link";
+import FormLogin from "../form/FormLogin";
 const Login = () => {
   return (
     <div className=" w-full h-[100vh] flex justify-center items-center ">
@@ -14,7 +15,8 @@ const Login = () => {
             </h1>
             <h1 className="text-xs tracking-wide pb-5 underline  ">
               {" "}
-              Don&apos;t have an account?{" "}
+              don't have an account?{" "}
+
               <Link
                 href={"/signup"}
                 className="text-[#7B2CBF] hover:text-[gray]"
@@ -90,8 +92,11 @@ const Login = () => {
                 <div className="border-t border-black w-[120px] "></div>
               </div>
             </div>
+            <div className="grid gap-3">
+              <FormLogin />
+            </div>
 
-            <form className="grid gap-3">
+            {/* <form className="grid gap-3">
               <div className="flex flex-col">
                 <label htmlFor="username">Email</label>
                 <input
@@ -125,7 +130,7 @@ const Login = () => {
               <Button className="hover:bg-violet-700 text-white text-[16px] flex justify-center w-[300px] font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ">
                 Log in
               </Button>
-            </form>
+            </form> */}
           </div>
         </div>
         <div className="flex items-center justify-center ">

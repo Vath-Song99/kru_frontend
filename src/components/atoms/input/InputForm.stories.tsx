@@ -1,20 +1,20 @@
-import type { Meta,StoryObj } from "@storybook/react";
-import { InputForm } from "./Inputform";
+import type { Meta, StoryObj } from "@storybook/react";
+import { InputForm } from "./inputform";
 
 const meta: Meta<typeof InputForm> = {
     title: "components/atoms/input/InputForm.tsx",
     component: InputForm,
     parameters: {
         layout: "centered",
-},
+    },
     tags: ["autodocs"],
 };
 
 export default meta;
 type Story = StoryObj<typeof InputForm>
-  
+
 export const FirstStory: Story = {
-    args:{
+    args: {
         className: "",
         type: "text",
         placeholder: "exampe@gmail.com",
@@ -23,6 +23,6 @@ export const FirstStory: Story = {
         paddingX: "sm",
         paddingY: "sm",
         borderRadius: "sm",
-        
+
     }
 }

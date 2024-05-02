@@ -1,3 +1,3 @@
 import FormSignup from "./FormSignup";
-
-export { FormSignup };
+import FormResetPassword from "./FormResetPassword";
+export { FormSignup,FormResetPassword };

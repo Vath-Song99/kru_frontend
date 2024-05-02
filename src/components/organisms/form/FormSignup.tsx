@@ -1,39 +1,63 @@
 "use client";
-import { AuthForm } from "@/@types/users/users";
+import { AuthForm, AuthModel } from "@/@types/users/users";
 import { Button, InputForm } from "@/components";
 import { AuthValidateSchema } from "@/schema/UserValidateSchema";
 import * as Yup from "yup";
-import React, { ChangeEvent, FC, FormEventHandler, useState } from "react";
+import React, {
+  ChangeEvent,
+  FormEvent,
+  FormEventHandler,
+  useState,
+} from "react";
 import Link from "next/link";
-import { useUser } from "@/contexts/UserContext";
-interface Formprop {}
+import axios from "axios";
+import { setLocalStorage } from "@/utils/localStorage";
+
+// TODOLIST
+// handle values in a form create state is handle form
+// handle error in from  nad create state in handle error
+// handle with yup show error in form
+// handle  add data with backend and fetch
+// handle fetch data with axios
+// handle with is not check remember
+// handel with remember
+
 const DEFAULT_FORM_VALUE = {
-  name: "",
   lastname: "",
   firstname: "",
   email: "",
   password: "",
 };
-const FormSignup: FC<Formprop> = () => {
+const FormSignup = () => {
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState<AuthForm>(DEFAULT_FORM_VALUE);
-  const { addNewAuth } = useUser();
+  const [rememberMe, setRememberMe] = useState(false);
+  // stept 1
   const onChangeInput = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
     if (errors[name]) {
+      // stept 2
       setErrors((prevErrors) => ({ ...prevErrors, [name]: "" }));
     }
+  };
+  const handleCheckboxChange = () => {
+    setRememberMe(!rememberMe);
   };
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
-  const handleSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
+  const handleSubmit: FormEventHandler<HTMLFormElement> = async (
+    e: FormEvent<HTMLFormElement>
+  ) => {
     e.preventDefault();
     try {
+      // stept 3
       await AuthValidateSchema.validate(formData, { abortEarly: false });
+      // stept 4
       addNewAuth(formData);
+
       setErrors({});
     } catch (error) {
       if (error instanceof Yup.ValidationError) {
@@ -47,9 +71,39 @@ const FormSignup: FC<Formprop> = () => {
       }
     }
   };
+  // stept 4
+  const addNewAuth = async (auth: AuthForm) => {
+    // stept 5
+    const fetchData = async (data: AuthForm) => {
+      try {
+        const authData = JSON.stringify(data);
+        const response = await axios.post(
+          "http://localhost:3001/api/v1/auth/signup",
+          authData,
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+      } catch (error) {}
+    };
+    // stept 6
+    if (!rememberMe) {
+      fetchData(auth);
+    }
+    // stept 7
+    const authObject = {
+      lastname: auth.lastname,
+      firstname: auth.firstname,
+      email: auth.email,
+    };
+    fetchData(auth);
+    setLocalStorage("user", authObject);
+  };
   return (
     <div className="flex">
-      <form onSubmit={handleSubmit}>
+      <form autoComplete="off" noValidate onSubmit={handleSubmit}>
         <div className="flex flex-col">
           <label htmlFor="">First Name:</label>
           <InputForm
@@ -61,9 +115,11 @@ const FormSignup: FC<Formprop> = () => {
             onChange={onChangeInput}
           />
           {errors.firstname && (
-            <p className="mt-2" style={{ color: "red" }}>
-              {errors.firstname}
-            </p>
+            <div className="flex justify-start">
+              <small className="mt-2" style={{ color: "red" }}>
+                {errors.firstname}
+              </small>
+            </div>
           )}
         </div>
         <div className="flex flex-col">
@@ -77,9 +133,11 @@ const FormSignup: FC<Formprop> = () => {
             onChange={onChangeInput}
           />
           {errors.lastname && (
-            <p className="mt-2" style={{ color: "red" }}>
-              {errors.lastname}
-            </p>
+            <div className="flex justify-start">
+              <small className="mt-2" style={{ color: "red" }}>
+                {errors.lastname}
+              </small>
+            </div>
           )}
         </div>
         <div className="flex flex-col">
@@ -92,14 +150,16 @@ const FormSignup: FC<Formprop> = () => {
             onChange={onChangeInput}
           />
           {errors.email && (
-            <p className="mt-2" style={{ color: "red" }}>
-              {errors.email}
-            </p>
+            <div className="flex justify-start">
+              <small className="mt-2" style={{ color: "red" }}>
+                {errors.email}
+              </small>
+            </div>
           )}
         </div>
         <div className="flex flex-col ">
           <label htmlFor="password">Password</label>
-          <div className="relative">
+          <div className="relative w-[360px]">
             <InputForm
               type={showPassword ? "text" : "password"}
               placeholder="Password"
@@ -108,16 +168,11 @@ const FormSignup: FC<Formprop> = () => {
               value={formData.password}
               onChange={onChangeInput}
             />
-            {errors.password && (
-              <p className="mt-2" style={{ color: "red" }}>
-                {errors.password}
-              </p>
-            )}
 
             <button
               type="button"
               onClick={togglePasswordVisibility}
-              className="absolute  right-3 top-2">
+              className="absolute right-3 top-2">
               {showPassword ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -154,10 +209,21 @@ const FormSignup: FC<Formprop> = () => {
               )}{" "}
             </button>
           </div>
+          {errors.password && (
+            <div className="flex justify-start">
+              <small className="mt-2  h-2" style={{ color: "red" }}>
+                {errors.password}
+              </small>
+            </div>
+          )}
         </div>
         <div className=" flex items-center  justify-between my-5 mb-[10px]">
           <div className="flex items-center gap-1">
-            <input type="checkbox" className=" outline-none" />
+            <input
+              type="checkbox"
+              className=" outline-none"
+              onChange={handleCheckboxChange}
+            />
             <Link href={"/signup"} className="text-sm">
               Remember me
             </Link>

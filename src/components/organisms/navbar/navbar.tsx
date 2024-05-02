@@ -56,7 +56,7 @@ const Navbar: React.FC<NavbarProps> = ({
           </Link>
           <Link
             className="text-[#455445] text-xs md:text-sm hover:underline"
-            href={"become-a-teacher-signup-steps"}
+            href={"form-teacher"}
           >
             Become a teacher
           </Link>

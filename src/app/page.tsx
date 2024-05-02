@@ -1,12 +1,7 @@
 /* eslint-disable react/jsx-no-duplicate-props */
-<<<<<<< HEAD
-"use client"
-import { Footer, Homepage, Navbar } from "@/components";
-=======
 "use client";
 
 import { Footer, Homepage, Navbar, SettingProfile } from "@/components";
->>>>>>> main
 import React, { useState } from "react";
 
 const Page = () => {

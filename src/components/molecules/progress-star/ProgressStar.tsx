@@ -1,11 +1,11 @@
-import { IconStarNoBorder, Progress } from "@/components";
+import { IconStarNoBorder } from "@/components";
 import React from "react";
 
 interface ProgressStarpros {
   className?: string;
   qtyStar?: number;
   qtyReting?: number;
-  classNameWidth?: string
+  classNameWidth?: string;
 }
 
 const ProgressStar: React.FC<ProgressStarpros> = ({
@@ -25,8 +25,10 @@ const ProgressStar: React.FC<ProgressStarpros> = ({
       </div>
       {/* end star  */}
       <div className={`w-[230px] h-[15px] bg-[#FFFFCA] relative `}>
-               <div className={`${classNameWidth}  h-[15px] bg-[#FFFF00] absolute`}></div>
-            </div>
+        <div
+          className={`${classNameWidth}  h-[15px] bg-[#FFFF00] absolute`}
+        ></div>
+      </div>
       <small className="pr-[8px]">{qtyReting}</small>
     </div>
   );

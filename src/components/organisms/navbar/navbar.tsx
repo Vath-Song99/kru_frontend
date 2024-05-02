@@ -158,7 +158,7 @@ const Navbar: React.FC<NavbarProps> = ({
           </Link>
           <Link
             className="text-[#455445] text-xs md:text-sm hover:underline"
-            href={"become-a-teacher-signup-steps"}
+            href={"form-teacher"}
           >
             Become a teacher
           </Link>
@@ -167,6 +167,28 @@ const Navbar: React.FC<NavbarProps> = ({
             href={"teacher-list"}
           >
             Find teacher
+          </Link>
+        </div>
+      </div>
+
+      {/* right */}
+
+      <div className="hidden lg:w-1/2 lg:h-full lg:flex lg:items-center lg:justify-end ">
+        <Link
+          href={"login"}
+          className="text-[#455445] text-xs md:text-sm hover:underline"
+        >
+          Log in
+        </Link>
+
+        <div className="w-1/3 flex items-center justify-evenly ">
+          {/* verticle Line */}
+          <div className="h-5 w-[1px] border-l-2 border-[#455445]"></div>
+          <Link
+            href={"signup"}
+            className="text-[#9B90C2] text-xs md:text-sm hover:underline"
+          >
+            Sign up for free
           </Link>
         </div>
       </div>
@@ -323,9 +345,8 @@ const Navbar: React.FC<NavbarProps> = ({
                 </svg>
               </div>
             </button>
-            <Typography fontSize="md" className="pl-3 cursor-pointer">
-              Log In
-            </Typography>
+
+            <Link href={"login"}>Log in</Link>
           </div>
           <button
             onClick={toggleModal}

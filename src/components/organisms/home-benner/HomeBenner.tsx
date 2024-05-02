@@ -5,11 +5,10 @@ import React from "react";
 const HomeBenner: React.FC = ({ className }: { className?: string }) => {
   return (
     <div
-      className={`w-full h-auto flex justify-center  py-14  bg-[#F6FAFC]  ${className}`}  //list card
+      className={`w-full h-auto flex justify-center  py-14  bg-[#F6FAFC]  ${className}`} //list card
     >
       {/* Header */}
       <div className="w-full md:w-[80%]  grid grid-flow-row justify-center  gap-5 ">
-
         <div className="w-full flex justify-center items-center">
           <div className="w-[80%] grid  gap-5">
             <Typography
@@ -34,7 +33,6 @@ const HomeBenner: React.FC = ({ className }: { className?: string }) => {
             </Typography>
           </div>
         </div>
-
 
         {/* List card */}
         <div className="w-full md:w-full  h-auto flex justify-center md:justify-between   flex-wrap gap-8">
@@ -75,12 +73,11 @@ const HomeBenner: React.FC = ({ className }: { className?: string }) => {
               Through our platform, teachers will have access to a diverse range
               of resources, personalized learning opportunities, and a
               supportive community to enhance their teaching practices
-
             </Typography>
 
             <div className="w-full flex justify-end items-center">
               <Link
-                href={"signup"}
+                href={"become-a-teacher-signup-steps"}
                 className="text-[#000000] text-xs md:text-sm"
               >
                 <svg

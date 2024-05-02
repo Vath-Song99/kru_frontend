@@ -35,56 +35,58 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
       ></Image>
 
       <div className="grid grid-flow-row justify-start gap-2 mt-2">
-       <div className="p-0 m-0">
-       <Typography
-          className="capitalize"
-          fontSize="md"
-          colorscheme="secondary"
-          variant="semibold"
-          align="left"
-        >
-          {username}
-        </Typography>
-
-        <div className="flex items-center justify-start">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-6 h-6 py-1 pr-2 text-[#455445]"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5"
-            />
-          </svg>
-
+        <div className="p-0 m-0">
           <Typography
             className="capitalize"
-            fontSize="sm"
+            fontSize="md"
             colorscheme="secondary"
-            variant="normal"
+            variant="semibold"
             align="left"
           >
-            {subjectname}
+            {username}
           </Typography>
+
+          <div className="flex items-center justify-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-6 h-6 py-1 pr-2 text-[#455445]"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5"
+              />
+            </svg>
+
+            <Typography
+              className="capitalize"
+              fontSize="sm"
+              colorscheme="secondary"
+              variant="normal"
+              align="left"
+            >
+              {subjectname}
+            </Typography>
+          </div>
         </div>
-       </div>
 
         <div className="w-[144px]  flex items-center justify-between">
           <div className="flex items-center">
-            <Typography className=""
-             fontSize="sm"
-             colorscheme="secondary"
-             variant="normal"
-             align="left"
-             tags="p"
-            >{rateStar}</Typography>
+            <Typography
+              className=""
+              fontSize="sm"
+              colorscheme="secondary"
+              variant="normal"
+              align="left"
+              tags="p"
+            >
+              {rateStar}
+            </Typography>
             <svg
-            
               viewBox="0 0 14 14"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -97,15 +99,17 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
             </svg>
           </div>
           <div className="flex items-center">
-            <Typography className=""
-             fontSize="sm"
-             colorscheme="secondary"
-             variant="normal"
-             align="left"
-             tags="p"
-            >{price}</Typography>
+            <Typography
+              className=""
+              fontSize="sm"
+              colorscheme="secondary"
+              variant="normal"
+              align="left"
+              tags="p"
+            >
+              {price}
+            </Typography>
             <svg
-            
               viewBox="0 0 14 14"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -118,15 +122,17 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
             </svg>
           </div>
           <div className="flex items-center">
-            <Typography className="mr-1"
-             fontSize="sm"
-             colorscheme="secondary"
-             variant="normal"
-             align="left"
-             tags="p"
-            >{students}</Typography>
+            <Typography
+              className="mr-1"
+              fontSize="sm"
+              colorscheme="secondary"
+              variant="normal"
+              align="left"
+              tags="p"
+            >
+              {students}
+            </Typography>
             <svg
-            
               viewBox="0 0 14 14"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -141,13 +147,25 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
         </div>
 
         <div className="flex items-center justify-between gap-2">
-        <Link
-        href={"teacher-list"}
-        className="text-[#0157FF] text-xs hover:text-opacity-70 md:text-sm">See more detail about teacher</Link>
-        <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg" className="hover:opacity-70">
-<path d="M5.22017 0.229106C5.3608 0.0886552 5.55142 0.00976563 5.75017 0.00976563C5.94892 0.00976563 6.13955 0.0886552 6.28017 0.229106L10.5302 4.4791C10.6706 4.61973 10.7495 4.81035 10.7495 5.00911C10.7495 5.20786 10.6706 5.39848 10.5302 5.5391L6.28017 9.7891C6.13791 9.92151 5.94986 9.99362 5.75554 9.99026C5.56123 9.9869 5.37578 9.90835 5.23817 9.7711C5.10093 9.6335 5.02237 9.44805 5.01902 9.25373C5.01566 9.05942 5.08776 8.87137 5.22017 8.7291L8.19017 5.7591L0.750173 5.7591C0.55126 5.7591 0.360496 5.68009 0.219843 5.53943C0.0791906 5.39878 0.000172943 5.20802 0.000172943 5.00911C0.000172943 4.81019 0.0791906 4.61943 0.219843 4.47877C0.360496 4.33812 0.55126 4.25911 0.750173 4.25911L8.19017 4.25911L5.22017 1.28911C5.07972 1.14848 5.00083 0.957856 5.00083 0.759106C5.00083 0.560355 5.07972 0.369731 5.22017 0.229106Z" fill="#0157FF"/>
-</svg>
-
+          <Link
+            href={"teacher-profile"}
+            className="text-[#0157FF] text-xs hover:text-opacity-70 md:text-sm"
+          >
+            See more detail about teacher
+          </Link>
+          <svg
+            width="11"
+            height="10"
+            viewBox="0 0 11 10"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="hover:opacity-70"
+          >
+            <path
+              d="M5.22017 0.229106C5.3608 0.0886552 5.55142 0.00976563 5.75017 0.00976563C5.94892 0.00976563 6.13955 0.0886552 6.28017 0.229106L10.5302 4.4791C10.6706 4.61973 10.7495 4.81035 10.7495 5.00911C10.7495 5.20786 10.6706 5.39848 10.5302 5.5391L6.28017 9.7891C6.13791 9.92151 5.94986 9.99362 5.75554 9.99026C5.56123 9.9869 5.37578 9.90835 5.23817 9.7711C5.10093 9.6335 5.02237 9.44805 5.01902 9.25373C5.01566 9.05942 5.08776 8.87137 5.22017 8.7291L8.19017 5.7591L0.750173 5.7591C0.55126 5.7591 0.360496 5.68009 0.219843 5.53943C0.0791906 5.39878 0.000172943 5.20802 0.000172943 5.00911C0.000172943 4.81019 0.0791906 4.61943 0.219843 4.47877C0.360496 4.33812 0.55126 4.25911 0.750173 4.25911L8.19017 4.25911L5.22017 1.28911C5.07972 1.14848 5.00083 0.957856 5.00083 0.759106C5.00083 0.560355 5.07972 0.369731 5.22017 0.229106Z"
+              fill="#0157FF"
+            />
+          </svg>
         </div>
       </div>
     </div>

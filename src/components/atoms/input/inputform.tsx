@@ -4,13 +4,25 @@ import React, { useState } from "react";
 
 interface InputProps {
   className?: string;
-  type: string;
+  type?: string;
   placeholder?: string;
-  borderColor?: "primary" | "secondary" | "black" | "none";
+  value?: string;
+  name?: string;
+  borderColor?: "primary" | "secondary" | "black" | "none" | "border-class";
   paddingX?: "sm" | "md" | "lg" | "xl";
   paddingY?: "sm" | "md" | "lg" | "xl";
   borderRadius?: "sm" | "md" | "lg" | "xl" | "full";
-  borderSize?: "sm" | "md" | "lg" | "xl" | "2xl" | "full";
+  borderSize?:
+  | "btnlogin"
+  | "classroom"
+  | "forgetpassword"
+  | "sm"
+  | "md"
+  | "lg"
+  | "xl"
+  | "2xl"
+  | "full";
+  onChange?: (event: any) => void;
 }
 
 const InputForm: React.FC<InputProps> = ({
@@ -21,9 +33,11 @@ const InputForm: React.FC<InputProps> = ({
   borderRadius = "sm",
   paddingX = "sm",
   paddingY = "sm",
-  borderSize = "sm"
+  borderSize = "sm",
+  value,
+  name,
+  onChange,
 }) => {
-
   const borderColorControl = (borderColorParam: string) => {
     switch (borderColorParam) {
       case "primary":
@@ -34,6 +48,8 @@ const InputForm: React.FC<InputProps> = ({
         return "border border-black";
       case "none":
         return "";
+      case "border-class":
+        return "border-l-4  border-[#0000e8]";
       default:
         return "border border-[#7B2CBF] focus:border-2 border-[#7B2CBF]";
     }
@@ -84,6 +100,12 @@ const InputForm: React.FC<InputProps> = ({
   };
   const borderSizeControl = (borderSizeParam: string) => {
     switch (borderSizeParam) {
+      case "btnlogin":
+        return "w-[300px] h-[40px]";
+      case "classroom":
+        return "w-[350px] h-[40px]";
+      case "forgetpassword":
+        return "w-full h-[50px]";
       case "sm":
         return "w-[332px] h-[40px]";
       case "md":
@@ -93,7 +115,7 @@ const InputForm: React.FC<InputProps> = ({
       case "xl":
         return "w-[511px] h-[65px]";
       case "2xl":
-        return "w-[564px] h-[50px]"
+        return "w-[564px] h-[50px]";
       case "full":
         return "w-screen h-[65px]";
       default:
@@ -104,21 +126,24 @@ const InputForm: React.FC<InputProps> = ({
   const setBorderColor = borderColorControl(borderColor);
   const setPaddingX = paddingXControl(paddingX);
   const setPaddingY = paddingYControl(paddingY);
-  const setBorderRadius = borderRaduisControl (borderRadius);
+  const setBorderRadius = borderRaduisControl(borderRadius);
   const setBorderSize = borderSizeControl(borderSize);
 
   const setClassName = ` ${setBorderSize}  ${setBorderColor} ${setPaddingX} ${setPaddingY} ${setBorderRadius}  ${className}`;
-    // state to storea and set text value
-   const [text,setText] = useState("")
+
+  const [text, setText] = useState("")
+
   return (
     <input
       type={type}
-      id={type}
+      value={value}
+      name={name}
       placeholder={placeholder}
       className={setClassName}
-      onChange={textValue => setText(textValue.target.value)}
+      onChange={onChange}
     />
   );
 };
+
 
 export { InputForm };

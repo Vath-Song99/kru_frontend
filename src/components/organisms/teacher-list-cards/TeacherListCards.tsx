@@ -1,7 +1,8 @@
 import { CardTeachers } from "@/components/molecules";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { CardTeachersTypes } from "@/@types";
 import Link from "next/link";
+import { Mycontext } from "@/context/CardContext";
 
 const TeacherInfo: Array<CardTeachersTypes> = [
   {
@@ -96,10 +97,13 @@ const TeacherInfo: Array<CardTeachersTypes> = [
 
 
 const TeacherListCards = () => {
+
+  const { Data } = useContext(Mycontext);
+
   return (
     <div className="w-full flex justify-center">
       <div className="w-[80%] flex justify-center lg:justify-between flex-wrap gap-4">
-        {TeacherInfo.map((item, index) => (
+        {Data.map((item, index) => (
           <CardTeachers
             key={index}
             imageUrl={item.imageUrl}

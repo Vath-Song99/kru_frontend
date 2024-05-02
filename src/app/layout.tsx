@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { Footer, Navbar } from "@/components";
+import CardContext from "@/context/CardContext";
 
 
 
@@ -27,7 +28,7 @@ export default function RootLayout({
       <body className={poppins.className}>
 
 
-        {children}
+        <CardContext>{children}</CardContext>
         {/* <div className="w-full flex justify-center items-end bg-gray-900 mt-6"><Footer/></div> */}
       </body>
     </html>

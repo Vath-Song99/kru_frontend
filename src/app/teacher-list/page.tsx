@@ -14,7 +14,7 @@ const page = () => {
         <Navbar setIsShowModal={setIsShowModal} isShowModal={isShowModal} />
       </div>
       <TeacherList />
-      <div className="w-full flex justify-center items-start bg-gray-900">
+      <div className="w-full  flex justify-center items-start bg-black  ">
         <Footer />
       </div>
     </div>

@@ -147,23 +147,20 @@ const Navbar: React.FC<NavbarProps> = ({
             width={500}
             alt="Kru Logo"
             className="h-full w-[100px] object-cover"
-          ></Image>
-        </Link>{" "}
+          />
+        </Link>
         <div className="hidden   lg:w-[80%] lg:flex  lg:justify-start lg:items-center lg:gap-5">
-          <Link
-            className="text-[#455445] text-xs md:text-sm hover:underline"
-            href={"/"}
-          >
+          <Link className="text-[#455445] text-sm hover:underline" href={"/"}>
             Home
           </Link>
           <Link
-            className="text-[#455445] text-xs md:text-sm hover:underline"
-            href={"form-teacher"}
+            className="text-[#455445] text-sm hover:underline"
+            href={"become-a-teacher-signup-steps"}
           >
             Become a teacher
           </Link>
           <Link
-            className="text-[#455445] text-xs md:text-sm hover:underline"
+            className="text-[#455445] text-sm hover:underline"
             href={"teacher-list"}
           >
             Find teacher
@@ -173,32 +170,27 @@ const Navbar: React.FC<NavbarProps> = ({
 
       {/* right */}
 
-      <div className="hidden lg:w-1/2 lg:h-full lg:flex lg:items-center lg:justify-end ">
-        <div className="w-1/3 flex items-center justify-evenly ">
-          {/* verticle Line */}
-        </div>
-      </div>
-      {/* right */}
       {isLogin == false ? (
-        <div className="lg:w-1/2 lg:h-full lg:flex lg:items-center lg:justify-end bg-red-300 ">
-          <div className="w-1/3 flex items-center justify-evenly bg-green-300">
-            <Link
-              href={"signup"}
-              className="text-[#9B90C2] text-xs md:text-sm hover:underline"
-            >
-              Login
-            </Link>
+        <div className="hidden lg:w-1/2 lg:h-full lg:flex lg:items-center lg:justify-end ">
+          <Link
+            href={"/Login"}
+            className="text-[#455445] text-sm hover:underline"
+          >
+            Log in
+          </Link>
+
+          <div className="w-1/3 flex items-center justify-evenly ">
             {/* verticle Line */}
             <div className="h-5 w-[1px] border-l-2 border-[#455445]"></div>
             <Link
-              href={"signup"}
-              className="text-[#9B90C2] text-xs md:text-sm hover:underline"
+              href={"Sign up"}
+              className="text-[#9B90C2] text-sm hover:underline"
             >
               Sign up for free
             </Link>
           </div>
           <Button className="px-4 py-2" colorScheme="primary">
-            <Link href={"teacher-list"}>Get Started</Link>
+            Get Started
           </Button>
         </div>
       ) : (

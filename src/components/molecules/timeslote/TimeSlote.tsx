@@ -31,7 +31,7 @@ const TimeSlote = ({ day }: { day: string }) => {
         <input type="checkbox" className="w-6" />
         <div className="w-full">
           <div className="flex items-center  gap-2">
-            <InputForm type="checkbox" className="h-[16px] w-[16px]" />
+            <InputForm type="checkbox" className="h-[12px] w-[12px]" />
             <label htmlFor="" className="font-bold">
               {day}
             </label>
@@ -82,8 +82,6 @@ const TimeSlote = ({ day }: { day: string }) => {
             Add another timeslot +
           </Typography>
         </div>
-        );
-
       </div>
     </div>
   )

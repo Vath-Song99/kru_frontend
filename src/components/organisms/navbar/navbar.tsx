@@ -134,7 +134,7 @@ const Navbar: React.FC<NavbarProps> = ({
     console.log("Selected option:", value);
   };
   // login
-  const [isLogin, setIsLogin] = useState(true);
+  const [isLogin, setIsLogin] = useState(false);
   return (
     <nav
       className={`w-[80%] h-[100px] flex justify-between items-center  ${className}`}
@@ -180,8 +180,8 @@ const Navbar: React.FC<NavbarProps> = ({
       </div>
       {/* right */}
       {isLogin == false ? (
-        <div className="lg:w-1/2 lg:h-full lg:flex lg:items-center lg:justify-end ">
-          <div className="w-1/3 flex items-center justify-evenly ">
+        <div className="lg:w-1/2 lg:h-full lg:flex lg:items-center lg:justify-end bg-red-300 ">
+          <div className="w-1/3 flex items-center justify-evenly bg-green-300">
             <Link
               href={"signup"}
               className="text-[#9B90C2] text-xs md:text-sm hover:underline"
@@ -200,11 +200,6 @@ const Navbar: React.FC<NavbarProps> = ({
           <Button className="px-4 py-2" colorScheme="primary">
             <Link href={"teacher-list"}>Get Started</Link>
           </Button>
-          <ButtonDropDown
-            options={options}
-            onChange={handleChange}
-            className="border-blue-500 mx-7"
-          ></ButtonDropDown>
         </div>
       ) : (
         <div className="lg:w-1/2 lg:h-full lg:flex lg:items-center lg:justify-end ">

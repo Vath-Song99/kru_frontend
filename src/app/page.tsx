@@ -1,11 +1,13 @@
-/* eslint-disable react/jsx-no-duplicate-props */
 "use client";
-
 import { Footer, Homepage, Navbar } from "@/components";
+import { ButtonDropDown } from "@/components/molecules/button-dropdown";
+import { ProfileDropDown } from "@/components/molecules/profile-dropdown";
+import { Notification } from "@/components/organisms/notification";
 import React, { useState } from "react";
 
 const Page = () => {
   const [isShowModal, setIsShowModal] = useState<boolean>(false);
+  const handleChange = (value?: string) => {};
 
   return (
     <div className="max-w-full">

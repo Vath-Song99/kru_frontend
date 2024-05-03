@@ -1,5 +1,5 @@
 import React from "react";
-import "../../../app/globals.css"
+import "../../../app/globals.css";
 
 const Footer: React.FC = () => {
   return (
@@ -9,32 +9,50 @@ const Footer: React.FC = () => {
         <div className="w-10 h-[2px] bg-[#e91e63] "></div>
         <ul className="flex flex-col md:mt-2 gap-y-2">
           <li>
-            <a href="#" className="text-gray-400 text-xs md:text-sm hover:text-white transition-all hover:ml-4">
+            <a
+              href="#"
+              className="text-gray-400 text-xs md:text-sm hover:text-white transition-all hover:ml-4"
+            >
               English teacher
             </a>
           </li>
           <li>
-            <a href="#" className="text-gray-400 text-xs md:text-sm hover:text-white transition-all hover:ml-4">
+            <a
+              href="#"
+              className="text-gray-400 text-xs md:text-sm hover:text-white transition-all hover:ml-4"
+            >
               Math teacher
             </a>
           </li>
           <li>
-            <a href="#" className="text-gray-400 text-xs md:text-sm hover:text-white transition-all hover:ml-4">
+            <a
+              href="#"
+              className="text-gray-400 text-xs md:text-sm hover:text-white transition-all hover:ml-4"
+            >
               Khmer teacher
             </a>
           </li>
           <li>
-            <a href="#" className="text-gray-400 text-xs md:text-sm hover:text-white transition-all hover:ml-4">
+            <a
+              href="#"
+              className="text-gray-400 text-xs md:text-sm hover:text-white transition-all hover:ml-4"
+            >
               Computer teacher
             </a>
           </li>
           <li>
-            <a href="#" className="text-gray-400 text-xs md:text-sm hover:text-white transition-all hover:ml-4">
+            <a
+              href="#"
+              className="text-gray-400 text-xs md:text-sm hover:text-white transition-all hover:ml-4"
+            >
               Physics teacher
             </a>
           </li>
           <li>
-            <a href="#" className="text-gray-400 text-xs md:text-sm hover:text-white transition-all hover:ml-4">
+            <a
+              href="#"
+              className="text-gray-400 text-xs md:text-sm hover:text-white transition-all hover:ml-4"
+            >
               Biology teacher
             </a>
           </li>
@@ -45,17 +63,26 @@ const Footer: React.FC = () => {
         <div className="w-10 h-[2px] bg-[#e91e63]"></div>
         <ul className="flex flex-col md:mt-2 gap-y-2 ">
           <li>
-            <a href="#" className="text-gray-400 text-xs md:text-sm hover:text-white transition-all hover:ml-4">
+            <a
+              href="#"
+              className="text-gray-400 text-xs md:text-sm hover:text-white transition-all hover:ml-4"
+            >
               FAQ
             </a>
           </li>
           <li>
-            <a href="#" className="text-gray-400 text-xs md:text-sm hover:text-white transition-all hover:ml-4">
+            <a
+              href="#"
+              className="text-gray-400 text-xs md:text-sm hover:text-white transition-all hover:ml-4"
+            >
               shipping
             </a>
           </li>
           <li>
-            <a href="#" className="text-gray-400 text-xs md:text-sm hover:text-white transition-all hover:ml-4">
+            <a
+              href="#"
+              className="text-gray-400 text-xs md:text-sm hover:text-white transition-all hover:ml-4"
+            >
               returns
             </a>
           </li>
@@ -66,17 +93,26 @@ const Footer: React.FC = () => {
         <div className="w-10 h-[2px] bg-[#e91e63] "></div>
         <ul className="flex flex-col md:mt-2 gap-y-2">
           <li>
-            <a href="#" className="text-gray-400 text-xs md:text-sm hover:text-white transition-all hover:ml-4">
+            <a
+              href="#"
+              className="text-gray-400 text-xs md:text-sm hover:text-white transition-all hover:ml-4"
+            >
               Facebook
             </a>
           </li>
           <li>
-            <a href="#" className="text-gray-400 text-xs md:text-sm hover:text-white transition-all hover:ml-4">
+            <a
+              href="#"
+              className="text-gray-400 text-xs md:text-sm hover:text-white transition-all hover:ml-4"
+            >
               Telegram
             </a>
           </li>
           <li>
-            <a href="#" className="text-gray-400 text-xs md:text-sm hover:text-white transition-all hover:ml-4">
+            <a
+              href="#"
+              className="text-gray-400 text-xs md:text-sm hover:text-white transition-all hover:ml-4"
+            >
               Tiktok
             </a>
           </li>
@@ -86,7 +122,10 @@ const Footer: React.FC = () => {
         <h4 className="text-white text-lg m-0">follow us</h4>
         <div className="w-10 h-[2px] bg-[#e91e63]"></div>
         <div className="flex  gap-4">
-          <a href="#" className="text-gray-400 text-xs md:text-sm hover:text-white">
+          <a
+            href="#"
+            className="text-gray-400 text-xs md:text-sm hover:text-white"
+          >
             <svg
               className="w-6 md:w-7"
               viewBox="0 0 20 20"
@@ -98,7 +137,10 @@ const Footer: React.FC = () => {
               />
             </svg>
           </a>
-          <a href="#" className="text-gray-400 text-xs md:text-sm hover:text-white">
+          <a
+            href="#"
+            className="text-gray-400 text-xs md:text-sm hover:text-white"
+          >
             <svg
               className="w-6 md:w-7"
               viewBox="0 0 20 20"
@@ -110,7 +152,10 @@ const Footer: React.FC = () => {
               />
             </svg>
           </a>
-          <a href="#" className="text-gray-400 text-xs md:text-sm hover:text-white">
+          <a
+            href="#"
+            className="text-gray-400 text-xs md:text-sm hover:text-white"
+          >
             <svg
               className="w-6 md:w-7"
               viewBox="0 0 1024 1024"
@@ -122,7 +167,10 @@ const Footer: React.FC = () => {
               />
             </svg>
           </a>
-          <a href="#" className="text-gray-400 text-xs md:text-sm hover:text-white">
+          <a
+            href="#"
+            className="text-gray-400 text-xs md:text-sm hover:text-white"
+          >
             <svg
               className="w-6 md:w-7"
               viewBox="0 0 20 20"
@@ -136,9 +184,8 @@ const Footer: React.FC = () => {
           </a>
         </div>
       </div>
-
     </footer>
   );
-}
+};
 
 export { Footer };

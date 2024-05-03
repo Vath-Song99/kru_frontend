@@ -3,8 +3,8 @@ import "../../../app/globals.css";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="w-full md:w-[80%] md:h-[300px] md:flex md:justify-between items-start py-4 lg:py-6 grid gap-3 bg-black">
-      <div className="w-full md:w-1/4 grid grid-flow-row   px-4 md:px-0">
+    <footer className="w-full md:w-[80%] md:h-[300px] md:flex md:justify-between items-start py-4 lg:py-6 grid gap-3 bg-purple-400 sm:bg-green-200 md:bg-red-300 lg:bg-yellow-200 xl:bg-black">
+      <div className="w-full sm:w-1/4 md:w-1/4 grid grid-flow-row justify-center px-4 md:px-0">
         <h4 className="text-white text-lg ">1-ON-1 TUTORS</h4>
         <div className="w-10 h-[2px] bg-[#e91e63] "></div>
         <ul className="flex flex-col md:mt-2 gap-y-2">

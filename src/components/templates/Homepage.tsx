@@ -29,11 +29,10 @@ const Homepage: React.FC = () => {
         <TopTeachersList />
 
         {/* benner card */}
-
         <KruVision />
         <ShowEasyText />
       </div>
-      <div className="w-full  flex justify-center items-start bg-black  ">
+      <div className="w-full  flex justify-center items-start bg-black">
         <Footer />
       </div>
     </div>

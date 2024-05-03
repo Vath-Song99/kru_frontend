@@ -8,7 +8,7 @@ const Page = () => {
   const handleChange = (value?: string) => { };
 
   return (
-    <div className="max-w-full">
+    <div className="max-w-full grid">
       <div className="w-full flex justify-center items-center">
         <Navbar setIsShowModal={setIsShowModal} isShowModal={isShowModal} />
       </div>

@@ -5,7 +5,7 @@ import React, { useState } from "react";
 
 const Page = () => {
   const [isShowModal, setIsShowModal] = useState<boolean>(false);
-  const handleChange = (value?: string) => {};
+  const handleChange = (value?: string) => { };
 
   return (
     <div className="max-w-full">
@@ -13,7 +13,7 @@ const Page = () => {
         <Navbar setIsShowModal={setIsShowModal} isShowModal={isShowModal} />
       </div>
       <Homepage />
-      <div className="w-full flex justify-center items-start bg-gray-900 mt-10"></div>
+      <div className="w-full flex justify-center items-start bg-gray-900"></div>
     </div>
   );
 };

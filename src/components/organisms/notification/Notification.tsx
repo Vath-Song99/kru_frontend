@@ -59,7 +59,7 @@ const Notification: React.FC<NotificationProps> = ({ className }) => {
       </button>
       {isOpen && (
         // drop down
-        <div className="bg-white absolute -right-24 sm:right-0 md:right-0 lg:right-0 xl:right-0 mt-1 w-[350px] sm:w-[500px] md:w-[500px] lg:w-[500px] xl:w-[500px] border rounded-lg shadow-lg z-10">
+        <div className="bg-white absolute -right-24 sm:-right-24 md:right-0 lg:right-0 xl:right-0 mt-1 w-[350px] sm:w-[500px] md:w-[500px] lg:w-[500px] xl:w-[500px] border rounded-lg shadow-lg z-10">
           <div className="flex justify-between px-5 pt-5">
             <Typography
               fontSize="md"

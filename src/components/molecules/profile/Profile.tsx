@@ -1,10 +1,11 @@
 import { Typography } from "@/components/atoms";
+import { RatingStar } from "@/components/organisms/rating-star";
 import Image from "next/image";
 import React from "react";
 
 const Profile = ({ className }: { className?: string }) => {
   return (
-    <div className={` w-[200px] h-auto   ${className}`}>
+    <div className={` w-[200px] h-auto bg-red-300 ${className}`}>
       <div className="w-full flex justify-center items-start">
         <Image
           src={"/Profiles/EnglishTeacher.jpg"}
@@ -14,11 +15,10 @@ const Profile = ({ className }: { className?: string }) => {
           className="w-[160px] h-[160px] rounded-full object-cover border-4 border-white"
         ></Image>
       </div>
-      <div className="w-full">
+      <div className="flex flex-col items-center w-full bg-red-300">
         <Typography align="center" fontSize="md" variant="semibold">
           Smoeury Songvat
         </Typography>
-
         <Typography
           align="center"
           fontSize="sm"
@@ -28,6 +28,7 @@ const Profile = ({ className }: { className?: string }) => {
         >
           English teacher
         </Typography>
+        <RatingStar />
       </div>
     </div>
   );

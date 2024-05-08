@@ -1,6 +1,6 @@
 "use client";
-
 import { Footer, Homepage, Navbar, SettingProfile } from "@/components";
+import { VerifyLogin } from "@/components/organisms/auth/VerifyLogin";
 import { RatingStar } from "@/components/organisms/rating-star";
 import React, { useState } from "react";
 

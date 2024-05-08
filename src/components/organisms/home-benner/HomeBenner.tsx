@@ -1,6 +1,7 @@
 import { Typography } from "@/components/atoms";
 import Link from "next/link";
 import React from "react";
+import { VerifyLogin } from "../auth/VerifyLogin";
 
 const HomeBenner: React.FC = ({ className }: { className?: string }) => {
   return (
@@ -76,25 +77,7 @@ const HomeBenner: React.FC = ({ className }: { className?: string }) => {
             </Typography>
 
             <div className="w-full flex justify-end items-center">
-              <Link
-                href={"become-a-teacher-signup-steps"}
-                className="text-[#000000] text-xs md:text-sm"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="w-10 h-5 bg-[#E9E9E9] rounded-full hover:bg-white"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
-                  />
-                </svg>
-              </Link>
+              <VerifyLogin />
             </div>
           </div>
 
@@ -136,25 +119,7 @@ const HomeBenner: React.FC = ({ className }: { className?: string }) => {
             </Typography>
 
             <div className="w-full flex justify-end items-center">
-              <Link
-                href={"signup"}
-                className="text-[#000000] text-xs md:text-sm"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="w-10 h-5 bg-[#E9E9E9] rounded-full hover:bg-white "
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
-                  />
-                </svg>
-              </Link>
+              <VerifyLogin />
             </div>
           </div>
         </div>

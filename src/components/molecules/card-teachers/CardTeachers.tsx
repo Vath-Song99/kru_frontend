@@ -6,7 +6,6 @@ import React, { useState } from "react";
 import { CardTeachersTypes } from "@/@types";
 
 const CardTeachers: React.FC<CardTeachersTypes> = ({
-  className,
   imageUrl,
   nameSubject,
   teacherName,
@@ -15,6 +14,7 @@ const CardTeachers: React.FC<CardTeachersTypes> = ({
   students,
   description,
   pricing,
+  favorite,
 }) => {
   const [isFavorite, setIsFavorite] = useState(true);
   const handleClick = () => {
@@ -46,15 +46,15 @@ const CardTeachers: React.FC<CardTeachersTypes> = ({
           <Typography className="font-medium text-md sm:text-xl tracking-normal">
             {teacherName}
           </Typography>
-          <button onClick={handleClick}>
-            {isFavorite ? (
+          <button onClick={handleClick} >
+            {favorite ? (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
                 stroke="currentColor"
-                className="w-4 h-4"
+                className="w-4 h-4 fill-white"
               >
                 <path
                   stroke-linecap="round"

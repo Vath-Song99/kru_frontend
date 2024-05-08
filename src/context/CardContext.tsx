@@ -1,6 +1,5 @@
 "use client"
 import React, { Children, createContext, useContext, useState } from 'react';
-import { getLocalStorage, setLocalStorage } from '@/utils/localStorage';
 interface CardTeachersTypes {
 
     className?: string;
@@ -30,14 +29,15 @@ const CardContext = ({ children }: { children: any }) => {
         {
             imageUrl: "Profiles/EnglishTeacher.jpg",
             nameSubject: "Physics",
-            teacherName: "Chan Tareak",
+            teacherName: "Chang Sichi",
             rateStars: 4.3,
             reviews: 532,
             students: 120,
             description:
                 "TEFL | TESOL | IELTS | 6 years' experience I'm Aimee graduated in 2017 from Batangas.",
             pricing: 50000,
-            isFavorite: true
+            isFavorite: true,
+
         },
         {
             imageUrl: "Profiles/example1.jpg",
@@ -49,6 +49,8 @@ const CardContext = ({ children }: { children: any }) => {
             description:
                 "TEFL | TESOL | IELTS | 6 years' experience I'm Aimee graduated in 2017 from Batangas.",
             pricing: 50000,
+            isFavorite: true,
+
         },
         {
             imageUrl: "Profiles/teacher1.avif",
@@ -60,6 +62,8 @@ const CardContext = ({ children }: { children: any }) => {
             description:
                 "TEFL | TESOL | IELTS | 6 years' experience I'm Aimee graduated in 2017 from Batangas.",
             pricing: 50000,
+            isFavorite: true,
+
         },
         {
             imageUrl: "Profiles/EnglishTeacher.jpg",
@@ -71,6 +75,8 @@ const CardContext = ({ children }: { children: any }) => {
             description:
                 "TEFL | TESOL | IELTS | 6 years' experience I'm Aimee graduated in 2017 from Batangas.",
             pricing: 50000,
+            isFavorite: true,
+
         },
         {
             imageUrl: "Profiles/EnglishTeacher.jpg",
@@ -82,6 +88,8 @@ const CardContext = ({ children }: { children: any }) => {
             description:
                 "TEFL | TESOL | IELTS | 6 years' experience I'm Aimee graduated in 2017 from Batangas.",
             pricing: 50000,
+            isFavorite: true,
+
         },
         {
             imageUrl: "Profiles/EnglishTeacher.jpg",
@@ -93,6 +101,8 @@ const CardContext = ({ children }: { children: any }) => {
             description:
                 "TEFL | TESOL | IELTS | 6 years' experience I'm Aimee graduated in 2017 from Batangas.",
             pricing: 50000,
+            isFavorite: true,
+
         },
         {
             imageUrl: "Profiles/EnglishTeacher.jpg",
@@ -104,26 +114,44 @@ const CardContext = ({ children }: { children: any }) => {
             description:
                 "TEFL | TESOL | IELTS | 6 years' experience I'm Aimee graduated in 2017 from Batangas.",
             pricing: 50000,
+            isFavorite: true,
+
         },
         {
             imageUrl: "Profiles/EnglishTeacher.jpg",
             nameSubject: "Physics",
-            teacherName: "Chan Tareak",
+            teacherName: "Chan Tareak  ",
             rateStars: 4,
             reviews: 532,
             students: 120,
             description:
                 "TEFL | TESOL | IELTS | 6 years' experience I'm Aimee graduated in 2017 from Batangas.",
             pricing: 50000,
+            isFavorite: true,
+
         },
     ])
+    const toggleVerification = (item: CardTeachersTypes) => {
+        setData((prevData) => {
+            const index = prevData.findIndex((d) => d === item);
+            if (index === -1) {
+                return prevData;
+            }
+
+            const newData = [...prevData];
+            // Toggle isFavorite property
+            newData[index].isFavorite = !newData[index].isFavorite;
+            return newData;
+        });
+    };
     const contextvalue = {
         Data,
-        setData
+        setData,
+        toggleVerification
     }
     return (
         <Mycontext.Provider value={contextvalue}> {children} </Mycontext.Provider>
     )
 }
 
-export default CardContext
+export default CardContext;

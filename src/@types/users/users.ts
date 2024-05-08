@@ -1,5 +1,5 @@
 interface CardTeachersTypes {
-  className?: string;
+  item?: CardTeachersTypes;
   imageUrl?: string;
   nameSubject?: string;
   teacherName?: string;
@@ -8,6 +8,7 @@ interface CardTeachersTypes {
   students?: number;
   description?: string;
   pricing?: number;
+  favorite?: boolean;
 }
 
 export interface AuthModel {

@@ -1,123 +1,36 @@
+"use client"
 import { CardTeachers } from "@/components/molecules";
 import React, { useContext, useState } from "react";
-import { CardTeachersTypes } from "@/@types";
-import Link from "next/link";
-import { Mycontext } from "@/context/CardContext";
-
-const TeacherInfo: Array<CardTeachersTypes> = [
-  {
-    imageUrl: "Profiles/EnglishTeacher.jpg",
-    nameSubject: "Physics",
-    teacherName: "Chan Tareak",
-    rateStars: 4.3,
-    reviews: 532,
-    students: 120,
-    description:
-      "TEFL | TESOL | IELTS | 6 years' experience I'm Aimee graduated in 2017 from Batangas.",
-    pricing: 50000,
-  },
-  {
-    imageUrl: "Profiles/example1.jpg",
-    nameSubject: "English",
-    teacherName: "Chan Tareak",
-    rateStars: 4.3,
-    reviews: 532,
-    students: 120,
-    description:
-      "TEFL | TESOL | IELTS | 6 years' experience I'm Aimee graduated in 2017 from Batangas.",
-    pricing: 50000,
-  },
-  {
-    imageUrl: "Profiles/teacher1.avif",
-    nameSubject: "Physics",
-    teacherName: "Chan Tareak",
-    rateStars: 4.3,
-    reviews: 532,
-    students: 120,
-    description:
-      "TEFL | TESOL | IELTS | 6 years' experience I'm Aimee graduated in 2017 from Batangas.",
-    pricing: 50000,
-  },
-  {
-    imageUrl: "Profiles/EnglishTeacher.jpg",
-    nameSubject: "Physics",
-    teacherName: "Chan Tareak",
-    rateStars: 4.3,
-    reviews: 532,
-    students: 120,
-    description:
-      "TEFL | TESOL | IELTS | 6 years' experience I'm Aimee graduated in 2017 from Batangas.",
-    pricing: 50000,
-  },
-  {
-    imageUrl: "Profiles/EnglishTeacher.jpg",
-    nameSubject: "Physics",
-    teacherName: "Chan Tareak",
-    rateStars: 4.3,
-    reviews: 532,
-    students: 120,
-    description:
-      "TEFL | TESOL | IELTS | 6 years' experience I'm Aimee graduated in 2017 from Batangas.",
-    pricing: 50000,
-  },
-  {
-    imageUrl: "Profiles/EnglishTeacher.jpg",
-    nameSubject: "Physics",
-    teacherName: "Chan Tareak",
-    rateStars: 4.3,
-    reviews: 532,
-    students: 120,
-    description:
-      "TEFL | TESOL | IELTS | 6 years' experience I'm Aimee graduated in 2017 from Batangas.",
-    pricing: 50000,
-  },
-  {
-    imageUrl: "Profiles/EnglishTeacher.jpg",
-    nameSubject: "Physics",
-    teacherName: "Chan Tareak",
-    rateStars: 4.3,
-    reviews: 532,
-    students: 120,
-    description:
-      "TEFL | TESOL | IELTS | 6 years' experience I'm Aimee graduated in 2017 from Batangas.",
-    pricing: 50000,
-  },
-  {
-    imageUrl: "Profiles/EnglishTeacher.jpg",
-    nameSubject: "Physics",
-    teacherName: "Chan Tareak",
-    rateStars: 4,
-    reviews: 532,
-    students: 120,
-    description:
-      "TEFL | TESOL | IELTS | 6 years' experience I'm Aimee graduated in 2017 from Batangas.",
-    pricing: 50000,
-  },
-];
-
-
+import CardContext, { Mycontext } from "@/context/CardContext";
 const TeacherListCards = () => {
 
   const { Data } = useContext(Mycontext);
-
+  console.log(Data);
   return (
     <div className="w-full flex justify-center">
       <div className="w-[80%] flex justify-center lg:justify-between flex-wrap gap-4">
+
         {Data.map((item, index) => (
-          <CardTeachers
-            key={index}
-            imageUrl={item.imageUrl}
-            nameSubject={item.nameSubject}
-            rateStars={item.rateStars}
-            students={item.students}
-            reviews={item.reviews}
-            teacherName={item.teacherName}
-            description={item.description}
-            pricing={item.pricing}
-          />
+
+
+          <CardContext>
+
+            <CardTeachers
+              key={index}
+              imageUrl={item.imageUrl}
+              nameSubject={item.nameSubject}
+              rateStars={item.rateStars}
+              students={item.students}
+              reviews={item.reviews}
+              teacherName={item.teacherName}
+              description={item.description}
+              pricing={item.pricing}
+              favorite={item.isFavorite}
+            />
+          </CardContext>
         ))}
       </div>
-    </div>
+    </div >
   );
 };
 

@@ -195,29 +195,6 @@ const Navbar: React.FC<NavbarProps> = ({
         </div>
       ) : (
         <div className="lg:w-1/2 lg:h-full lg:flex lg:items-center lg:justify-end ">
-          <ButtonIcon
-            // favarite icon
-            icon={
-              <a href="#">
-                <svg
-                  width="32"
-                  height="32"
-                  viewBox="0 0 21 18"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M19.5 5.25C19.5 2.765 17.401 0.75 14.812 0.75C12.877 0.75 11.215 1.876 10.5 3.483C9.785 1.876 8.123 0.75 6.187 0.75C3.6 0.75 1.5 2.765 1.5 5.25C1.5 12.47 10.5 17.25 10.5 17.25C10.5 17.25 19.5 12.47 19.5 5.25Z"
-                    stroke="black"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </a>
-            }
-            className="hidden sm:hidden md:hidden xl:inline lg:inline"
-          ></ButtonIcon>
           <ButtonDropDown
             options={options}
             onChange={handleChange}
@@ -380,46 +357,8 @@ const Navbar: React.FC<NavbarProps> = ({
           </ul>
         </nav>
         <div className="w-[90%] mx-auto h-[1.2px] bg-gray-200"></div>
-        <nav className="flex  py-2 flex-col items-start justify-start">
-          <ul className="ml-5">
-            <li
-              className="cursor-pointer py-3 hover:underline relative"
-              onClick={() => handleItemClick("Setttings")}
-            >
-              {selectedItem === "Setttings" && (
-                <span
-                  className="absolute left-[-15px] top-[9px] h-[50%] w-1 bg-[#7B2CBF]"
-                  style={{ marginTop: "0.5rem" }}
-                />
-              )}
-              <a href={"/"}>Setttings</a>
-            </li>
-            <li
-              className="cursor-pointer py-3 hover:underline relative"
-              onClick={() => handleItemClick("Favarite")}
-            >
-              {selectedItem === "Favarite" && (
-                <span
-                  className="absolute left-[-15px] top-[9px] h-[50%] w-1 bg-[#7B2CBF]"
-                  style={{ marginTop: "0.5rem" }}
-                />
-              )}
-              <a href={"become-a-teacher-signup-steps"}>Favarite</a>
-            </li>
-            <li
-              className="cursor-pointer py-3 hover:underline relative"
-              onClick={() => handleItemClick("Logout")}
-            >
-              {selectedItem === "Logout" && (
-                <span
-                  className="absolute left-[-15px] top-[9px] h-[50%] w-1 bg-[#7B2CBF]"
-                  style={{ marginTop: "0.5rem" }}
-                />
-              )}
-              Logout
-            </li>
-          </ul>
-        </nav>
+
+
         <ButtonDropDown
           options={options}
           onChange={handleChange}

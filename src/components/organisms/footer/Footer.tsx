@@ -4,8 +4,10 @@ import "../../../app/globals.css";
 const Footer: React.FC = () => {
   return (
     <footer className="w-full justify-center sm:justify-center md:w-[80%] md:h-[300px] md:flex md:justify-between items-start py-4 lg:py-6 grid gap-3 ">
-      <div className="w-full md:w-1/4 grid grid-flow-row   px-4 md:px-0">
-        <h4 className="text-white text-xl">1-ON-1 TUTORS</h4>
+      <div className="w-full md:w-1/4 lg:w-1/4 grid grid-flow-row gap-1 px-4">
+        <h4 className="text-white text-xl md:text-[16px] lg:text-xl xl:text-xl">
+          1-ON-1 TUTORS
+        </h4>
         <div className="w-10 h-[2px] bg-[rgb(233,30,99)] "></div>
         <ul className="flex flex-col md:mt-2 gap-y-2">
           <li>
@@ -59,42 +61,12 @@ const Footer: React.FC = () => {
         </ul>
       </div>
       <div className="w-full md:w-1/4 lg:w-1/4 grid grid-flow-row gap-1 px-4">
-        <h4 className="text-white text-xl">Get help</h4>
-        <div className="w-10 h-[2px] bg-[#e91e63]"></div>
-        <ul className="flex flex-col md:mt-2 gap-y-2 ">
-          <li>
-            <a
-              href="#"
-              className="text-gray-400 text-md md:text-sm hover:text-white transition-all hover:ml-4"
-            >
-              FAQ
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="text-gray-400 text-md md:text-sm hover:text-white transition-all hover:ml-4"
-            >
-              shipping
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="text-gray-400 text-md md:text-sm hover:text-white transition-all hover:ml-4"
-            >
-              returns
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div className="w-full md:w-1/4 lg:w-1/4 grid grid-flow-row gap-1 px-4">
         <h4 className="text-white text-xl m-0">Contact</h4>
         <div className="w-10 h-[2px] bg-[#e91e63] "></div>
         <ul className="flex flex-col md:mt-2 gap-y-2">
           <li>
             <a
-              href="#"
+              href="https://www.facebook.com/profile.php?id=100092631759554&mibextid=LQQJ4d"
               className="text-gray-400 text-md md:text-sm hover:text-white transition-all hover:ml-4"
             >
               Facebook
@@ -102,28 +74,36 @@ const Footer: React.FC = () => {
           </li>
           <li>
             <a
-              href="#"
+              href="https://twitter.com/"
+              className="text-gray-400 text-md md:text-sm hover:text-white transition-all hover:ml-4"
+            >
+              Twitter
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.instagram.com/"
+              className="text-gray-400 text-md md:text-sm hover:text-white transition-all hover:ml-4"
+            >
+              Instagram
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://t.me/nareth_dp"
               className="text-gray-400 text-md md:text-sm hover:text-white transition-all hover:ml-4"
             >
               Telegram
             </a>
           </li>
-          <li>
-            <a
-              href="#"
-              className="text-gray-400 text-md md:text-sm hover:text-white transition-all hover:ml-4"
-            >
-              Tiktok
-            </a>
-          </li>
         </ul>
       </div>
       <div className="w-full md:w-1/4 lg:w-1/4 grid grid-flow-row gap-1 px-4">
-        <h4 className="text-white text-xl">follow us</h4>
+        <h5 className="text-white text-xl m-0">Follow us</h5>
         <div className="w-10 h-[2px] bg-[#e91e63]"></div>
-        <div className="flex  gap-4">
+        <div className="flex gap-4 mt-3">
           <a
-            href="#"
+            href="https://www.facebook.com/profile.php?id=100092631759554&mibextid=LQQJ4d"
             className="text-gray-400 text-xs md:text-sm hover:text-white"
           >
             <svg
@@ -138,7 +118,7 @@ const Footer: React.FC = () => {
             </svg>
           </a>
           <a
-            href="#"
+            href="https://twitter.com/"
             className="text-gray-400 text-xs md:text-sm hover:text-white"
           >
             <svg
@@ -153,7 +133,7 @@ const Footer: React.FC = () => {
             </svg>
           </a>
           <a
-            href="#"
+            href="https://www.instagram.com/"
             className="text-gray-400 text-xs md:text-sm hover:text-white"
           >
             <svg
@@ -168,17 +148,17 @@ const Footer: React.FC = () => {
             </svg>
           </a>
           <a
-            href="#"
+            href="https://t.me/nareth_dp"
             className="text-gray-400 text-xs md:text-sm hover:text-white"
           >
             <svg
               className="w-6 md:w-7"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 22 22"
+              xmlns="http://www.w3.org/2400/svg"
             >
               <path
                 fill="currentColor"
-                d="M10 .4C4.698.4.4 4.698.4 10s4.298 9.6 9.6 9.6s9.6-4.298 9.6-9.6S15.302.4 10 .4M7.65 13.979H5.706V7.723H7.65zm-.984-7.024c-.614 0-1.011-.435-1.011-.973c0-.549.409-.971 1.036-.971s1.011.422 1.023.971c0 .538-.396.973-1.048.973m8.084 7.024h-1.944v-3.467c0-.807-.282-1.355-.985-1.355c-.537 0-.856.371-.997.728c-.052.127-.065.307-.065.486v3.607H8.814v-4.26c0-.781-.025-1.434-.051-1.996h1.689l.089.869h.039c.256-.408.883-1.01 1.932-1.01c1.279 0 2.238.857 2.238 2.699z"
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19c-.14.75-.42 1-.68 1.03c-.58.05-1.02-.38-1.58-.75c-.88-.58-1.38-.94-2.23-1.5c-.99-.65-.35-1.01.22-1.59c.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02c-.09.02-1.49.95-4.22 2.79c-.4.27-.76.41-1.08.4c-.36-.01-1.04-.2-1.55-.37c-.63-.2-1.12-.31-1.08-.66c.02-.18.27-.36.74-.55c2.92-1.27 4.86-2.11 5.83-2.51c2.78-1.16 3.35-1.36 3.73-1.36c.08 0 .27.02.39.12c.1.08.13.19.14.27c-.01.06.01.24 0 .38z"
               />
             </svg>
           </a>

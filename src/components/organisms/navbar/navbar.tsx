@@ -294,8 +294,9 @@ const Navbar: React.FC<NavbarProps> = ({
                 </svg>
               </div>
             </button>
-
-            <Link href={"login"}>Log in</Link>
+            <Link href={"login"} className="ml-5">
+              Log in
+            </Link>
           </div>
           <button
             onClick={toggleModal}

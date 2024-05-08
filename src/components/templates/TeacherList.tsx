@@ -11,7 +11,6 @@ const TeacherList = () => {
         <SearchInput />
         <TeacherListCards />
       </CardContext>
-
     </div>
   );
 };

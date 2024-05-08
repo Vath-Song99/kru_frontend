@@ -274,8 +274,9 @@ const Navbar: React.FC<NavbarProps> = ({
       </button>
       {/* Slider Navbar Content */}
       <div
-        className={`fixed lg:hidden xl:hidden inset-y-0 right-0 flex flex-col items-start z-50 bg-white w-64 md:w-72 lg:w-80 xl:w-96 shadow-lg transform transition-all duration-300 ${isOpen ? "translate-x-0" : "translate-x-full"
-          }`}
+        className={`fixed lg:hidden xl:hidden inset-y-0 right-0 flex flex-col items-start z-50 bg-white w-64 md:w-72 lg:w-80 xl:w-96 shadow-lg transform transition-all duration-300 ${
+          isOpen ? "translate-x-0" : "translate-x-full"
+        }`}
       >
         <div className="flex items-center justify-between w-full px-4 py-2">
           <div className="flex">
@@ -376,7 +377,7 @@ const Navbar: React.FC<NavbarProps> = ({
                   style={{ marginTop: "0.5rem" }}
                 />
               )}
-              Find teacher
+              <a href={"teacher-list"}>Find teacher</a>
             </li>
           </ul>
         </nav>

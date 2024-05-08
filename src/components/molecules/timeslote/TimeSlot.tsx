@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import { Button, InputForm, Typography } from "@/components/atoms";
 
@@ -38,7 +38,10 @@ const TimeSlote = ({ day }: { day: string }) => {
           </div>
           <div className="w-full flex justify-between items-center">
             <div className="grid ">
-              <label htmlFor="fromTime" className="inline-block font-bold text-sm">
+              <label
+                htmlFor="fromTime"
+                className="inline-block font-bold text-sm"
+              >
                 From
               </label>
               <select
@@ -55,7 +58,10 @@ const TimeSlote = ({ day }: { day: string }) => {
               </select>
             </div>
             <div className="grid ">
-              <label htmlFor="toTime" className="inline-block font-bold text-sm">
+              <label
+                htmlFor="toTime"
+                className="inline-block font-bold text-sm"
+              >
                 To
               </label>
               <select
@@ -84,6 +90,6 @@ const TimeSlote = ({ day }: { day: string }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 export { TimeSlote };

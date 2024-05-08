@@ -5,7 +5,7 @@ import React from "react";
 
 const Profile = ({ className }: { className?: string }) => {
   return (
-    <div className={` w-[200px] h-auto bg-red-300 ${className}`}>
+    <div className={` w-[200px] h-auto ${className}`}>
       <div className="w-full flex justify-center items-start">
         <Image
           src={"/Profiles/EnglishTeacher.jpg"}
@@ -15,7 +15,7 @@ const Profile = ({ className }: { className?: string }) => {
           className="w-[160px] h-[160px] rounded-full object-cover border-4 border-white"
         ></Image>
       </div>
-      <div className="flex flex-col items-center w-full bg-red-300">
+      <div className="flex flex-col items-center w-full gap-2">
         <Typography align="center" fontSize="md" variant="semibold">
           Smoeury Songvat
         </Typography>

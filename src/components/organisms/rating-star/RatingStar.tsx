@@ -22,13 +22,13 @@ const RatingStar = () => {
   const starsArray = Array.from({ length: 5 }, (_, index) => index);
 
   return (
-    <div>
-      <Button onClick={togglePopup} radius="md" className="w-[100px] h-[40px]">
+    <div className="">
+      <Button onClick={togglePopup} radius="md" className="w-[150px] h-[40px]">
         Rate me
       </Button>
       {isPopupOpen && (
         <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center">
-          <div className="mx-auto flex flex-col w-[450px] p-10 gap-5 items-center border rounded-md shadow-lg bg-white">
+          <div className="mx-auto flex flex-col w-[450px] p-5 gap-5 items-center border rounded-md shadow-lg bg-white">
             <Button
               colorScheme="tertiary"
               className="self-end"

@@ -1,11 +1,12 @@
 "use client";
 
 import { Footer, Homepage, Navbar, SettingProfile } from "@/components";
+import { RatingStar } from "@/components/organisms/rating-star";
 import React, { useState } from "react";
 
 const Page = () => {
   const [isShowModal, setIsShowModal] = useState<boolean>(false);
-  const handleChange = (value?: string) => { };
+  const handleChange = (value?: string) => {};
 
   return (
     <div className="max-w-full grid">

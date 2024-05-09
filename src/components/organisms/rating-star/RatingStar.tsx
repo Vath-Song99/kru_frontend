@@ -1,3 +1,4 @@
+"use client"
 import { Button, Typography } from "@/components/atoms";
 import React, { useState } from "react";
 

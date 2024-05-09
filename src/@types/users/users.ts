@@ -1,5 +1,6 @@
 interface CardTeachersTypes {
-  item?: CardTeachersTypes;
+  id?: string;
+  item?: string | undefined;
   imageUrl?: string;
   nameSubject?: string;
   teacherName?: string;

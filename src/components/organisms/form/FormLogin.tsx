@@ -60,7 +60,7 @@ const FormLogin = () => {
       try {
         const data = JSON.stringify(usersData);
         const response = await axios.post(
-          "http://localhost:3001/api/v1/auth/login",
+          "http://localhost:3000/v1/auth/login",
           data,
           {
             headers: {
@@ -68,8 +68,10 @@ const FormLogin = () => {
             },
           }
         );
-        alert(response.status);
-      } catch (error) {}
+        console.log(response.data);
+      } catch (error) {
+        console.error('Error Hz Preas ery', error)
+      }
     };
     // stept 6
     if (!rememberMe) {

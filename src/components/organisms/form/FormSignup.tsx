@@ -73,34 +73,47 @@ const FormSignup = () => {
   };
   // stept 4
   const addNewAuth = async (auth: AuthForm) => {
-    // stept 5
-    const fetchData = async (data: AuthForm) => {
-      try {
-        const authData = JSON.stringify(data);
-        const response = await axios.post(
-          "http://localhost:3001/api/v1/auth/signup",
-          authData,
-          {
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        );
-      } catch (error) {}
-    };
-    // stept 6
-    if (!rememberMe) {
-      fetchData(auth);
+    try {
+      // Step 5: Define the fetchData function
+      const fetchData = async (data: AuthForm) => {
+        try {
+          const authData = JSON.stringify(data);
+          const response = await axios.post(
+            "http://localhost:3000/v1/auth/signup",
+            authData,
+            {
+              headers: {
+                "Content-Type": "application/json",
+              },
+            }
+          );
+          return response.data; // Return the response data
+        } catch (error) {
+          console.error('Error occurred while fetching data:', error);
+          throw error; // Rethrow the error to handle it outside
+        }
+      };
+
+      // Step 6: Call the fetchData function conditionally based on rememberMe
+      if (!auth.rememberMe) {
+        await fetchData(auth);
+      }
+
+      // Step 7: Define the authObject
+      const authObject = {
+        lastname: auth.lastname,
+        firstname: auth.firstname,
+        email: auth.email,
+      };
+
+      // Step 8: Set the user data in localStorage
+      setLocalStorage("user", authObject);
+    } catch (error) {
+      console.error('Error occurred while adding new authentication:', error);
+      throw error; // Rethrow the error to handle it outside
     }
-    // stept 7
-    const authObject = {
-      lastname: auth.lastname,
-      firstname: auth.firstname,
-      email: auth.email,
-    };
-    fetchData(auth);
-    setLocalStorage("user", authObject);
   };
+  console.log()
   return (
     <div className="flex">
       <form autoComplete="off" noValidate onSubmit={handleSubmit}>

@@ -9,6 +9,7 @@ const Signup = () => {
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
+
   return (
     <div className="w-full h-[100vh] flex justify-center items-center  mx-auto">
       <div className="border-[1px] border-[#f3f3f3]-500  pt-4 pb-8 px-8 flex items-center justify-center shadow-md">

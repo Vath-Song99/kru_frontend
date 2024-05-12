@@ -24,7 +24,9 @@ export interface UserContextType {
   rememberMe: boolean;
   setRememberMe: React.Dispatch<boolean>;
 }
+
 export type AuthForm = Omit<AuthModel, "id">;
+
 export type { CardTeachersTypes };
 
 // handle login

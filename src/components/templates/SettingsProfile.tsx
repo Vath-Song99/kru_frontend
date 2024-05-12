@@ -4,6 +4,7 @@ import Image from "next/image";
 import * as Yup from "yup";
 import { Button, InputForm, Typography } from "../atoms";
 import { validationSchema, validationTeacher } from "@/schema/editProfileSchema";
+import Link from "next/link";
 
 interface MenuItemProps {
   itemName: string;
@@ -17,14 +18,12 @@ const MenuItem: React.FC<MenuItemProps> = ({
   handleClick,
 }) => {
   return (
-    <a
+    <Link
       onClick={() => handleClick(itemName)}
-      className={`cursor-pointer text-[20px] sm:text-[20px] md:text-[16px] lg:text-[20px] xl:text-[20px] ${active ? "border-b-2 border-[#7B2CBF] text-[#7B2CBF]" : ""
-        }`}
-      style={{ padding: "15px" }}
-    >
+      className={`cursor-pointer text-[20px] sm:text-[20px] md:text-[16px] lg:text-[20px] xl:text-[20px] ${active ? "border-b-2 border-[#7B2CBF] text-[#7B2CBF]" : ""}`}
+      style={{ padding: "15px" }} href={""}    >
       {itemName}
-    </a>
+    </Link>
   );
 };
 
@@ -35,6 +34,26 @@ const SettingsProfile = () => {
   const handleItemClick = (item: string) => {
     setSelectedItem(item);
   };
+
+  const [file, setFile] = useState(null);
+  const [previewURL, setPreviewURL] = useState<string | null>(null);
+
+  const handleFileInput = (e: any) => {
+    const selectedFile = e.target.files[0];
+    if (selectedFile) {
+      if (!selectedFile.type.startsWith('image/')) {
+        alert("Please select an image file");
+      } else if (selectedFile.size > 2 * 1024 * 1024) {
+        alert("The file size should be less than 2MB");
+      } else {
+        const reader = new FileReader();
+        reader.onload = () => {
+          setPreviewURL(reader.result as string);
+        };
+        reader.readAsDataURL(selectedFile);
+      }
+    }
+  }
   const [formValues, setFormValues] = useState({ // Corrected state variable name from "form" to "formValues"
     firstName: "",
     lastName: "",
@@ -42,7 +61,6 @@ const SettingsProfile = () => {
     password: "",
     address: "",
     phoneNumber: "",
-
   });
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
@@ -115,32 +133,44 @@ const SettingsProfile = () => {
   return (
     <div className="w-[95%] sm:w-full md:w-[90%] lg:w-[90%] xl:w-[80%] h-150 mx-auto flex sm:flex-col md:flex-col lg:flex-row xl:flex-row">
       {/* Left profile */}
-      <div className="flex flex-col gap-y-3 items-center md:items-center bg-[#F8F8F8] h-[405px] lg:w-[40%] xl:w-[40%] w-full md:w-full rounded-md">
+      <div className="flex flex-col h-auto gap-y-3 items-center md:items-center bg-[#F8F8F8]  lg:w-[40%] xl:w-[40%] w-full md:w-full rounded-md">
         <Typography fontSize="lg" variant="bold" className="mt-4">
           Ny Sreyneang
         </Typography>
         <div className="flex mt-3 w-[160px] h-[160px] items-center justify-end rounded-full overflow-hidden">
-          <Image
-            className="object-cover w-full h-full"
-            src="/Profiles/example1.jpg"
-            alt="Bordered avatar"
-            width={160}
-            height={160}
-          />
+          {!previewURL ?
+            <Image
+              className="object-cover w-full h-full"
+              src="/Profiles/example1.jpg"
+              alt="Bordered avatar"
+              width={160}
+              height={160}
+
+            /> :
+            (previewURL && <img src={previewURL} alt="Preview" className=" w-[160px] h-[160px] flex justify-start" />)
+
+          }
+
         </div>
         <label className="bg-[#007C00] text-white w-[100%] h-[45px] sm:w-[90%] sm:h-[45px] md:w-[55%] md:h-[45px] lg:w-[85%] lg:h-[35px] mt-5 rounded-md xl:w-[80%] xl:h-[40px] sm:text-[14px] md:text-[14px] lg:text-[14px] xl:text-[16px] flex items-center justify-center cursor-pointer">
           <input
             type="file"
             className="hidden"
-            onChange={(e) => {
-              // Handle file selection
-            }}
+            onChange={handleFileInput}
           />
+
           Upload new photo
         </label>
         <Typography className="text-[12px]">
           The photo should be less than 2mb size
         </Typography>
+        {file && (
+          <div>
+            <Typography>
+              Selected file: {(file as File).name} ({(file as File).size / 1024} KB)
+            </Typography>
+          </div>
+        )}
         <Typography className="text-[12px]">member since: 12 September 2024</Typography>
       </div>
 

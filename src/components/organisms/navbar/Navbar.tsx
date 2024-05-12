@@ -208,7 +208,7 @@ const Navbar: React.FC<NavbarProps> = ({
       ) : (
         <div className="lg:w-1/2 lg:h-full lg:flex bg-blue-500 lg:items-center lg:justify-end ">
           <Link
-            href={"/login"}
+            href={"login"}
             className="text-[#455445] text-sm hover:underline"
           >
             Log in
@@ -224,9 +224,14 @@ const Navbar: React.FC<NavbarProps> = ({
               Sign up for free
             </Link>
           </div>
-          <Button className="px-4 py-2" colorScheme="primary">
-            Get Started
-          </Button>
+          <Link
+            href={"signup"}
+            className="text-[#9B90C2] text-sm hover:underline"
+          >
+            <Button className="px-4 py-2" colorScheme="primary">
+              Get Started
+            </Button>
+          </Link>
         </div>
       )}
 

@@ -14,7 +14,7 @@ const Page = () => {
       <div className="w-full flex justify-center items-center">
         <Navbar setIsShowModal={setIsShowModal} isShowModal={isShowModal} />
       </div>
-      <Dashboard />
+      <Homepage />
       <div className="w-full flex justify-center items-start bg-gray-900"></div>
     </div>
   );

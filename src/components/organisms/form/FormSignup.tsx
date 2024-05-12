@@ -10,7 +10,7 @@ import React, {
   useState,
 } from "react";
 import Link from "next/link";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import { setLocalStorage } from "@/utils/localStorage";
 
 // TODOLIST
@@ -71,32 +71,53 @@ const FormSignup = () => {
       }
     }
   };
-  // stept 4
+
+  async function fetchData(data: AuthForm) {
+    try {
+      const response = await axios.post(
+        "http://localhost:3000/v1/auth/signup",
+        data,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      // Handle successful response
+      console.log("Data:", response.data);
+      return response.data;
+    } catch (error: unknown) {
+      if (axios.isAxiosError(error)) {
+        const axiosError = error as AxiosError;
+        if (axiosError.response) {
+          // Request was made and server responded with a status code
+          console.log("Response data:", axiosError.response.data);
+          console.log("Status code:", axiosError.response.status);
+          console.log("Status message:", axiosError.response.statusText);
+        } else if (axiosError.request) {
+          // Request was made but no response was received
+          console.error("No response received:", axiosError.request);
+        } else {
+          // Something happened in setting up the request that triggered an error
+          console.error("Error:", axiosError.message);
+        }
+      } else {
+        // Regular JavaScript error
+        console.error("Error:", error.message);
+      }
+    }
+  }
+
+  // Call the function to make the request
+
   const addNewAuth = async (auth: AuthForm) => {
     try {
       // Step 5: Define the fetchData function
-      const fetchData = async (data: AuthForm) => {
-        try {
-          const authData = JSON.stringify(data);
-          const response = await axios.post(
-            "http://localhost:3000/v1/auth/signup",
-            authData,
-            {
-              headers: {
-                "Content-Type": "application/json",
-              },
-            }
-          );
-          return response.data; // Return the response data
-        } catch (error) {
-          console.error('Error occurred while fetching data:', error);
-          throw error; // Rethrow the error to handle it outside
-        }
-      };
-
+      fetchData(auth);
       // Step 6: Call the fetchData function conditionally based on rememberMe
       if (!auth.rememberMe) {
-        await fetchData(auth);
+        const responseData = await fetchData(auth);
+        console.log("Response Data:", responseData); // Logging success data
       }
 
       // Step 7: Define the authObject
@@ -108,12 +129,58 @@ const FormSignup = () => {
 
       // Step 8: Set the user data in localStorage
       setLocalStorage("user", authObject);
+      console.log("User data saved to localStorage:", authObject);
     } catch (error) {
-      console.error('Error occurred while adding new authentication:', error);
-      throw error; // Rethrow the error to handle it outside
+      console.error("Error occurred while adding new authentication:", error);
+      // Rethrow the error to handle it outside
     }
   };
-  console.log()
+
+  // stept 4
+  // const addNewAuth = async (auth: AuthForm) => {
+  //   try {
+  //     // Step 5: Define the fetchData function
+  //     const fetchData = async (data: AuthForm) => {
+  //       try {
+  //         const authData = JSON.stringify(data);
+  //         console.log(authData);
+  //         const response = await axios.post(
+  //           "http://localhost:3000/v1/auth/signup",
+  //           authData,
+  //           {
+  //             headers: {
+  //               "Content-Type": "application/json",
+  //             },
+  //           }
+  //         );
+
+  //         return response.data; // Return the response data
+  //       } catch (error) {
+  //         console.error("Error occurred while fetching data:", error);
+  //         throw error; // Rethrow the error to handle it outside
+  //       }
+  //     };
+
+  //     // Step 6: Call the fetchData function conditionally based on rememberMe
+  //     if (!auth.rememberMe) {
+  //       await fetchData(auth);
+  //     }
+
+  //     // Step 7: Define the authObject
+  //     const authObject = {
+  //       lastname: auth.lastname,
+  //       firstname: auth.firstname,
+  //       email: auth.email,
+  //     };
+
+  //     // Step 8: Set the user data in localStorage
+  //     setLocalStorage("user", authObject);
+  //   } catch (error) {
+  //     console.error("Error occurred while adding new authentication:", error);
+  //     throw error; // Rethrow the error to handle it outside
+  //   }
+  // };
+  console.log();
   return (
     <div className="flex">
       <form autoComplete="off" noValidate onSubmit={handleSubmit}>
@@ -185,7 +252,8 @@ const FormSignup = () => {
             <button
               type="button"
               onClick={togglePasswordVisibility}
-              className="absolute right-3 top-2">
+              className="absolute right-3 top-2"
+            >
               {showPassword ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -193,7 +261,8 @@ const FormSignup = () => {
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
                   stroke="currentColor"
-                  className="w-6 h-6">
+                  className="w-6 h-6"
+                >
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -207,7 +276,8 @@ const FormSignup = () => {
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
                   stroke="currentColor"
-                  className="w-6 h-6">
+                  className="w-6 h-6"
+                >
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -243,7 +313,8 @@ const FormSignup = () => {
           </div>
           <Link
             href={"/login"}
-            className="inline-block align-baseline text-xs hover:underline   text-[#455445]">
+            className="inline-block align-baseline text-xs hover:underline   text-[#455445]"
+          >
             Already have an account?
           </Link>
         </div>

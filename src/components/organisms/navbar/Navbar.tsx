@@ -206,7 +206,7 @@ const Navbar: React.FC<NavbarProps> = ({
           </div>
         </div>
       ) : (
-        <div className="lg:w-1/2 lg:h-full lg:flex bg-blue-500 lg:items-center lg:justify-end ">
+        <div className="lg:w-1/2 lg:h-full lg:flex lg:items-center lg:justify-end ">
           <Link
             href={"login"}
             className="text-[#455445] text-sm hover:underline"
@@ -216,7 +216,7 @@ const Navbar: React.FC<NavbarProps> = ({
 
           <div className="w-1/3 flex items-center justify-evenly ">
             {/* vertical Line */}
-            <div className="h-5 w-[1px] border-l-2 border-[#455445]"></div>
+            <div className="h-5 w-[1px] border-l-2 border-[#756739]"></div>
             <Link
               href={"signup"}
               className="text-[#9B90C2] text-sm hover:underline"

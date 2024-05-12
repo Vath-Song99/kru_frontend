@@ -170,10 +170,10 @@ const Navbar: React.FC<NavbarProps> = ({
 
       {/* right */}
 
-      {isLogin == false ? (
+      {!isLogin == false ? (
         <div className="hidden lg:w-1/2 lg:h-full lg:flex lg:items-center lg:justify-end ">
           <Link
-            href={"/Login"}
+            href={"login"}
             className="text-[#455445] text-sm hover:underline"
           >
             Log in
@@ -183,15 +183,20 @@ const Navbar: React.FC<NavbarProps> = ({
             {/* verticle Line */}
             <div className="h-5 w-[1px] border-l-2 border-[#455445]"></div>
             <Link
-              href={"Sign up"}
+              href={"signup"}
               className="text-[#9B90C2] text-sm hover:underline"
             >
               Sign up for free
             </Link>
           </div>
-          <Button className="px-4 py-2" colorScheme="primary">
-            Get Started
-          </Button>
+          <Link
+            href={"signup"}
+            className="text-[#9B90C2] text-sm hover:underline"
+          >
+            <Button className="px-4 py-2" colorScheme="primary">
+              Get Started
+            </Button>
+          </Link>
         </div>
       ) : (
         <div className="lg:w-1/2 lg:h-full lg:flex lg:items-center lg:justify-end ">

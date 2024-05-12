@@ -2,6 +2,7 @@
 import { Footer, Homepage, Navbar, SettingProfile } from "@/components";
 import { VerifyLogin } from "@/components/organisms/auth/VerifyLogin";
 import { RatingStar } from "@/components/organisms/rating-star";
+import { Dashboard } from "@/components/templates/Dashboard";
 import React, { useState } from "react";
 
 const Page = () => {
@@ -13,7 +14,7 @@ const Page = () => {
       <div className="w-full flex justify-center items-center">
         <Navbar setIsShowModal={setIsShowModal} isShowModal={isShowModal} />
       </div>
-      <Homepage />
+      <Dashboard />
       <div className="w-full flex justify-center items-start bg-gray-900"></div>
     </div>
   );

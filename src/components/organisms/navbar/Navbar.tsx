@@ -134,7 +134,7 @@ const Navbar: React.FC<NavbarProps> = ({
     console.log("Selected option:", value);
   };
   // login
-  const [isLogin, setIsLogin] = useState(true);
+  const [isLogin, setIsLogin] = useState(false);
   return (
     <nav
       className={`w-[80%] h-[100px] flex justify-between items-center  ${className}`}
@@ -170,20 +170,55 @@ const Navbar: React.FC<NavbarProps> = ({
 
       {/* right */}
 
-      {isLogin == false ? (
-        <div className="hidden lg:w-1/2 lg:h-full lg:flex lg:items-center lg:justify-end ">
+      {!isLogin ? (
+        <div className="lg:w-1/3  lg:h-1/3 lg:flex lg:items-center lg:justify-center ">
+          <div className="flex items-center">
+            <ButtonDropDown
+              options={options}
+              onChange={handleChange}
+              className="md:hidden xl:inline lg:flex lg:items-start lg:mr-7"
+            ></ButtonDropDown>
+            <div className="w-1/3 flex items-center justify-evenly">
+              {/* Vertical Line */}
+              <div className="h-5 w-[1px] bg-gray-400 lg:inline"></div>
+            </div>
+            <Notification className="hidden lg:inline lg:ml-7 lg:mt-2"></Notification>
+            <ProfileDropDown
+              icon={
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
+                  />
+                </svg>
+              }
+              className="ml-10 hidden sm:hidden md:hidden xl:inline lg:inline"
+              onChange={handleChange}
+            ></ProfileDropDown>
+          </div>
+        </div>
+      ) : (
+        <div className="lg:w-1/2 lg:h-full lg:flex bg-blue-500 lg:items-center lg:justify-end ">
           <Link
-            href={"/Login"}
+            href={"/login"}
             className="text-[#455445] text-sm hover:underline"
           >
             Log in
           </Link>
 
           <div className="w-1/3 flex items-center justify-evenly ">
-            {/* verticle Line */}
+            {/* vertical Line */}
             <div className="h-5 w-[1px] border-l-2 border-[#455445]"></div>
             <Link
-              href={"Sign up"}
+              href={"signup"}
               className="text-[#9B90C2] text-sm hover:underline"
             >
               Sign up for free
@@ -193,63 +228,8 @@ const Navbar: React.FC<NavbarProps> = ({
             Get Started
           </Button>
         </div>
-      ) : (
-        <div className="lg:w-1/2 lg:h-full lg:flex lg:items-center lg:justify-end ">
-          <ButtonIcon
-            // favarite icon
-            icon={
-              <a href="#">
-                <svg
-                  width="32"
-                  height="32"
-                  viewBox="0 0 21 18"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M19.5 5.25C19.5 2.765 17.401 0.75 14.812 0.75C12.877 0.75 11.215 1.876 10.5 3.483C9.785 1.876 8.123 0.75 6.187 0.75C3.6 0.75 1.5 2.765 1.5 5.25C1.5 12.47 10.5 17.25 10.5 17.25C10.5 17.25 19.5 12.47 19.5 5.25Z"
-                    stroke="black"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </a>
-            }
-            className="hidden sm:hidden md:hidden xl:inline lg:inline"
-          ></ButtonIcon>
-          <ButtonDropDown
-            options={options}
-            onChange={handleChange}
-            className="border-blue-500 mx-7 hidden sm:hidden md:hidden xl:inline lg:inline"
-          ></ButtonDropDown>
-          <div className="w-1/3 flex items-center justify-evenly ">
-            {/* verticle Line */}
-            <div className="h-5 w-[1px] border-l-2 border-[#455445] hidden sm:hidden md:hidden xl:inline lg:inline"></div>
-          </div>
-          <Notification className="" />
-          <ProfileDropDown
-            icon={
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                className="w-6 h-6"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
-                />
-              </svg>
-            }
-            className="ml-7 hidden sm:hidden md:hidden xl:inline lg:inline"
-            onChange={handleChange}
-          ></ProfileDropDown>
-        </div>
       )}
+
       {/* Start mobile screen */}
       <button
         onClick={toggleModal}
@@ -382,46 +362,7 @@ const Navbar: React.FC<NavbarProps> = ({
           </ul>
         </nav>
         <div className="w-[90%] mx-auto h-[1.2px] bg-gray-200"></div>
-        <nav className="flex  py-2 flex-col items-start justify-start">
-          <ul className="ml-5">
-            <li
-              className="cursor-pointer py-3 hover:underline relative"
-              onClick={() => handleItemClick("Setttings")}
-            >
-              {selectedItem === "Setttings" && (
-                <span
-                  className="absolute left-[-15px] top-[9px] h-[50%] w-1 bg-[#7B2CBF]"
-                  style={{ marginTop: "0.5rem" }}
-                />
-              )}
-              <a href={"/"}>Setttings</a>
-            </li>
-            <li
-              className="cursor-pointer py-3 hover:underline relative"
-              onClick={() => handleItemClick("Favarite")}
-            >
-              {selectedItem === "Favarite" && (
-                <span
-                  className="absolute left-[-15px] top-[9px] h-[50%] w-1 bg-[#7B2CBF]"
-                  style={{ marginTop: "0.5rem" }}
-                />
-              )}
-              <a href={"become-a-teacher-signup-steps"}>Favarite</a>
-            </li>
-            <li
-              className="cursor-pointer py-3 hover:underline relative"
-              onClick={() => handleItemClick("Logout")}
-            >
-              {selectedItem === "Logout" && (
-                <span
-                  className="absolute left-[-15px] top-[9px] h-[50%] w-1 bg-[#7B2CBF]"
-                  style={{ marginTop: "0.5rem" }}
-                />
-              )}
-              Logout
-            </li>
-          </ul>
-        </nav>
+
         <ButtonDropDown
           options={options}
           onChange={handleChange}

@@ -1,5 +1,6 @@
 interface CardTeachersTypes {
-  className?: string;
+  id?: string;
+  item?: string | undefined;
   imageUrl?: string;
   nameSubject?: string;
   teacherName?: string;
@@ -8,6 +9,7 @@ interface CardTeachersTypes {
   students?: number;
   description?: string;
   pricing?: number;
+  favorite?: boolean;
 }
 
 export interface AuthModel {
@@ -22,7 +24,9 @@ export interface UserContextType {
   rememberMe: boolean;
   setRememberMe: React.Dispatch<boolean>;
 }
+
 export type AuthForm = Omit<AuthModel, "id">;
+
 export type { CardTeachersTypes };
 
 // handle login

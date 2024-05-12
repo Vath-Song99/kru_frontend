@@ -1,2 +1,2 @@
-import { Favorite } from "./favorite";
-export { Favorite };
+import { Fav } from "./Fav";
+export { Fav };

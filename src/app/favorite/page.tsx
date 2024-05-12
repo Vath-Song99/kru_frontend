@@ -1,9 +1,10 @@
 import React from 'react'
-import { Favorite } from '@/components/organisms/favorite-page'
+import { Fav } from '@/components/organisms/favorite-page'
+
 const page = () => {
     return (
         <div>
-            <Favorite />
+            <Fav />
         </div>
     )
 }

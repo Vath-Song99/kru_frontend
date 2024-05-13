@@ -171,16 +171,16 @@ const Navbar: React.FC<NavbarProps> = ({
       {/* right */}
 
       {!isLogin ? (
-        <div className="lg:w-1/3  lg:h-1/3 lg:flex lg:items-center lg:justify-center ">
+        <div className="lg:w-1/3 lg:h-1/3 lg:flex lg:items-center lg:justify-center ">
           <div className="flex items-center">
             <ButtonDropDown
               options={options}
               onChange={handleChange}
-              className="md:hidden xl:inline lg:flex lg:items-start lg:mr-7"
+              className="md:hidden xl:inline lg:flex lg:items-start lg:mr-7 sm:hidden hidden"
             ></ButtonDropDown>
             <div className="w-1/3 flex items-center justify-evenly">
               {/* Vertical Line */}
-              <div className="h-5 w-[1px] bg-gray-400 lg:inline"></div>
+              <div className="h-5 w-[1px] bg-gray-400 hidden lg:inline"></div>
             </div>
             <Notification className="hidden lg:inline lg:ml-7 lg:mt-2"></Notification>
             <ProfileDropDown
@@ -259,9 +259,8 @@ const Navbar: React.FC<NavbarProps> = ({
       </button>
       {/* Slider Navbar Content */}
       <div
-        className={`fixed lg:hidden xl:hidden inset-y-0 right-0 flex flex-col items-start z-50 bg-white w-64 md:w-72 lg:w-80 xl:w-96 shadow-lg transform transition-all duration-300 ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`fixed lg:hidden xl:hidden inset-y-0 right-0 flex flex-col items-start z-50 bg-white w-64 md:w-72 lg:w-80 xl:w-96 shadow-lg transform transition-all duration-300 ${isOpen ? "translate-x-0" : "translate-x-full"
+          }`}
       >
         <div className="flex items-center justify-between w-full px-4 py-2">
           <div className="flex">

@@ -1,5 +1,6 @@
 "use client";
 import { Footer, Homepage, Navbar, SettingProfile } from "@/components";
+import { VerifyEmail } from "@/components/organisms/auth/VerifyEmail";
 import { VerifyLogin } from "@/components/organisms/auth/VerifyLogin";
 import { RatingStar } from "@/components/organisms/rating-star";
 import { Dashboard } from "@/components/templates/Dashboard";

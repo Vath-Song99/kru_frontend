@@ -16,11 +16,14 @@ const VerifyLogin = () => {
   };
   useEffect(() => {
     if (isPopupOpen) {
+      document.body.style.overflow = "hidden"
       document.addEventListener("mousedown", handleClickOutside);
     } else {
+      document.body.style.overflow = "";
       document.removeEventListener("mousedown", handleClickOutside);
     }
     return () => {
+      document.body.style.overflow = "";
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [isPopupOpen]);
@@ -43,25 +46,22 @@ const VerifyLogin = () => {
         />
       </svg>
       {isPopupOpen && (
-        <div className=" sm:w-[470px] sm:h-[470px] md:w-[470px] md:h-[470px] lg:w-[470px] lg:h-[470px] xl:w-[470px] xl:-[470px] mx-auto p-5 gap-5  rounded-lg border shadow-lg">
-          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-            <div
-              ref={popupRef}
-              className="relative  w-[350px] h-[400px] sm:w-[470px] sm:h-[470px] md:w-[470px] md:h-[470px] lg:w-[470px] lg:h-[470px] xl:w-[470px] xl:h-[470px] bg-white rounded-md border shadow-lg flex flex-col items-center p-5 gap-5"
-            >
-              <Button className="self-end" onClick={togglePopup} radius="md">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="32"
-                  height="32"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill="#F01C1C"
-                    d="m6.4 18.308l-.708-.708l5.6-5.6l-5.6-5.6l.708-.708l5.6 5.6l5.6-5.6l.708.708l-5.6 5.6l5.6 5.6l-.708.708l-5.6-5.6l-5.6 5.6Z"
-                  />
-                </svg>
-              </Button>
+        <div className="fixed inset-0 bg-[#000000] bg-opacity-50 flex items-center justify-center z-50">
+          <div ref={popupRef} className="relative w-full max-w-md p-5 bg-white rounded-lg border shadow-lg flex flex-col justify-between    ">
+            <Button className="absolute top-0 right-0 m-2" onClick={togglePopup} radius="md">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="#F01C1C"
+                  d="m6.4 18.308l-.708-.708l5.6-5.6l-5.6-5.6l.708-.708l5.6 5.6l5.6-5.6l.708.708l-5.6 5.6l5.6 5.6l-.708.708l-5.6-5.6l-5.6 5.6Z"
+                />
+              </svg>
+            </Button>
+            <div className="flex justify-center">
               <svg
                 width="125"
                 height="125"
@@ -84,31 +84,32 @@ const VerifyLogin = () => {
                   stroke-linejoin="round"
                 />
               </svg>
-              <Typography
-                variant="bold"
-                className="text-sm sm:text-lg md:text-lg lg:text-lg xl:text-lg"
-              >
-                Let us know If you are Sign up or Log in Speed your time to
-                authentication with us.
-              </Typography>
-              <div className="w-full flex justify-between mt-20 md:px-5 lg:px-5 xl:px-5">
-                <Link href={"login"}>
-                  <Button className="w-[130px] h-[40px] border border-[#7B2CBF] rounded-md">
-                    Login
-                  </Button>
-                </Link>
-                <Link href={"signup"}>
-                  <Button className="w-[130px] h-[40px] border border-[#7B2CBF] rounded-md">
-                    SignUp
-                  </Button>
-                </Link>
-              </div>
+            </div>
+            <Typography
+              variant="bold"
+              className="text-sm sm:text-lg md:text-lg lg:text-lg xl:text-lg"
+            >
+              Let us know If you are Sign up or Log in. Spend  your time to
+              authentication with us.
+            </Typography>
+            <div className="w-full flex justify-between mt-20 md:px-5 lg:px-5 xl:px-5">
+              <Link href={"login"}>
+                <Button className="w-[130px] h-[40px] border border-[#7B2CBF] rounded-md">
+                  Login
+                </Button>
+              </Link>
+              <Link href={"signup"}>
+                <Button className="w-[130px] h-[40px] border border-[#7B2CBF] rounded-md">
+                  SignUp
+                </Button>
+              </Link>
             </div>
           </div>
-
         </div>
-      )}
-    </div>
+
+      )
+      }
+    </div >
   );
 };
 

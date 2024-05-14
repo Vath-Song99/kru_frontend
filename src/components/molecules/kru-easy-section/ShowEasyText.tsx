@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography } from "@/components";
 
-const ShowEasyText: React.FC = ({}) => {
+const ShowEasyText: React.FC = ({ }) => {
   return (
     <div className="w-full flex justify-center items-center py-10 ">
       <div className="w-[80%] grid gap-3 md:grid-flow-col md:gap-1  ">

@@ -7,8 +7,8 @@ const TeacherNavbarComponent = ({
   icon = true,
 }: TeacherNavbarType) => {
   return (
-    <div className={`w-[20%] flex justify-around  items-center  ${className}`}>
-      <div className=" flex justify-between items-center gap-2">{children}</div>
+    <div className={` flex  items-center gap-4  ${className}`}>
+      <div className="flex  items-center">{children}</div>
 
       {icon === true && (
         <svg
@@ -17,8 +17,7 @@ const TeacherNavbarComponent = ({
           height="20"
           viewBox="0 0 26 28"
           fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+          xmlns="http://www.w3.org/2000/svg">
           <path
             d="M8.9375 5.25L17.0625 14L8.9375 22.75"
             stroke="black"

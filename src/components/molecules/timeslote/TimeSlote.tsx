@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import { Button, InputForm, Typography } from "@/components/atoms";
 
@@ -26,15 +26,9 @@ const TimeSlote = ({ day }: { day: string }) => {
   };
 
   return (
-<<<<<<< HEAD
     <div className="w-[464px]">
       <div className="flex items-center justify-start gap-2">
         <input type="checkbox" className="w-6" />
-=======
-    <div className="w-full">
-      <div className="flex items-center  gap-2">
-        <InputForm type="checkbox" className="h-[16px] w-[16px]" />
->>>>>>> main
         <label htmlFor="" className="font-bold">
           {day}
         </label>
@@ -49,8 +43,7 @@ const TimeSlote = ({ day }: { day: string }) => {
             name="fromTime"
             value={fromTime}
             onChange={handleFromTimeChange}
-            className="pr-20 pl-2 py-[5px] border border-black rounded-md outline-none "
-          >
+            className="pr-20 pl-2 py-[5px] border border-black rounded-md outline-none ">
             <option value="">Select</option>
             <option value="9:00 AM">9:00 AM</option>
             <option value="10:00 AM">10:00 AM</option>
@@ -66,8 +59,7 @@ const TimeSlote = ({ day }: { day: string }) => {
             name="toTime"
             value={toTime}
             onChange={handleToTimeChange}
-            className="pr-20 pl-2 py-[5px] border border-black rounded-md outline-none "
-          >
+            className="pr-20 pl-2 py-[5px] border border-black rounded-md outline-none ">
             <option value="">Select</option>
             <option value="9:00 AM">9:00 AM</option>
             <option value="10:00 AM">10:00 AM</option>
@@ -80,8 +72,7 @@ const TimeSlote = ({ day }: { day: string }) => {
         align="left"
         fontSize="sm"
         variant="semibold"
-        className="hover:underline py-2"
-      >
+        className="hover:underline py-2">
         Add another timeslot +
       </Typography>
     </div>

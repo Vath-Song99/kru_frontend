@@ -32,7 +32,7 @@ const CreateClass = () => {
     e.preventDefault();
     try {
       await createClassSchema.validate(formData, { abortEarly: false });
-      addLoginUsers(formData);
+      addClassRoom(formData);
       setErrors({});
     } catch (error) {
       if (error instanceof Yup.ValidationError) {
@@ -46,7 +46,7 @@ const CreateClass = () => {
       }
     }
   };
-  const addLoginUsers = (users: classRoom) => {
+  const addClassRoom = (users: classRoom) => {
     // stept 5
     alert(users.email);
     const fetchData = async (usersData: classRoom) => {
@@ -87,60 +87,66 @@ const CreateClass = () => {
               aspernatur minus. Aperiam, deserunt!
             </p>
           </div>
-          <form action="" onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit}>
             <div className=" mt-4 md:w-[200px] ">
               <label className=" w-[350px] flex flex-col justify-center items-center   ">
-                <InputForm
-                  className=" mt-4 bg-[#f1f1f1]   px-3  md:w-[350px] lg:w-[350px]  outline-none"
-                  borderColor="border-class"
-                  placeholder="ClassName"
-                  borderSize="classroom"
-                  name="classroom"
-                  type="text"
-                  onChange={onChangeInput}
-                  value={formData.classroom}
-                />
-                {errors.classroom && (
-                  <div className="flex justify-start">
-                    <small className="mt-2" style={{ color: "red" }}>
-                      {errors.classroom}
-                    </small>
-                  </div>
-                )}
-                <InputForm
-                  className=" mt-4 bg-[#f1f1f1]   px-3  md:w-[350px] lg:w-[350px]  outline-none"
-                  borderColor="border-class"
-                  placeholder="Subject"
-                  borderSize="classroom"
-                  name="subject"
-                  type="text"
-                  value={formData.subject}
-                  onChange={onChangeInput}
-                />
-                {errors.subject && (
-                  <div className="flex justify-start">
-                    <small className="mt-2" style={{ color: "red" }}>
-                      {errors.subject}
-                    </small>
-                  </div>
-                )}
-                <InputForm
-                  className=" mt-4 bg-[#f1f1f1]   px-3  md:w-[350px] lg:w-[350px]  outline-none"
-                  borderColor="border-class"
-                  placeholder="Email Address"
-                  borderSize="classroom"
-                  name="email"
-                  type="text"
-                  value={formData.email}
-                  onChange={onChangeInput}
-                />
-                {errors.email && (
-                  <div className="flex justify-start">
-                    <small className="mt-2" style={{ color: "red" }}>
-                      {errors.email}
-                    </small>
-                  </div>
-                )}
+                <div className="flex flex-col">
+                  <InputForm
+                    className=" mt-4 bg-[#f1f1f1]   px-3  md:w-[350px] lg:w-[350px]  outline-none"
+                    borderColor="border-class"
+                    placeholder="ClassName"
+                    borderSize="classroom"
+                    name="classroom"
+                    type="text"
+                    onChange={onChangeInput}
+                    value={formData.classroom}
+                  />
+                  {errors.classroom && (
+                    <div className="flex justify-start">
+                      <small className="mt-2" style={{ color: "red" }}>
+                        {errors.classroom}
+                      </small>
+                    </div>
+                  )}
+                </div>
+                <div className="flex flex-col">
+                  <InputForm
+                    className=" mt-4 bg-[#f1f1f1]   px-3  md:w-[350px] lg:w-[350px]  outline-none"
+                    borderColor="border-class"
+                    placeholder="Subject"
+                    borderSize="classroom"
+                    name="subject"
+                    type="text"
+                    value={formData.subject}
+                    onChange={onChangeInput}
+                  />
+                  {errors.subject && (
+                    <div className="flex justify-start">
+                      <small className="mt-2" style={{ color: "red" }}>
+                        {errors.subject}
+                      </small>
+                    </div>
+                  )}
+                </div>
+                <div className="flex flex-col">
+                  <InputForm
+                    className=" mt-4 bg-[#f1f1f1]   px-3  md:w-[350px] lg:w-[350px]  outline-none"
+                    borderColor="border-class"
+                    placeholder="Email Address"
+                    borderSize="classroom"
+                    name="email"
+                    type="text"
+                    value={formData.email}
+                    onChange={onChangeInput}
+                  />
+                  {errors.email && (
+                    <div className="flex justify-start">
+                      <small className="mt-2" style={{ color: "red" }}>
+                        {errors.email}
+                      </small>
+                    </div>
+                  )}
+                </div>
               </label>
             </div>
             <div className="">

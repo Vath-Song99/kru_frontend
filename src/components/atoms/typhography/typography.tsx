@@ -9,7 +9,7 @@ interface TypographyProps {
   fontSize?: "base" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl";
   variant?: "normal" | "semibold" | "bold" | "extrabold" | "2-extrabold";
   colorscheme?: "primary" | "secondary" | "tb" | "white"; // Corrected prop name
-  tags?: "h1" | "p";
+  tags?: "h1" | "p" | "h4";
   id?: string;
 }
 
@@ -103,10 +103,15 @@ const Typography: React.FC<TypographyProps> = ({
           className={`${typographyColorStyles} ${typographyVariantStyles} ${typographyFontSizeStyles} ${typographyAlignStyles} ${className}`}>
           {children}
         </h1>
+      ) : tags === "h4" ? (
+        <h4
+          className={`${typographyColorStyles} ${typographyVariantStyles} ${typographyFontSizeStyles} ${typographyAlignStyles} ${className}`}>
+          {children}
+        </h4>
       ) : (
         <p
           className={`${typographyColorStyles} ${typographyVariantStyles} ${typographyFontSizeStyles} ${typographyAlignStyles} ${className}`}
-          id={`${id}`}>
+          id={id}>
           {children}
         </p>
       )}

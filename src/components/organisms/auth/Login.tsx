@@ -16,11 +16,9 @@ const Login = () => {
             <h1 className="text-xs tracking-wide pb-5 underline  ">
               {" "}
               don&apos;t have an account?{" "}
-
               <Link
                 href={"/signup"}
-                className="text-[#7B2CBF] hover:text-[gray]"
-              >
+                className="text-[#7B2CBF] hover:text-[gray]">
                 {" "}
                 sign up
               </Link>
@@ -33,8 +31,7 @@ const Login = () => {
                   height="24"
                   viewBox="0 0 25 24"
                   fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
+                  xmlns="http://www.w3.org/2000/svg">
                   <g clip-path="url(#clip0_2202_1265)">
                     <path
                       d="M12.4998 9.81836V14.4656H18.9579C18.6743 15.9602 17.8233 17.2257 16.547 18.0766L20.4415 21.0984C22.7106 19.0039 24.0197 15.9276 24.0197 12.273C24.0197 11.4221 23.9433 10.6039 23.8015 9.81849L12.4998 9.81836Z"
@@ -75,8 +72,7 @@ const Login = () => {
                   height="24"
                   viewBox="0 0 25 24"
                   fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
+                  xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M24.5 12C24.5 5.37264 19.1274 0 12.5 0C5.87264 0 0.5 5.37264 0.5 12C0.5 17.6275 4.37456 22.3498 9.60128 23.6467V15.6672H7.12688V12H9.60128V10.4198C9.60128 6.33552 11.4498 4.4424 15.4597 4.4424C16.22 4.4424 17.5318 4.59168 18.0685 4.74048V8.06448C17.7853 8.03472 17.2933 8.01984 16.6822 8.01984C14.7147 8.01984 13.9544 8.76528 13.9544 10.703V12H17.8741L17.2006 15.6672H13.9544V23.9122C19.8963 23.1946 24.5005 18.1354 24.5005 12H24.5Z"
                     fill="#0866FF"
@@ -95,42 +91,6 @@ const Login = () => {
             <div className="grid gap-3">
               <FormLogin />
             </div>
-
-            <form className="grid gap-3">
-              <div className="flex flex-col">
-                <label htmlFor="username">Email</label>
-                <input
-                  type="email"
-                  placeholder="example@gmail.com"
-                  className="border border-purple-500 rounded-md w-[300px] h-[40px] pl-3 outline-none text-xs"
-                />
-              </div>
-              <div className="flex flex-col">
-                <label htmlFor="password">Password</label>
-                <input
-                  type="password"
-                  placeholder="password"
-                  className="border border-purple-500 rounded-md w-[300px] h-[40px] pl-3 outline-none text-xs"
-                />
-              </div>
-              <div className=" flex items-center justify-between">
-                <div className="flex items-center">
-                  <input type="checkbox" className="mr-[2px]" />
-                  <a href="" className="text-sm">
-                    Remember me
-                  </a>
-                </div>
-                <a
-                  className="inline-block align-baseline text-sm hover:underline text-[#455445]"
-                  href="forget-password"
-                >
-                  Forgot Password?
-                </a>
-              </div>
-              <Button className="hover:bg-violet-700 text-white text-[16px] flex justify-center w-[300px] font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ">
-                Log in
-              </Button>
-            </form>
           </div>
         </div>
         <div className="flex items-center justify-center ">
@@ -138,8 +98,7 @@ const Login = () => {
             alt="login page"
             src={"/login.png"}
             width={400}
-            height={400}
-          ></Image>
+            height={400}></Image>
         </div>
       </div>
     </div>

@@ -1,5 +1,6 @@
 import type { Meta,StoryObj } from "@storybook/react";
-import { InputForm } from "./Inputform";
+import { InputForm } from "./inputform";
+
 
 const meta: Meta<typeof InputForm> = {
     title: "components/atoms/input/InputForm.tsx",

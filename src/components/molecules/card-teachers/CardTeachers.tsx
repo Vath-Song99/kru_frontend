@@ -1,39 +1,47 @@
 "use client";
-
 import { Button, Typography } from "@/components/atoms";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { CardTeachersTypes } from "@/@types";
 
-const CardTeachers: React.FC<CardTeachersTypes> = ({
-  className,
-  imageUrl,
-  nameSubject,
-  teacherName,
-  rateStars,
-  reviews,
-  students,
-  description,
-  pricing,
-}) => {
-  const [isFavorite, setIsFavorite] = useState(true);
-  const handleClick = () => {
+const CardTeachers: React.FC<CardTeachersTypes> = (props) => {
+  const {
+    imageUrl,
+    nameSubject,
+    teacherName,
+    rateStars,
+    reviews,
+    students,
+    description,
+    pricing } = props
+
+  const [isFavorite, setIsFavorite] = useState(false)
+
+  const handleOnToggleFavorite = () => {
     setIsFavorite(!isFavorite);
   };
+
   return (
     <div className="w-full  lg:w-[49%] flex justify-evenly sm:justify-around border-[1.5px] px-1 md:px-0  shadow-sm pt-2 pb-1 md:py-3 hover:border-3 hover:border-[#455445] ">
-      <div className="flex flex-col items-center gap-1 justify-center md:justify-start w-[100px]  sm:w-[130px] md:w-[140px] lg:w-[120px]">
-        <Image
-          src={`/${imageUrl}`}
-          width={500}
-          height={500}
-          alt={`${teacherName}`}
-          className="w-full h-[100px] sm:h-[110px] md:h-[140px] lg:h-[120px] object-cover"></Image>
 
-        <button className="md:hidden py-1 px-2 text-[8px] bg-[#007C00] text-white hover:bg-white hover:border hover:text-[#455445] hover:border-[#007C00]">
-          Send Message
-        </button>
+      <div className="flex flex-col items-center gap-1 justify-center md:justify-start w-[100px]  sm:w-[130px] md:w-[140px] lg:w-[120px]">
+        <Link
+          href={"teacher-profile"}
+          className="flex flex-col items-center gap-1 justify-center md:justify-start w-[100px]  sm:w-[130px] md:w-[140px] lg:w-[120px]"
+        >
+          <Image
+            src={`/${imageUrl}`}
+            width={500}
+            height={500}
+            alt={`${teacherName}`}
+            className="w-full h-[100px] sm:h-[110px] md:h-[140px] lg:h-[120px] object-cover"
+          ></Image>
+
+          <button className="md:hidden py-1 px-2 text-[8px] bg-[#007C00] text-white hover:bg-white hover:border hover:text-[#455445] hover:border-[#007C00]">
+            Send Message
+          </button>
+        </Link>
       </div>
 
       <div className="w-[65%] grid  gap-[2px]">
@@ -42,15 +50,16 @@ const CardTeachers: React.FC<CardTeachersTypes> = ({
           <Typography className="font-medium text-md sm:text-xl tracking-normal">
             {teacherName}
           </Typography>
-          <button onClick={handleClick}>
-            {isFavorite ? (
+          <button onClick={handleOnToggleFavorite} className="cursor-pointer">
+            {!isFavorite ? (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
                 stroke="currentColor"
-                className="w-4 h-4">
+                className="w-4 h-4 fill-white"
+              >
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"

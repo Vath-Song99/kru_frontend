@@ -4,12 +4,13 @@ import {
   HomepageSlider,
   HomeBenner,
   TopTeachersList,
+  Footer,
 } from "@/components/organisms";
 import { SearchInput, ShowEasyText, KruVision } from "@/components/molecules";
 
 const Homepage: React.FC = () => {
   return (
-    <div className="max-w-full ">
+    <div className="max-w-full">
       {/* Homepage Benner */}
 
       <HomepageSlider />
@@ -28,9 +29,11 @@ const Homepage: React.FC = () => {
         <TopTeachersList />
 
         {/* benner card */}
-
         <KruVision />
         <ShowEasyText />
+      </div>
+      <div className="w-full  flex justify-center items-start bg-black">
+        <Footer />
       </div>
     </div>
   );

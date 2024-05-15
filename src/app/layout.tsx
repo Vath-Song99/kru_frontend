@@ -3,6 +3,8 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import { Footer, Navbar } from "@/components";
 
+import CardContext from "@/context/CardContext";
+
 const poppins = Poppins({
   subsets: ["latin"],
   weight: "400",
@@ -22,10 +24,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.className}>
-        {children}
-        {/* <div className="w-full flex justify-center items-end bg-gray-900 mt-6">
-          <Footer />
-        </div> */}
+        <CardContext>{children}</CardContext>
+        {/* <div className="w-full flex justify-center items-end bg-gray-900 mt-6"><Footer/></div> */}
       </body>
     </html>
   );

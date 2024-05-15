@@ -1,5 +1,3 @@
-"use client";
-
 import React, { FC, ReactNode } from "react";
 
 interface ButtonProps {
@@ -15,7 +13,7 @@ interface ButtonProps {
   fontSize?: "sm" | "md" | "lg" | "xl";
   width?: number;
   height?: number;
-  onClick?: any;
+  onClick?: () => void;
   hover?: () => void;
 }
 
@@ -27,12 +25,11 @@ export const Button: FC<ButtonProps> = ({
   leftIcon,
   rightIcon,
   radius = "sm",
-  fontColor = "text-white",
-  fontSize = "sm",
+  fontColor = "white",
+  fontSize = "md",
   hover,
-  width,
-  height,
   onClick,
+  type
 }) => {
   const getColorSchemeClass = (schemeParam: string) => {
     switch (schemeParam) {
@@ -48,6 +45,7 @@ export const Button: FC<ButtonProps> = ({
         return "bg-[#7B2CBF] hover:bg-[#542598] text-white";
     }
   };
+
   const buttonRadius = (radiusParam: string) => {
     switch (radiusParam) {
       case "sm":
@@ -62,8 +60,9 @@ export const Button: FC<ButtonProps> = ({
         return "rounded-sm";
     }
   };
-  const fontColorControl = (fontColor: string) => {
-    switch (fontColor) {
+
+  const fontColorControl = (fontColorParam: string) => {
+    switch (fontColorParam) {
       case "primary":
         return "text-[#7B2CBF]";
       case "secondary":
@@ -76,8 +75,9 @@ export const Button: FC<ButtonProps> = ({
         return "text-white";
     }
   };
-  const fontSizeControl = (fontSize: string) => {
-    switch (fontSize) {
+
+  const fontSizeControl = (fontSizeParam: string) => {
+    switch (fontSizeParam) {
       case "sm":
         return "text-[12px]";
       case "md":
@@ -87,7 +87,7 @@ export const Button: FC<ButtonProps> = ({
       case "xl":
         return "text-[28px]";
       default:
-        return "text-[12px]";
+        return "text-[16px]";
     }
   };
 
@@ -102,10 +102,17 @@ export const Button: FC<ButtonProps> = ({
     <button
       disabled={isDisabled}
       className={combinedClassName}
-      onMouseOver={hover}>
+      onMouseOver={hover}
+      onClick={onClick}
+    >
       {leftIcon}
       {children}
       {rightIcon}
     </button>
   );
 };
+
+
+
+
+

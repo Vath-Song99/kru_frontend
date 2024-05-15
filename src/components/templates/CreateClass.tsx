@@ -61,7 +61,7 @@ const CreateClass = () => {
         //     },
         //   }
         // );
-      } catch (error) {}
+      } catch (error) { }
     };
     // stept 6
     // stept 7

@@ -1,5 +1,6 @@
 "use client";
 import { Button, FormSignup } from "@/components";
+import axios from "axios";
 import Link from "next/link";
 import React, { useState } from "react";
 
@@ -9,6 +10,28 @@ const Signup = () => {
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
+  const handleSigninWithGoogle = async () => {
+    try {
+      const url = "http://localhost:3000/v1/auth/google";
+      const response = await axios.get(url);
+      console.log(response);
+      return response.data;
+    } catch (error: any) {
+      if (axios.isAxiosError(error)) {
+        // Axios error (e.g., network error, timeout)
+        console.error("Axios error:", error.message);
+      } else if (error.response) {
+        // The request was made and the server responded with a status code
+        // that falls out of the range of 2xx
+        console.error("Server error:", error.response.data);
+      } else {
+        // Something happened in setting up the request that triggered an error
+        console.error("Error:", error.message);
+      }
+      throw error; // Re-throw the error to be handled by the caller if needed
+    }
+  };
+
   return (
     <div className="w-full h-[100vh] flex justify-center items-center  mx-auto">
       <div className="border-[1px] border-[#f3f3f3]-500  pt-4 pb-8 px-8 flex items-center justify-center shadow-md">
@@ -19,20 +42,25 @@ const Signup = () => {
               Sign up as a teacher?{"  "}
               <Link
                 href={"/signup"}
-                className="text-[#7b2cbf] underline hover:text-purple-700">
+                className="text-[#7b2cbf] underline hover:text-purple-700"
+              >
                 Sign up
               </Link>
             </p>
           </div>
           <div className="grid gap-3">
-            <Button className="flex items-center justify-center  w-[360px] py-2.5  bg-[#f3f3f3] rounded-md hover:bg-[#d2d0d0]">
+            <Button
+              onClick={handleSigninWithGoogle}
+              className="flex items-center justify-center  w-[360px] py-2.5  bg-[#f3f3f3] rounded-md hover:bg-[#d2d0d0]"
+            >
               <div className="w-[80%] flex justify-evenly items-center gap-x-5">
                 <svg
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
                   fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
+                  xmlns="http://www.w3.org/2000/svg"
+                >
                   <path
                     d="M12 9.81836V14.4656H18.4582C18.1746 15.9602 17.3236 17.2257 16.0472 18.0766L19.9417 21.0984C22.2108 19.0039 23.5199 15.9276 23.5199 12.273C23.5199 11.4221 23.4436 10.6039 23.3017 9.81849L12 9.81836Z"
                     fill="#4285F4"
@@ -61,7 +89,8 @@ const Signup = () => {
                   height="24"
                   viewBox="0 0 24 24"
                   fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
+                  xmlns="http://www.w3.org/2000/svg"
+                >
                   <g clip-path="url(#clip0_2243_1312)">
                     <path
                       d="M24 12C24 5.37264 18.6274 0 12 0C5.37264 0 0 5.37264 0 12C0 17.6275 3.87456 22.3498 9.10128 23.6467V15.6672H6.62688V12H9.10128V10.4198C9.10128 6.33552 10.9498 4.4424 14.9597 4.4424C15.72 4.4424 17.0318 4.59168 17.5685 4.74048V8.06448C17.2853 8.03472 16.7933 8.01984 16.1822 8.01984C14.2147 8.01984 13.4544 8.76528 13.4544 10.703V12H17.3741L16.7006 15.6672H13.4544V23.9122C19.3963 23.1946 24.0005 18.1354 24.0005 12H24Z"

@@ -1,3 +1,3 @@
-import { TimeSlote } from "./TimeSlote";
+import { TimeSlote } from "./TimeSlot";
 
 export { TimeSlote };

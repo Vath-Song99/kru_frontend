@@ -20,18 +20,15 @@ interface InputProps {
   paddingY?: "sm" | "md" | "lg" | "xl";
   borderRadius?: "sm" | "md" | "lg" | "xl" | "full" | "borderphone";
   borderSize?:
-    | "btnlogin"
-    | "classroom"
-    | "forgetpassword"
-    | "phonenumber"
-    | "Subject"
-    | "checkbox"
-    | "sm"
-    | "md"
-    | "lg"
-    | "xl"
-    | "2xl"
-    | "full";
+  | "btnlogin"
+  | "classroom"
+  | "forgetpassword"
+  | "sm"
+  | "md"
+  | "lg"
+  | "xl"
+  | "2xl"
+  | "full";
   onChange?: (event: any) => void;
   accept?: string;
   ref?: React.MutableRefObject<HTMLInputElement | null>;
@@ -157,8 +154,9 @@ const InputForm: React.FC<InputProps> = ({
   const setBorderSize = borderSizeControl(borderSize);
 
   const setClassName = ` ${setBorderSize}  ${setBorderColor} ${setPaddingX} ${setPaddingY} ${setBorderRadius}  ${className}`;
-  // state to storea and set text value
-  const [text, setText] = useState("");
+
+  const [text, setText] = useState("")
+
   return (
     <input
       type={type}
@@ -173,5 +171,6 @@ const InputForm: React.FC<InputProps> = ({
     />
   );
 };
+
 
 export { InputForm };

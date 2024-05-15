@@ -1,10 +1,21 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "../..";
 import Image from "next/image";
 import Link from "next/link";
 import FormLogin from "../form/FormLogin";
 const Login = () => {
+  // const [formInput, setFormInput] = useState({
+  //   email: "",
+  //   password: "",
+  // })
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target.value;
+  //   setFormInput((prevData) => ({
+  //     ...prevData,
+  //     [name]: value,
+  //   }))
+  // }
   return (
     <div className=" w-full h-[100vh] flex justify-center items-center ">
       <div className="w-[900px] h-[600px] flex justify-between items-center border shadow-md">
@@ -15,7 +26,8 @@ const Login = () => {
             </h1>
             <h1 className="text-xs tracking-wide pb-5 underline  ">
               {" "}
-              don&apos;t have an account?{" "}
+              don't have an account?{" "}
+
               <Link
                 href={"/signup"}
                 className="text-[#7B2CBF] hover:text-[gray]">

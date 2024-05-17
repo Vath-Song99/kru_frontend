@@ -86,7 +86,7 @@ const FormSignup = () => {
       // Handle successful response
       console.log("Data:", response.data);
       return response.data;
-    } catch (error: unknown) {
+    } catch (error: any) {
       if (axios.isAxiosError(error)) {
         const axiosError = error as AxiosError;
         if (axiosError.response) {

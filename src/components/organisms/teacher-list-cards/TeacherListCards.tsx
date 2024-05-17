@@ -1,13 +1,18 @@
 "use client"
 import { CardTeachers } from "@/components/molecules";
-import React, { useContext, useState } from "react";
-import CardContext, { Mycontext } from "@/context/CardContext";
-const TeacherListCards = () => {
+import React, { useContext } from "react";
+import { Mycontext } from "@/context/CardContext";
+
+const TeacherListCards = ({ search }: { search: string }) => {
   const { Data } = useContext(Mycontext);
+
   return (
     <div className="w-full flex justify-center">
       <div className="w-[80%] flex justify-center lg:justify-between flex-wrap gap-4">
-        {Data.map((item, index) => (
+        {Data.filter(info => {
+          const searchStr = String(search).trim();
+          return searchStr === "" ? true : info.teacherName?.toLowerCase().includes(searchStr.toLowerCase());
+        }).map((item, index) => (
           <CardTeachers
             key={index}
             id={item.id}
@@ -23,7 +28,8 @@ const TeacherListCards = () => {
           />
         ))}
       </div>
-    </div >
+    </div>
   );
 };
+
 export { TeacherListCards };

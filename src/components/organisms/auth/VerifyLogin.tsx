@@ -1,6 +1,7 @@
 "use client";
 import { Typography } from "@/components/atoms";
 import { Button, Link } from "@nextui-org/react";
+import Image from "next/image";
 import React, { useState, useRef, useEffect } from "react";
 
 const VerifyLogin = () => {
@@ -61,7 +62,7 @@ const VerifyLogin = () => {
                 />
               </svg>
             </Button>
-            <div className="flex justify-center">
+            {/* <div className="flex justify-center">
               <svg
                 width="125"
                 height="125"
@@ -84,7 +85,8 @@ const VerifyLogin = () => {
                   stroke-linejoin="round"
                 />
               </svg>
-            </div>
+            </div> */}
+            <Image src={"/Logos/KruLogo.png"} alt={"logo kru"} width={94} height={80} className="flex justify-center mt-3 mb-3 shadow-lg p-3 rounded-lg " />
             <Typography
               variant="bold"
               className="text-sm sm:text-lg md:text-lg lg:text-lg xl:text-lg"
@@ -94,12 +96,12 @@ const VerifyLogin = () => {
             </Typography>
             <div className="w-full flex justify-between mt-20 md:px-5 lg:px-5 xl:px-5">
               <Link href={"login"}>
-                <Button className="w-[130px] h-[40px] border border-[#7B2CBF] rounded-md">
+                <Button className="w-[130px] h-[40px] border bg-[#7B2CBF] border-[#7B2CBF] rounded-md text-white">
                   Login
                 </Button>
               </Link>
               <Link href={"signup"}>
-                <Button className="w-[130px] h-[40px] border border-[#7B2CBF] rounded-md">
+                <Button className="w-[130px] h-[40px] bg-[#7B2CBF] border border-[#7B2CBF] rounded-md text-white">
                   SignUp
                 </Button>
               </Link>

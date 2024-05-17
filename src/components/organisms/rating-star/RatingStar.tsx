@@ -1,34 +1,47 @@
 "use client";
 import { Button, Typography } from "@/components/atoms";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const RatingStar = () => {
   const [isPopupOpen, setPopupOpen] = useState(false);
+  const [rating, setRating] = useState(0);
 
   const togglePopup = () => {
     setPopupOpen(!isPopupOpen);
   };
-  const [ratedStars, setRatedStars] = useState<number[]>([]);
 
-  const toggleStar = (index: number) => {
-    if (ratedStars.includes(index)) {
-      // If star is already rated, remove it
-      setRatedStars(ratedStars.filter((starIndex) => starIndex !== index));
-    } else {
-      // If star is not rated, add it
-      setRatedStars([...ratedStars, index]);
-    }
+  const handleStarClick = (index: number) => {
+    setRating(index + 1);
   };
+
+  useEffect(() => {
+    if (isPopupOpen) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = ""
+    }
+    return () => {
+      document.body.style.overflow = ""
+
+    }
+  }, [isPopupOpen]);
+
+  const backgroundClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    if (e.target === e.currentTarget) {
+      setPopupOpen(false);
+    }
+
+  }
 
   const starsArray = Array.from({ length: 5 }, (_, index) => index);
 
   return (
-    <div className="">
+    <div >
       <Button onClick={togglePopup} radius="md" className="w-[150px] h-[40px]">
         Rate me
       </Button>
       {isPopupOpen && (
-        <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center">
+        <div onClick={backgroundClick} className="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center">
           <div className="mx-auto flex flex-col w-[450px] p-5 gap-5 items-center border rounded-md shadow-lg bg-white">
             <Button
               colorScheme="tertiary"
@@ -60,14 +73,12 @@ const RatingStar = () => {
                 <svg
                   key={`star-${index}`}
                   xmlns="http://www.w3.org/2000/svg"
-                  fill={ratedStars.includes(index) ? "yellow" : "none"}
-                  stroke={
-                    ratedStars.includes(index) ? "yellow" : "currentColor"
-                  }
+                  fill={index < rating ? "yellow" : "none"}
+                  stroke={index < rating ? "yellow" : "currentColor"}
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   className="w-[32px] h-[32px] cursor-pointer"
-                  onClick={() => toggleStar(index)}
+                  onClick={() => handleStarClick(index)}
                 >
                   <path
                     strokeLinecap="round"

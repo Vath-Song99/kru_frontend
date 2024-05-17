@@ -24,15 +24,17 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
 }) => {
   return (
     <div
-      className={`w-full sm:w-[48%] lg:w-[353px] h-[388px] p-4 rounded-md border shadow-md ${className}`}
+      className={`w-full sm:w-[48%] lg:w-[353px] h-auto  p-4 rounded-md border shadow-md ${className}`}
     >
       <Image
-        className="lg:w-[360px] h-[235px] rounded-md object-cover"
+        className="lg:w-[360px] h-[300px] rounded-md object-cover"
         src={imageUrl}
         alt="Image Card"
-        width={500}
-        height={500}
-      ></Image>
+        width={360}
+        height={100}
+      >
+
+      </Image>
 
       <div className="grid grid-flow-row justify-start gap-2 mt-2">
         <div className="p-0 m-0">

@@ -1,5 +1,6 @@
 "use client";
-import React, { createContext, useState } from "react";
+import axios from "axios";
+import React, { createContext, useEffect, useState } from "react";
 interface CardTeachersTypes {
   id?: string;
   className?: string;
@@ -21,8 +22,8 @@ interface ContextProps {
 }
 export const Mycontext = createContext<ContextProps>({
   Data: [],
-  setData: () => {},
-  toggleFavorite: () => {},
+  setData: () => { },
+  toggleFavorite: () => { },
 });
 
 const CardContext = ({ children }: { children: any }) => {
@@ -77,7 +78,80 @@ const CardContext = ({ children }: { children: any }) => {
       pricing: 50000,
       isFavorite: true,
     },
+    {
+      imageUrl: "Profiles/EnglishTeacher.jpg",
+      nameSubject: "Physics",
+      teacherName: "Lee minhai",
+      rateStars: 4.3,
+      reviews: 532,
+      students: 120,
+      description:
+        "TEFL | TESOL | IELTS | 6 years' experience I'm Aimee graduated in 2017 from Batangas.",
+      pricing: 50000,
+      isFavorite: true,
+    },
+    {
+      imageUrl: "Profiles/Ounsart.jpg",
+      nameSubject: "Physics",
+      teacherName: "Lee minhoo",
+      rateStars: 4.3,
+      reviews: 532,
+      students: 120,
+      description:
+        "TEFL | TESOL | IELTS | 6 years' experience I'm Aimee graduated in 2017 from Batangas.",
+      pricing: 50000,
+      isFavorite: true,
+    },
+    {
+      imageUrl: "Profiles/Ounsart.jpg",
+      nameSubject: "Physics",
+      teacherName: "Lee minhoo",
+      rateStars: 4.3,
+      reviews: 532,
+      students: 120,
+      description:
+        "TEFL | TESOL | IELTS | 6 years' experience I'm Aimee graduated in 2017 from Batangas.",
+      pricing: 50000,
+      isFavorite: true,
+    },
+    {
+      imageUrl: "Profiles/APoy.jpg",
+      nameSubject: "Physics",
+      teacherName: "A Poy ",
+      rateStars: 4.3,
+      reviews: 532,
+      students: 120,
+      description:
+        "TEFL | TESOL | IELTS | 6 years' experience I'm Aimee graduated in 2017 from Batangas.",
+      pricing: 50000,
+      isFavorite: true,
+    },
   ]);
+  const [cardList, setCardlist] = useState([{}])
+
+
+  const fetchingTeachers = async () => {
+    try {
+      const API_ENDPOINT = "http://localhost:3000/v1/teachers";
+      const response = await axios.get(API_ENDPOINT); // Removed redundant options object
+      return response.data; // Return the data property of the response
+    } catch (error) { // Removed type annotation
+      throw error; // Throw the caught error
+    }
+  }
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        await fetchingTeachers();
+      } catch (error) { // Removed type annotation
+        console.log(error);
+      }
+    };
+
+    fetchData(); // Call the fetchData function
+  }, []);
+
 
   const toggleFavorite = (id: string) => {
     setData((prevData) => {

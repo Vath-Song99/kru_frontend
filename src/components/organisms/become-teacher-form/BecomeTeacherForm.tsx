@@ -151,27 +151,34 @@ const BecomeTeacherForm = ({
   return (
     <div className="w-full flex justify-center">
       <div className="flex flex-col w-[600px] h-auto">
-        <div className="flex justify-center">
-          <div className="flex flex-col">
-            <div className="flex justify-center sm:justify-start md:justify-center">
-              <Typography tags="h1" variant="bold" className="">
-                Teaching Certification
-              </Typography>
+        <div className="">
+          <div className="">
+            <div className="flex flex-col justify-start items-start">
+              <div
+                className="flex justify-start sm:justify-start md:justify-center "
+              >
+                <Typography tags="h1" variant="bold" className="w-auto">
+                  Teaching Certification
+                </Typography>
+              </div>
+              <div
+                className="mt-2"
+              >
+                <Typography fontSize="sm" className="flex items-start text-left text-nowrap ">
+                  {description}
+                </Typography>
+              </div>
+
             </div>
-            <div className="flex pl-0 sm:pl-0 md:pl-[196px] justify-center sm:justify-start md:justify-center">
-              <Typography fontSize="sm" className="py-2 ">
-                {description}
-              </Typography>
-            </div>
-            <div className="flex justify-center sm:justify-start md:justify-center">
-              <div className="flex w-[400px]   justify-center sm:justify-start  md:justify-center">
-                <div className="flex py-[2px] pr-[10px]">
+            <div className="flex justify-center sm:justify-start md:justify-center mt-2">
+              <div className="flex w-[400px] justify-center sm:justify-start  md:justify-center">
+                <div className="flex py-[2px] pr-[10px] " >
                   <InputForm
                     type="checkbox"
                     borderRadius="md"
                     borderSize="checkbox"
                     onChange={handleCheckboxChange}
-                    className="border border-purple-500outline-none text-xs"
+                    className="border border-purple-500outline-none text-xs "
                   />
                 </div>
                 <div className="flex">{checkboxtext}</div>
@@ -181,7 +188,7 @@ const BecomeTeacherForm = ({
         </div>
         {!showForm && (
           <>
-            <div className="flex justify-center sm:justify-start md:justify-center w-full ">
+            <div className="flex justify-center sm:justify-start md:justify-center w-full mt-3 ">
               <form action="" onSubmit={handleSubmitNoDegree}>
                 <div className="flex flex-col gap-4 pl-[30px] sm:pl-[5px] md:pl-[10px]">
                   <div className="flex flex-col pl-[20px]   w-[450px] sm:w-[450px]">

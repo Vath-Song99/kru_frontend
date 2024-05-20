@@ -137,29 +137,10 @@ const AboutForm = ({
             <div className="flex flex-col">
               <InputForm
                 type="text"
-                placeholder="last name"
-                borderRadius="md"
-                borderSize="md"
-                className="border border-purple-500 sm:w-[240px]  pl-3 outline-none text-xs"
-                name="lastname"
-                value={formData.lastname}
-                onChange={onChangeInput}
-              />
-              {errors.lastname && (
-                <div className="flex justify-start">
-                  <small className="mt-2" style={{ color: "red" }}>
-                    {errors.lastname}
-                  </small>
-                </div>
-              )}
-            </div>
-            <div className="flex flex-col">
-              <InputForm
-                type="text"
                 placeholder="First name"
                 borderRadius="md"
                 borderSize="md"
-                className="border border-purple-500 sm:w-[240px] pl-3 outline-none text-xs"
+                className="border border-purple-500 sm:w-[240px]  pl-3 outline-none text-xs"
                 name="firstname"
                 value={formData.firstname}
                 onChange={onChangeInput}
@@ -168,6 +149,25 @@ const AboutForm = ({
                 <div className="flex justify-start">
                   <small className="mt-2" style={{ color: "red" }}>
                     {errors.firstname}
+                  </small>
+                </div>
+              )}
+            </div>
+            <div className="flex flex-col">
+              <InputForm
+                type="text"
+                placeholder="Last name"
+                borderRadius="md"
+                borderSize="md"
+                className="border border-purple-500 sm:w-[240px] pl-3 outline-none text-xs"
+                name="lastname"
+                value={formData.lastname}
+                onChange={onChangeInput}
+              />
+              {errors.lastname && (
+                <div className="flex justify-start">
+                  <small className="mt-2" style={{ color: "red" }}>
+                    {errors.lastname}
                   </small>
                 </div>
               )}
@@ -223,7 +223,7 @@ const AboutForm = ({
                   Select Subject
                 </option>
                 {data.subjects.map((subjects) => (
-                  <option key={subjects.id} value={subjects.id}>
+                  <option key={subjects.id} value={subjects.subjectName}>
                     {subjects.subjectName}
                   </option>
                 ))}
@@ -251,7 +251,7 @@ const AboutForm = ({
                 Select province
               </option>
               {dataProvince.provinceDatausers.map((provinceDatausers) => (
-                <option key={provinceDatausers.id} value={provinceDatausers.id}>
+                <option key={provinceDatausers.id} value={provinceDatausers.provinceData}>
                   {provinceDatausers.provinceData}
                 </option>
               ))}

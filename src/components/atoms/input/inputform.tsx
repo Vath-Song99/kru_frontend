@@ -9,13 +9,13 @@ interface InputProps {
   value?: string;
   name?: string;
   borderColor?:
-    | "phonenumberSize"
-    | "file"
-    | "primary"
-    | "secondary"
-    | "black"
-    | "none"
-    | "border-class";
+  | "phonenumberSize"
+  | "file"
+  | "primary"
+  | "secondary"
+  | "black"
+  | "none"
+  | "border-class";
   paddingX?: "sm" | "md" | "lg" | "xl";
   paddingY?: "sm" | "md" | "lg" | "xl";
   borderRadius?: "sm" | "md" | "lg" | "xl" | "full" | "borderphone";
@@ -23,6 +23,9 @@ interface InputProps {
   | "btnlogin"
   | "classroom"
   | "forgetpassword"
+  | "phonenumber"
+  | "checkbox"
+  | "Subject"
   | "sm"
   | "md"
   | "lg"

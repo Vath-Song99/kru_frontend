@@ -52,7 +52,7 @@ const VerifyLogin = () => {
             ref={popupRef}
             className="relative w-[350px] p-5 bg-white rounded-lg border shadow-lg flex flex-col justify-between    ">
             <Button
-              className="absolute top-20 right-0 m-2"
+              className="absolute top-10 right-0 m-2"
               onClick={togglePopup}
               radius="md"
             >
@@ -87,14 +87,14 @@ const VerifyLogin = () => {
               Let us know If you are Sign up or Log in. Spend your time to
               authentication with us.
             </Typography>
-            <div className="w-full flex justify-between mt-20 md:px-5 lg:px-5 lg: max-w-32">
+            <div className=" w-full flex justify-between mt-20 md:px-5 lg:px-5 lg:max-w-32">
               <Link href={"login"}>
-                <Button className="w-[130px] h-[40px] border bg-[#7B2CBF] border-[#7B2CBF] rounded-md text-white">
+                <Button className="w-[90px] h-[40px] text-sm border bg-[#7B2CBF] border-[#7B2CBF] rounded-md text-white">
                   Login
                 </Button>
               </Link>
               <Link href={"signup"}>
-                <Button className="w-[130px] h-[40px] bg-[#7B2CBF] border border-[#7B2CBF] rounded-md text-white">
+                <Button className="w-[90px] h-[40px] text-sm bg-[#7B2CBF] border border-[#7B2CBF] rounded-md text-white">
                   SignUp
                 </Button>
               </Link>

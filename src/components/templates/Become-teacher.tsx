@@ -118,13 +118,11 @@ const BecomeTeacher = () => {
             // eslint-disable-next-line react/jsx-key
             <TeacherNavbarComponent>
               <div
-                className={`w-[35px] h-[36px] ${
-                  currentPage >= index + 1 ? "bg-green-500 " : "bg-black"
-                } rounded-md text-white flex justify-center items-center`}>
+                className={`w-[35px] h-[36px] ${currentPage >= index + 1 ? "bg-green-500 " : "bg-black"
+                  } rounded-md text-white flex justify-center items-center`}>
                 <div
-                  className={`${
-                    currentPage >= index + 1 ? "hideen" : "font-bold"
-                  }`}>
+                  className={`${currentPage >= index + 1 ? "hideen" : "font-bold"
+                    }`}>
                   {currentPage >= index + 1 && (
                     <Link
                       href={""}

@@ -17,7 +17,7 @@ const SiderDashboard = () => {
           <Typography>Learn with KRU</Typography>
         </div>
 
-        <div className="flex flex-col mt-20 gap-20">
+        <div className="flex flex-col items-center mt-20 gap-20">
           <Button radius="md" className="w-[200px] h-[45px] pl-5">
             <a href="#" className="flex">
               <svg

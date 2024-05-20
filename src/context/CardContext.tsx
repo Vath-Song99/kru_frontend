@@ -1,4 +1,5 @@
 "use client";
+import { getCurrentDateTime, getLocalStorage, setLocalStorage } from "@/utils/localStorage";
 import axios from "axios";
 import React, { createContext, useEffect, useState } from "react";
 interface CardTeachersTypes {
@@ -19,137 +20,67 @@ interface ContextProps {
   Data: CardTeachersTypes[];
   setData: React.Dispatch<React.SetStateAction<CardTeachersTypes[]>>;
   toggleFavorite: (id: string) => void;
+  currentTime: string;
 }
 export const Mycontext = createContext<ContextProps>({
   Data: [],
   setData: () => { },
   toggleFavorite: () => { },
+  currentTime: "",
 });
 
 const CardContext = ({ children }: { children: any }) => {
-  const [Data, setData] = useState<CardTeachersTypes[]>([
-    {
-      imageUrl: "Profiles/EnglishTeacher.jpg",
-      nameSubject: "Physics",
-      teacherName: "Chang Sichi",
-      rateStars: 4.3,
-      reviews: 532,
-      students: 120,
-      description:
-        "TEFL | TESOL | IELTS | 6 years' experience I'm Aimee graduated in 2017",
-      pricing: 50000,
-      isFavorite: true,
-      id: "1",
-    },
-    {
-      imageUrl: "Profiles/example1.jpg",
-      nameSubject: "English",
-      teacherName: "Chan Tareak",
-      rateStars: 4.3,
-      reviews: 532,
-      students: 120,
-      description:
-        "TEFL | TESOL | IELTS | 6 years' experience I'm Aimee graduated in 2017 from Batangas.",
-      pricing: 50000,
-      isFavorite: true,
-      id: "2",
-    },
-    {
-      imageUrl: "Profiles/teacher1.avif",
-      nameSubject: "Physics",
-      teacherName: "Chan Tareak",
-      rateStars: 4.3,
-      reviews: 532,
-      students: 120,
-      description:
-        "TEFL | TESOL | IELTS | 6 years' experience I'm Aimee graduated in 2017 from Batangas.",
-      pricing: 50000,
-      isFavorite: true,
-    },
-    {
-      imageUrl: "Profiles/EnglishTeacher.jpg",
-      nameSubject: "Physics",
-      teacherName: "Chan Tareak",
-      rateStars: 4.3,
-      reviews: 532,
-      students: 120,
-      description:
-        "TEFL | TESOL | IELTS | 6 years' experience I'm Aimee graduated in 2017 from Batangas.",
-      pricing: 50000,
-      isFavorite: true,
-    },
-    {
-      imageUrl: "Profiles/EnglishTeacher.jpg",
-      nameSubject: "Physics",
-      teacherName: "Lee minhai",
-      rateStars: 4.3,
-      reviews: 532,
-      students: 120,
-      description:
-        "TEFL | TESOL | IELTS | 6 years' experience I'm Aimee graduated in 2017 from Batangas.",
-      pricing: 50000,
-      isFavorite: true,
-    },
-    {
-      imageUrl: "Profiles/Ounsart.jpg",
-      nameSubject: "Physics",
-      teacherName: "Lee minhoo",
-      rateStars: 4.3,
-      reviews: 532,
-      students: 120,
-      description:
-        "TEFL | TESOL | IELTS | 6 years' experience I'm Aimee graduated in 2017 from Batangas.",
-      pricing: 50000,
-      isFavorite: true,
-    },
-    {
-      imageUrl: "Profiles/Ounsart.jpg",
-      nameSubject: "Physics",
-      teacherName: "Lee minhoo",
-      rateStars: 4.3,
-      reviews: 532,
-      students: 120,
-      description:
-        "TEFL | TESOL | IELTS | 6 years' experience I'm Aimee graduated in 2017 from Batangas.",
-      pricing: 50000,
-      isFavorite: true,
-    },
-    {
-      imageUrl: "Profiles/APoy.jpg",
-      nameSubject: "Physics",
-      teacherName: "A Poy ",
-      rateStars: 4.3,
-      reviews: 532,
-      students: 120,
-      description:
-        "TEFL | TESOL | IELTS | 6 years' experience I'm Aimee graduated in 2017 from Batangas.",
-      pricing: 50000,
-      isFavorite: true,
-    },
-  ]);
-  const [cardList, setCardlist] = useState([{}])
+  const [Data, setData] = useState<CardTeachersTypes[]>([]);
+  const [currentTime, setCurrentTime] = useState<string>(new Date().toLocaleString());
 
 
   const fetchingTeachers = async () => {
     try {
       const API_ENDPOINT = "http://localhost:3000/v1/teachers";
-      const response = await axios.get(API_ENDPOINT); // Removed redundant options object
-      return response.data; // Return the data property of the response
-    } catch (error) { // Removed type annotation
-      throw error; // Throw the caught error
+      const token = ""; // Replace with your actual token
+      const response = await axios.get(API_ENDPOINT, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      return response.data;
+    } catch (error: any) {
+      console.error("Error fetching teachers:", error.response ? error.response.data : error.message);
+      throw error;
     }
-  }
-
+  };
   useEffect(() => {
     const fetchData = async () => {
       try {
-        await fetchingTeachers();
-      } catch (error) { // Removed type annotation
-        console.log(error);
+        const teachers = await fetchingTeachers();
+        setData(teachers.Data); // Update state with fetched data
+      } catch (error) {
+        console.error("Error in fetchData:", error);
       }
     };
-
     fetchData(); // Call the fetchData function
+  }, []);
+
+  useEffect(() => {
+    // Retrieve stored date and time or set initial value
+    const storedDateTime = getLocalStorage('storedDateTime');
+    if (storedDateTime) {
+      setCurrentTime(storedDateTime);
+    } else {
+      const initialDateTime = getCurrentDateTime();
+      setCurrentTime(initialDateTime);
+      setLocalStorage('storedDateTime', initialDateTime);
+    }
+
+    // Update current date and time every second
+    const intervalId = setInterval(() => {
+      const newDateTime = getCurrentDateTime();
+      setCurrentTime(newDateTime);
+      // Do not update localStorage here to prevent overwriting
+    }, 1000);
+
+    // Cleanup interval on component unmount
+    return () => clearInterval(intervalId);
   }, []);
 
 
@@ -171,6 +102,8 @@ const CardContext = ({ children }: { children: any }) => {
     Data,
     setData,
     toggleFavorite,
+    currentTime,
+
   };
   return (
     <Mycontext.Provider value={contextvalue}> {children} </Mycontext.Provider>

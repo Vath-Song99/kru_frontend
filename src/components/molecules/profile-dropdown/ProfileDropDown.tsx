@@ -2,7 +2,8 @@
 
 import React, { useState, useRef, useEffect } from "react";
 interface ProfileDropDownProps {
-  onChange: (value?: string) => void;
+  children?: React.ReactNode;
+  onChange?: (value?: string) => void;
   className?: string;
   icon?: React.ReactNode;
 }

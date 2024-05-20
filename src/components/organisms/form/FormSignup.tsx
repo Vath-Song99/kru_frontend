@@ -112,27 +112,24 @@ const FormSignup = () => {
 
   const addNewAuth = async (auth: AuthForm) => {
     try {
-      // Step 5: Define the fetchData function
+      // Call the fetchData function
       fetchData(auth);
-      // Step 6: Call the fetchData function conditionally based on rememberMe
+      // Optionally fetch data again if rememberMe is not checked
       if (!auth.rememberMe) {
         const responseData = await fetchData(auth);
         console.log("Response Data:", responseData); // Logging success data
       }
 
-      // Step 7: Define the authObject
+      // Save user data to localStorage
       const authObject = {
         lastname: auth.lastname,
         firstname: auth.firstname,
         email: auth.email,
       };
-
-      // Step 8: Set the user data in localStorage
       setLocalStorage("user", authObject);
       console.log("User data saved to localStorage:", authObject);
     } catch (error) {
       console.error("Error occurred while adding new authentication:", error);
-      // Rethrow the error to handle it outside
     }
   };
 

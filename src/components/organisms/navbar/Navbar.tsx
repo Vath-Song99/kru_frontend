@@ -134,7 +134,7 @@ const Navbar: React.FC<NavbarProps> = ({
     console.log("Selected option:", value);
   };
   // login
-  const [isLogin, setIsLogin] = useState(false);
+  const [isLogin, setIsLogin] = useState(true);
   return (
     <nav
       className={`w-[80%] h-[100px] flex justify-between items-center  ${className}`}
@@ -206,10 +206,10 @@ const Navbar: React.FC<NavbarProps> = ({
           </div>
         </div>
       ) : (
-        <div className="lg:w-1/2 lg:h-full lg:flex lg:items-center lg:justify-end ">
+        <div className="lg:w-1/2 lg:h-full lg:flex lg:items-center lg:justify-end hidden ">
           <Link
             href={"login"}
-            className="text-[#455445] text-sm hover:underline"
+            className="text-[#455445] text-sm flex  hover:underline"
           >
             Log in
           </Link>
@@ -302,7 +302,7 @@ const Navbar: React.FC<NavbarProps> = ({
                 </svg>
               </div>
             </button>
-            <Link href={"login"} className="ml-5">
+            <Link href={"login"} className="ml-5 p-3 hover:underline">
               Log in
             </Link>
           </div>

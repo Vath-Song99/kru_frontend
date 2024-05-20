@@ -1,12 +1,13 @@
-import React from 'react'
-import { Fav } from '@/components/organisms/favorite-page'
+"use client";
+import React from "react";
+import { Fav } from "@/components/organisms/favorite-page";
 
 const page = () => {
-    return (
-        <div>
-            <Fav />
-        </div>
-    )
-}
+  return (
+    <div>
+      <Fav />
+    </div>
+  );
+};
 
-export default page
+export default page;

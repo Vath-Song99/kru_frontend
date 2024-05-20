@@ -9,9 +9,8 @@ const TeacherNavbar = ({
 }) => {
   return (
     <div
-      className={`w-[1440px] flex justify-evenly items-start bg-[#F4F4F8] ${className}`}
-    >
-      <div className="w-[100%] flex justify-center items-start">{children}</div>
+      className={` flex justify-center sm:justify-center md:justify-center items-start  bg-[#F4F4F8]`}>
+      <div className=" flex justify-center items-start">{children}</div>
     </div>
   );
 };

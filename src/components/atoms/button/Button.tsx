@@ -17,7 +17,7 @@ interface ButtonProps {
   hover?: () => void;
 }
 
-const Button: FC<ButtonProps> = ({
+export const Button: FC<ButtonProps> = ({
   children,
   className,
   colorScheme = "primary",
@@ -100,7 +100,6 @@ const Button: FC<ButtonProps> = ({
 
   return (
     <button
-      type={type}
       disabled={isDisabled}
       className={combinedClassName}
       onMouseOver={hover}
@@ -113,7 +112,7 @@ const Button: FC<ButtonProps> = ({
   );
 };
 
-export { Button };
+
 
 
 

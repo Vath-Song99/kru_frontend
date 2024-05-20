@@ -1,16 +1,31 @@
 "use client";
 
-import React, { useState } from "react";
+import { select } from "@nextui-org/react";
+import React, { ReactNode } from "react";
 
-interface InputProps {
+interface SelectProps {
+  onclick?: CallableFunction;
+  onChange?: (event: any) => void;
   className?: string;
-  type?: string;
-  placeholder?: string;
-  value?: string;
-  name?: string;
+  children: ReactNode;
+  disabled?: boolean | undefined;
+  defaultValue?: string;
+  borderSize?:
+    | "btnlogin"
+    | "classroom"
+    | "forgetpassword"
+    | "phonenumber"
+    | "timeSelect"
+    | "Subject"
+    | "select"
+    | "sm"
+    | "md"
+    | "lg"
+    | "xl"
+    | "2xl"
+    | "full";
   borderColor?:
     | "phonenumberSize"
-    | "file"
     | "primary"
     | "secondary"
     | "black"
@@ -19,47 +34,63 @@ interface InputProps {
   paddingX?: "sm" | "md" | "lg" | "xl";
   paddingY?: "sm" | "md" | "lg" | "xl";
   borderRadius?: "sm" | "md" | "lg" | "xl" | "full" | "borderphone";
-  borderSize?:
-  | "btnlogin"
-  | "classroom"
-  | "forgetpassword"
-  | "sm"
-  | "md"
-  | "lg"
-  | "xl"
-  | "2xl"
-  | "full";
-  onChange?: (event: any) => void;
-  accept?: string;
-  ref?: React.MutableRefObject<HTMLInputElement | null>;
-  checked?: boolean | undefined;
+  name?: string;
+  value?: string;
 }
-
-const InputForm: React.FC<InputProps> = ({
+const Select: React.FC<SelectProps> = ({
   className,
-  type = "text",
-  placeholder = "example",
-  borderColor = "primary",
+  children,
+  name,
+  value,
+  onChange,
   borderRadius = "sm",
   paddingX = "sm",
   paddingY = "sm",
   borderSize = "sm",
-  value,
-  name,
-  ref,
-  onChange,
-  accept,
-  checked,
+  borderColor = "sm",
+  disabled,
+  defaultValue
 }) => {
+  const borderSizeControl = (borderSizeParam: string) => {
+    switch (borderSizeParam) {
+      case "btnlogin":
+        return "w-[300px] h-[40px]";
+      case "classroom":
+        return "w-[350px] h-[40px]";
+      case "forgetpassword":
+        return "w-full h-[50px]";
+      case "phonenumber":
+        return "w-full sm:w-[160px] h-[40px]";
+      case "Subject":
+        return "w-full h-[40px]";
+      case "select":
+        return "w-full h-[40px]";
+      case "timeSelect":
+        return "w-[200px] h-[40px]";
+      case "sm":
+        return "w-[332px] h-[40px]";
+      case "md":
+        return "w-[460px] h-[44px]";
+      case "lg":
+        return "w-[420px] h-[60px]";
+      case "xl":
+        return "w-[511px] h-[65px]";
+      case "2xl":
+        return "w-[564px] h-[50px]";
+      case "full":
+        return "w-screen h-[65px]";
+      default:
+        return "w-[332px] h-[40px]";
+    }
+  };
   const borderColorControl = (borderColorParam: string) => {
     switch (borderColorParam) {
       case "primary":
+        return "b border-[#7B2CBF]";
       case "phonenumberSize":
         return "border-r border-t border-b border-[#7B2CBF]";
-      case "file":
-        return "";
       case "secondary":
-        return "border border-[#455445] focus:border-2";
+        return "border focus:border-2 border-[#7B2CBF]";
       case "black":
         return "border border-black";
       case "none":
@@ -116,61 +147,23 @@ const InputForm: React.FC<InputProps> = ({
         return "rounded-sm";
     }
   };
-  const borderSizeControl = (borderSizeParam: string) => {
-    switch (borderSizeParam) {
-      case "btnlogin":
-        return "w-[300px] h-[40px]";
-      case "checkbox":
-        return "w-[16px] h-[16px]";
-      case "classroom":
-        return "w-[350px] h-[40px]";
-      case "forgetpassword":
-        return "w-full h-[50px]";
-      case "phonenumber":
-        return "w-full sm:w-[180px] h-[40px]";
-      case "Subject":
-        return "w-full h-[40px]";
-      case "sm":
-        return "w-[332px] h-[40px]";
-      case "md":
-        return "w-[460px] h-[44px]";
-      case "lg":
-        return "w-[420px] h-[60px]";
-      case "xl":
-        return "w-[511px] h-[65px]";
-      case "2xl":
-        return "w-[564px] h-[50px]";
-      case "full":
-        return "w-screen h-[65px]";
-      default:
-        return "w-[332px] h-[40px]";
-    }
-  };
 
   const setBorderColor = borderColorControl(borderColor);
   const setPaddingX = paddingXControl(paddingX);
   const setPaddingY = paddingYControl(paddingY);
   const setBorderRadius = borderRaduisControl(borderRadius);
   const setBorderSize = borderSizeControl(borderSize);
-
   const setClassName = ` ${setBorderSize}  ${setBorderColor} ${setPaddingX} ${setPaddingY} ${setBorderRadius}  ${className}`;
-
-  const [text, setText] = useState("")
-
   return (
-    <input
-      type={type}
-      value={value}
-      name={name}
-      ref={ref}
-      accept={accept}
-      placeholder={placeholder}
+    <select
       className={setClassName}
-      onChange={onChange}
-      checked={checked}
-    />
+      value={value}
+      defaultValue={defaultValue}
+      name={name}
+      disabled={disabled}
+      onChange={onChange}>
+      {children}
+    </select>
   );
 };
-
-
-export { InputForm };
+export { Select };

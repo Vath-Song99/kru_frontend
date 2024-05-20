@@ -171,7 +171,7 @@ const Navbar: React.FC<NavbarProps> = ({
       {/* right */}
 
       {!isLogin ? (
-        <div className="lg:w-1/3  lg:h-1/3 lg:flex lg:items-center lg:justify-center ">
+        <div className="lg:w-1/3 lg:h-1/3 lg:flex lg:items-center lg:justify-center ">
           <div className="flex items-center">
             <ButtonDropDown
               options={options}
@@ -181,6 +181,7 @@ const Navbar: React.FC<NavbarProps> = ({
             <div className="w-1/3 flex items-center justify-evenly">
               {/* Vertical Line */}
               <div className="h-5 w-[1px] bg-gray-400 lg:inline hidden"></div>
+
             </div>
             <Notification className="hidden lg:inline lg:ml-7 lg:mt-2"></Notification>
             <ProfileDropDown

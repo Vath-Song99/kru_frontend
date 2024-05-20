@@ -1,9 +1,19 @@
-import React from "react";
+"use client"
+import React, { ChangeEvent, ReactElement, useState } from "react";
 import { InputForm, Typography } from "@/components/atoms";
 
-const SearchInput = ({ className }: { className?: string }) => {
+const SearchInput = ({ className, setSearch }: { className?: string, setSearch: React.Dispatch<React.SetStateAction<string>> }) => {
+  //catch value 
+
+  const [value, setValue] = useState("")
+  const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
+    setValue(e.target.value);
+    if (setSearch) { // Check if setSearch is defined before calling it
+      setSearch(e.target.value);
+    }
+  };
   return (
-    <div className={`w-full    ${className}`}>
+    <div className={`w-full ${className}`}>
       <div className="w-full flex justify-center items-center border shadow-sm py-1  gap-5 ">
         <div className="lg:w-[80%] w-[80%] flex items-center justify-between ">
           <div className="flex items-center md:gap-4 gap-">
@@ -26,6 +36,8 @@ const SearchInput = ({ className }: { className?: string }) => {
               borderColor="none"
               className="outline-none border-none text-xs md:text-sm"
               placeholder="Searching ..."
+              value={value}
+              onChange={handleInput}
             />
           </div>
         </div>

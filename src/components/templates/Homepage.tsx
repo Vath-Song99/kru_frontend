@@ -1,5 +1,4 @@
 "use client";
-
 import {
   HomepageSlider,
   HomeBenner,
@@ -7,8 +6,11 @@ import {
   Footer,
 } from "@/components/organisms";
 import { SearchInput, ShowEasyText, KruVision } from "@/components/molecules";
+import { useState } from "react";
 
 const Homepage: React.FC = () => {
+  const [search, setSearch] = useState("")
+
   return (
     <div className="max-w-full">
       {/* Homepage Benner */}
@@ -21,12 +23,12 @@ const Homepage: React.FC = () => {
 
       {/* Search Input */}
 
-      <SearchInput />
+      <SearchInput setSearch={setSearch} />
 
       <div className="grid gap-8 md:gap-12">
         {/*  all subject */}
 
-        <TopTeachersList />
+        <TopTeachersList search={search} />
 
         {/* benner card */}
         <KruVision />

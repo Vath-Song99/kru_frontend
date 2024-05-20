@@ -134,7 +134,7 @@ const Navbar: React.FC<NavbarProps> = ({
     console.log("Selected option:", value);
   };
   // login
-  const [isLogin, setIsLogin] = useState(false);
+  const [isLogin, setIsLogin] = useState(true);
   return (
     <nav
       className={`w-[80%] h-[100px] flex justify-between items-center  ${className}`}
@@ -176,11 +176,12 @@ const Navbar: React.FC<NavbarProps> = ({
             <ButtonDropDown
               options={options}
               onChange={handleChange}
-              className="md:hidden xl:inline lg:flex lg:items-start lg:mr-7 sm:hidden hidden"
+              className="md:inline xl:inline lg:flex lg:items-start lg:mr-7 "
             ></ButtonDropDown>
             <div className="w-1/3 flex items-center justify-evenly">
               {/* Vertical Line */}
-              <div className="h-5 w-[1px] bg-gray-400 hidden lg:inline"></div>
+              <div className="h-5 w-[1px] bg-gray-400 lg:inline hidden"></div>
+
             </div>
             <Notification className="hidden lg:inline lg:ml-7 lg:mt-2"></Notification>
             <ProfileDropDown
@@ -202,14 +203,14 @@ const Navbar: React.FC<NavbarProps> = ({
               }
               className="ml-10 hidden sm:hidden md:hidden xl:inline lg:inline"
               onChange={handleChange}
-            ></ProfileDropDown>
+            > </ProfileDropDown>
           </div>
         </div>
       ) : (
-        <div className="lg:w-1/2 lg:h-full lg:flex lg:items-center lg:justify-end ">
+        <div className="lg:w-1/2 lg:h-full lg:flex lg:items-center lg:justify-end hidden ">
           <Link
             href={"login"}
-            className="text-[#455445] text-sm hover:underline"
+            className="text-[#455445] text-sm flex  hover:underline"
           >
             Log in
           </Link>
@@ -302,7 +303,7 @@ const Navbar: React.FC<NavbarProps> = ({
                 </svg>
               </div>
             </button>
-            <Link href={"login"} className="ml-5">
+            <Link href={"login"} className="ml-5 p-3 hover:underline">
               Log in
             </Link>
           </div>
@@ -367,11 +368,11 @@ const Navbar: React.FC<NavbarProps> = ({
         </nav>
         <div className="w-[90%] mx-auto h-[1.2px] bg-gray-200"></div>
 
-        <ButtonDropDown
+        {/* <ButtonDropDown
           options={options}
           onChange={handleChange}
-          className="border-blue-500 flex mt-16 self-center"
-        ></ButtonDropDown>
+          className="border-blue-500 flex mt-16 ml-7"
+        ></ButtonDropDown> */}
       </div>
       {/* Background Overlay */}
       {isOpen && (

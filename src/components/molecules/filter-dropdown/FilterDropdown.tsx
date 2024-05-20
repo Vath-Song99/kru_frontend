@@ -1,18 +1,12 @@
 "use client"
-import {
-  Dropdown,
-  Typography,
-  ShowDropdown,
-  LinkDropdown,
-  LinkDropdownPage,
-} from "@/components/atoms";
-import React, { useContext } from "react";
-import { createContext, useState } from "react";
+import { Dropdown } from "@/components/atoms";
+import { SelectDropdownnProps } from "@/components/atoms/dropdown/dropdown";
+import React from "react";
 interface FilterDropdownTypes {
   className?: React.ReactNode;
   nameDropdown?: string;
   nameSubject?: string;
-  itemsDropdown?: [] | any
+  itemsDropdown?: { itemName: string }[];
 }
 const FilterDropdown: React.FC<FilterDropdownTypes> = ({
   className,
@@ -23,24 +17,12 @@ const FilterDropdown: React.FC<FilterDropdownTypes> = ({
 }) => {
 
   return (
-
-    <div className="lg:w-1/5 w-[48%] grid grid-flow-row  ">
-      <Typography align="left" className="text-xs" colorscheme="secondary">{nameDropdown}</Typography>
-      <Dropdown className="w-full" buttonContent={`Select ${nameDropdown}`} >
-        <ShowDropdown className=" w-[180px] sm:w-[270px] md:w-[300px] lg:w-[300px]  px-3 py-1">
-          {
-            itemsDropdown.map((item: { itemName: string; }, index: React.Key | null | undefined) => (
-              <LinkDropdown key={index} className="py-2 text-xs  ">
-                <LinkDropdownPage itemDropdown={item.itemName} />
-              </LinkDropdown>
-            ))
-          }
-        </ShowDropdown>
+    <div className={`lg:w-1/5 w-[48%] grid grid-flow-row ${className}`}>
+      <Dropdown buttonContent={`Select ${nameDropdown}`} className="w-full">
+        <SelectDropdownnProps options={itemsDropdown?.map(item => item.itemName)} />
       </Dropdown>
-
     </div>
-
   );
-};
+}
 
 export { FilterDropdown };

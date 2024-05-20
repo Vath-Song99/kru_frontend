@@ -1,7 +1,9 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { Children, useState } from "react";
 import Image from "next/image";
+import { Button } from "../button";
+import { Values } from "aws-cdk-lib/aws-cloudwatch";
 
 interface DropdownProps {
   children: React.ReactNode;
@@ -28,6 +30,23 @@ interface LinkDropdownPageProps {
   href?: string;
   id?: string;
 }
+interface SelectDropdownnProps {
+  options?: string[];
+  children?: React.ReactNode;
+  className?: string;
+}
+const SelectDropdownnProps: React.FC<SelectDropdownnProps> = ({
+  options,
+  className
+}) => {
+  return (
+    <select name="" id="" className={`${className}`}>
+      {options?.map((option, index) => (
+        <option key={index} value={option}>{option}</option>
+      ))}
+    </select>
+  );
+}
 
 const Dropdown: React.FC<DropdownProps> = ({
   children,
@@ -44,17 +63,16 @@ const Dropdown: React.FC<DropdownProps> = ({
     <div
       className={`dropdown  relative inline-block ${className || ""}`}
     >
-      
+
       <button
         className='inline-flex w-full justify-between items-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-xs font-normal shadow-sm   border  hover:bg-gray-50" id="menu-button" aria-expanded="true'
         onClick={toggleDropdown}
       >
-       
+
         {buttonContent}
         <svg
-          className={`-mr-1 h-5 w-5 text-gray-400 transition-all duration-300 transform ${
-            isOpen ? "rotate-180" : ""
-          }`}
+          className={`-mr-1 h-5 w-5 text-gray-400 transition-all duration-300 transform ${isOpen ? "rotate-180" : ""
+            }`}
           viewBox="0 0 20 20"
           fill="currentColor"
           aria-hidden="true"
@@ -68,9 +86,11 @@ const Dropdown: React.FC<DropdownProps> = ({
       </button>
       {isOpen && (
         <div className={`${className}`}>
-          <ShowDropdown>
-            <LinkDropdown>{children}</LinkDropdown>
-          </ShowDropdown>
+          <SelectDropdownnProps >
+            <option value="">
+              {children}
+            </option>
+          </SelectDropdownnProps>
         </div>
       )}
     </div>
@@ -90,7 +110,7 @@ const ShowDropdown: React.FC<ShowDropProps> = ({
       aria-labelledby="menu-button"
       role={`${role}`}
     >
-      
+
       {children}
     </div>
   );
@@ -127,4 +147,4 @@ const LinkDropdownPage: React.FC<LinkDropdownPageProps> = ({
   );
 };
 
-export { Dropdown, ShowDropdown, LinkDropdown, LinkDropdownPage };
+export { Dropdown, ShowDropdown, LinkDropdown, LinkDropdownPage, SelectDropdownnProps };

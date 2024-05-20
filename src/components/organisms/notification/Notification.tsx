@@ -1,15 +1,63 @@
 // components/Notification.tsx
 
 import { Typography } from "@/components/atoms";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useContext } from "react";
 import Image from "next/image";
-
+import { Mycontext } from "@/context/CardContext";
+interface Notification {
+  message: string;
+  date: string;
+  time: string;
+  profileImage: string;
+}
 interface NotificationProps {
   className?: string;
+  initialNotifications?: Notification[];
 }
 
-const Notification: React.FC<NotificationProps> = ({ className }) => {
+const Notification: React.FC<NotificationProps> = ({ className, initialNotifications }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const { currentTime } = useContext(Mycontext);
+  const currentDate = new Date().toLocaleDateString('en-US');
+  // const currentTime = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+  const [notifications, setNotifications] = useState<Notification[]>([
+    {
+      message: "Thank you for being a valued member of our education platform. We're committed to providing you with enriching learning experiences.",
+      date: currentDate,
+      time: currentTime,
+      profileImage: "/Profiles/APoy.jpg",
+    },
+    {
+      message: "Thank you for being a valued member of our education platform. We're committed to providing you with enriching learning experiences.",
+      date: currentDate,
+      time: currentTime,
+      profileImage: "/Profiles/Ounsart.jpg",
+    },
+    {
+      message: "Thank you for being a valued member of our education platform. We're committed to providing you with enriching learning experiences.",
+      date: currentDate,
+      time: currentTime,
+      profileImage: "/Profiles/example1.jpg",
+    },
+    {
+      message: "Thank you for being a valued member of our education platform. We're committed to providing you with enriching learning experiences.",
+      date: currentDate,
+      time: currentTime,
+      profileImage: "/Profiles/Teacher2.avif",
+    },
+    {
+      message: "Thank you for being a valued member of our education platform. We're committed to providing you with enriching learning experiences.",
+      date: currentDate,
+      time: currentTime,
+      profileImage: "/Profiles/Teacher2.avif",
+    },
+    {
+      message: "Thank you for being a valued member of our education platform. We're committed to providing you with enriching learning experiences.",
+      date: currentDate,
+      time: currentTime,
+      profileImage: "/Profiles/Teacher2.avif",
+    },
+  ]);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const toggleDropdown = () => {
@@ -32,9 +80,11 @@ const Notification: React.FC<NotificationProps> = ({ className }) => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
   const toggleModal = () => {
     setIsOpen(!isOpen);
   };
+
   return (
     <div
       className={`relative inline-block text-left ${className}`}
@@ -68,7 +118,7 @@ const Notification: React.FC<NotificationProps> = ({ className }) => {
               className="mb-10"
             >
               Notification
-            </Typography>
+            </  Typography>
             <button
               onClick={toggleModal}
               className="hover:bg-red-200 hover:rounded-md w-[32px] h-[32px]"
@@ -89,89 +139,37 @@ const Notification: React.FC<NotificationProps> = ({ className }) => {
           </div>
           <div className="w-full p-2 border border-collapse border-gray-200">
             <div className="flex">
-              <Image
-                src={"/Profiles/teacher1.avif"}
-                height={500}
-                width={500}
-                alt="profile"
-                className="w-[40px] h-[40px] object-cover rounded-full"
-              ></Image>
-              <div className="flex flex-col">
-                <Typography align="left" className="ml-5 text-[12px]">
-                  Thank you for being a valued member of our education platform.
-                  We're committed to providing you with enriching learning
-                  experiences.
-                </Typography>
-                <p className="flex mt">
-                  <Typography
-                    align="left"
-                    className="ml-5 mt-3 text-gray-400 text-[11px]"
-                  >
-                    1/5/2024
-                  </Typography>
-                  <Typography className="ml-5 mt-3 text-gray-400 text-[11px]">
-                    6:02 pm
-                  </Typography>
-                </p>
+              <div className="">
+                <div className={notifications.length >= 3 ? "overflow-y-auto h-64" : ""}> {/* Adjust height as needed */}
+                  {notifications.map((notification, index) => (
+                    <div key={index} className="flex mb-2">
+                      <Image
+                        src={notification.profileImage}
+                        height={500}
+                        width={500}
+                        alt="profile"
+                        className="w-[40px] h-[40px] object-cover rounded-full"
+                      />
+                      <div className="flex flex-col ml-5">
+                        <Typography align="left" className="text-[12px]">
+                          {notification.message}
+                        </Typography>
+                        <div className="flex mt-3">
+                          <Typography align="left" className="text-gray-400 text-[11px]">
+                            {notification.date}
+                          </Typography>
+                          <Typography className="ml-5 text-gray-400 text-[11px]">
+                            {notification.time}
+                          </Typography>
+                        </div>
+                        <p className="border-b-2 w-full p-2 "></p>
+                      </div>
+
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-          </div>
-          <div className="w-full p-2 border border-collapse border-gray-200">
-            <div className="flex">
-              <Image
-                src={"/Profiles/teacher1.avif"}
-                height={500}
-                width={500}
-                alt="profile"
-                className="w-[40px] h-[40px] object-cover rounded-full"
-              ></Image>
-              <div className="flex flex-col">
-                <Typography align="left" className="ml-5 text-[12px]">
-                  Thank you for being a valued member of our education platform.
-                  We're committed to providing you with enriching learning
-                  experiences.
-                </Typography>
-                <p className="flex mt">
-                  <Typography
-                    align="left"
-                    className="ml-5 mt-3 text-gray-400 text-[11px]"
-                  >
-                    1/5/2024
-                  </Typography>
-                  <Typography className="ml-5 mt-3 text-gray-400 text-[11px]">
-                    6:02 pm
-                  </Typography>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="w-full p-2 border border-collapse border-gray-200">
-            <div className="flex">
-              <Image
-                src={"/Profiles/teacher1.avif"}
-                height={500}
-                width={500}
-                alt="profile"
-                className="w-[40px] h-[40px] object-cover rounded-full"
-              ></Image>
-              <div className="flex flex-col">
-                <Typography align="left" className="ml-5 text-[12px]">
-                  Thank you for being a valued member of our education platform.
-                  We're committed to providing you with enriching learning
-                  experiences.
-                </Typography>
-                <p className="flex mt">
-                  <Typography
-                    align="left"
-                    className="ml-5 mt-3 text-gray-400 text-[11px]"
-                  >
-                    1/5/2024
-                  </Typography>
-                  <Typography className="ml-5 mt-3 text-gray-400 text-[11px]">
-                    6:02 pm
-                  </Typography>
-                </p>
-              </div>
+
             </div>
           </div>
         </div>

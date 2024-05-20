@@ -43,19 +43,19 @@ const HomepageSlider = ({ className }: { className?: string }) => {
 
             <div className="w-full flex justify-center">
               <Button
-                className="px-8 py-[6px] sm:py-2 md:px-9 lg:px-10 lg:py-2 border-2  "
+                className="px-8 py-[6px] bg-[#7B2CBF] hover:bg-transparent hover:border-[#7B2CBF]    sm:py-2 md:px-9 lg:px-10 lg:py-2 border-[#7B2CBF] text-white hover:border-2 hover:text-white"
                 colorScheme="outline"
                 fontSize="sm"
                 radius="md"
               >
-              <Link href={"teacher-list"}>Get Started</Link>
+                <Link href={"teacher-list"}>Get Started</Link>
               </Button>
             </div>
           </div>
-        </div>  
+        </div>
       </div>
     </div>
   );
 };
 
-export  {HomepageSlider};
+export { HomepageSlider };
